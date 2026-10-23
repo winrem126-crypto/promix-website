@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteDialogs from '../../components/SiteDialogs.astro';
+import ArchitecturalTasks from '../../components/ArchitecturalTasks.astro';
+import ProductBackdrop from '../../components/ProductBackdrop.astro';
+import { categories, catalogProducts } from '../../data/products';
+import { productReferenceStyle } from '../../data/product-image-layout';
+import '../../styles/architectural-home.css';
+
+const featured: Record<string, string> = {
+  putties: 'promix-f', primers: 'universal-primer', paints: 'super-tack-7',
+  adhesives: 'plus-top', waterproofing: 'hydro', 'roll-materials': 'glass-fiber-plus-top',
+};
+const referenceImageStyle = (product: typeof catalogProducts[number]) => {
+  const frame = product.cardImageFrame;
+  if (!frame?.reference) return undefined;
+  return `${productReferenceStyle(frame)};${frame.builtInShadow ? 'filter:none;' : ''}`;
+};
+const materialWord = (count: number) => count % 10 === 1 && count % 100 !== 11 ? 'материал' : count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 12 || count % 100 > 14) ? 'материала' : 'материалов';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'PROMIX',
+  url: 'https://pro-mix.ru/',
+  email: 'simkraski@mail.ru',
+  telephone: '+7-8422-22-90-42',
+  description: 'Профессиональные материалы для комплексной отделки поверхностей.',
+};
+---
+<BaseLayout
+  title="PROMIX — профессиональные материалы для отделки"
+  description="Шпатлёвки, грунты, краски, клеи и комплексные решения PROMIX для профессиональной отделки."
+  image="/images/hero-architecture-no-product-1600.webp"
+  preloadImage="/images/hero-architecture-no-product-1600.webp"
+  pageClass="architectural-home home-refinement-preview"
+  canonical="/"
+  robots="noindex, nofollow"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  <link rel="stylesheet" href="/previews/home-refinement/preview.css" />
+  <link rel="stylesheet" href="/previews/home-refinement/lower-sections.css" />
+  <SiteHeader />
+  <main id="top" class="arch-main">
+<section class="arch-hero" id="hero" aria-labelledby="hero-title"><div class="arch-hero-copy"><span class="arch-label">PROMIX / Профессиональные материалы</span><h1 id="hero-title">Основа<br>безупречной<br>отделки.</h1><p>Материалы, которые превращают замысел в&nbsp;завершённое пространство. От&nbsp;подготовки основания до&nbsp;финишного покрытия.</p><a class="arch-solid-link" href="#products">Открыть продукцию <span class="arch-arrow"><img src="/icons/phosphor/arrow-right.svg" alt="" aria-hidden="true" width="20" height="20" /></span></a><div class="arch-hero-end"><span>Там, где важен результат.</span><span>Ульяновск · Россия</span></div></div><div class="arch-hero-visual"><img src="/images/hero-architecture-no-product-1600.webp" width="1600" height="900" fetchpriority="high" decoding="async" alt="Строгая архитектура и фактурные поверхности"><span class="arch-hero-line"></span><div class="arch-hero-caption"><span>Материал. Форма. Результат.</span><span>01 — 06</span></div></div></section>
+<section class="arch-products" id="products" aria-labelledby="products-title"><div class="arch-section-heading"><div><span class="arch-label">01 / Продукция PROMIX</span><h2 id="products-title">Всё для отделки.</h2></div><div class="arch-aside"><p>Шесть направлений.<br>Единый подход к качеству поверхности.</p><span class="arch-label">{catalogProducts.length} материалов</span></div></div><div class="arch-collection">
+        {categories.map((category, index) => {
+          const product = catalogProducts.find(item => item.slug === featured[category.id])!;
+          const referenceStyle = referenceImageStyle(product);
+          return <a class:list={['arch-piece', {'arch-canister': product.imageLayout === 'canister', 'arch-roll': product.imageLayout === 'roll'}]} href={`/products/?category=${category.id}`}>
+            <div class="arch-art"><ProductBackdrop category={category.id} />{referenceStyle ? <span class="arch-product-image arch-product-image--reference" style={referenceStyle}><img src={product.image} alt={product.name} width={product.cardImageFrame!.source[0]} height={product.cardImageFrame!.source[1]} loading="lazy" decoding="async" /></span> : <img class="arch-product-image" src={product.image} alt={product.name} width={category.id === 'primers' ? 1024 : category.id === 'roll-materials' ? 245 : 1024} height={category.id === 'primers' ? 1535 : category.id === 'roll-materials' ? 1470 : 1024} loading="lazy" decoding="async" />}</div>
+            <h3>{category.title}</h3>
+            <div class="arch-piece-bottom"><span>{String(index + 1).padStart(2, '0')} / {category.count} {materialWord(category.count)}</span><span aria-hidden="true">↗</span></div>
+          </a>;
+        })}
+      </div><div class="arch-collection-foot"><span>От основания до финишного слоя</span><a href="/products/">Весь каталог <span class="arch-arrow"><img src="/icons/phosphor/arrow-right.svg" alt="" aria-hidden="true" width="20" height="20" /></span></a></div></section>
+<ArchitecturalTasks />
+<section class="arch-production" id="production" aria-labelledby="production-title"><div class="arch-production-top"><span class="arch-label">03 / Производство и контроль</span><h2 id="production-title">Производим. Проверяем.<br>Отвечаем за результат.</h2></div><div class="arch-production-pictures"><figure><img src="/images/production-realistic-1600.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Производственная линия PROMIX"><figcaption><span>Производство</span><span>Ульяновск</span></figcaption></figure><figure><img src="/images/laboratory-realistic-1600.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Контроль качества материалов"><figcaption><span>Лаборатория</span><span>Контроль каждой партии</span></figcaption></figure></div><div class="arch-proof">{['Профессиональные рецептуры','Контроль каждой партии','Поставки по России и СНГ'].map((text, i) => <div class="arch-proof-item"><span class="arch-proof-number">{String(i+1).padStart(2,'0')}</span><p>{text}</p></div>)}</div></section>
+<section class="arch-partners" id="partners" aria-labelledby="partners-title"><span class="arch-label">04 / Партнёрство с PROMIX</span><div><h2 id="partners-title">Сильный материал.<br>Надёжное партнёрство.</h2><div class="arch-intro"><p>Продукция, техническая поддержка и&nbsp;понятные условия для дилеров, подрядчиков и&nbsp;проектных организаций.</p><button class="arch-solid-link" type="button" data-open-form data-form-context="partnership">Обсудить сотрудничество <span class="arch-arrow"><img src="/icons/phosphor/arrow-right.svg" alt="" aria-hidden="true" width="20" height="20" /></span></button></div><div class="arch-benefits"><div class="arch-benefit-row"><span class="arch-benefit-number">01</span><h3>Поддержка продаж</h3><p>Материалы и сопровождение для работы с клиентами.</p></div><div class="arch-benefit-row"><span class="arch-benefit-number">02</span><h3>Техническая консультация</h3><p>Помощь в подборе продукции и применении материалов.</p></div><div class="arch-benefit-row"><span class="arch-benefit-number">03</span><h3>Поставки и сопровождение</h3><p>Понятная коммуникация на каждом этапе работы.</p></div></div></div></section>
+
+  </main>
+  <span id="footer" aria-hidden="true"></span>
+  <SiteFooter />
+  <SiteDialogs />
+  <script src="/site.js" is:inline></script>
+  <script is:inline>
+    // Isolated review route: section navigation stays within this preview.
+    document.querySelectorAll('.site-header a, .mobile-menu a, .footer-nav a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('/#')) link.setAttribute('href', href.slice(1));
+    });
+  </script>
+</BaseLayout>
+
+<style is:global>
+  /* Preserve this review scene's original image box, baseline and rotation.
+     Only sources with centrally measured reference metadata use this frame. */
+  .home-refinement-preview .arch-piece .arch-art .arch-product-image--reference {
+    position: absolute;
+    left: 50%;
+    width: calc(var(--size) * var(--ratio));
+    height: var(--size);
+    bottom: calc(24px - var(--size) * var(--bottom));
+    max-width: none;
+    transform: translateX(-50%);
+  }
+  .home-refinement-preview .arch-piece .arch-art .arch-product-image--reference > img {
+    position: absolute;
+    left: var(--image-left);
+    top: var(--image-top);
+    bottom: auto;
+    width: var(--image-width);
+    height: auto;
+    max-width: none;
+    transform: none;
+    filter: none;
+  }
+</style>

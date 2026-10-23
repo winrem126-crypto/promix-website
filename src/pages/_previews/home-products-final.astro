@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import HomeFooter from '../../components/HomeFooter.astro';
+import SiteDialogs from '../../components/SiteDialogs.astro';
+import HomeHero from '../../components/HomeHero.astro';
+import ArchitecturalTasks from '../../components/ArchitecturalTasks.astro';
+import HomeProducts from '../../components/HomeProducts.astro';
+import HomeProduction from '../../components/HomeProduction.astro';
+import HomePartners from '../../components/HomePartners.astro';
+import '../../styles/architectural-home.css';
+import '../../styles/home-product-scenes-preview.css';
+import { responsiveImage } from '../../performance/images';
+const heroImage = responsiveImage('/images/hero-surface-promix-h.webp').src;
+---
+<BaseLayout
+  title="PROMIX — preview блока продукции"
+  description="Локальная проверка шести предметных сцен PROMIX."
+  canonical="/"
+  robots="noindex, nofollow"
+  image={heroImage}
+  preloadImage={heroImage}
+  pageClass="architectural-home"
+>
+  <SiteHeader />
+  <main id="top" class="arch-main">
+    <HomeHero />
+    <HomeProducts previewVariant="final" />
+    <ArchitecturalTasks />
+    <HomeProduction />
+    <HomePartners />
+  </main>
+  <span id="footer" aria-hidden="true"></span>
+  <HomeFooter />
+  <SiteDialogs />
+  <script src="../../scripts/site.js"></script>
+</BaseLayout>

@@ -1,0 +1,110 @@
+---
+import type { Product } from '../data/products';
+import catalogProductAssets from '../data/catalog-product-assets.json';
+import productShadowGeometry from '../data/product-shadow-geometry.json';
+import ProductStageScene from './ProductStageScene.astro';
+import CatalogProductShadow from './CatalogProductShadow.astro';
+import FramedProductImage from './FramedProductImage.astro';
+import ProductImageNotice from './ProductImageNotice.astro';
+import { canonicalAssetUrl } from '../performance/images';
+
+interface Props { product: Product; }
+type StudioGeometry = {
+  source: number[]; bodyWidth: number; bodyCenter: number; base: number;
+  family: string; profile?: string;
+  contactMask?: string; ambientMask?: string; groundMask?: string;
+};
+const { product } = Astro.props;
+const asset = (catalogProductAssets as Record<string, { catalogScale?: number; geometry: StudioGeometry }>)[product.slug];
+const frame = product.cardImageFrame!;
+// Older direct product URLs retain their original artwork and baked shadows.
+const geometry = asset?.geometry ?? (frame.builtInShadow ? undefined
+  : (productShadowGeometry as Record<string, StudioGeometry>)[product.image]);
+const reference = frame.reference ?? {
+  source: [963, 769] as [number, number],
+  bounds: [72, 31, 778, 680] as [number, number, number, number],
+};
+const [referenceWidth, referenceHeight] = reference.source;
+// Center the complete visible silhouette, including the lid and handle mounts.
+// Keep the catalog cutout intact; its transparent canvas is not the focal point.
+const detailScale = Math.min(reference.bounds[2] / frame.bounds[2], reference.bounds[3] / frame.bounds[3])
+  * (frame.opticalScale ?? 1) * (asset?.catalogScale ?? 1) * .90;
+const visibleWidth = frame.bounds[2] * detailScale;
+const visibleHeight = frame.bounds[3] * detailScale;
+// Match the existing 280px mobile studio, 9px inset, 1px border and 22px
+// page gutters. Size the complete transparent source canvas, not its label.
+const sourceFactor = frame.source[0] * detailScale / referenceWidth;
+const mobileCanvasLimit = 260 * referenceWidth / referenceHeight;
+// Mirror the existing pd-main gutters, .46 image column, column gap and 28px
+// border/inset. This sizes the complete source canvas; it never changes layout.
+// Desktop height constraints may make the painted canvas slightly smaller.
+const studioSizes = `(max-width: 760px) calc(min(100vw - 64px, ${mobileCanvasLimit.toFixed(3)}px) * ${sourceFactor.toFixed(6)}), (max-width: 1050px) calc(((100vw - 96px) * .46 - 28px) * ${sourceFactor.toFixed(6)}), (max-width: 1100px) calc(((100vw - 64px - clamp(48px, 4.4vw, 64px)) * .46 - 28px) * ${sourceFactor.toFixed(6)}), calc(((min(1368px, 100vw - clamp(96px, 8.4vw, 128px)) - clamp(48px, 4.4vw, 64px)) * .46 - 28px) * ${sourceFactor.toFixed(6)})`;
+const framedProduct = {
+  ...product,
+  cardImageFrame: {
+    ...frame,
+    opticalScale: 1,
+    reference: {
+      ...reference,
+      bounds: [
+        (referenceWidth - visibleWidth) / 2,
+        (referenceHeight - visibleHeight) / 2,
+        visibleWidth,
+        visibleHeight,
+      ] as [number, number, number, number],
+    },
+  },
+};
+// Use the catalog's measured package silhouette and its existing floor masks.
+const shadowStyle = [
+  geometry?.contactMask ? '--product-contact-mask: url("' + canonicalAssetUrl(geometry.contactMask) + '")' : '',
+  geometry?.ambientMask ? '--product-ambient-mask: url("' + canonicalAssetUrl(geometry.ambientMask) + '")' : '',
+  geometry?.groundMask ? '--product-ground-mask: url("' + canonicalAssetUrl(geometry.groundMask) + '")' : '',
+].filter(Boolean).join('; ');
+---
+<div class="product-studio-stage" data-product-shadow={geometry ? JSON.stringify(geometry) : undefined} data-shadow-family={geometry?.family} data-shadow-profile={geometry?.profile} style={shadowStyle || undefined}>
+  {product.imageUnavailable ? <ProductImageNotice product={product} /> : <>
+    <ProductStageScene />
+    {geometry && <CatalogProductShadow synchronized={geometry.profile === 'reference-mineral'} />}
+    <FramedProductImage product={framedProduct} alt={'Упаковка ' + product.name} loading="eager" fetchpriority="high" sizes={studioSizes} />
+  </>}
+</div>
+
+<style is:global>
+  .pd-image.pd-image--studio {
+    --studio-frame-inset: 13px;
+    position: relative; overflow: hidden; padding: 0;
+    border: 1px solid #ece9e4; border-radius: 24px;
+    background: #faf9f6;
+    box-shadow: 0 2px 5px rgb(49 42 33 / .025), 0 16px 38px -20px rgb(49 42 33 / .14);
+  }
+  .product-studio-stage {
+    position: absolute; inset: var(--studio-frame-inset); container-type: size;
+    border-radius: 12px;
+    display: grid; place-items: center; overflow: hidden; background: #eee6de;
+  }
+  .pd-image.pd-image--studio > .product-studio-stage > .product-image-reference {
+    z-index: 3; width: 100%; height: 100%; max-width: none; max-height: none;
+    min-width: 0; min-height: 0; aspect-ratio: auto;
+  }
+  .product-studio-stage img {
+    opacity: 1; filter: none; mix-blend-mode: normal; object-fit: fill;
+    transform: none; translate: none;
+  }
+  .product-studio-stage[data-shadow-profile="reference-mineral"] .catalog-ground-diffuse {
+    /* The catalog raster still has opacity at its right/bottom boundary.
+       Finish its diffuse tail inside that canvas, leaving a clear safety area.
+       Source-relative fades follow the image at every responsive size; the
+       original package, floor exclusion mask and contact shadow stay intact. */
+    mask-image: var(--product-ambient-mask),
+      linear-gradient(90deg, #000 74%, rgb(0 0 0 / .75) 82%, rgb(0 0 0 / .25) 91%, transparent 97%),
+      linear-gradient(180deg, #000 92%, rgb(0 0 0 / .55) 95%, rgb(0 0 0 / .12) 97%, transparent 98%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-composite: intersect;
+  }
+  @media (max-width: 760px) {
+    .pd-image.pd-image--studio { --studio-frame-inset: 9px; border-radius: 20px; }
+    .product-studio-stage { border-radius: 10px; }
+  }
+</style>

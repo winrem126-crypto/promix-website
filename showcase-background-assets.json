@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Edit the corresponding approved category scene: remove only the product and all shadows cast by that product; reconstruct the continuous pale background. Preserve the existing scene, material texture, lower surface, wall/floor line, lighting and camera. No products, labels, lettering, UI, or new objects. Landscape 8:5.",
+  "purpose": "Backgrounds only. Product PNGs are separate original files in ProductCategoryShowcase.astro and were not edited or generated.",
+  "outputs": [
+    "public/images/categories/showcase-backgrounds/putties-768.webp",
+    "public/images/categories/showcase-backgrounds/putties-1280.webp",
+    "public/images/categories/showcase-backgrounds/primers-768.webp",
+    "public/images/categories/showcase-backgrounds/primers-1280.webp",
+    "public/images/categories/showcase-backgrounds/paints-768.webp",
+    "public/images/categories/showcase-backgrounds/paints-1280.webp",
+    "public/images/categories/showcase-backgrounds/adhesives-768.webp",
+    "public/images/categories/showcase-backgrounds/adhesives-1280.webp",
+    "public/images/categories/showcase-backgrounds/waterproofing-768.webp",
+    "public/images/categories/showcase-backgrounds/waterproofing-1280.webp",
+    "public/images/categories/showcase-backgrounds/roll-materials-768.webp",
+    "public/images/categories/showcase-backgrounds/roll-materials-1280.webp"
+  ]
+}

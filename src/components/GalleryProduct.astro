@@ -1,0 +1,45 @@
+---
+import type { Product } from '../data/products';
+
+interface Props { product: Product; position: number }
+const { product, position } = Astro.props;
+// Visible alpha bounds only: the source PNG is neither rewritten nor stretched.
+const bounds: Record<string, [number, number, number, number, number, number]> = {
+  'deep-primer': [1024, 1536, 80, 105, 851, 1194],
+  'betokontakt': [1024, 1024, 107, 162, 813, 712],
+  'promix-f': [1024, 1024, 107, 162, 813, 712],
+  'polymer-putty': [1024, 1024, 107, 162, 813, 712],
+};
+const frame = product.cardImageFrame;
+const [sw, sh, x, y, w, h] = frame
+  ? [...frame.source, ...frame.bounds]
+  : bounds[product.slug] ?? [1024, 1024, 108, 162, 812, 712];
+const title = product.name.replace('SUPER TACK', 'Super Tack');
+const descriptions: Record<string, string> = {
+  'super-tack-3': 'Глубокоматовая краска для стен и потолков',
+  'super-tack-7': 'Матовая износостойкая краска',
+  'acrylic-enamel': 'Универсальная глянцевая эмаль',
+  'mittel-grund': 'Концентрат для впитывающих оснований',
+  'deep-primer': 'Для укрепления минеральных оснований',
+  'polymer-putty': 'Универсальная шпатлёвка ручного нанесения',
+};
+const sourceStyle = `width:${sw / w * 100}%;left:${-x / w * 100}%;top:${-y / h * 100}%;`;
+---
+
+<a class={`gallery-product gallery-product--${position + 1}`} href={`/products/${product.slug}/`}>
+  <div class={`gallery-product-art ${product.imageLayout === 'canister' ? 'gallery-product-art--canister' : ''}`}>
+    <img class="gallery-marble" src="/images/task-selector/marble-stage.webp" alt="" width="1152" height="768" loading="lazy" />
+    <img class="gallery-marble gallery-marble-body" src="/images/task-selector/marble-stage.webp" alt="" width="1152" height="768" loading="lazy" />
+    {!frame?.builtInShadow && <div class="gallery-product-cutout gallery-contact-shadow" style={`aspect-ratio:${w}/${h}`} aria-hidden="true">
+      <img src={product.image} alt="" width={sw} height={sh} style={sourceStyle} loading="lazy" decoding="async" />
+    </div>}
+    <div class="gallery-product-cutout" style={`aspect-ratio:${w}/${h}`}>
+      <img src={product.image} alt="" width={sw} height={sh} style={sourceStyle} loading="lazy" decoding="async" />
+    </div>
+  </div>
+  <div class="gallery-product-copy">
+    <h3>{title}</h3>
+    <p>{descriptions[product.slug] ?? product.subtitle}</p>
+    <span class="gallery-product-cta">Подробнее <img class="gallery-product-arrow" src="/icons/phosphor/arrow-right.svg" width="24" height="24" alt="" aria-hidden="true" /></span>
+  </div>
+</a>

@@ -1,0 +1,21 @@
+.documents-page { min-width: 0; min-height: 100vh; background: var(--site-paper); color: #102336; }
+.documents-main { width: min(100%, 1440px); margin: 0 auto; padding: 0 var(--site-gutter) 80px; font: 400 17px/1.55 'PROMIX Product', Inter, sans-serif; }
+.documents-breadcrumbs { display: flex; flex-wrap: wrap; gap: 6px 10px; padding: 24px 0 28px; color: #53616b; font-size: 13px; }
+.documents-breadcrumbs a:focus-visible { outline: 2px solid #55151b; outline-offset: 4px; }
+.documents-heading { max-width: 820px; padding: 24px 0 48px; }
+.documents-heading h1 { margin: 0; font: inherit; font-size: clamp(38px, 4.3vw, 64px); line-height: 1.08; letter-spacing: -.04em; }
+.documents-heading p { max-width: 680px; margin: 20px 0 0; color: #46565f; }
+.documents-content { min-width: 0; }
+.documents-request { max-width: 820px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--site-line); }
+.documents-request h2 { margin: 0; font-size: clamp(24px, 3vw, 32px); font-weight: 500; line-height: 1.2; letter-spacing: -.03em; }
+.documents-request p { margin: 20px 0; color: #46565f; }
+.documents-content .documents-label { margin: 0 0 32px; padding-bottom: 16px; border-bottom: 1px solid var(--site-line); color: #53616b; font-size: 12px; line-height: 1.5; letter-spacing: .06em; text-transform: uppercase; }
+@media (hover: hover) and (pointer: fine) { .documents-breadcrumbs a:hover { color: #55151b; } }
+@media (max-width: 760px) {
+  .documents-main { padding: 0 22px 56px; font-size: 16px; }
+  .documents-breadcrumbs { padding: 20px 0 24px; font-size: 12px; }
+  .documents-heading { padding: 12px 0 36px; }
+  .documents-heading h1 { font-size: 38px; line-height: 1.12; }
+  .documents-heading p { margin-top: 16px; }
+  .documents-content .documents-label { margin-bottom: 24px; }
+}

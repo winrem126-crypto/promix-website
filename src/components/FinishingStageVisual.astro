@@ -1,0 +1,33 @@
+---
+import type { FinishingStage } from '../data/finishing-stages';
+import { homeImagePlaceholder } from '../performance/home-image-placeholder';
+interface Props { stage: FinishingStage }
+const { stage } = Astro.props;
+---
+
+<figure class:list={['finishing-visual', { 'finishing-visual--image': Boolean(stage.image.src) }]} style={homeImagePlaceholder(stage.image.src)}>
+  {stage.image.src && <img src={stage.image.src} alt={stage.image.alt} width="1536" height="1024" loading="lazy" decoding="async" />}
+  {stage.image.draft && (
+    <figcaption>
+      <span class="finishing-visual__draft">Черновой визуал</span>
+      <span class="finishing-visual__label">{stage.number} / {stage.image.label}</span>
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .finishing-visual { position: relative; margin: 0; width: 100%; height: 100%; min-width: 0; aspect-ratio: 4 / 3; background: #e7e8e3; color: #102336; }
+  .finishing-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .finishing-visual--image { background-size: cover; background-position: center; }
+  .finishing-visual figcaption { position: absolute; inset: 0; display: grid; place-items: center; padding: 32px; }
+  .finishing-visual__draft { position: absolute; top: 28px; left: 32px; font-size: 14px; line-height: 1.5; color: #53616b; }
+  .finishing-visual__label { font-size: clamp(22px, 2.2vw, 32px); line-height: 1.35; font-weight: 400; letter-spacing: -.035em; text-align: center; }
+  .finishing-visual--image figcaption { align-items: end; }
+  .finishing-visual--image .finishing-visual__label,
+  .finishing-visual--image .finishing-visual__draft { background: #f8f8f5; padding: 8px 12px; }
+  @media (max-width: 760px) {
+    .finishing-visual figcaption { padding: 20px; }
+    .finishing-visual__draft { top: 18px; left: 20px; font-size: 16px; }
+    .finishing-visual__label { font-size: 22px; }
+  }
+</style>

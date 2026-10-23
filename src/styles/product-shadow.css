@@ -1,0 +1,117 @@
+/* The approved ground shadow. Only cards explicitly opting in are affected. */
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow] {
+  --product-floor-height: calc(56px * var(--product-shadow-scale));
+  --product-floor-blur: calc(10px * var(--product-shadow-scale));
+  --product-floor-offset: calc(2px * var(--product-shadow-scale));
+  --product-contact-height: calc(28px * var(--product-shadow-scale));
+  --product-contact-blur: calc(5.5px * var(--product-shadow-scale));
+  --product-contact-offset: calc(-6px * var(--product-shadow-scale));
+}
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow][data-shadow-ready] img {
+  mask-image: var(--product-package-mask);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+}
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow] > .catalog-ground-plane {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0;
+  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow][data-shadow-ready] > .catalog-ground-plane { opacity: 1; }
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow] .catalog-ground-diffuse {
+  position: absolute;
+  left: var(--product-body-center); top: calc(var(--product-base) + var(--product-floor-offset));
+  width: calc(var(--product-body-width) * 2.10); height: var(--product-floor-height);
+  border-radius: 50%; transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse closest-side, rgb(45 44 42 / .17) 0%, rgb(45 44 42 / .125) 30%, rgb(45 44 42 / .055) 60%, rgb(45 44 42 / .012) 84%, transparent 100%);
+  filter: blur(var(--product-floor-blur));
+}
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow] .catalog-ground-contact {
+  position: absolute;
+  left: var(--product-body-center); top: calc(var(--product-base) + var(--product-contact-offset));
+  width: calc(var(--product-body-width) * .84); height: var(--product-contact-height);
+  border-radius: 50%; transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse closest-side, rgb(29 29 29 / .23) 0%, rgb(29 29 29 / .18) 35%, rgb(29 29 29 / .07) 70%, transparent 100%);
+  filter: blur(var(--product-contact-blur));
+}
+/* Keep a narrow roll's floor footprint soft instead of reducing it to a line. */
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow][data-shadow-family="roll"] {
+  --product-floor-height: max(16px, calc(56px * var(--product-shadow-scale)));
+  --product-floor-blur: max(3px, calc(10px * var(--product-shadow-scale)));
+  --product-contact-height: max(7px, calc(28px * var(--product-shadow-scale)));
+  --product-contact-blur: max(1.6px, calc(5.5px * var(--product-shadow-scale)));
+}
+
+/* Approved reference scene. New catalog cutouts explicitly opt into this profile.
+   Their source has no floor shadow; the original alpha is displayed intact. */
+:is(.product-card-visual, .product-studio-stage)[data-product-shadow][data-shadow-profile="reference-mineral"] img { mask-image: none; }
+:is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] > .catalog-ground-plane {
+  mask-image: none;
+}
+:is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] .catalog-ground-source {
+  position: absolute; z-index: 1;
+  left: var(--product-image-left); top: var(--product-image-top);
+  width: var(--product-image-width); height: var(--product-image-height);
+  mask-image: var(--product-ground-mask); mask-size: 100% 100%;
+  mask-repeat: no-repeat; mask-mode: alpha;
+  transform: none; transform-origin: 50% 100%; translate: 0 0;
+  transition: transform var(--motion-medium) var(--ease-premium), translate var(--motion-medium) var(--ease-premium);
+}
+:is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] .catalog-ground-diffuse {
+  /* Measured reference-floor density: the right/back field continues to the
+     frame edge. The mask already contains its falloff; no extra CSS blur. */
+  left: 0; top: 0; width: 100%; height: 100%;
+  transform: none; border-radius: 0;
+  background: rgb(69 58 44);
+  mask-image: var(--product-ambient-mask); mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha;
+  filter: none;
+}
+/* Reuse the detail stage's existing falloff wherever the source canvas ends
+   inside the stage. Keep the package, floor exclusion and contact masks intact. */
+:is(.product-studio-stage, .pd-related-grid .product-card-visual)[data-shadow-profile="reference-mineral"] .catalog-ground-diffuse {
+  mask-image: var(--product-ambient-mask),
+    linear-gradient(90deg, #000 74%, rgb(0 0 0 / .75) 82%, rgb(0 0 0 / .25) 91%, transparent 97%),
+    linear-gradient(180deg, #000 92%, rgb(0 0 0 / .55) 95%, rgb(0 0 0 / .12) 97%, transparent 98%);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-composite: intersect;
+}
+:is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] .catalog-ground-contact {
+  /* The narrow reference contact residual follows the actual lower arc.
+     Both masks use one warm colour, preserving their measured composition. */
+  left: 0; top: 0; width: 100%; height: 100%;
+  transform: none; border-radius: 0;
+  background: rgb(69 58 44);
+  mask-image: var(--product-contact-mask); mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha;
+  filter: none;
+  transition: background-color var(--motion-medium) var(--ease-premium);
+}
+
+/* Use the approved framing and mineral scene for each measured package family.
+   The visible bounds, rather than the transparent source canvas, set its size. */
+.catalog-page .catalog-product-grid .product-card.product-card--open :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] {
+  aspect-ratio: 963 / 769;
+  background: #eee6de;
+}
+/* Catalog and related cards share the scene and motion, retaining their own sizes. */
+:is(.catalog-page .catalog-product-grid, .pd-related-grid) .product-card.product-card--open :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] .product-image-reference {
+  z-index: 3; width: 100%; height: 100%; max-width: none;
+}
+:is(.catalog-page .catalog-product-grid, .pd-related-grid) .product-card.product-card--open :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] img {
+  opacity: 1; filter: none; mix-blend-mode: normal;
+  transform: none; transform-origin: 50% 100%; translate: 0 0;
+  transition: transform var(--motion-medium) var(--ease-premium), translate var(--motion-medium) var(--ease-premium);
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.catalog-page .catalog-product-grid, .pd-related-grid) .product-card.product-card--open:hover :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] :is(img, .catalog-ground-source) {
+    transform: scale(1.015); translate: 0 var(--product-hover-base-correction);
+  }
+  /* Strengthen the existing floor contact, without a duplicate shadow pass. */
+  :is(.catalog-page .catalog-product-grid, .pd-related-grid) .product-card.product-card--open:hover :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] .catalog-ground-contact { background-color: rgb(64 54 41); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.catalog-page .catalog-product-grid, .pd-related-grid) .product-card.product-card--open:hover :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] :is(img, .catalog-ground-source) {
+    transform: none; translate: 0 0; transition: none;
+  }
+  :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] .catalog-ground-contact { transition: none; }
+}

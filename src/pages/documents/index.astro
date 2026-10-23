@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteDialogs from '../../components/SiteDialogs.astro';
+import DocumentList from '../../components/DocumentList.astro';
+import { documents } from '../../data/documents';
+import '../../styles/documents.css';
+---
+
+<BaseLayout title="Документы PROMIX" description="Документы на материалы PROMIX: свидетельство о государственной регистрации шпатлёвок и запрос документации для других материалов." canonical="/documents/" pageClass="documents-page">
+  <SiteHeader />
+  <main class="documents-main">
+    <nav class="documents-breadcrumbs" aria-label="Хлебные крошки">
+      <a href="/">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Документы</span>
+    </nav>
+    <header class="documents-heading">
+      <h1>Документы PROMIX</h1>
+      <p>Официальная документация на продукцию PROMIX. Для скачивания доступно свидетельство о государственной регистрации шпатлёвок.</p>
+    </header>
+    <section class="documents-content" aria-labelledby="all-documents-title">
+      <p class="documents-label" id="all-documents-title">Все документы</p>
+      <DocumentList documents={documents} showScope headingLevel="h2" />
+    </section>
+    <section class="documents-content documents-request" aria-labelledby="request-documents-title">
+      <h2 id="request-documents-title">Документы на другие материалы</h2>
+      <p>Для грунтовок, красок, клеев и гидроизоляции запросите актуальную документацию у специалиста PROMIX. Укажите название материала в комментарии.</p>
+      <button class="button button-primary" type="button" data-open-form data-form-context="general" data-form-title="Запросить документы PROMIX" data-form-message="Прошу предоставить актуальный технический лист и документы, подтверждающие соответствие продукции. Материал: ">Запросить документы</button>
+    </section>
+  </main>
+  <SiteFooter />
+  <SiteDialogs />
+  <script src="../../scripts/site.js"></script>
+</BaseLayout>

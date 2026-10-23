@@ -1,0 +1,45 @@
+---
+import wordmark from '../assets/brand/promix-wordmark.svg?raw';
+
+interface Props {
+  class?: string;
+  href?: string;
+}
+
+const { class: className = '', href = '/' } = Astro.props;
+---
+
+<a class={`brand-lockup ${className}`.trim()} href={href} aria-label="PROMIX — главная">
+  <Fragment set:html={wordmark} />
+</a>
+
+<style>
+  .brand-lockup {
+    --brand-width: 156px;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: var(--brand-width);
+    min-width: 0;
+    vertical-align: middle;
+    line-height: 0;
+    text-decoration: none;
+    transition: none;
+  }
+  .brand-lockup,
+  .brand-lockup:hover,
+  .brand-lockup:focus-visible { color: var(--brand-color, #102336); text-decoration: none; }
+  .brand-lockup :global(svg) { display: block; width: 100%; height: auto; }
+  .brand-lockup:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+  .brand-lockup.header-brand {
+    --brand-width: 140px;
+    min-height: 32px;
+    /* Preserve the previous brand's flex footprint and the navigation position. */
+    margin-inline-end: calc(129.15625px - var(--brand-width));
+  }
+  .brand-lockup.footer-brand-lockup { min-height: 32px; }
+  @media (max-width: 760px) {
+    .brand-lockup.header-brand { --brand-width: 120px; min-height: 29px; margin-inline-end: 0; }
+    .brand-lockup.footer-brand-lockup { min-height: 29px; }
+  }
+</style>

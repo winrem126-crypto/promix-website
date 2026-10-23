@@ -1,0 +1,272 @@
+---
+import { responsiveImage } from '../performance/images';
+import { homeImagePlaceholder } from '../performance/home-image-placeholder';
+// The approved hero is already smaller than lossless resized alternatives.
+// Fingerprint its unchanged bytes and share this URL with the single preload.
+const hero = responsiveImage('/images/hero-surface-promix-h.webp');
+---
+<section class="home-hero" id="hero" aria-labelledby="hero-title">
+  <div class="home-hero__inner">
+    <div class="home-hero__copy">
+      <p class="home-hero__eyebrow">PROMIX / Профессиональные материалы</p>
+      <div class="home-hero__message">
+        <h1 id="hero-title">Основа<br />безупречной<br />отделки<span class="home-hero__period">.</span></h1>
+        <p class="home-hero__description">Шпатлёвки, грунтовки, краски и клеи — от подготовки основания до финишного покрытия.</p>
+        <a class="home-hero__cta" href="#products">
+          Смотреть продукцию
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <figure class="home-hero__visual" style={homeImagePlaceholder('/images/hero-surface-promix-h.webp')}>
+      <img
+        class="home-hero__image"
+        src={hero.src}
+        width="1207"
+        height="1303"
+        fetchpriority="high"
+        decoding="async"
+        alt="Светлая отделанная поверхность на фоне тёмно-синей стены и ведро шпатлёвки PROMIX H справа внизу"
+      />
+      <span class="home-hero__specimen">Система отделки / 01</span>
+      <figcaption class="home-hero__caption">
+        <span>От основания <br />до финишного слоя</span>
+        <span class="home-hero__caption-detail">Материал. Форма. Результат.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  /* Local brand typography: no font or layout changes outside this component.
+     Manrope by The Manrope Project Authors, SIL OFL; see public/fonts/manrope/OFL.txt. */
+  @font-face {
+    font-family: 'PROMIX Hero Manrope';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url('/fonts/manrope/manrope-cyrillic-variable.woff2') format('woff2');
+    unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+  }
+  @font-face {
+    font-family: 'PROMIX Hero Manrope';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url('/fonts/manrope/manrope-latin-variable.woff2') format('woff2');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  .home-hero {
+    --hero-navy: #102336;
+    --hero-steel: #517493;
+    --hero-burgundy: #55151b;
+    --hero-ivory: #e2d9cb;
+    color: var(--hero-navy);
+    font-family: 'PROMIX Hero Manrope', Arial, sans-serif;
+  }
+  .home-hero__inner {
+    width: min(var(--site-content-max), calc(100% - var(--site-content-gutter) * 2));
+    min-height: 640px;
+    height: calc(100svh - var(--site-header-height));
+    max-height: 940px;
+    margin-inline: auto;
+    padding-block: 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+  }
+  .home-hero__copy {
+    min-width: 0;
+    /* Lift the text group slightly above center without changing its internal rhythm. */
+    padding: 24px 36px 150px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .home-hero .home-hero__eyebrow {
+    font-size: 10px;
+    line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .home-hero__message {
+    width: 100%;
+    margin-block: auto;
+    padding-block: 40px;
+  }
+  .home-hero .home-hero__message h1 {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: clamp(72px, calc(2.5vw + 44px), 88px);
+    line-height: .99;
+    letter-spacing: -.055em;
+    margin: 0;
+  }
+  .home-hero__period { color: var(--hero-burgundy); }
+  .home-hero .home-hero__description {
+    max-width: 350px;
+    /* Retain the existing three-line footprint so the scene and CTA stay in place. */
+    min-height: 3lh;
+    margin-top: 28px;
+    color: #596873;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .home-hero .home-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    min-height: 52px;
+    margin-top: 30px;
+    padding: 14px 22px;
+    border: 1px solid var(--hero-navy);
+    border-radius: 4px;
+    background: var(--hero-navy);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: var(--motion-button-transition);
+  }
+  .home-hero__cta svg {
+    flex: 0 0 20px;
+    transition: transform var(--motion-fast) var(--ease-standard);
+  }
+  .home-hero .home-hero__cta:focus-visible {
+    outline: 2px solid var(--hero-steel);
+    outline-offset: 5px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .home-hero .home-hero__cta:hover {
+      background: #29475f;
+      border-color: #29475f;
+    }
+    .home-hero__cta:hover svg { transform: translateX(3px); }
+  }
+  .home-hero__visual {
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+    margin: 0;
+    margin-inline-start: 3%;
+    overflow: hidden;
+    background: var(--hero-navy);
+    background-size: cover;
+    background-position: right center;
+    color: var(--hero-ivory);
+  }
+  .home-hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Keep the small product and its floor contact inside narrower viewports. */
+    object-position: right center;
+  }
+  /* Lighting stays in the photograph; a restrained scrim protects the caption. */
+  .home-hero__visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 72%, rgb(16 35 54 / .44));
+  }
+  .home-hero__specimen {
+    position: absolute;
+    z-index: 1;
+    top: 28px;
+    left: 28px;
+    padding-left: 28px;
+    color: var(--hero-navy);
+    font-size: 11.25px;
+    line-height: 1.6;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .home-hero__specimen::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-top: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+  }
+  .home-hero__caption {
+    position: absolute;
+    z-index: 1;
+    inset: auto 28px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgb(226 217 203 / .38);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .home-hero__caption-detail { font-size: 13px; line-height: 1.35; }
+
+  @media (min-width: 1101px) and (max-height: 760px) {
+    .home-hero__inner { min-height: 560px; padding-block: 24px; }
+    .home-hero__copy { padding-block: 12px 138px; }
+    .home-hero__message { padding-block: 24px; }
+    .home-hero .home-hero__message h1 { font-size: 72px; }
+    .home-hero .home-hero__description { margin-top: 22px; }
+    .home-hero .home-hero__cta { margin-top: 24px; }
+  }
+  @media (min-width: 761px) and (max-width: 1100px) {
+    .home-hero__inner {
+      height: clamp(580px, 78svh, 740px);
+      min-height: 580px;
+      grid-template-columns: minmax(0, 48fr) minmax(0, 52fr);
+      padding-block: 24px;
+    }
+    .home-hero__copy { padding: 20px 24px 20px 0; }
+    .home-hero__visual { margin-inline-start: 0; }
+    .home-hero .home-hero__eyebrow { max-width: 225px; font-size: 9px; }
+    .home-hero .home-hero__message h1 { font-size: clamp(44px, 5.7vw, 62px); }
+    .home-hero .home-hero__description { font-size: 14px; }
+    .home-hero__specimen { top: 22px; left: 22px; font-size: 9px; }
+    .home-hero__caption { inset: auto 22px 22px; }
+    .home-hero__caption-detail { display: none; }
+  }
+  @media (max-width: 760px) {
+    .home-hero__inner {
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      padding-block: 28px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+    }
+    .home-hero__copy { padding: 0; }
+    .home-hero .home-hero__eyebrow { font-size: 9px; letter-spacing: .08em; }
+    .home-hero__message { padding: 26px 0 0; }
+    .home-hero .home-hero__message h1 {
+      font-size: clamp(44px, 12.3vw, 54px);
+      line-height: 1.01;
+      letter-spacing: -.05em;
+    }
+    .home-hero .home-hero__description {
+      max-width: 340px;
+      min-height: 0;
+      margin-top: 22px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .home-hero .home-hero__cta { margin-top: 24px; }
+    .home-hero__visual { height: clamp(260px, 72vw, 400px); margin-inline-start: 0; background-position: right bottom; }
+    .home-hero__image { object-position: right bottom; }
+    .home-hero__specimen { display: none; }
+    .home-hero__caption { inset: auto 18px 16px; padding-top: 12px; font-size: 12px; line-height: 1.35; }
+    .home-hero__caption br { display: none; }
+    .home-hero__caption-detail { display: none; }
+  }
+</style>

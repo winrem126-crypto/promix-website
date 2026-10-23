@@ -1,0 +1,70 @@
+---
+import { getProduct } from '../../../data/products';
+
+// This review route keeps its established copy and layout while reading the
+// current packshots from the same inventory as the public catalog.
+const entries = [
+  { id: 'putties', title: 'Шпатлёвки', description: 'Выравнивающие и<br>финишные составы', count: '11 продуктов', slug: 'promix-f', texture: 'putty' },
+  { id: 'primers', title: 'Грунтовки', description: 'Подготовка и укрепление<br>основания', count: '7 продуктов', slug: 'mittel-grund', texture: 'primer' },
+  { id: 'paints', title: 'Краски', description: 'Интерьерные и<br>фасадные покрытия', count: '7 продуктов', slug: 'super-tack-3', texture: 'paint' },
+  { id: 'adhesives', title: 'Клеи', description: 'Готовые составы для<br>полотен и лент', count: '2 продукта', slug: 'tape-adhesive', texture: 'adhesive' },
+  { id: 'waterproofing', title: 'Гидроизоляция', description: 'Защита поверхностей<br>во влажных зонах', count: '1 продукт', slug: 'hydro', texture: 'waterproofing' },
+  { id: 'roll-materials', title: 'Стеклохолст<br>и флизелин', description: 'Подготовка стен и<br>потолков под финиш', count: '2 продукта', slug: 'glass-fiber-plus-top', texture: 'rolls' },
+];
+const previewAssets = '/previews/products-reference';
+const sourceStyle = (entry: typeof entries[number], frame: NonNullable<ReturnType<typeof getProduct>>['cardImageFrame']) => {
+  const roll = entry.id === 'roll-materials';
+  const paint = entry.id === 'paints';
+  const fallback = roll
+    ? { source: [245, 1470], bounds: [0, 0, 245, 1470] }
+    : paint
+      ? { source: [1359, 1158], bounds: [175, 153, 1013, 892] }
+      : { source: [1024, 1024], bounds: [108, 163, 812, 710] };
+  const [sw] = frame?.source ?? fallback.source;
+  const [x, y, width, height] = frame?.bounds ?? fallback.bounds;
+  // Preserve each review card's established visible size and baseline; only
+  // the source canvas changes. No pixels or proportions are rewritten.
+  const [canvasWidth, canvasHeight] = roll && frame?.reference ? frame.reference.source : roll ? [245, 1470] : paint ? [1359, 1158] : [812, 710];
+  const [targetX, targetY, targetWidth, targetHeight] = roll && frame?.reference ? frame.reference.bounds : paint ? [175, 153, 1013, 892] : [0, 0, canvasWidth, canvasHeight];
+  const scale = Math.min(targetWidth / width, targetHeight / height);
+  return `position:absolute;width:${sw * scale / canvasWidth * 100}%;height:auto;max-width:none;left:${(targetX + targetWidth / 2 - (x + width / 2) * scale) / canvasWidth * 100}%;top:${(targetY + targetHeight - (y + height) * scale) / canvasHeight * 100}%;`;
+};
+---
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Продукция PROMIX — предпросмотр</title>
+<link rel="icon" href="/favicon.ico?v=7" sizes="any">
+<link rel="icon" href="/favicon-32x32.png?v=7" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16x16.png?v=7" type="image/png" sizes="16x16">
+<link rel="icon" href="/favicon-48x48.png?v=7" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon.svg?v=7" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest?v=7">
+<link rel="stylesheet" href={`${previewAssets}/preview.css`}>
+</head>
+<body>
+<main class="products-preview" id="products">
+  <header><h1>Продукция PROMIX</h1><p>Профессиональные материалы для каждого этапа отделки.</p></header>
+  <div class="product-grid" id="grid">
+    {entries.map((entry, index) => {
+      const product = getProduct(entry.slug)!;
+      const roll = entry.id === 'roll-materials';
+      const texture = entry.texture === 'adhesive' || entry.texture === 'putty'
+        ? `${previewAssets}/${entry.texture}.webp`
+        : roll ? `${previewAssets}/cloth.webp` : `/images/categories/concept-1/texture-${entry.texture}.png`;
+      const dimensions = product.cardImageFrame?.source ?? (roll ? [245, 1470] : entry.id === 'paints' ? [1359, 1158] : [1024, 1024]);
+      const imageStyle = sourceStyle(entry, product.cardImageFrame);
+      return <a class={`card ${roll ? 'roll-card' : 'bucket-card'}`} href={`/products/?category=${entry.id}`} aria-label={`${entry.title.replace('<br>', ' ')} — ${entry.count}`}>
+        <img class={`texture texture--${entry.texture}`} src={texture} alt="" />
+        <div class="copy"><span class="number">{String(index + 1).padStart(2, '0')}</span><h2 set:html={entry.title} /><p set:html={entry.description} /></div>
+        <span class="count">{entry.count}</span><img class="arrow" src="/icons/phosphor/arrow-right.svg" alt="" width="28" height="20" />
+        {roll ? <div class="roll-position" style={product.cardImageFrame?.builtInShadow ? 'filter:none' : undefined}><div class="roll"><img src={product.image} style={imageStyle} alt="" width={dimensions[0]} height={dimensions[1]} /></div></div>
+          : <div class="product" style={product.cardImageFrame?.builtInShadow ? 'filter:none' : undefined}><img src={product.image} style={imageStyle} alt="" width={dimensions[0]} height={dimensions[1]} /></div>}
+      </a>;
+    })}
+  </div>
+  <footer><a class="catalog" href="/products/">Смотреть весь каталог <img src="/icons/phosphor/arrow-right.svg" alt="" width="28" height="20"></a></footer>
+</main>
+</body></html>

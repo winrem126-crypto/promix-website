@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SiteDialogs from '../../../components/SiteDialogs.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { categories, catalogProducts, taskOptions } from '../../../data/products';
+import '../../../styles/catalog.css';
+import './shadow-preview.css';
+import previewFrames from '../../../data/product-images.json';
+export function getStaticPaths() { return [1,2,3,4].map(number => ({params:{variant:`variant-${number}`},props:{number}})); }
+const {number} = Astro.props;
+const variant = `variant-${number}`;
+---
+
+<BaseLayout title={`Вариант ${number} — Каталог продукции PROMIX`} description="Шпатлёвки, грунтовки, краски, клеи и гидроизоляционные материалы PROMIX." canonical="/products/" pageClass={`catalog-page shadow-preview shadow-preview--${variant}`} robots="noindex, nofollow">
+  <SiteHeader />
+  <main class="catalog-main">
+    <div class="catalog-layout">
+      <header class="catalog-hero">
+        <h1>Материалы PROMIX</h1>
+        <p>Каталог профессиональных материалов для подготовки, выравнивания и финишной отделки поверхностей.</p>
+      </header>
+      <aside class="catalog-filters" aria-label="Фильтры каталога">
+        <section role="group" aria-labelledby="catalog-category-heading">
+          <h2 id="catalog-category-heading">Категории</h2>
+          <button class="active" type="button" data-filter-group="category" data-filter-value="all" aria-pressed="true"><span class="catalog-filter-label">Все материалы</span><span class="catalog-category-count">{catalogProducts.length}</span></button>
+          {categories.map((category) => <button type="button" data-filter-group="category" data-filter-value={category.id} aria-pressed="false"><span class="catalog-filter-label">{category.title}</span><span class="catalog-category-count">{category.count}</span></button>)}
+        </section>
+        <button class="catalog-reset" type="button" data-filter-reset hidden>Сбросить фильтры</button>
+        <div class="catalog-selection-help">
+          <h3>Не знаете, что выбрать?</h3>
+          <a href="/#selection">Подбор материалов по этапу отделки&nbsp;→</a>
+        </div>
+      </aside>
+
+      <section class="catalog-results" id="catalog-results" aria-label="Товары">
+        <div class="catalog-controls">
+        <label class="catalog-search" for="catalog-search"><span>Поиск по каталогу</span><input id="catalog-search" type="search" name="q" placeholder="Название или назначение" data-catalog-search /></label>
+        <label class="catalog-mobile-category" for="catalog-category">
+          <span>Категория</span>
+          <select id="catalog-category" name="category" data-category-select>
+            <option value="all">Все материалы</option>
+            {categories.map((category) => <option value={category.id}>{category.title}</option>)}
+          </select>
+        </label>
+        <a class="catalog-mobile-help" href="/#selection">Подбор по этапу отделки&nbsp;→</a>
+        <div class="catalog-active-tasks">
+          {taskOptions.map((task) => <div class="catalog-active-task" data-active-task={task.id} hidden>
+            <span>Задача: {task.title}</span>
+            <button type="button" data-task-remove aria-label={`Убрать задачу «${task.title}»`}>Убрать</button>
+          </div>)}
+        </div>
+        <div class="catalog-result-summary">
+          <h2 data-catalog-title tabindex="-1">Все материалы</h2>
+          <span data-catalog-count role="status" aria-live="polite" aria-atomic="true">{catalogProducts.length} материалов</span>
+          <button class="catalog-reset catalog-mobile-reset" type="button" data-filter-reset hidden>Сбросить фильтры</button>
+        </div>
+        </div>
+        <div class="catalog-product-grid">{catalogProducts.map((product) => <ProductCard product={product} filterable variant="open" />)}</div>
+        <div class="catalog-empty" data-catalog-empty hidden>
+          <strong>Ничего не нашли</strong>
+          <p>Попробуйте изменить запрос или выберите категорию. Если не уверены в выборе — мы поможем подобрать материал.</p>
+          <div><button type="button" data-search-reset>Сбросить поиск</button><button type="button" data-open-form data-form-context="catalog-empty">Получить консультацию</button></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <SiteFooter />
+  <SiteDialogs />
+  <script src="/site.js" is:inline></script>
+  <script src="/catalog.js" is:inline></script>
+  <script id="shadow-preview-frames" type="application/json" is:inline set:html={JSON.stringify(previewFrames)} />
+  <script src="/previews/catalog-shadows/shadows.js" is:inline></script>
+</BaseLayout>

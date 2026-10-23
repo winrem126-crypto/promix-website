@@ -1,0 +1,16 @@
+export type LineIconName =
+  | 'grid'
+  | 'trowel'
+  | 'primer'
+  | 'paint'
+  | 'adhesive'
+  | 'drop'
+  | 'roll'
+  | 'purpose'
+  | 'application'
+  | 'layers'
+  | 'coverage'
+  | 'clock'
+  | 'package'
+  | 'grain'
+  | 'size';

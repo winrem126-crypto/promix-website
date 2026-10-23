@@ -1,0 +1,512 @@
+{
+  "/images/products/2026-10/promix-h-03-f281de343a.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/promix-h-02-ac384999d4.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      321,
+      1655,
+      1449
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/promix-j-71ae9842fc.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1449
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/promix-3in1-5ddbc3c12f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1449
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/promix-f-e71ba1c0b5.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/pro-spray-finish-c441eedcda.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      321,
+      1655,
+      1449
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/promix-w-b1fc804c1a.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      321,
+      1655,
+      1449
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/promix-fasad-4fa9419c39.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/textured-anti-vandal-06ef857cad.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/polymer-putty-09cd4e5959.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/betokontakt-9357d7c5e4.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      321,
+      1655,
+      1449
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/mittel-grund-707be14614.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/primer-paint-36e1e0948e.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/sous-couche-4f2e9b531f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      329,
+      1657,
+      1440
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/super-tack-3-a745b14619.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      197,
+      310,
+      1655,
+      1460
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/super-tack-7-0c47626be9.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      304,
+      1657,
+      1466
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/super-tack-facade-6d66c49261.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      348,
+      1656,
+      1422
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/super-tack-facade-silicon-f98f92df89.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      197,
+      314,
+      1657,
+      1455
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/mix-mosaic-c196ed3116.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      196,
+      321,
+      1656,
+      1449
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/acrylic-enamel-67cad3d45f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/tape-adhesive-5741790d4f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/plus-top-01cb1f86f5.png": {
+    "source": [
+      1679,
+      1233
+    ],
+    "bounds": [
+      200,
+      160,
+      1278,
+      865
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/hydro-dcc0155a95.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bounds": [
+      195,
+      320,
+      1656,
+      1450
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true
+  },
+  "/images/products/2026-10/glass-fiber-plus-top-e4f31956bf.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bounds": [
+      498,
+      42,
+      223,
+      1456
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true,
+    "reference": {
+      "source": [
+        245,
+        1470
+      ],
+      "bounds": [
+        10,
+        10,
+        225,
+        1450
+      ]
+    }
+  },
+  "/images/products/2026-10/nonwoven-plus-top-a846e281ec.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bounds": [
+      500,
+      50,
+      216,
+      1440
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true,
+    "reference": {
+      "source": [
+        262,
+        1483
+      ],
+      "bounds": [
+        18,
+        18,
+        226,
+        1447
+      ]
+    }
+  },
+  "/images/products/2026-10/deep-primer-8c9c918005.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bounds": [
+      177,
+      106,
+      847,
+      1194
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true,
+    "reference": {
+      "source": [
+        1024,
+        1536
+      ],
+      "bounds": [
+        82,
+        106,
+        848,
+        1191
+      ]
+    }
+  },
+  "/images/products/2026-10/universal-primer-f832e445e9.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bounds": [
+      177,
+      106,
+      847,
+      1194
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true,
+    "reference": {
+      "source": [
+        1024,
+        1535
+      ],
+      "bounds": [
+        81,
+        105,
+        847,
+        1191
+      ]
+    }
+  },
+  "/images/products/2026-10/primer-concentrate-0fd024c39b.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bounds": [
+      177,
+      106,
+      847,
+      1194
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": true,
+    "reference": {
+      "source": [
+        566,
+        773
+      ],
+      "bounds": [
+        39,
+        30,
+        467,
+        644
+      ]
+    }
+  },
+  "/images/products/current/pro-spray-improved.png": {
+    "source": [
+      1024,
+      1024
+    ],
+    "bounds": [
+      109,
+      164,
+      809,
+      708
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": false
+  },
+  "/images/products/current/latex-paint.png": {
+    "source": [
+      1024,
+      1024
+    ],
+    "bounds": [
+      109,
+      164,
+      810,
+      708
+    ],
+    "opticalScale": 1,
+    "normalizeDetail": true,
+    "builtInShadow": false
+  }
+}

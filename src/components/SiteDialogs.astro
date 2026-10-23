@@ -1,0 +1,73 @@
+---
+import '../styles/cookie-banner.css';
+---
+
+<div class="cookie-banner" data-cookie-banner role="region" aria-labelledby="cookie-banner-title" hidden>
+  <span class="cookie-icon" aria-hidden="true">
+    <svg viewBox="0 0 32 32" fill="none"><path d="M27.5 17a6.5 6.5 0 0 1-8-8 5 5 0 0 1-6-5.2A12.5 12.5 0 1 0 28.3 19a5 5 0 0 1-.8-2Z" /><circle cx="10.5" cy="13" r="1" /><circle cx="19" cy="22" r="1" /><circle cx="10" cy="22" r="1" /><circle cx="16" cy="16.5" r="1" /></svg>
+  </span>
+  <div class="cookie-content">
+    <h2 id="cookie-banner-title">Мы используем файлы cookie</h2>
+    <p>Они помогают нам анализировать посещаемость и улучшать работу сайта. <button type="button" class="cookie-link" data-cookie-settings aria-haspopup="dialog">Настроить</button></p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="button cookie-accept" data-cookie-accept>Разрешить аналитику <span aria-hidden="true">→</span></button>
+  </div>
+</div>
+
+<dialog class="modal cookie-modal" data-cookie-modal aria-modal="true" aria-labelledby="cookie-dialog-title">
+  <form method="dialog">
+    <div class="modal-head"><h2 id="cookie-dialog-title">Настройки cookie</h2><button class="modal-close" type="button" data-dialog-close aria-label="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19" /></svg></button></div>
+    <label class="toggle-row"><span><strong>Необходимые</strong><small id="cookie-necessary-description">Обеспечивают базовую работу сайта.</small><small class="cookie-always-active">Всегда активны</small></span><input type="checkbox" role="switch" aria-label="Необходимые cookie" aria-describedby="cookie-necessary-description" checked disabled /></label>
+    <label class="toggle-row"><span><strong>Аналитика</strong><small id="cookie-analytics-description">Помогает нам понимать, как используется сайт, и улучшать его.</small></span><input type="checkbox" role="switch" data-analytics-toggle aria-label="Разрешить аналитические cookie" aria-describedby="cookie-analytics-description" /></label>
+    <p class="cookie-policies"><a href="/cookies/">Политика Cookie</a> и <a href="/personal-data/">Политика обработки персональных данных</a>.</p>
+    <menu><button class="button cookie-save" type="button" data-cookie-save>Сохранить выбор</button></menu>
+  </form>
+</dialog>
+
+<dialog class="modal consultation-modal" data-consultation-modal aria-modal="true" aria-labelledby="consultation-dialog-title">
+  <form class="consult-form" method="post" action="/api/lead.php" data-consult-form>
+    <div class="modal-head"><div><div class="section-label" data-form-label>Консультация</div><h2 id="consultation-dialog-title" data-form-title>Расскажите о проекте</h2></div><button class="modal-close" type="button" data-dialog-close aria-label="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19" /></svg></button></div>
+    <div class="form-field">
+      <label>Имя<input name="name" autocomplete="name" maxlength="120" aria-describedby="consult-name-error" required placeholder="Иван" /></label>
+      <p class="form-field-error" id="consult-name-error" data-field-error="name" hidden></p>
+    </div>
+    <div class="form-field">
+      <label>Телефон<input type="tel" name="phone" autocomplete="tel" maxlength="40" aria-describedby="consult-phone-error" required placeholder="+7 900 000-00-00" /></label>
+      <p class="form-field-error" id="consult-phone-error" data-field-error="phone" hidden></p>
+    </div>
+    <div class="form-field">
+      <label>Город<input name="city" autocomplete="address-level2" maxlength="120" aria-describedby="consult-city-error" required placeholder="Ульяновск" /></label>
+      <p class="form-field-error" id="consult-city-error" data-field-error="city" hidden></p>
+    </div>
+    <div class="form-field">
+      <label>Комментарий <small>необязательно</small><textarea name="message" rows="3" maxlength="3000" aria-describedby="consult-message-error" placeholder="Кратко опишите объект и задачу"></textarea></label>
+      <p class="form-field-error" id="consult-message-error" data-field-error="message" hidden></p>
+    </div>
+    <div class="form-field">
+      <label class="consent"><input type="checkbox" name="consent" value="true" aria-describedby="consult-consent-error" required /> <span>Согласен с <a href="/personal-data/">политикой обработки персональных данных</a></span></label>
+      <p class="form-field-error" id="consult-consent-error" data-field-error="consent" hidden></p>
+    </div>
+    <input type="hidden" name="utm_source" />
+    <input type="hidden" name="utm_medium" />
+    <input type="hidden" name="utm_campaign" />
+    <input type="hidden" name="utm_content" />
+    <input type="hidden" name="utm_term" />
+    <input type="hidden" name="product" />
+    <input type="hidden" name="productSlug" />
+    <input type="hidden" name="source" />
+    <input type="hidden" name="sourcePage" />
+    <input type="hidden" name="leadType" />
+    <input type="hidden" name="startedAt" />
+    <label class="form-honeypot" aria-hidden="true">Сайт<input name="website" tabindex="-1" autocomplete="off" /></label>
+    <button class="button button-primary" type="submit">Отправить запрос</button>
+    <p class="form-status" role="status" aria-live="polite" hidden></p>
+  </form>
+</dialog>
+
+<style>
+  .consult-form .form-field { display: grid; gap: 8px; }
+  .consult-form .form-field-error { margin: 0; color: #ffc5b8; font-size: 12px; line-height: 1.5; }
+  .consult-form .form-field-error[hidden] { display: none; }
+  .consult-form [aria-invalid="true"] { border-bottom-color: #ffc5b8; }
+</style>

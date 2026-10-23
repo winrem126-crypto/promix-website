@@ -1,0 +1,31 @@
+---
+import SiteIcons from '../../components/SiteIcons.astro';
+// Isolated review route. Homepage and shared components are intentionally unchanged.
+import TaskSelector from '../../components/TaskSelector.astro';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/playfair-display/400.css';
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>PROMIX — preview посадки на мрамор</title>
+    <SiteIcons />
+  </head>
+  <body class="grounding-preview"><main><TaskSelector /></main></body>
+</html>
+<style is:global>
+  *{box-sizing:border-box}
+  body.grounding-preview{margin:0;background:#061521;font-family:Inter,sans-serif;--gutter:clamp(20px,4.7vw,68px)}
+  .grounding-preview button{font-family:inherit}
+  /* Scale only the environment around its contact plane, never the packaging. */
+  .grounding-preview .gallery-marble{transform:scaleY(.65);transform-origin:50% 72%;opacity:.35}
+  .grounding-preview .gallery-marble-body{opacity:1;filter:brightness(1.08) contrast(.88) saturate(.6)}
+  .grounding-preview .gallery-product-cutout{bottom:17.5cqw;filter:drop-shadow(0 1px 1px #000b) drop-shadow(2px 3px 3px #0004);z-index:2}
+  .grounding-preview .gallery-product-art--canister .gallery-product-cutout{bottom:18.7cqw}
+  .grounding-preview .gallery-product-cutout.gallery-contact-shadow{z-index:1;pointer-events:none;transform:scale(.88,.055);transform-origin:50% 100%;filter:brightness(0) blur(5px);opacity:.65}
+</style>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { catalogProducts } from '../../../data/products';
+import frames from '../../../data/product-images.json';
+import '../../../styles/catalog.css';
+---
+<BaseLayout title="Широкая тень — предпросмотр на трёх карточках" description="Более широкая мягкая тень на трёх карточках PROMIX, с переключением прежней и новой тени." pageClass="catalog-page wide-surface-preview" robots="noindex, nofollow" canonical="/products/">
+  <header class="surface-preview-header">
+    <h1>Широкая тень — предпросмотр</h1>
+    <p>Три карточки в размере каталога. Меняется только тень.</p>
+    <nav class="surface-preview-controls" aria-label="Сравнение теней">
+      <button type="button" data-surface-mode-button="wide" aria-pressed="true">Новая широкая</button>
+      <button type="button" data-surface-mode-button="previous" aria-pressed="false">Прежняя</button>
+    </nav>
+  </header>
+  <main class="catalog-main" data-surface-mode="wide">
+    <div class="catalog-layout">
+      <section class="catalog-results surface-preview-results" aria-label="Три карточки с обновлённой тенью">
+        <div class="surface-review-window">
+          <div class="catalog-product-grid">
+            {catalogProducts.map(product => <ProductCard product={product} variant="open" />)}
+          </div>
+        </div>
+        <p class="surface-preview-note">Изменения подготовлены только в этом предпросмотре. Общий каталог не изменён.</p>
+      </section>
+    </div>
+  </main>
+  <script id="surface-shadow-frames" type="application/json" is:inline set:html={JSON.stringify(frames)} />
+  <script src="/previews/wide-surface-shadow/review.js" is:inline></script>
+</BaseLayout>
+<style is:global>
+  .wide-surface-preview { min-height: 100vh; display: flow-root; background: #fff; }
+  .wide-surface-preview .surface-preview-header { padding: 28px var(--gutter) 28px; }
+  .wide-surface-preview .surface-preview-header h1 { margin: 0 0 10px; color: #102336; font: 400 28px/1.2 'PROMIX Product',Inter,sans-serif; letter-spacing: -.025em; }
+  .wide-surface-preview .surface-preview-header p,
+  .wide-surface-preview .surface-preview-note { margin: 0; color: #53616b; font: 400 14px/1.5 'PROMIX Product',Inter,sans-serif; }
+  .wide-surface-preview .surface-preview-controls { display: flex; gap: 8px; margin-top: 18px; }
+  .wide-surface-preview .surface-preview-controls button { padding: 9px 15px; background: #fff; border: 1px solid #c7ced2; border-radius: 3px; color: #102336; cursor: pointer; font: 400 14px/1.4 'PROMIX Product',Inter,sans-serif; }
+  .wide-surface-preview .surface-preview-controls button[aria-pressed="true"] { background: #55151b; border-color: #55151b; color: #fff; }
+  .wide-surface-preview .surface-preview-controls button:focus-visible { outline: 2px solid #55151b; outline-offset: 3px; }
+  .wide-surface-preview .surface-preview-results { grid-column: 2; }
+  .wide-surface-preview .surface-review-window { overflow: clip; }
+  /* Invisible later products preserve the actual catalog's shared row tracks. */
+  .wide-surface-preview .catalog-product-grid > .product-card:nth-child(n+4) { visibility: hidden; pointer-events: none; }
+  .wide-surface-preview .surface-preview-note { margin-top: 24px; }
+  .wide-surface-preview .product-card-visual [data-surface-source] { mask-image: var(--surface-package-mask); mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha; }
+  .wide-surface-preview .product-card-visual > .surface-shadow-plane {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0;
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  }
+  .wide-surface-preview .product-card-visual[data-surface-ready] > .surface-shadow-plane { opacity: 1; }
+  .wide-surface-preview .surface-shadow-plane > .surface-shadow-diffuse {
+    position: absolute; left: var(--surface-body-center); top: calc(var(--surface-body-base) + 2px);
+    width: calc(var(--surface-body-width) * 2.10); height: 56px;
+    border-radius: 50%; transform: translate(-50%,-50%);
+    background: radial-gradient(ellipse closest-side, rgb(45 44 42 / .17) 0%, rgb(45 44 42 / .125) 30%, rgb(45 44 42 / .055) 60%, rgb(45 44 42 / .012) 84%, transparent 100%);
+    filter: blur(10px);
+  }
+  .wide-surface-preview .surface-shadow-plane > .surface-shadow-contact {
+    position: absolute; left: var(--surface-body-center); top: calc(var(--surface-body-base) - 6px);
+    width: calc(var(--surface-body-width) * .84); height: 28px;
+    border-radius: 50%; transform: translate(-50%,-50%);
+    background: radial-gradient(ellipse closest-side, rgb(29 29 29 / .23) 0%, rgb(29 29 29 / .18) 35%, rgb(29 29 29 / .07) 70%, transparent 100%);
+    filter: blur(5.5px);
+  }
+  .wide-surface-preview [data-surface-mode="previous"] .surface-shadow-diffuse {
+    top: calc(var(--surface-body-base) - 1px); width: calc(var(--surface-body-width) * 1.22); height: 28px;
+    background: rgb(40 39 38 / .13); filter: blur(12px);
+  }
+  .wide-surface-preview [data-surface-mode="previous"] .surface-shadow-contact { height: 20px; background: rgb(29 29 29 / .18); }
+  @media (max-width: 760px) {
+    .wide-surface-preview .surface-preview-header { padding: 24px 22px; }
+    .wide-surface-preview .surface-preview-header h1 { font-size: 25px; }
+    .wide-surface-preview .catalog-product-grid > .product-card:nth-child(n+4) { display: none; }
+  }
+</style>

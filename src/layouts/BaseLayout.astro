@@ -1,0 +1,66 @@
+---
+import SiteIcons from '../components/SiteIcons.astro';
+import interCyrillic from '@fontsource/inter/files/inter-cyrillic-400-normal.woff2?url';
+import '../styles/global.css';
+import '../styles/premium-refactor.css';
+import '../styles/product-typography.css';
+import '../styles/site-shell.css';
+import '../styles/motion.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  preloadImage?: string;
+  preloadImageMobile?: string;
+  pageClass?: string;
+  robots?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.pathname,
+  image = '/images/hero-architecture-no-product-1600.webp',
+  preloadImage,
+  preloadImageMobile,
+  pageClass = '',
+  robots = 'index, follow, max-image-preview:large',
+} = Astro.props;
+
+const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url);
+const imageUrl = new URL(image, Astro.site ?? Astro.url);
+// One primary, actually used face; remaining subsets keep normal CSS discovery.
+const primaryFont = pageClass === 'architectural-home'
+  ? '/fonts/manrope/manrope-cyrillic-variable.woff2'
+  : interCyrillic;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#102336" />
+    <SiteIcons />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="preload" as="font" href={primaryFont} type="font/woff2" crossorigin="anonymous" />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} media={preloadImageMobile ? '(min-width: 761px)' : undefined} fetchpriority="high" />}
+    {preloadImageMobile && <link rel="preload" as="image" href={preloadImageMobile} media="(max-width: 760px)" fetchpriority="high" />}
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="../scripts/metrika.js"></script>
+    <title>{title}</title>
+  </head>
+  <body class={pageClass}>
+    <slot />
+  </body>
+</html>

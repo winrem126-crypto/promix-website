@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ProductStageScene from '../../components/ProductStageScene.astro';
+import { catalogProducts, type Product } from '../../data/products';
+import trial from '../../data/product-image-trial.json';
+import '../../styles/catalog.css';
+const original = catalogProducts.find(product => product.slug === trial.slug)!;
+// Trial data only: public products, counts, metadata and detailed pages are untouched.
+const product: Product = { ...original, image: trial.image, imageSources: undefined, cardImageFrame: {
+  ...trial.frame,
+  source: trial.frame.source as [number, number],
+  bounds: trial.frame.bounds as [number, number, number, number],
+  opticalScale: 1,
+  reference: {
+    source: trial.referenceFrame.source as [number, number],
+    bounds: trial.referenceFrame.bounds as [number, number, number, number],
+  },
+} };
+// Scale around the visible base while retaining 50% 100% on the source image.
+// This downward, subpixel compensation cancels the PNG's empty bottom margin.
+const hoverBaseCorrection = (trial.geometry.source[1] - trial.geometry.base) / trial.geometry.source[1] * .015 * 100;
+---
+<BaseLayout title="PROMIX H 0,2 — проверка предметной тени" description="Первый тест актуальной упаковки и контакта с минеральной поверхностью." pageClass="catalog-page h-shadow-review" robots="noindex, nofollow" canonical="/products/">
+  <header class="h-review-heading">
+    <p>PROMIX / Проба 01</p>
+    <h1>Контакт с поверхностью</h1>
+    <span>Красный PROMIX H 0,2 · карточка в реальном размере каталога</span>
+  </header>
+  <main class="catalog-main" style={`--review-frame-ratio: ${trial.referenceFrame.source[0]} / ${trial.referenceFrame.source[1]}; --review-hover-base-correction: ${hoverBaseCorrection}%`}>
+    <div class="catalog-layout">
+      <section class="catalog-results h-review-results" aria-label="Карточка и обязательный эталон">
+        <div class="catalog-product-grid">
+          <div class="h-review-caption h-review-caption--rest"><h2>Наша новая реализация</h2><p>Посадка и тень по эталону</p></div>
+          <div class="h-review-caption h-review-caption--hover"><h2>Hover</h2><p>Увеличение 1,015 · опора на той же линии</p></div>
+          <div class="h-review-caption h-review-caption--reference"><h2>Эталон</h2><p>Оригинал приложенного изображения</p></div>
+          <ProductCard product={product} variant="open" groundShadow shadowGeometry={{ ...trial.geometry, previewState: 'rest' }} imageSources={trial.sources}>
+            <ProductStageScene slot="stage-background" />
+          </ProductCard>
+          <ProductCard product={product} variant="open" groundShadow shadowGeometry={{ ...trial.geometry, previewState: 'hover' }} imageSources={trial.sources}>
+            <ProductStageScene slot="stage-background" />
+          </ProductCard>
+          <figure class="h-review-reference">
+            <img src={trial.reference} width="963" height="769" alt="Визуальный эталон: красное ведро PROMIX H стоит на светлой минеральной поверхности" />
+          </figure>
+        </div>
+        <p class="h-review-note">Это отдельная проба. Настройки остальных товаров и публичный каталог сохранены.</p>
+        <a class="h-review-catalog" href="/products/">Открыть текущий каталог →</a>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+<style is:global>
+  .h-shadow-review { min-height: 100vh; }
+  .h-review-heading { max-width: 1496px; margin: 0 auto; padding: 36px var(--site-content-gutter) 30px; color: #102336; }
+  .h-review-heading p { margin: 0 0 12px; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: #65747b; }
+  .h-review-heading h1 { margin: 0 0 14px; font: 500 34px/1.15 Inter, sans-serif; letter-spacing: -.035em; }
+  .h-review-heading > span { color: #586a77; font-size: 14px; line-height: 1.5; }
+  .h-shadow-review .h-review-results { grid-column: 2; }
+  /* Match the reference canvas and alpha bounds rather than the virtual square
+     used by the public catalog. The package source itself is never cropped. */
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open .product-card-visual[data-shadow-profile="reference-mineral"] {
+    aspect-ratio: var(--review-frame-ratio);
+    background: #eee6de;
+  }
+  .h-shadow-review [data-shadow-profile="reference-mineral"] .product-image-reference { z-index: 3; width: 100%; height: 100%; }
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open .product-card-visual::after { content: none; }
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open .product-card-visual img {
+    opacity: 1; filter: none; mix-blend-mode: normal; transform-origin: 50% 100%;
+    translate: 0 0;
+    transition: transform var(--motion-medium) var(--ease-premium), translate var(--motion-medium) var(--ease-premium);
+  }
+  /* The second card pins hover for comparison; the first still responds normally. */
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open:is([data-preview-state="hover"], :hover) .product-card-visual :is(img, .catalog-ground-source) {
+    transform: scale(1.015); translate: 0 var(--review-hover-base-correction);
+  }
+  /* The PNG and source-coordinate floor masks share one anchored CSS motion. */
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open[data-preview-state="hover"] .product-card-copy :is(h2, h3),
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open[data-preview-state="hover"] .product-card-copy > .product-card-link { color: #55151b; }
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open[data-preview-state="hover"] .product-card-arrow { transform: translateX(4px); }
+  .h-shadow-review .catalog-product-grid .product-card.product-card--open[data-preview-state="hover"] .product-card-visual::after { opacity: .06; }
+  .h-review-caption { min-width: 0; }
+  .h-review-caption--rest { grid-column: 1; grid-row: 1; }
+  .h-review-caption--hover { grid-column: 2; grid-row: 1; }
+  .h-review-caption--reference { grid-column: 3; grid-row: 1; }
+  .h-review-caption h2 { margin: 0 0 6px; font-size: 16px; font-weight: 500; }
+  .h-review-caption p { margin: 0; font-size: 12px; line-height: 1.5; color: #586a77; }
+  .h-shadow-review .catalog-product-grid > [data-preview-state="rest"] { grid-column: 1; grid-row: 2; }
+  .h-shadow-review .catalog-product-grid > [data-preview-state="hover"] { grid-column: 2; grid-row: 2; }
+  .h-review-reference { grid-column: 3; grid-row: 2; margin: 0; border: 1px solid transparent; align-self: start; }
+  .h-review-reference img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .h-review-note { margin: 24px 0 10px; color: #586a77; font-size: 13px; line-height: 1.6; }
+  .h-review-catalog { color: #55151b; font-size: 13px; }
+  @media (max-width: 1199px) and (min-width: 761px) {
+    .h-shadow-review .h-review-results { grid-column: 2; }
+    .h-review-caption--reference { grid-column: 1; grid-row: 3; }
+    .h-review-reference { grid-column: 1; grid-row: 4; }
+  }
+  @media (max-width: 760px) {
+    .h-review-heading { padding: 28px 22px 24px; }
+    .h-review-heading h1 { font-size: 28px; }
+    .h-shadow-review .h-review-caption--rest { grid-column: 1; grid-row: 1; }
+    .h-shadow-review .catalog-product-grid > [data-preview-state="rest"] { grid-column: 1; grid-row: 2; }
+    .h-shadow-review .h-review-caption--hover { grid-column: 1; grid-row: 3; margin-top: 12px; }
+    .h-shadow-review .catalog-product-grid > [data-preview-state="hover"] { grid-column: 1; grid-row: 4; }
+    .h-shadow-review .h-review-caption--reference { grid-column: 1; grid-row: 5; margin-top: 12px; }
+    .h-shadow-review .h-review-reference { grid-column: 1; grid-row: 6; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .h-shadow-review .catalog-product-grid .product-card.product-card--open .product-card-visual :is(img, .catalog-ground-source) { transition: none; }
+  }
+</style>

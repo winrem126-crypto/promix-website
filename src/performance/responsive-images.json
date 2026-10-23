@@ -1,0 +1,278 @@
+{
+  "/images/products/current/promix-f.png": {
+    "src": "/images/performance/promix-f-740d9201fb14-1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/promix-f-7c7d9b2374f9-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/promix-f-b38481e68a5a-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/promix-f-bd75ab3a9005-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/promix-f-832135085f96-960.webp"
+      },
+      {
+        "width": 1024,
+        "url": "/images/performance/promix-f-740d9201fb14-1024.webp"
+      }
+    ],
+    "kind": "home-category"
+  },
+  "/images/products/current/plus-top.png": {
+    "src": "/images/performance/plus-top-f9349cd8f67b-1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/plus-top-e065bd7dce74-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/plus-top-80b86b9b5b8b-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/plus-top-6aa7724c3682-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/plus-top-12d2146f689c-960.webp"
+      },
+      {
+        "width": 1024,
+        "url": "/images/performance/plus-top-f9349cd8f67b-1024.webp"
+      }
+    ],
+    "kind": "home-category"
+  },
+  "/images/products/current/hydro.png": {
+    "src": "/images/performance/hydro-141199e0f9e7-1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/hydro-52eec248ba82-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/hydro-9c23a7e795ed-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/hydro-5122897db48e-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/hydro-96321cc91b0d-960.webp"
+      },
+      {
+        "width": 1024,
+        "url": "/images/performance/hydro-141199e0f9e7-1024.webp"
+      }
+    ],
+    "kind": "home-category"
+  },
+  "/images/categories/concept-1/glass-fiber.png": {
+    "src": "/images/performance/glass-fiber-c69c0f491138-1024.webp",
+    "width": 1024,
+    "height": 1536,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/glass-fiber-30d2cf1c7923-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/glass-fiber-1d638a4b41de-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/glass-fiber-5ed88b5ab1fb-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/glass-fiber-5d3d0fab5113-960.webp"
+      },
+      {
+        "width": 1024,
+        "url": "/images/performance/glass-fiber-c69c0f491138-1024.webp"
+      }
+    ],
+    "kind": "home-category"
+  },
+  "/images/products/current/pro-spray-improved.png": {
+    "src": "/images/performance/pro-spray-improved-c9421cc9f4f2-1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/pro-spray-improved-1469ab8fa7c7-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/pro-spray-improved-9bf8cb5f429b-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/pro-spray-improved-7c90421b73ae-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/pro-spray-improved-c5ba3e36f1e7-960.webp"
+      },
+      {
+        "width": 1024,
+        "url": "/images/performance/pro-spray-improved-c9421cc9f4f2-1024.webp"
+      }
+    ],
+    "kind": "historical-product"
+  },
+  "/images/products/2026-10/polymer-putty-09cd4e5959.png": {
+    "src": "/images/performance/polymer-putty-09cd4e5959-83b2855b0a4a-2048.webp",
+    "width": 2048,
+    "height": 2048,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/polymer-putty-09cd4e5959-a68f7e00fefb-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/polymer-putty-09cd4e5959-30343f6e9140-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/polymer-putty-09cd4e5959-192ea8f2d0e6-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/polymer-putty-09cd4e5959-1b53d6a03fef-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/performance/polymer-putty-09cd4e5959-b459a5b9193e-1600.webp"
+      },
+      {
+        "width": 2048,
+        "url": "/images/performance/polymer-putty-09cd4e5959-83b2855b0a4a-2048.webp"
+      }
+    ],
+    "kind": "historical-product"
+  },
+  "/images/products/current/latex-paint.png": {
+    "src": "/images/performance/latex-paint-af17bc3d3144-1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/latex-paint-8ab99c2e1496-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/latex-paint-2ca987e72010-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/latex-paint-d899265acb28-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/latex-paint-b08e8cda6ac7-960.webp"
+      },
+      {
+        "width": 1024,
+        "url": "/images/performance/latex-paint-af17bc3d3144-1024.webp"
+      }
+    ],
+    "kind": "historical-product"
+  },
+  "/images/products/2026-10/acrylic-enamel-67cad3d45f.png": {
+    "src": "/images/performance/acrylic-enamel-67cad3d45f-c975cc5db977-2048.webp",
+    "width": 2048,
+    "height": 2048,
+    "sources": [
+      {
+        "width": 320,
+        "url": "/images/performance/acrylic-enamel-67cad3d45f-d16eb7b41268-320.webp"
+      },
+      {
+        "width": 480,
+        "url": "/images/performance/acrylic-enamel-67cad3d45f-811959b04916-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/performance/acrylic-enamel-67cad3d45f-78dc5a7f27c7-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/performance/acrylic-enamel-67cad3d45f-aeca788f673b-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/performance/acrylic-enamel-67cad3d45f-5963417e16e2-1600.webp"
+      },
+      {
+        "width": 2048,
+        "url": "/images/performance/acrylic-enamel-67cad3d45f-c975cc5db977-2048.webp"
+      }
+    ],
+    "kind": "historical-product"
+  },
+  "/images/hero-surface-promix-h.webp": {
+    "src": "/images/performance/hero-surface-promix-h-5b9e33336aef-1207.webp",
+    "width": 1207,
+    "height": 1303,
+    "sources": [
+      {
+        "width": 1207,
+        "url": "/images/performance/hero-surface-promix-h-5b9e33336aef-1207.webp"
+      }
+    ],
+    "kind": "home-hero"
+  },
+  "/images/production-realistic-1600.webp": {
+    "src": "/images/performance/production-realistic-f1a7a82517c4-1600.webp",
+    "width": 1600,
+    "height": 900,
+    "sources": [
+      {
+        "width": 960,
+        "url": "/images/performance/production-realistic-c6712369a881-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/performance/production-realistic-f1a7a82517c4-1600.webp"
+      }
+    ],
+    "kind": "production"
+  },
+  "/images/laboratory-realistic-1600.webp": {
+    "src": "/images/performance/laboratory-realistic-944c720dba58-1600.webp",
+    "width": 1600,
+    "height": 900,
+    "sources": [
+      {
+        "width": 960,
+        "url": "/images/performance/laboratory-realistic-5720999d766a-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/performance/laboratory-realistic-944c720dba58-1600.webp"
+      }
+    ],
+    "kind": "production"
+  }
+}

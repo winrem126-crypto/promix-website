@@ -1,0 +1,75 @@
+---
+const variants = [
+  { number: 1, title: 'Почти без тени', description: 'Очень лёгкая и мягкая тень.' },
+  { number: 2, title: 'Мягкая натуральная', description: 'Короткая, аккуратная тень под товаром.' },
+  { number: 3, title: 'Студийная', description: 'Чуть заметнее, с мягкими краями.' },
+  { number: 4, title: 'Контактная + рассеянная', description: 'Тонкая опора у основания и лёгкое рассеивание.' },
+];
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Четыре варианта теней — каталог PROMIX</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; color: #102336; background: #fff; font: 14px/1.45 Arial,sans-serif; }
+      .review-controls { padding: 14px 24px 12px; border-bottom: 1px solid #dce1e3; background: #f8f9f8; }
+      .review-top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+      h1 { font-size: 19px; font-weight: 500; margin: 0; }
+      .note { margin: 0; color: #53616b; font-size: 12px; }
+      nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 10px; }
+      nav button { padding: 9px 14px; border: 1px solid #c7ced2; background: #fff; border-radius: 3px; font: inherit; color: inherit; cursor: pointer; }
+      nav button[aria-pressed="true"] { border-color: #55151b; background: #55151b; color: #fff; }
+      .review-bottom { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+      label { display: flex; align-items: center; gap: 8px; }
+      select { font: inherit; color: inherit; background: #fff; border: 1px solid #c7ced2; border-radius: 3px; padding: 5px 9px; }
+      a { color: #55151b; text-underline-offset: 3px; }
+      .description { color: #53616b; margin: 0; }
+      iframe { display: block; width: 100%; height: calc(100vh - 164px); min-height: 600px; border: 0; background: #fff; }
+      button:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid #55151b; outline-offset: 3px; }
+      @media(max-width:760px) { .review-controls { padding: 12px; } .review-top { display: block; } nav { gap: 5px; } nav button { padding: 8px 10px; } .review-bottom { gap: 8px 14px; } .description { width: 100%; } iframe { height: calc(100vh - 245px); } }
+    </style>
+  </head>
+  <body>
+    <header class="review-controls">
+      <div class="review-top"><h1>Тени товаров — 4 варианта</h1><p class="note">Предпросмотр для выбора. Общий стиль сайта не изменён.</p></div>
+      <nav aria-label="Варианты теней">
+        {variants.map(v => <button type="button" data-variant={v.number} aria-pressed={v.number===1 ? 'true':'false'} title={v.description}>Вариант {v.number} · {v.title}</button>)}
+      </nav>
+      <div class="review-bottom">
+        <label>Показать <select id="review-category"><option value="">Весь каталог</option><option value="primers">Грунтовки: ведра и канистры</option><option value="roll-materials">Стеклохолст и флизелин</option></select></label>
+        <a id="standalone" href="/previews/catalog-shadows/variant-1/" target="_blank">Открыть вариант отдельно ↗</a>
+        <p class="description" id="review-description">{variants[0].description}</p>
+      </div>
+    </header>
+    <iframe id="catalog-preview" title="Вариант 1 — каталог PROMIX" src="/previews/catalog-shadows/variant-1/"></iframe>
+    <script is:inline define:vars={{variants}}>
+      const iframe = document.querySelector('#catalog-preview');
+      const category = document.querySelector('#review-category');
+      const standalone = document.querySelector('#standalone');
+      let current = 1;
+      let desiredScroll = 0;
+      const remembered = new URLSearchParams(location.search);
+      if (remembered.has('category')) category.value = remembered.get('category');
+      iframe.addEventListener('load', () => iframe.contentWindow.scrollTo(0, desiredScroll));
+      function update(number, resetScroll = false) {
+        desiredScroll = resetScroll ? 0 : (iframe.contentWindow?.scrollY || 0);
+        current = number;
+        const query = category.value ? `?category=${encodeURIComponent(category.value)}` : '';
+        iframe.src = `/previews/catalog-shadows/variant-${number}/${query}`;
+        iframe.title = `Вариант ${number} — каталог PROMIX`;
+        standalone.href = iframe.src;
+        document.querySelectorAll('[data-variant]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.variant) === number)));
+        document.querySelector('#review-description').textContent = variants[number-1].description;
+        history.replaceState(null, '', `?variant=${number}${category.value ? `&category=${category.value}` : ''}`);
+      }
+      document.querySelectorAll('[data-variant]').forEach(button => button.addEventListener('click', () => update(Number(button.dataset.variant))));
+      category.addEventListener('change', () => update(current, true));
+      const initial = Number(remembered.get('variant'));
+      if ((initial >= 1 && initial <= 4) || category.value) update(initial >= 1 && initial <= 4 ? initial : 1, true);
+    </script>
+  </body>
+</html>

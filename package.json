@@ -1,0 +1,20 @@
+{
+  "name": "promix-architectural-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.4.1",
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/playfair-display": "5.2.8",
+    "astro": "^5.13.5",
+    "typescript": "^5.9.2"
+  }
+}

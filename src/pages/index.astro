@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HomeFooter from '../components/HomeFooter.astro';
+import SiteDialogs from '../components/SiteDialogs.astro';
+import HomeHero from '../components/HomeHero.astro';
+import ArchitecturalTasks from '../components/ArchitecturalTasks.astro';
+import HomeProducts from '../components/HomeProducts.astro';
+import HomeProduction from '../components/HomeProduction.astro';
+import HomePartners from '../components/HomePartners.astro';
+import '../styles/architectural-home.css';
+import { responsiveImage } from '../performance/images';
+
+const heroImage = responsiveImage('/images/hero-surface-promix-h.webp').src;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'PROMIX',
+  url: 'https://pro-mix.ru/',
+  email: 'simkraski@mail.ru',
+  telephone: '+7-8422-22-90-42',
+  description: 'Профессиональные материалы для комплексной отделки поверхностей.',
+};
+---
+<BaseLayout
+  title="PROMIX — профессиональные материалы для отделки"
+  description="Шпатлёвки, грунтовки, краски, клеи и комплексные решения PROMIX для профессиональной отделки."
+  image={heroImage}
+  preloadImage={heroImage}
+  pageClass="architectural-home"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  <SiteHeader />
+  <main id="top" class="arch-main">
+    <HomeHero />
+    <HomeProducts />
+<ArchitecturalTasks />
+<HomeProduction />
+<HomePartners />
+
+  </main>
+  <span id="footer" aria-hidden="true"></span>
+  <HomeFooter />
+  <SiteDialogs />
+  <script src="../scripts/site.js"></script>
+</BaseLayout>

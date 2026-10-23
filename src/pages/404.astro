@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteDialogs from '../components/SiteDialogs.astro';
+---
+
+<BaseLayout title="Страница не найдена — PROMIX" description="Такой страницы нет на сайте PROMIX. Перейдите в каталог материалов или вернитесь на главную." canonical="/404/" robots="noindex, follow" pageClass="not-found-page">
+  <SiteHeader />
+  <main class="not-found-main">
+    <p class="not-found-code" aria-hidden="true">404</p>
+    <h1>Страница не найдена</h1>
+    <p class="not-found-message">Возможно, адрес изменился или в ссылке есть ошибка. Найти нужный материал можно в каталоге.</p>
+    <div class="not-found-actions">
+      <a class="button button-primary" href="/products/">Перейти в каталог</a>
+      <a class="not-found-home" href="/">На главную <span aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+  <SiteFooter />
+  <SiteDialogs />
+  <script src="../scripts/site.js"></script>
+</BaseLayout>
+
+<style>
+  :global(.not-found-page) { background: var(--site-paper, #f8f8f5); color: var(--site-ink, #102336); }
+  .not-found-main { width: min(1280px, calc(100% - 96px)); min-height: 64vh; margin: 0 auto; padding: 156px 0 112px; }
+  .not-found-code { margin: 0 0 24px; color: var(--site-muted, #657078); font-size: 13px; letter-spacing: .16em; }
+  h1 { max-width: 900px; margin: 0; color: var(--site-ink, #102336); font-size: clamp(36px, 5.2vw, 76px); font-weight: 400; line-height: 1.08; letter-spacing: -.035em; }
+  .not-found-message { max-width: 540px; margin: 28px 0 0; color: var(--site-muted, #657078); font-size: 17px; line-height: 1.65; }
+  .not-found-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; margin-top: 36px; }
+  .not-found-home { display: inline-flex; align-items: center; gap: 20px; color: var(--site-ink, #102336); font-size: 14px; text-decoration: none; }
+  .not-found-home:hover { text-decoration: underline; text-underline-offset: 5px; }
+  .not-found-home:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+  @media (max-width: 760px) {
+    .not-found-main { width: calc(100% - 40px); min-height: 62vh; padding: 124px 0 72px; }
+    .not-found-code { margin-bottom: 20px; }
+    .not-found-message { margin-top: 24px; font-size: 16px; }
+    .not-found-actions { align-items: flex-start; flex-direction: column; gap: 24px; margin-top: 30px; }
+  }
+</style>

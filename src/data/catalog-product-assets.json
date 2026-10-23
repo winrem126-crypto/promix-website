@@ -1,0 +1,1563 @@
+{
+  "deep-primer": {
+    "image": "/images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        439,
+        89,
+        722,
+        1015
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 719,
+      "bodyCenter": 800.5,
+      "base": 1104,
+      "family": "canister",
+      "contactMask": "/images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-contact-493c5ced8276.svg",
+      "ambientMask": "/images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-ambient-f7f2f285783e.svg",
+      "groundMask": "/images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-ground-b440bdf868aa.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "7d7b6b2b1613",
+    "originalFilename": "01_Grunt_glubokogo_proniknoveniya_studio_transparent_4344x3258.png"
+  },
+  "mix-mosaic": {
+    "image": "/images/products/catalog-2026-10/mix-mosaic-5e6da5543814-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/mix-mosaic-5e6da5543814-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/mix-mosaic-5e6da5543814-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/mix-mosaic-5e6da5543814-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/mix-mosaic-5e6da5543814-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/mix-mosaic-5e6da5543814-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/mix-mosaic-5e6da5543814-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "5e6da5543814",
+    "originalFilename": "03_MIX_kraska_transparent_4344x3258.png"
+  },
+  "glass-fiber-plus-top": {
+    "image": "/images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        722,
+        89,
+        155,
+        1014
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 154,
+      "bodyCenter": 800,
+      "base": 1103,
+      "family": "roll",
+      "contactMask": "/images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-contact-b8181542ad96.svg",
+      "ambientMask": "/images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ambient-533994fd7934.svg",
+      "groundMask": "/images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ground-4be78cf6fdcc.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "409cb287f83a",
+    "originalFilename": "03_Steklokholst_Premium_studio_transparent_4344x3258.png"
+  },
+  "nonwoven-plus-top": {
+    "image": "/images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        724,
+        89,
+        152,
+        1015
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 148,
+      "bodyCenter": 800,
+      "base": 1104,
+      "family": "roll",
+      "contactMask": "/images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-contact-f8f1fb07d8eb.svg",
+      "ambientMask": "/images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ambient-79e87221e806.svg",
+      "groundMask": "/images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ground-16fa27a58704.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "ea94d8292c93",
+    "originalFilename": "04_Flizelin_Plus_Top_studio_transparent_4344x3258.png"
+  },
+  "primer-concentrate": {
+    "image": "/images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        439,
+        89,
+        722,
+        1015
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 719,
+      "bodyCenter": 800.5,
+      "base": 1104,
+      "family": "canister",
+      "contactMask": "/images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-contact-493c5ced8276.svg",
+      "ambientMask": "/images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-ambient-f7f2f285783e.svg",
+      "groundMask": "/images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-ground-b440bdf868aa.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "8e7f5216daec",
+    "originalFilename": "05_Grunt_kontsentrat_studio_transparent_4344x3258.png"
+  },
+  "universal-primer": {
+    "image": "/images/products/catalog-2026-10/universal-primer-d706f35b751d-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/universal-primer-d706f35b751d-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/universal-primer-d706f35b751d-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/universal-primer-d706f35b751d-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        439,
+        89,
+        722,
+        1015
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 719,
+      "bodyCenter": 800.5,
+      "base": 1104,
+      "family": "canister",
+      "contactMask": "/images/products/catalog-2026-10/universal-primer-d706f35b751d-contact-493c5ced8276.svg",
+      "ambientMask": "/images/products/catalog-2026-10/universal-primer-d706f35b751d-ambient-f7f2f285783e.svg",
+      "groundMask": "/images/products/catalog-2026-10/universal-primer-d706f35b751d-ground-b440bdf868aa.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "d706f35b751d",
+    "originalFilename": "06_Grunt_universalnyy_studio_transparent_4344x3258.png"
+  },
+  "promix-3in1": {
+    "image": "/images/products/catalog-2026-10/promix-3in1-6f04c9413772-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-3in1-6f04c9413772-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-3in1-6f04c9413772-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-3in1-6f04c9413772-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-3in1-6f04c9413772-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-3in1-6f04c9413772-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-3in1-6f04c9413772-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "6f04c9413772",
+    "originalFilename": "PROMIX_3_V_1.png"
+  },
+  "betokontakt": {
+    "image": "/images/products/catalog-2026-10/betokontakt-613d6fe67c64-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/betokontakt-613d6fe67c64-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/betokontakt-613d6fe67c64-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/betokontakt-613d6fe67c64-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/betokontakt-613d6fe67c64-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/betokontakt-613d6fe67c64-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/betokontakt-613d6fe67c64-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "613d6fe67c64",
+    "originalFilename": "PROMIX_Betokontakt_studio_v7_4344x3258.png"
+  },
+  "promix-f": {
+    "image": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "e29eb8da3aed",
+    "originalFilename": "PROMIX_F.png"
+  },
+  "promix-fasad": {
+    "image": "/images/products/catalog-2026-10/promix-fasad-745418051688-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-fasad-745418051688-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-fasad-745418051688-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-fasad-745418051688-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-fasad-745418051688-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-fasad-745418051688-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-fasad-745418051688-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "745418051688",
+    "originalFilename": "PROMIX_FASAD.png"
+  },
+  "hydro": {
+    "image": "/images/products/catalog-2026-10/hydro-be230cdd86df-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/hydro-be230cdd86df-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/hydro-be230cdd86df-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/hydro-be230cdd86df-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/hydro-be230cdd86df-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/hydro-be230cdd86df-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/hydro-be230cdd86df-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "be230cdd86df",
+    "originalFilename": "PROMIX_GIDROIZOLYATSIYA.png"
+  },
+  "primer-paint": {
+    "image": "/images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "07f2d9a5ec71",
+    "originalFilename": "PROMIX_GRUNT_KRASKA.png"
+  },
+  "promix-h-03": {
+    "image": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "685e4fb7db0e",
+    "originalFilename": "PROMIX_H.png"
+  },
+  "promix-h-02": {
+    "image": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "26e55032b9e8",
+    "originalFilename": "PROMIX_H_BLUE.png"
+  },
+  "promix-j": {
+    "image": "/images/products/catalog-2026-10/promix-j-55df257e92a1-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-j-55df257e92a1-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-j-55df257e92a1-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-j-55df257e92a1-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-j-55df257e92a1-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-j-55df257e92a1-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-j-55df257e92a1-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "55df257e92a1",
+    "originalFilename": "PROMIX_J_SHOVNAYA.png"
+  },
+  "tape-adhesive": {
+    "image": "/images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "a1ee65eb50e2",
+    "originalFilename": "PROMIX_KLEY_DLYA_LENT.png"
+  },
+  "mittel-grund": {
+    "image": "/images/products/catalog-2026-10/mittel-grund-9676d3bec759-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/mittel-grund-9676d3bec759-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/mittel-grund-9676d3bec759-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/mittel-grund-9676d3bec759-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/mittel-grund-9676d3bec759-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/mittel-grund-9676d3bec759-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/mittel-grund-9676d3bec759-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "9676d3bec759",
+    "originalFilename": "PROMIX_MITTEL_GRUNT.png"
+  },
+  "pro-spray-finish": {
+    "image": "/images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "2ce7e5bd1b9b",
+    "originalFilename": "PROMIX_PRO_SPRAY.png"
+  },
+  "plus-top": {
+    "image": "/images/products/catalog-2026-10/plus-top-81a9aefabc66-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/plus-top-81a9aefabc66-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/plus-top-81a9aefabc66-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/plus-top-81a9aefabc66-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        116,
+        186,
+        1368,
+        918
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "catalogScale": 1.06,
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 1160,
+      "bodyCenter": 800,
+      "base": 1104,
+      "family": "oval",
+      "contactMask": "/images/products/catalog-2026-10/plus-top-81a9aefabc66-contact-8e790985ca82.svg",
+      "ambientMask": "/images/products/catalog-2026-10/plus-top-81a9aefabc66-ambient-681ca6cd968e.svg",
+      "groundMask": "/images/products/catalog-2026-10/plus-top-81a9aefabc66-ground-2dcc2f6cbc0b.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "81a9aefabc66",
+    "originalFilename": "PROMIX_Plus_Top_oval.png"
+  },
+  "sous-couche": {
+    "image": "/images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "aaf8fb4ae3fb",
+    "originalFilename": "PROMIX_SU_KUSH.png"
+  },
+  "super-tack-3": {
+    "image": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "952003b7c139",
+    "originalFilename": "PROMIX_Super_Tack_3.png"
+  },
+  "super-tack-7": {
+    "image": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "9713303dcb5f",
+    "originalFilename": "PROMIX_Super_Tack_7.png"
+  },
+  "super-tack-facade": {
+    "image": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "80d1d9b9b739",
+    "originalFilename": "PROMIX_Super_Tack_Fasad.png"
+  },
+  "super-tack-facade-silicon": {
+    "image": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "74849e644295",
+    "originalFilename": "PROMIX_Super_Tack_Fasad_Silikon.png"
+  },
+  "textured-anti-vandal": {
+    "image": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "2143d551bcdc",
+    "originalFilename": "PROMIX_TEXTURE.png"
+  },
+  "promix-w": {
+    "image": "/images/products/catalog-2026-10/promix-w-62aa53c331ed-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-w-62aa53c331ed-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-w-62aa53c331ed-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-w-62aa53c331ed-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-w-62aa53c331ed-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-w-62aa53c331ed-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-w-62aa53c331ed-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "62aa53c331ed",
+    "originalFilename": "PROMIX_W.png"
+  }
+}

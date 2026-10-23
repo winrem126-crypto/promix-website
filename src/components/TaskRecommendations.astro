@@ -1,0 +1,48 @@
+---
+import { isCatalogVisible, type Product } from '../data/products';
+
+interface TaskItem {
+  id: string;
+  copy: string;
+}
+
+interface Props {
+  task: TaskItem;
+  products: Product[];
+  variant: 'desktop' | 'accordion';
+  initiallyOpen?: boolean;
+}
+
+const { task, products, variant, initiallyOpen = false } = Astro.props;
+const visibleProducts = products.filter(isCatalogVisible);
+const panelId = variant === 'desktop' ? `task-panel-${task.id}` : `task-accordion-panel-${task.id}`;
+const labelledBy = variant === 'accordion' ? `task-accordion-button-${task.id}` : undefined;
+const specIcon = (label: string) => {
+  const key = label.toLowerCase();
+  if (key.includes('нанес') || key.includes('монтаж')) return '<path d="M4 17 15 6l3 3L7 20H4v-3Z"/><path d="m14 5 2-2 5 5-2 2"/>';
+  if (key.includes('расход') || key.includes('фракц') || key.includes('толщ')) return '<path d="M4 17h16M6 13h12M8 9h8M10 5h4"/>';
+  if (key.includes('высых') || key.includes('отверж') || key.includes('час')) return '<circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/>';
+  if (key.includes('фасов') || key.includes('формат') || key.includes('размер')) return '<path d="M4 7h16v12H4zM7 4h10v3"/>';
+  return '<path d="M4 12h16M7 7h10M7 17h10"/><circle cx="5" cy="7" r="1"/><circle cx="19" cy="17" r="1"/>';
+};
+---
+
+<section
+  id={panelId}
+  role={variant === 'desktop' ? 'tabpanel' : 'region'}
+  aria-labelledby={labelledBy}
+  data-task-panel={variant === 'desktop' ? task.id : undefined}
+  data-task-accordion-panel={variant === 'accordion' ? task.id : undefined}
+  hidden={!initiallyOpen}
+>
+  <div class="task-result-intro"><span>Рекомендуемые материалы</span><p>{task.copy}</p></div>
+  <div class="task-product-list">
+    {visibleProducts.map((product) => <a class="task-product-row" href={`/products/${product.slug}/`}>
+      <div class={`task-product-stage media-${product.imageLayout}`}><span class="task-product-backdrop"></span><span class="task-product-plinth"></span><img src={product.image} alt="" width="768" height="768" loading="lazy" decoding="async" /></div>
+      <div class="task-product-info"><small>{product.categoryLabel}</small><strong>{product.name}</strong><span>{product.subtitle}</span><ul>{product.specs.slice(0, 3).map((item) => <li><svg viewBox="0 0 24 24" aria-hidden="true" set:html={specIcon(item.label)} /><span><b>{item.label}</b>{item.value}</span></li>)}</ul></div>
+      <svg class="task-product-arrow" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h20M15 2l6 6-6 6" /></svg>
+    </a>)}
+    {visibleProducts.length === 0 && <p class="task-empty">Подбор по этому этапу будет дополнен после загрузки полной номенклатуры.</p>}
+  </div>
+  <a class="task-catalog-link" href={`/products/?task=${task.id}`}>Все материалы для этапа <span aria-hidden="true">→</span></a>
+</section>

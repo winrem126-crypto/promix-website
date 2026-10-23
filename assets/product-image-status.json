@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-09-30",
+  "sourceOfTruth": "src/data/products.ts",
+  "notes": "Original transparent PNGs are copied byte-for-byte. Replaced opaque files are retained. Unused means no runtime references in source, public pages/scripts or the rebuilt site; this manifest only records provenance.",
+  "replacements": [
+    {
+      "slug": "super-tack-3",
+      "sourceFile": "IMG_4526-Photoroom.png",
+      "image": "/images/products/current/super-tack-3-transparent.png",
+      "previousImage": "/images/products/current/super-tack-3-approved.png",
+      "previousImageStatus": "unused"
+    },
+    {
+      "slug": "super-tack-7",
+      "sourceFile": "IMG_4525-Photoroom.png",
+      "image": "/images/products/current/super-tack-7-transparent.png",
+      "previousImage": "/images/products/current/super-tack-7-approved.png",
+      "previousImageStatus": "unused"
+    },
+    {
+      "slug": "super-tack-facade",
+      "sourceFile": "IMG_4524-Photoroom.png",
+      "image": "/images/products/current/super-tack-facade-transparent.png",
+      "previousImage": "/images/products/current/super-tack-facade-approved.png",
+      "previousImageStatus": "unused"
+    },
+    {
+      "slug": "super-tack-facade-silicon",
+      "sourceFile": "IMG_4533-Photoroom.png",
+      "image": "/images/products/current/super-tack-facade-silicon-transparent.png",
+      "previousImage": "/images/products/current/super-tack-facade-silicon-approved.png",
+      "previousImageStatus": "unused"
+    }
+  ],
+  "identifierField": "slug"
+}

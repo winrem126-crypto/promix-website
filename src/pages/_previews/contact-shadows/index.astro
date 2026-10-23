@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { catalogProducts } from '../../../data/products';
+import '../../../styles/catalog.css';
+// Invisible neighbors preserve the real catalog row's subgrid and breakpoints.
+const firstRow = catalogProducts.slice(0, 3);
+---
+<BaseLayout title="PROMIX H 0,2 — широкая тень по референсу" description="Один тестовый вариант двухслойной тени на карточке PROMIX H 0,2 в реальном размере каталога." pageClass="catalog-page ground-shadow-review" robots="noindex, nofollow" canonical="/products/">
+  <header class="ground-review-header">
+    <h1>PROMIX H 0,2 — тень по референсу</h1>
+    <p>Один тестовый вариант: широкая мягкая тень на поверхности и контакт у дна.</p>
+  </header>
+  <main class="catalog-main">
+    <div class="catalog-layout">
+      <section class="catalog-results ground-review-result" aria-label="Тестовая карточка PROMIX H 0,2">
+        <div class="ground-review-card-window">
+          <div class="catalog-product-grid">
+            {firstRow.map((product, index) => index === 0
+              ? <ProductCard product={product} variant="open" />
+              : <div class="ground-review-measurer" aria-hidden="true" inert><ProductCard product={product} variant="open" /></div>)}
+          </div>
+        </div>
+        <p class="ground-review-note">Размер карточки соответствует каталогу. Общий каталог пока не изменён.</p>
+      </section>
+    </div>
+  </main>
+  <script src="/previews/contact-shadows/review.js" is:inline></script>
+</BaseLayout>
+<style is:global>
+  .ground-shadow-review { min-height: 100vh; display: flow-root; background: #fff; }
+  .ground-shadow-review .ground-review-header { margin: 0 var(--gutter); padding: 28px 0 24px; }
+  .ground-shadow-review .ground-review-header h1 { margin: 0 0 10px; color: #102336; font: 400 27px/1.2 'PROMIX Product',Inter,sans-serif; letter-spacing: -.025em; }
+  .ground-shadow-review .ground-review-header p,
+  .ground-shadow-review .ground-review-note { margin: 0; color: #53616b; font: 400 14px/1.5 'PROMIX Product',Inter,sans-serif; }
+  .ground-shadow-review .ground-review-result { grid-column: 2; }
+  .ground-shadow-review .ground-review-card-window { overflow: clip; }
+  .ground-shadow-review .ground-review-measurer { display: contents; visibility: hidden; pointer-events: none; }
+  .ground-shadow-review .ground-review-measurer > .product-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; }
+  .ground-shadow-review .product-card-visual [data-ground-source] { mask-image: url('/previews/catalog-shadows/masks/promix-h-03-f281de343a.svg'); mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha; }
+  .ground-shadow-review .product-card-visual > .ground-shadow-layer {
+    position: absolute; z-index: 0; left: var(--visible-body-center); top: calc(var(--visible-body-base) - 3px);
+    width: calc(var(--visible-body-width) * 1.24); height: 22px;
+    border-radius: 50%; background: rgb(44 43 42 / .14); filter: blur(14px);
+    transform: translate(-50%, -50%); pointer-events: none; opacity: 0;
+  }
+  .ground-shadow-review .product-card-visual > .ground-shadow-contact {
+    top: calc(var(--visible-body-base) - .5px);
+    width: calc(var(--visible-body-width) * .80); height: 8px;
+    background: rgb(29 29 29 / .18); filter: blur(5px);
+  }
+  .ground-shadow-review .product-card-visual[data-ground-ready] > .ground-shadow-layer { opacity: 1; }
+  .ground-shadow-review .ground-review-note { margin-top: 22px; max-width: 332px; }
+  @media (max-width: 760px) {
+    .ground-shadow-review .ground-review-header { margin: 0 22px; padding-top: 24px; }
+    .ground-shadow-review .ground-review-header h1 { font-size: 24px; }
+    .ground-shadow-review .ground-review-measurer { display: none; }
+    .ground-shadow-review .ground-review-note { max-width: none; }
+  }
+</style>

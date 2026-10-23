@@ -1,0 +1,145 @@
+<section class="home-partners" id="partners" aria-labelledby="partners-title">
+  <div class="home-partners__container" data-motion-reveal>
+    <div class="home-partners__top">
+      <div class="home-partners__copy">
+        <p class="home-partners__label">04 / Партнёрство с PROMIX</p>
+        <h2 id="partners-title">Сильный материал.<br />Надёжное партнёрство.</h2>
+        <p class="home-partners__description">Продукция, техническая поддержка и&nbsp;понятные условия для дилеров, подрядчиков и&nbsp;проектных организаций.</p>
+      </div>
+      <div class="home-partners__action">
+        <p>Сотрудничество с PROMIX</p>
+        <button class="home-partners__cta" type="button" data-open-form data-form-context="partnership">
+          Обсудить сотрудничество
+          <span class="home-partners__arrow" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="home-partners__benefits">
+      <div>
+        <h3>Поддержка продаж</h3>
+        <p>Материалы и сопровождение для работы с клиентами.</p>
+      </div>
+      <div>
+        <h3>Техническая консультация</h3>
+        <p>Помощь в подборе продукции и применении материалов.</p>
+      </div>
+      <div>
+        <h3>Поставки и сопровождение</h3>
+        <p>Понятная коммуникация на каждом этапе работы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-partners {
+    padding-block: 80px;
+    border-top: 1px solid var(--arch-line);
+    color: #102336;
+    background: var(--site-paper);
+    font-family: 'PROMIX Hero Manrope', Arial, sans-serif;
+  }
+  .home-partners__container {
+    width: min(var(--site-content-max), calc(100% - var(--site-content-gutter) * 2));
+    margin-inline: auto;
+  }
+  .home-partners__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 64px;
+  }
+  .home-partners__label {
+    color: #53616b;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .home-partners .home-partners__copy h2 {
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: clamp(56px, 4.2vw, 64px);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -.045em;
+  }
+  .home-partners .home-partners__description {
+    max-width: 520px;
+    margin-top: 24px;
+    color: #53616b;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .home-partners__action { justify-self: start; padding-bottom: 4px; }
+  .home-partners__action p { margin-bottom: 14px; color: #53616b; font-size: 14px; line-height: 1.5; }
+  .home-partners .home-partners__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 56px;
+    max-width: 100%;
+    padding: 16px 22px;
+    border: 0;
+    border-radius: 0;
+    background: #102336;
+    color: #f8f8f5;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--motion-button-transition);
+  }
+  .home-partners__arrow {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    background-color: currentColor;
+    mask: url('/icons/phosphor/arrow-right.svg') center / contain no-repeat;
+  }
+  .home-partners .home-partners__cta:focus-visible { outline: 2px solid #55151b; outline-offset: 5px; background: #55151b; }
+  @media (hover: hover) and (pointer: fine) { .home-partners .home-partners__cta:hover { background: #55151b; } }
+  .home-partners__benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--arch-line);
+  }
+  .home-partners__benefits > div { min-width: 0; padding-inline: 32px; border-left: 1px solid var(--arch-line); }
+  .home-partners__benefits > div:first-child { padding-left: 0; border-left: 0; }
+  .home-partners__benefits > div:last-child { padding-right: 0; }
+  .home-partners .home-partners__benefits h3 {
+    max-width: 320px;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+    text-wrap: balance;
+  }
+  .home-partners .home-partners__benefits p { max-width: 340px; margin-top: 12px; color: #53616b; font-size: 16px; line-height: 1.5; }
+  @media (max-width: 1100px) {
+    .home-partners__top { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .home-partners__action { padding: 0; }
+    .home-partners__benefits > div { padding-inline: 24px; }
+  }
+  @media (max-width: 760px) {
+    .home-partners { padding-block: 48px 56px; }
+    .home-partners .home-partners__copy h2 { margin-top: 16px; font-size: clamp(34px, 9.5vw, 38px); line-height: 1.08; }
+    .home-partners .home-partners__description { margin-top: 20px; font-size: 16px; line-height: 1.55; }
+    .home-partners__action { width: 100%; }
+    .home-partners .home-partners__cta { width: 100%; padding-inline: 18px; gap: 14px; }
+    .home-partners__benefits { grid-template-columns: minmax(0, 1fr); margin-top: 36px; padding-top: 0; }
+    .home-partners__benefits > div,
+    .home-partners__benefits > div:first-child,
+    .home-partners__benefits > div:last-child { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--arch-line); }
+    .home-partners .home-partners__benefits h3 { max-width: none; font-size: 24px; }
+    .home-partners .home-partners__benefits p { margin-top: 10px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .home-partners__cta { transition: none; } }
+</style>

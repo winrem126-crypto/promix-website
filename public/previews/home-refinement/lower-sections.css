@@ -1,0 +1,464 @@
+/* Isolated homepage refinement preview. The live homepage is unchanged. */
+.architectural-home.home-refinement-preview .arch-production {
+  padding-block: clamp(48px, 4.2vw, 64px) clamp(48px, 4.4vw, 68px);
+}
+
+.architectural-home.home-refinement-preview .arch-production-top {
+  grid-template-columns: 27% 73%;
+  align-items: start;
+  margin-bottom: clamp(30px, 2.8vw, 42px);
+}
+
+.architectural-home.home-refinement-preview .arch-production-top h2 {
+  max-width: 880px;
+  font-size: clamp(30px, 3.6vw, 62px);
+  line-height: 1.12;
+  font-weight: 300;
+}
+
+.architectural-home.home-refinement-preview .arch-production-pictures {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 32px;
+}
+
+.architectural-home.home-refinement-preview .arch-production-pictures figure {
+  min-width: 0;
+  width: auto;
+  margin: 0;
+}
+
+.architectural-home.home-refinement-preview .arch-production-pictures img,
+.architectural-home.home-refinement-preview .arch-production-pictures figure:nth-child(2) img {
+  width: 100%;
+  height: clamp(300px, 25vw, 400px);
+  object-fit: cover;
+}
+
+.architectural-home.home-refinement-preview .arch-production-pictures figcaption {
+  align-items: baseline;
+  gap: 16px;
+  padding-top: 15px;
+  font-size: clamp(11px, .84vw, 13px);
+  line-height: 1.5;
+}
+
+.architectural-home.home-refinement-preview .arch-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin: 32px 0 0;
+  padding-top: 23px;
+  border-top: 1px solid var(--arch-line);
+}
+
+.architectural-home.home-refinement-preview .arch-proof-item {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: start;
+  align-content: start;
+  gap: 13px;
+  min-width: 0;
+}
+
+.architectural-home.home-refinement-preview .arch-proof .arch-proof-number {
+  max-width: none;
+  padding: 4px 0 0;
+  border: 0;
+  color: var(--arch-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.architectural-home.home-refinement-preview .arch-proof-item p {
+  max-width: 270px;
+  font-size: clamp(16px, 1.32vw, 21px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -.025em;
+}
+
+.architectural-home.home-refinement-preview .arch-partners {
+  grid-template-columns: 27% minmax(0, 73%);
+  padding-block: clamp(48px, 4.5vw, 72px);
+  background: #e6e9e8;
+}
+
+.architectural-home.home-refinement-preview .arch-partners > .arch-label {
+  padding-top: 8px;
+}
+
+.architectural-home.home-refinement-preview .arch-partners > div {
+  min-width: 0;
+}
+
+.architectural-home.home-refinement-preview .arch-partners h2 {
+  max-width: 920px;
+  font-size: clamp(32px, 4.05vw, 66px);
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: -.047em;
+}
+
+.architectural-home.home-refinement-preview .arch-partners .arch-intro {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.architectural-home.home-refinement-preview .arch-partners .arch-intro p {
+  max-width: 420px;
+  font-size: clamp(14px, 1.04vw, 16px);
+  line-height: 1.65;
+  color: #65727a;
+}
+
+.architectural-home.home-refinement-preview .arch-partners .arch-solid-link {
+  min-height: 52px;
+  max-width: 100%;
+  gap: 24px;
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.architectural-home.home-refinement-preview .arch-benefits {
+  display: block;
+  margin-top: 38px;
+  padding-top: 0;
+  border-top: 1px solid #bdc7c9;
+}
+
+.architectural-home.home-refinement-preview .arch-benefit-row {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: baseline;
+  column-gap: 22px;
+  row-gap: 9px;
+  padding-block: 23px;
+  border-bottom: 1px solid #bdc7c9;
+}
+
+.architectural-home.home-refinement-preview .arch-benefit-number {
+  color: #6d7b83;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.architectural-home.home-refinement-preview .arch-benefits h3 {
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(18px, 1.42vw, 23px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -.025em;
+}
+
+.architectural-home.home-refinement-preview .arch-benefits p {
+  min-width: 0;
+  max-width: 340px;
+  font-size: clamp(14px, 1.02vw, 16px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #65727a;
+}
+
+.home-refinement-preview .site-footer {
+  padding-block: clamp(40px, 4vw, 64px) 26px;
+}
+
+.home-refinement-preview .footer-top {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 38px;
+  padding-bottom: 38px;
+}
+
+.home-refinement-preview .footer-brand p {
+  max-width: 280px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.home-refinement-preview .footer-nav {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 15px 20px;
+  padding-top: 4px;
+  font-size: clamp(13px, .97vw, 15px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.home-refinement-preview .footer-nav a {
+  min-width: 0;
+  align-self: start;
+}
+
+.home-refinement-preview .footer-contacts {
+  min-width: 0;
+}
+
+.home-refinement-preview .footer-contact-row {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.home-refinement-preview .footer-contact-row > a:first-child {
+  font-size: clamp(25px, 2.35vw, 36px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+
+.home-refinement-preview .footer-contact-row > a:nth-child(2) {
+  color: var(--site-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.home-refinement-preview .site-footer address {
+  max-width: 330px;
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.home-refinement-preview .footer-bottom {
+  gap: 22px 32px;
+  padding-top: 21px;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.home-refinement-preview .footer-legal {
+  gap: 12px 22px;
+}
+
+@media (max-width: 1200px) {
+  .home-refinement-preview .footer-top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .95fr) minmax(0, 1.15fr);
+    gap: 26px;
+  }
+
+  .home-refinement-preview .footer-nav {
+    column-gap: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .architectural-home.home-refinement-preview .arch-production-top,
+  .architectural-home.home-refinement-preview .arch-partners {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 23px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-production-top .arch-label,
+  .architectural-home.home-refinement-preview .arch-partners > .arch-label {
+    padding-top: 0;
+  }
+
+  .architectural-home.home-refinement-preview .arch-production-top h2,
+  .architectural-home.home-refinement-preview .arch-partners h2 {
+    margin-top: 0;
+    font-size: clamp(30px, 4.8vw, 48px);
+  }
+
+  .architectural-home.home-refinement-preview .arch-production-pictures img,
+  .architectural-home.home-refinement-preview .arch-production-pictures figure:nth-child(2) img {
+    height: clamp(250px, 34vw, 330px);
+  }
+
+  .architectural-home.home-refinement-preview .arch-proof {
+    gap: 24px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-proof-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-proof .arch-proof-number {
+    padding: 0;
+  }
+
+  .home-refinement-preview .footer-top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .home-refinement-preview .footer-brand {
+    grid-column: 1;
+  }
+
+  .home-refinement-preview .footer-nav {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 14px;
+  }
+
+  .home-refinement-preview .footer-contacts {
+    grid-column: 1 / -1;
+  }
+
+  .home-refinement-preview .footer-contact-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 30px;
+  }
+
+  .home-refinement-preview .footer-contact-row > a:nth-child(2) {
+    align-self: center;
+  }
+
+  .home-refinement-preview .footer-contact-row address {
+    grid-column: 1 / -1;
+  }
+
+  .home-refinement-preview .footer-bottom {
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .home-refinement-preview .footer-legal {
+    justify-content: flex-start;
+  }
+
+  .home-refinement-preview .footer-legal a,
+  .home-refinement-preview .footer-legal button {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .architectural-home.home-refinement-preview .arch-partners .arch-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    margin-top: 24px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-partners .arch-solid-link {
+    justify-self: start;
+    font-size: 14px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-benefits {
+    margin-top: 32px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-production-pictures figcaption {
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: 12px;
+  }
+
+  .home-refinement-preview .footer-nav a {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .home-refinement-preview .footer-legal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .architectural-home.home-refinement-preview .arch-production-pictures {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-production-pictures img {
+    height: clamp(230px, 54vw, 320px);
+  }
+
+  .architectural-home.home-refinement-preview .arch-production-pictures figure:nth-child(2) {
+    width: 80%;
+    margin-left: auto;
+  }
+
+  .architectural-home.home-refinement-preview .arch-production-pictures figure:nth-child(2) img {
+    height: clamp(200px, 48vw, 270px);
+  }
+
+  .architectural-home.home-refinement-preview .arch-proof {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-top: 30px;
+    padding-top: 0;
+  }
+
+  .architectural-home.home-refinement-preview .arch-proof-item {
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 14px;
+    padding-block: 18px;
+    border-bottom: 1px solid var(--arch-line);
+  }
+
+  .architectural-home.home-refinement-preview .arch-proof .arch-proof-number {
+    padding-top: 4px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-proof-item p {
+    max-width: 300px;
+    font-size: 17px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-benefit-row {
+    grid-template-columns: 26px minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 10px;
+    padding-block: 22px;
+  }
+
+  .architectural-home.home-refinement-preview .arch-benefits h3 {
+    font-size: clamp(18px, 4.7vw, 22px);
+    line-height: 1.35;
+  }
+
+  .architectural-home.home-refinement-preview .arch-benefits p {
+    grid-column: 2;
+    max-width: 360px;
+    font-size: 14px;
+  }
+
+  .home-refinement-preview .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-bottom: 30px;
+  }
+
+  .home-refinement-preview .footer-brand,
+  .home-refinement-preview .footer-nav,
+  .home-refinement-preview .footer-contacts {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .home-refinement-preview .footer-nav {
+    max-width: none;
+    gap: 7px 20px;
+    padding-top: 0;
+  }
+
+  .home-refinement-preview .footer-contact-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .home-refinement-preview .footer-contact-row > a:first-child {
+    font-size: clamp(25px, 6.6vw, 30px);
+  }
+
+  .home-refinement-preview .footer-contact-row address {
+    grid-column: 1;
+    margin-top: 3px;
+  }
+}

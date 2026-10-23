@@ -1,0 +1,36 @@
+---
+import type { Product } from '../data/products';
+import { productReferenceStyle } from '../data/product-image-layout';
+import { responsiveImage, imageSrcset } from '../performance/images';
+interface Props {
+  product: Product;
+  alt?: string;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+}
+const { product, alt = '', class: className, loading = 'lazy', fetchpriority, sizes = '(max-width: 760px) 110vw, (max-width: 1199px) 65vw, 42vw' } = Astro.props;
+const frame = product.cardImageFrame!;
+const image = responsiveImage(product.image, product.imageSources);
+const srcset = imageSrcset(image.sources);
+// Lazy images can use their measured source-canvas width instead of a viewport
+// estimate. Keep the conservative fallback for browsers without auto sizes.
+const sourceSizes = loading === 'lazy' ? `auto, ${sizes}` : sizes;
+const referenceStage = frame.reference?.source[0] === 963 && frame.reference?.source[1] === 769;
+const style = productReferenceStyle(frame);
+// Source geometry takes precedence over legacy packaging-family aspect ratios.
+const sourceStyle = `position:absolute;left:var(--image-left);top:var(--image-top);width:var(--image-width);height:auto;aspect-ratio:${frame.source[0]} / ${frame.source[1]};object-fit:contain;max-width:none;max-height:none;filter:none;`;
+---
+<div class:list={['product-image-reference', className]} style={style} data-reference-stage={referenceStage || undefined} data-embedded-shadow={frame.builtInShadow || undefined}>
+  <div class="product-image-reference-canvas">
+    <img src={image.src} srcset={srcset} sizes={srcset ? sourceSizes : undefined} alt={alt} width={frame.source[0]} height={frame.source[1]} style={sourceStyle} loading={loading} fetchpriority={fetchpriority} decoding="async" />
+  </div>
+</div>
+<style>
+  .product-image-reference { position: relative; container-type: size; display: grid; place-items: center; width: 100%; height: 100%; }
+  .product-image-reference-canvas {
+    position: relative; width: min(100cqw, calc(100cqh * var(--reference-ratio)));
+    aspect-ratio: var(--reference-ratio);
+  }
+</style>

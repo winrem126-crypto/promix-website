@@ -1,0 +1,40 @@
+{
+  "source": "E:\\bulat\\design\\promix-site\\assets\\product-sources\\catalog-2026-10\\glass-fiber-plus-top-409cb287f83a.png",
+  "sourceSha256": "409cb287f83ad65434f75321e59cb7bd62bc4701760d4fd0f59a415e53826190",
+  "canvas": [
+    1280,
+    800
+  ],
+  "originalCropBounds": [
+    1956,
+    240,
+    2385,
+    3000
+  ],
+  "originalCropSize": [
+    429,
+    2760
+  ],
+  "rotationClockwiseDegrees": 27.0,
+  "uniformScale": 0.286231884057971,
+  "rotatedProductBounds": [
+    597,
+    32,
+    1052,
+    773
+  ],
+  "center": [
+    823,
+    405
+  ],
+  "imageLayerOrder": [
+    "fabric.webp",
+    "ambient.png",
+    "contact.png",
+    "product.png"
+  ],
+  "productModifiedOnlyBy": "transparent bounds crop, uniform scale, rigid 2D rotation",
+  "labelOverlay": false,
+  "productRelit": false,
+  "imageGeneration": false
+}

@@ -1,0 +1,127 @@
+---
+import ProductCategoryShowcase from './ProductCategoryShowcase.astro';
+import { catalogProducts } from '../data/products';
+interface Props { previewVariant?: 'final'; }
+const { previewVariant } = Astro.props;
+const materialWord = (count: number) => count % 10 === 1 && count % 100 !== 11 ? 'материал' : count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 12 || count % 100 > 14) ? 'материала' : 'материалов';
+---
+
+<section class="home-products" id="products" aria-labelledby="products-title">
+  <div class="home-products__heading" data-motion-reveal>
+    <div class="home-products__copy">
+      <p class="home-products__label">01 / Продукция</p>
+      <h2 id="products-title">Всё для отделки.</h2>
+      <p class="home-products__description">Шесть направлений.<br />Единый подход к качеству поверхности.</p>
+    </div>
+    <div class="home-products__catalog">
+      <a href="/products/">
+        Весь каталог
+        <span class="home-products__arrow" aria-hidden="true"></span>
+      </a>
+      <span>{catalogProducts.length} {materialWord(catalogProducts.length)}</span>
+    </div>
+  </div>
+  <div class="home-products__showcase">
+    <ProductCategoryShowcase previewVariant={previewVariant} />
+  </div>
+</section>
+
+<style>
+  .home-products {
+    padding-block: 80px 72px;
+    border-top: 1px solid var(--arch-line);
+    color: #102336;
+    font-family: 'PROMIX Hero Manrope', Arial, sans-serif;
+  }
+  .home-products__heading,
+  .home-products__showcase {
+    width: min(var(--site-content-max), calc(100% - var(--site-content-gutter) * 2));
+    margin-inline: auto;
+  }
+  .home-products__heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 32px;
+  }
+  .home-products__label {
+    color: #53616b;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .home-products .home-products__heading h2 {
+    margin-top: 16px;
+    font-family: inherit;
+    font-size: clamp(56px, 3.6vw, 64px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -.045em;
+  }
+  .home-products .home-products__description {
+    max-width: 480px;
+    margin-top: 20px;
+    color: #53616b;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .home-products__catalog {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding-bottom: 3px;
+  }
+  .home-products .home-products__catalog a {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 44px;
+    color: var(--burgundy);
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+  }
+  .home-products__catalog > span {
+    color: var(--site-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .home-products__showcase {
+    margin-top: 48px;
+  }
+  .home-products__arrow {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    background-color: currentColor;
+    mask: url('/icons/phosphor/arrow-right.svg') center / contain no-repeat;
+    transition: color var(--motion-fast) var(--ease-standard);
+  }
+  .home-products a:focus-visible { outline: 2px solid var(--burgundy); outline-offset: 5px; }
+  .home-products__catalog a:focus-visible { text-decoration: underline; }
+  @media (hover: hover) and (pointer: fine) {
+    .home-products__catalog a:hover { text-decoration: underline; }
+  }
+  @media (max-width: 760px) {
+    .home-products { padding-block: 48px; }
+    .home-products__heading { display: block; }
+    .home-products .home-products__heading h2 { margin-top: 12px; font-size: clamp(34px, 9.5vw, 38px); }
+    .home-products .home-products__description { margin-top: 16px; font-size: 16px; }
+    .home-products__catalog { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 0 18px; margin-top: 18px; padding: 0; }
+    .home-products__showcase { margin-top: 28px; }
+  }
+  @media (max-width: 359px) {
+    .home-products__catalog { gap: 0 12px; }
+    .home-products__catalog a { gap: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .home-products__arrow { transition: none; }
+  }
+</style>

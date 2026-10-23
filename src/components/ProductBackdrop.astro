@@ -1,0 +1,66 @@
+---
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+const materials: Record<string, string> = {
+  putties: 'putty',
+  primers: 'primer',
+  paints: 'paint',
+  adhesives: 'adhesive',
+  waterproofing: 'waterproofing',
+  'roll-materials': 'cloth',
+};
+const material = materials[category];
+---
+
+{material && <img class="arch-material-backdrop" data-material={category} src={`/images/categories/material-backdrops/${material}.webp`} width="640" height={category === 'roll-materials' ? 853 : 640} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
+
+<style is:global>
+  .architectural-home .arch-piece .arch-art { isolation:isolate; }
+  .architectural-home .arch-piece .arch-art .arch-product-image { z-index:1; }
+  .architectural-home .arch-piece .arch-art .arch-material-backdrop {
+    position:absolute;
+    z-index:0;
+    pointer-events:none;
+    user-select:none;
+    left:50%;
+    bottom:12px;
+    width:calc(100% + 20px);
+    height:calc(var(--size) + 64px);
+    max-height:calc(100% - 12px);
+    max-width:none;
+    object-fit:cover;
+    transform:translateX(-50%);
+    filter:grayscale(1);
+    mix-blend-mode:multiply;
+    opacity:var(--material-opacity,.58);
+    /* A continuous surface dissolves into the composition instead of forming a round swatch. */
+    mask-image:linear-gradient(to bottom,transparent,#000 27%,#000 80%,transparent),linear-gradient(to right,transparent,#000 15%,#000 85%,transparent);
+    mask-composite:intersect;
+  }
+  /* Balance the source photographs, while keeping a common footprint and fade. */
+  .arch-material-backdrop[data-material="putties"] { --material-opacity:.58; }
+  .arch-material-backdrop[data-material="primers"] { --material-opacity:.50; }
+  .arch-material-backdrop[data-material="paints"] { --material-opacity:.76; }
+  .arch-material-backdrop[data-material="adhesives"] { --material-opacity:.48; }
+  .arch-material-backdrop[data-material="waterproofing"] { --material-opacity:.62; }
+  .architectural-home .arch-piece .arch-art .arch-material-backdrop[data-material="roll-materials"] {
+    --material-opacity:.60;
+    bottom:10px;
+    width:116%;
+    object-fit:contain;
+  }
+  .architectural-home .arch-piece.arch-roll .arch-art .arch-product-image {
+    transform:translateX(-50%) rotate(-10deg);
+    transform-origin:center;
+    filter:drop-shadow(5px 7px 7px rgb(23 40 48 / .10));
+  }
+  @media (max-width:760px) {
+    .architectural-home .arch-piece .arch-art .arch-material-backdrop {
+      width:calc(100% + 12px);
+      height:calc(var(--size) + 32px);
+    }
+  }
+</style>

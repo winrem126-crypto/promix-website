@@ -1,0 +1,88 @@
+/* Isolated review styles. No selector matches the public catalog. */
+.shadow-preview .product-card-visual {
+  --shadow-width-factor: .94;
+  --shadow-depth-factor: .045;
+  --shadow-opacity: .055;
+  --shadow-blur: 2.8px;
+  --shadow-offset: 0px;
+  --contact-width-factor: .66;
+  --contact-depth-factor: .014;
+  --contact-opacity: .025;
+  --contact-blur: .8px;
+}
+.shadow-preview--variant-2 .product-card-visual {
+  --shadow-width-factor: 1.02;
+  --shadow-depth-factor: .065;
+  --shadow-opacity: .15;
+  --shadow-blur: 3px;
+  --shadow-offset: .4px;
+  --contact-width-factor: .72;
+  --contact-opacity: .13;
+}
+.shadow-preview--variant-3 .product-card-visual {
+  --shadow-width-factor: 1.13;
+  --shadow-depth-factor: .09;
+  --shadow-opacity: .19;
+  --shadow-blur: 4.2px;
+  --shadow-offset: 1px;
+  --contact-width-factor: .8;
+  --contact-depth-factor: .02;
+  --contact-opacity: .18;
+  --contact-blur: 1px;
+}
+.shadow-preview--variant-4 .product-card-visual {
+  --shadow-width-factor: 1.16;
+  --shadow-depth-factor: .095;
+  --shadow-opacity: .08;
+  --shadow-blur: 5px;
+  --shadow-offset: .3px;
+  --contact-width-factor: .88;
+  --contact-depth-factor: .032;
+  --contact-opacity: .24;
+  --contact-blur: 1.2px;
+}
+.shadow-preview .product-card.product-card--open .product-card-visual::before,
+.shadow-preview .product-card.product-card--open .product-card-visual > .shadow-preview-contact {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: var(--package-center);
+  top: calc(var(--package-base) + var(--shadow-offset));
+  right: auto;
+  bottom: auto;
+  width: calc(var(--package-width) * var(--shadow-width-factor));
+  height: max(2px, calc(var(--package-width) * var(--shadow-depth-factor)));
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgb(35 39 41 / var(--shadow-opacity)) 0%, rgb(35 39 41 / var(--shadow-opacity)) 16%, transparent 72%);
+  filter: blur(var(--shadow-blur));
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+}
+.shadow-preview .product-card.product-card--open .product-card-visual > .shadow-preview-contact {
+  top: calc(var(--package-base) - .3px);
+  width: calc(var(--package-width) * var(--contact-width-factor));
+  height: max(1px, calc(var(--package-width) * var(--contact-depth-factor)));
+  background: radial-gradient(ellipse at center, rgb(35 39 41 / var(--contact-opacity)) 0%, rgb(35 39 41 / var(--contact-opacity)) 20%, transparent 73%);
+  filter: blur(var(--contact-blur));
+}
+.shadow-preview .product-card-visual[data-shadow-ready]::before,
+.shadow-preview .product-card-visual[data-shadow-ready] > .shadow-preview-contact { opacity: 1 !important; }
+.shadow-preview .product-card-visual img {
+  mask-image: var(--preview-package-mask);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-position: center;
+  mask-mode: alpha;
+}
+/* Narrow rolls need a small floor footprint and a lighter contact line. */
+.shadow-preview .product-card-visual.media-roll {
+  --shadow-blur: 1.5px;
+  --contact-blur: .45px;
+  --shadow-offset: 0px;
+}
+.shadow-preview--variant-1 .product-card-visual.media-roll { --shadow-opacity: .045; --contact-opacity: .018; }
+.shadow-preview--variant-2 .product-card-visual.media-roll { --shadow-opacity: .13; --contact-opacity: .10; }
+.shadow-preview--variant-3 .product-card-visual.media-roll { --shadow-opacity: .18; --shadow-blur: 2px; --contact-opacity: .14; }
+.shadow-preview--variant-4 .product-card-visual.media-roll { --shadow-opacity: .065; --shadow-blur: 2.5px; --contact-opacity: .18; --contact-blur: .6px; }

@@ -1,0 +1,62 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteDialogs from '../components/SiteDialogs.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  current?: 'privacy' | 'cookies' | 'personal-data';
+  updated?: string;
+  operator?: string;
+  registry?: string;
+}
+
+const { title, description, current, updated, operator, registry } = Astro.props;
+const documentNav = [
+  ['01', 'Конфиденциальность', '/privacy/', 'privacy'],
+  ['02', 'Использование Cookie', '/cookies/', 'cookies'],
+  ['03', 'Обработка персональных данных', '/personal-data/', 'personal-data'],
+];
+const activeDocument = documentNav.find(([, , , key]) => key === current);
+---
+
+<BaseLayout title={`${title} — PROMIX`} description={description} pageClass="legal-page">
+  <SiteHeader />
+
+  <main class="legal-main">
+    <header class="legal-hero">
+      <div class="legal-title-block">
+        <div class="section-label">Документы</div>
+        <h1>{title}</h1>
+      </div>
+      {(updated || operator || registry) && (
+        <div class="legal-meta">
+          {updated && <p>Редакция от {updated}</p>}
+          {operator && <p>{operator}</p>}
+          {registry && <p>{registry}</p>}
+        </div>
+      )}
+      <nav class="legal-document-nav" aria-label="Юридические документы PROMIX">
+        {documentNav.map(([index, label, href, key]) => (
+          <a href={href} aria-current={current === key ? 'page' : undefined}><span>{index}</span>{label}</a>
+        ))}
+      </nav>
+    </header>
+
+    <div class="legal-document-shell">
+      <aside class="legal-document-rail" aria-hidden="true">
+        <span>{activeDocument?.[0] ?? '—'}</span>
+        <div><strong>Документ</strong><p>{activeDocument?.[1] ?? 'Правовая информация'}</p></div>
+      </aside>
+      <article class="legal-document">
+        <slot />
+      </article>
+    </div>
+  </main>
+
+  <SiteFooter />
+  <SiteDialogs />
+  <script src="../scripts/site.js"></script>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import type { Product } from '../data/products';
+import { brochureGroups, resolveBrochureText, type ProductBrochure } from '../data/product-brochure';
+interface Props { product: Product; brochure: ProductBrochure; }
+const { product, brochure } = Astro.props;
+const text = (value: string) => resolveBrochureText(value, product);
+// Generic purpose/state fields are replaced by the full, product-specific
+// instructions. Retain specific current fields when a new field is withheld.
+const remainingSpecs = product.specs.filter((spec) =>
+  !['Назначение', 'Состояние', 'Нанесение'].includes(spec.label) && !brochure.coveredSpecLabels.includes(spec.label)
+);
+const retainedApplication = !brochure.coveredSpecLabels.includes('Нанесение')
+  ? product.specs.find((spec) => spec.label === 'Нанесение') : undefined;
+---
+
+{brochureGroups.map((group) => {
+  const blocks = brochure.groups[group.id];
+  const specs = group.id === 'characteristics' ? remainingSpecs : [];
+  if (!blocks.length && !specs.length) return null;
+  return (
+    <section class="pd-section pd-brochure-section" id={group.id} aria-labelledby={group.id + '-title'}>
+      <h2 id={group.id + '-title'}>{brochure.groupTitles?.[group.id] ?? group.title}</h2>
+      <div class="pd-section-content">
+        {specs.length > 0 && <dl class="pd-specs">{specs.map((spec) => <div><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl>}
+        {blocks.map((block) => {
+          const List = block.ordered ? 'ol' : 'ul';
+          return (
+            <div data-content-block={block.id} class:list={['pd-content-block', { 'pd-content-warning': block.warning }]}>
+              <h3>{block.heading}</h3>
+              {block.paragraphs?.map((paragraph) => <p>{text(paragraph)}</p>)}
+              {block.items?.length && <List>{block.items.map((item) => <li>{text(item)}</li>)}</List>}
+              {block.after?.map((paragraph) => <p>{text(paragraph)}</p>)}
+              {block.table && <div class="pd-table-scroll" role="region" aria-label={block.heading} tabindex="0">
+                <table class:list={['pd-brochure-table', { 'pd-two-column-table': block.table.headers.length === 2 }]}>
+                  <caption>{block.heading}</caption>
+                  <thead><tr>{block.table.headers.map((header) => <th scope="col">{header}</th>)}</tr></thead>
+                  <tbody>{block.table.rows.map((row) => <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody>
+                </table>
+              </div>}
+              {block.table && block.table.headers.length > 2 && <p class="pd-table-hint">Таблица прокручивается по горизонтали.</p>}
+              {block.rollFormats && <div class="pd-table-scroll" role="region" aria-label="Размеры и плотность рулонов" tabindex="0">
+                <table class="pd-brochure-table pd-roll-table">
+                  <caption>Размеры и плотность рулонов</caption>
+                  <thead><tr><th scope="col">Ширина, м</th><th scope="col">Плотность, г/м²</th><th scope="col">Длина, м</th></tr></thead>
+                  <tbody>{block.rollFormats.map((format) => <tr><td>{format.width}</td><th scope="row">{format.density}</th><td>{format.length}</td></tr>)}</tbody>
+                </table>
+              </div>}
+            </div>
+          );
+        })}
+        {group.id === 'application' && retainedApplication && <div class="pd-content-block">
+          <h3>Способ нанесения</h3><p>{retainedApplication.value}</p>
+        </div>}
+        {group.id === 'description' && product.benefits.length > 0 && <div class="pd-content-block">
+          <h3>Преимущества</h3><ul>{product.benefits.map((benefit) => <li>{benefit}</li>)}</ul>
+        </div>}
+      </div>
+    </section>
+  );
+})}

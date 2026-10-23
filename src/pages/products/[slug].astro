@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteDialogs from '../../components/SiteDialogs.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import ProductBrochure from '../../components/ProductBrochure.astro';
+import DocumentList from '../../components/DocumentList.astro';
+import { getProductDocuments } from '../../data/documents';
+import { products, catalogProducts, type Product } from '../../data/products';
+import { getProductBrochure } from '../../data/product-brochure';
+import ProductStudioImage from '../../components/ProductStudioImage.astro';
+import '../../styles/product-detail.css';
+
+export function getStaticPaths() {
+  return products.map((product) => ({ params: { slug: product.slug }, props: { product } }));
+}
+
+interface Props { product: Product; }
+const { product } = Astro.props;
+const brochure = getProductBrochure(product.slug);
+const productDocuments = getProductDocuments(product.slug);
+const related = catalogProducts.filter((item) => item.category === product.category && item.slug !== product.slug).slice(0, 3);
+const mediaKind = product.imageLayout;
+
+// Full specs remain below; the hero carries only compact orientation points.
+const highlights = product.specs.filter((spec) => !['Назначение', 'Состояние'].includes(spec.label) && spec.value.length <= 40).slice(0, 2);
+const hasSpecs = product.specs.length > 0 || product.surfaces.length > 0;
+const longDescription = product.description.length > 360;
+const metaDescription = brochure?.edition === 'current' ? `${product.name} — ${product.catalogPurpose}.` : product.description;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.name,
+  description: metaDescription,
+  ...(product.imageUnavailable ? {} : { image: new URL(product.image, Astro.site ?? Astro.url).href }),
+  brand: { '@type': 'Brand', name: 'PROMIX' },
+  category: product.categoryLabel,
+};
+---
+
+<BaseLayout title={product.name + ' — ' + product.subtitle + ' | PROMIX'} description={metaDescription} canonical={'/products/' + product.slug + '/'} image={product.imageUnavailable ? '/images/hero-architecture-no-product-1600.webp' : product.image} pageClass="product-page">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  <SiteHeader />
+  <main class="product-main pd-main">
+    <nav class="pd-breadcrumbs" aria-label="Хлебные крошки">
+      <a href="/">Главная</a><span aria-hidden="true">/</span><a href="/products/">Продукция</a><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span>
+    </nav>
+    <section class="pd-hero" aria-labelledby="product-title">
+      <header class="pd-heading">
+        <p class="pd-category">{product.categoryLabel}</p>
+        <h1 id="product-title">{product.name}</h1>
+        <p class="pd-subtitle">{product.subtitle}</p>
+      </header>
+      <div class:list={['pd-image media-' + mediaKind, 'pd-image--studio']}>
+        <ProductStudioImage product={product} />
+      </div>
+      <div class="pd-overview">
+        {!longDescription && product.description && <p class="pd-description">{product.description}</p>}
+        {highlights.length > 0 && <dl class="pd-highlights">{highlights.map((spec) => <div><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl>}
+        <div class="pd-actions">
+          <button class="button button-primary" type="button" data-open-form data-form-context="product-consultation" data-product-name={product.name} data-product-slug={product.slug}>Получить консультацию</button>
+          {hasSpecs && <a href="#characteristics">Характеристики <span aria-hidden="true">↓</span></a>}
+        </div>
+      </div>
+    </section>
+    <div class="pd-information">
+      {brochure ? <ProductBrochure product={product} brochure={brochure} /> : <>
+      {longDescription && <section class="pd-section" aria-labelledby="purpose-title"><h2 id="purpose-title">Назначение</h2><p>{product.description}</p></section>}
+      {hasSpecs && <section class="pd-section" id="characteristics" aria-labelledby="characteristics-title">
+        <h2 id="characteristics-title">Характеристики</h2>
+        <dl class="pd-specs">
+          {product.specs.map((spec) => <div><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}
+          {product.surfaces.length > 0 && <div><dt>Подходящие основания</dt><dd>{product.surfaces.join(', ')}</dd></div>}
+        </dl>
+      </section>}
+      {product.benefits.length > 0 && <section class="pd-section" aria-labelledby="benefits-title"><h2 id="benefits-title">Преимущества</h2><ul class="pd-benefits">{product.benefits.map((benefit) => <li>{benefit}</li>)}</ul></section>}
+      </>}
+      <section class="pd-section pd-brochure-section" id="documents" aria-labelledby="documents-title">
+        <h2 id="documents-title">Документы</h2>
+        {productDocuments.length > 0 ? <DocumentList documents={productDocuments} /> : <div class="pd-section-content">
+          <p>Документы на этот материал можно запросить у специалиста PROMIX.</p>
+          <button class="button button-primary pd-document-request" type="button" data-open-form data-form-context="product-support" data-product-name={product.name} data-product-slug={product.slug} data-form-title={`Запросить документы на ${product.name}`} data-form-message={`Прошу предоставить актуальные документы на ${product.name}: технический лист и документы, подтверждающие соответствие продукции.`}>Запросить документы</button>
+        </div>}
+      </section>
+    </div>
+    <aside class="pd-support" aria-label="Помощь с применением">
+      <p>Нужна помощь с применением?</p>
+      <button type="button" data-open-form data-form-context="product-support" data-product-name={product.name} data-product-slug={product.slug}>Получить консультацию <span aria-hidden="true">→</span></button>
+    </aside>
+    {related.length > 0 && <section class="pd-related" aria-labelledby="related-title">
+      <div class="pd-related-head"><h2 id="related-title">Другие материалы категории</h2><a href={'/products/?category=' + product.category}>Все товары категории <span aria-hidden="true">→</span></a></div>
+      <div class="pd-related-grid">{related.map((item) => <ProductCard product={item} variant="open" headingLevel="h3" groundShadow />)}</div>
+    </section>}
+  </main>
+  <SiteFooter />
+  <SiteDialogs />
+  <script src="../../scripts/site.js"></script>
+</BaseLayout>

@@ -1,0 +1,146 @@
+# EXAMPLE ONLY. Include from the http {} context (conf.d/ or sites-enabled/).
+# Review paths, certificates, nginx version/modules and PHP-FPM socket first.
+# This file is not installed or applied by the performance audit.
+
+# A failed/missing resource must never receive an immutable cache policy.
+map $status $promix_cacheable_response {
+    default 0;
+    200 1;
+    206 1;
+    304 1;
+}
+
+# Match only build fingerprints verified in the current project.
+# New unversioned images, site.js, catalog.js, metrika.js and local fonts revalidate.
+map "$promix_cacheable_response:$uri" $promix_cache_control {
+    default "no-cache";
+    ~^[01]:/api/ "no-store";
+    "~^1:/_astro/[^/]+\.[A-Za-z0-9_-]{8,}\.(?:js|css|woff2?|ttf|otf|png|jpe?g|webp|avif|svg)$" "public, max-age=31536000, immutable";
+    "~^1:/images/products/catalog-2026-10/[a-z0-9-]+-[a-f0-9]{12}-(?:640|960|1600)\.webp$" "public, max-age=31536000, immutable";
+    "~^1:/images/products/catalog-2026-10/[a-z0-9-]+-[a-f0-9]{12}-(?:contact|ambient|ground)-[a-f0-9]{12}\.svg$" "public, max-age=31536000, immutable";
+    "~^1:/images/performance/[a-z0-9-]+-[a-f0-9]{12}-(?:320|480|640|960|1024|1207|1600|2048)\.webp$" "public, max-age=31536000, immutable";
+    ~*^1:/.+\.pdf$ "public, max-age=86400, must-revalidate";
+    ~*^1:/.+\.(?:css|js|mjs|json|xml|webmanifest|svg|png|jpe?g|gif|webp|avif|ico|woff2?|ttf|otf)$ "public, max-age=0, must-revalidate";
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name pro-mix.ru www.pro-mix.ru;
+
+    # Retain the existing ACME challenge location if certificate renewal uses it.
+    # Preserve any existing canonical-host redirect policy when integrating.
+    return 308 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    # nginx >= 1.25.1 with ngx_http_v2_module:
+    http2 on;
+    # nginx < 1.25.1: remove `http2 on;` and append `http2` to BOTH listen lines.
+
+    server_name pro-mix.ru www.pro-mix.ru;
+    ssl_certificate     /etc/letsencrypt/live/pro-mix.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pro-mix.ru/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_cache shared:PROMIX_TLS:10m;
+    ssl_session_timeout 1d;
+
+    # Upload ONLY the audited dist/ contents here; never the repository root.
+    root /var/www/promix/current/dist;
+    index index.html;
+    autoindex off;
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    charset utf-8;
+    etag on;
+    sendfile on;
+    tcp_nopush on;
+    keepalive_timeout 65s;
+
+    add_header Cache-Control $promix_cache_control always;
+    add_header X-Content-Type-Options nosniff always;
+
+    # Install this companion include at this path together with this example.
+    # Exact approved old URLs only; query strings are preserved by each rule.
+    include /etc/nginx/snippets/nginx-promix-redirects.conf;
+
+    gzip on;
+    gzip_comp_level 5;
+    gzip_min_length 1024;
+    gzip_vary on;
+    gzip_proxied any;
+    # text/html is included by nginx automatically.
+    # Binary image/font/PDF/archive types are deliberately absent.
+    gzip_types text/plain text/css text/javascript application/javascript
+        application/x-javascript application/json application/ld+json
+        application/xml text/xml image/svg+xml application/manifest+json;
+
+    # OPTIONAL: uncomment only after an installed Brotli module is verified.
+    # Load its dynamic module at nginx main context, using the OS package path.
+    # brotli on;
+    # brotli_comp_level 5;
+    # brotli_types text/plain text/css text/javascript application/javascript
+    #     application/json application/ld+json application/xml text/xml
+    #     image/svg+xml application/manifest+json text/html;
+    # brotli_static on; # only with a static module AND matching .br files
+
+    # The only executable PHP URL. Backend/config/vendor stay outside dist/.
+    location = /api/lead.php {
+        client_max_body_size 32k;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock; # REPLACE with actual pool socket
+        # Explicit parameters avoid distro fastcgi.conf SCRIPT_FILENAME overrides.
+        fastcgi_param SCRIPT_FILENAME /var/www/promix/backend/public/api/lead.php;
+        fastcgi_param SCRIPT_NAME /api/lead.php;
+        fastcgi_param DOCUMENT_ROOT /var/www/promix/backend/public;
+        fastcgi_param QUERY_STRING $query_string;
+        fastcgi_param REQUEST_METHOD $request_method;
+        fastcgi_param CONTENT_TYPE $content_type;
+        fastcgi_param CONTENT_LENGTH $content_length;
+        fastcgi_param REQUEST_URI $request_uri;
+        fastcgi_param DOCUMENT_URI $document_uri;
+        fastcgi_param SERVER_PROTOCOL $server_protocol;
+        fastcgi_param REQUEST_SCHEME $scheme;
+        fastcgi_param HTTPS $https if_not_empty;
+        fastcgi_param GATEWAY_INTERFACE CGI/1.1;
+        fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;
+        fastcgi_param REMOTE_ADDR $remote_addr;
+        fastcgi_param REMOTE_PORT $remote_port;
+        fastcgi_param SERVER_ADDR $server_addr;
+        fastcgi_param SERVER_PORT $server_port;
+        fastcgi_param SERVER_NAME $server_name;
+        fastcgi_param REDIRECT_STATUS 200;
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_connect_timeout 5s;
+        fastcgi_read_timeout 30s;
+        fastcgi_intercept_errors off;
+        fastcgi_cache off;
+        # Keep exactly one Cache-Control; server-level map emits no-store.
+        fastcgi_hide_header Cache-Control;
+    }
+
+    location ^~ /api/ { return 404; }
+    location ~* \.php(?:/|$) { return 404; }
+    location ~ /\.(?!well-known/) { return 404; }
+    location ^~ /backend/ { return 404; }
+    location = /preview { return 404; }
+    location ^~ /preview/ { return 404; }
+    location = /previews { return 404; }
+    location ^~ /previews/ { return 404; }
+
+    # Explicit manifest MIME, including on older system mime.types tables.
+    location = /site.webmanifest {
+        types { application/manifest+json webmanifest; }
+        try_files $uri =404;
+    }
+
+    # Real Astro directories, directly served by nginx. No Node/SPA fallback.
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Approved Astro error page; preserve the original HTTP 404 status.
+    error_page 404 /404.html;
+    location = /404.html { internal; }
+}

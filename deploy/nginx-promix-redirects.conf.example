@@ -1,0 +1,165 @@
+# EXAMPLE: include inside the existing canonical HTTPS server {} block.
+# Exact reviewed URL mappings; query string is preserved; unmatched paths retain real 404.
+# Install as /etc/nginx/snippets/promix-redirects.conf only after reviewing OLD_NEW_URL_MAP.md.
+# No wildcard product remapping. Pending legacy pages are deliberately absent.
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /post-sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /page-sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /products-sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /post-archive-sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /category-sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /product_category-sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /product_tags-sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+
+# Политика конфиденциальности; семантическое назначение совпадает, юридический текст проверяет компания
+location = /privacy-policy/ { return 301 "/privacy/$is_args$args"; }
+location = /privacy-policy { return 301 "/privacy/$is_args$args"; }
+
+# Контакты перенесены в существующий раздел главной
+location = /contacts/ { return 301 "/$is_args$args#contacts"; }
+location = /contacts { return 301 "/$is_args$args#contacts"; }
+
+# Производство перенесено в существующий раздел главной
+location = /production/ { return 301 "/$is_args$args#production"; }
+location = /production { return 301 "/$is_args$args#production"; }
+
+# Старое предложение будущим дилерам ведёт в существующее партнёрство; обещания скидок не переносятся
+location = /dealer/ { return 301 "/$is_args$args#partners"; }
+location = /dealer { return 301 "/$is_args$args#partners"; }
+
+# Общий каталог продукции
+location = /katalog-produkczii/ { return 301 "/products/$is_args$args"; }
+location = /katalog-produkczii { return 301 "/products/$is_args$args"; }
+
+# Миттельгрунт концентрат; сильновпитывающие основания
+location = /products/grunt-konczentrat-promix-mittelgrunt/ { return 301 "/products/mittel-grund/$is_args$args"; }
+location = /products/grunt-konczentrat-promix-mittelgrunt { return 301 "/products/mittel-grund/$is_args$args"; }
+
+# Гидроизоляционный состав PROMIX
+location = /products/gidroizolyacziya-promix/ { return 301 "/products/hydro/$is_args$args"; }
+location = /products/gidroizolyacziya-promix { return 301 "/products/hydro/$is_args$args"; }
+
+# Клей PROMIX для лент и армирующих уголков
+location = /products/klej-dlya-lent-promix/ { return 301 "/products/tape-adhesive/$is_args$args"; }
+location = /products/klej-dlya-lent-promix { return 301 "/products/tape-adhesive/$is_args$args"; }
+
+# Акриловая универсальная эмаль; сохранена существующая direct страница скрытого SKU
+location = /products/emal-akrilovaya-universalnaya-glyanczevaya/ { return 301 "/products/acrylic-enamel/$is_args$args"; }
+location = /products/emal-akrilovaya-universalnaya-glyanczevaya { return 301 "/products/acrylic-enamel/$is_args$args"; }
+
+# SUPER TACK ФАСАД SILICON
+location = /products/kraska-akrilovaya-super-tack-fasad-silikonovyj/ { return 301 "/products/super-tack-facade-silicon/$is_args$args"; }
+location = /products/kraska-akrilovaya-super-tack-fasad-silikonovyj { return 301 "/products/super-tack-facade-silicon/$is_args$args"; }
+
+# SUPER TACK ФАСАД
+location = /products/kraska-akrilovaya-super-tack-fasad/ { return 301 "/products/super-tack-facade/$is_args$args"; }
+location = /products/kraska-akrilovaya-super-tack-fasad { return 301 "/products/super-tack-facade/$is_args$args"; }
+
+# MIX мозаичная краска
+location = /products/mix-kraska-mozaichnaya-promix/ { return 301 "/products/mix-mosaic/$is_args$args"; }
+location = /products/mix-kraska-mozaichnaya-promix { return 301 "/products/mix-mosaic/$is_args$args"; }
+
+# В старом названии и описании явно указан PROMIX F; спецификации старой редакции не переносятся
+location = /products/tonkodispersnaya-finishnaya-shpatlevka-promix-f-na-polimernoj-osnove/ { return 301 "/products/promix-f/$is_args$args"; }
+location = /products/tonkodispersnaya-finishnaya-shpatlevka-promix-f-na-polimernoj-osnove { return 301 "/products/promix-f/$is_args$args"; }
+
+# Универсальная полимерная шпатлёвка; сохранена существующая direct страница скрытого SKU
+location = /products/shpatlevka-polimernaya-universalnaya/ { return 301 "/products/polymer-putty/$is_args$args"; }
+location = /products/shpatlevka-polimernaya-universalnaya { return 301 "/products/polymer-putty/$is_args$args"; }
+
+# Базовая финишная PRO SPRAY, 0,06 мм, 18/25 кг; не улучшенная скрытая PRO SPRAY
+location = /products/shpatlevka-polimernaya-prospray/ { return 301 "/products/pro-spray-finish/$is_args$args"; }
+location = /products/shpatlevka-polimernaya-prospray { return 301 "/products/pro-spray-finish/$is_args$args"; }
+
+# Текстурная антивандальная шпатлёвка
+location = /products/shpatlevka-fasadnaya-teksturnaya-promix/ { return 301 "/products/textured-anti-vandal/$is_args$args"; }
+location = /products/shpatlevka-fasadnaya-teksturnaya-promix { return 301 "/products/textured-anti-vandal/$is_args$args"; }
+
+# Шовная шпатлёвка PROMIX J
+location = /products/shpatlevka-shovnaya/ { return 301 "/products/promix-j/$is_args$args"; }
+location = /products/shpatlevka-shovnaya { return 301 "/products/promix-j/$is_args$args"; }
+
+# Суперфинишная шпатлёвка PROMIX F; код и назначение совпадают
+location = /products/shpatlevka-super-finishnaya-promix-f/ { return 301 "/products/promix-f/$is_args$args"; }
+location = /products/shpatlevka-super-finishnaya-promix-f { return 301 "/products/promix-f/$is_args$args"; }
+
+# Фасадная шпатлёвка PROMIX FASAD
+location = /products/fasadnaya-shpatlevka-promix-na-polimernoj-osnove/ { return 301 "/products/promix-fasad/$is_args$args"; }
+location = /products/fasadnaya-shpatlevka-promix-na-polimernoj-osnove { return 301 "/products/promix-fasad/$is_args$args"; }
+
+# Старый H1 и величина зерна 0,3 мм; это H 0,3, не H 0,2
+location = /products/shpatlevka-vyravnivayushhaya/ { return 301 "/products/promix-h-03/$is_args$args"; }
+location = /products/shpatlevka-vyravnivayushhaya { return 301 "/products/promix-h-03/$is_args$args"; }
+
+# Старый H1 явно содержит H 0,2; не H 0,3
+location = /products/shpatlevka-vyravnivayushhaya-frakcziya-02-mm-promix-h/ { return 301 "/products/promix-h-02/$is_args$args"; }
+location = /products/shpatlevka-vyravnivayushhaya-frakcziya-02-mm-promix-h { return 301 "/products/promix-h-02/$is_args$args"; }
+
+# Грунт-краска PROMIX
+location = /products/grunt-kraska-promix/ { return 301 "/products/primer-paint/$is_args$args"; }
+location = /products/grunt-kraska-promix { return 301 "/products/primer-paint/$is_args$args"; }
+
+# Многофункциональный белый грунт Су-Куш
+location = /products/grunt-su-kush-promix/ { return 301 "/products/sous-couche/$is_args$args"; }
+location = /products/grunt-su-kush-promix { return 301 "/products/sous-couche/$is_args$args"; }
+
+# Второй старый опубликованный URL того же Миттельгрунт концентрата; противоречивое время высыхания не переносится
+location = /products/gruntovka-mittelgrunt-konczentrat/ { return 301 "/products/mittel-grund/$is_args$args"; }
+location = /products/gruntovka-mittelgrunt-konczentrat { return 301 "/products/mittel-grund/$is_args$args"; }
+
+# Адгезионный грунт Бетоноконтакт PROMIX
+location = /products/grunt-betonokontakt-promix/ { return 301 "/products/betokontakt/$is_args$args"; }
+location = /products/grunt-betonokontakt-promix { return 301 "/products/betokontakt/$is_args$args"; }
+
+# Многофункциональное покрытие PROMIX 3в1
+location = /products/mnogofunkczionalnoe-pokrytie-3v1-promix/ { return 301 "/products/promix-3in1/$is_args$args"; }
+location = /products/mnogofunkczionalnoe-pokrytie-3v1-promix { return 301 "/products/promix-3in1/$is_args$args"; }
+
+# Акриловая краска SUPER TACK 7
+location = /products/kraska-akrilovaya-super-tack-7/ { return 301 "/products/super-tack-7/$is_args$args"; }
+location = /products/kraska-akrilovaya-super-tack-7 { return 301 "/products/super-tack-7/$is_args$args"; }
+
+# Акриловая краска SUPER TACK 3
+location = /products/kraska-super-tack-3-promix/ { return 301 "/products/super-tack-3/$is_args$args"; }
+location = /products/kraska-super-tack-3-promix { return 301 "/products/super-tack-3/$is_args$args"; }
+
+# Готовый клей PROMIX Plus Top для стеклообоев, стеклохолста и флизелина
+location = /products/klej-promix-plus-top-dlya-steklooboev-malyarnogo-steklovolokna-flizelina-gotovyj-10-kg/ { return 301 "/products/plus-top/$is_args$args"; }
+location = /products/klej-promix-plus-top-dlya-steklooboev-malyarnogo-steklovolokna-flizelina-gotovyj-10-kg { return 301 "/products/plus-top/$is_args$args"; }
+
+# Именно старый опубликованный deep-primer URL, прямо названный source текущей карточки; противоречие слова «концентрат» отдельно передано технологу
+location = /products/grunt-glubokogo-proniknoveniya-promix/ { return 301 "/products/deep-primer/$is_args$args"; }
+location = /products/grunt-glubokogo-proniknoveniya-promix { return 301 "/products/deep-primer/$is_args$args"; }
+
+# Малярный флизелин PROMIX Plus Top, не стеклохолст
+location = /products/flizelin-promix/ { return 301 "/products/nonwoven-plus-top/$is_args$args"; }
+location = /products/flizelin-promix { return 301 "/products/nonwoven-plus-top/$is_args$args"; }
+
+# Малярный стеклохолст PROMIX, не флизелин
+location = /products/malyarnyj-stekloholst-promix/ { return 301 "/products/glass-fiber-plus-top/$is_args$args"; }
+location = /products/malyarnyj-stekloholst-promix { return 301 "/products/glass-fiber-plus-top/$is_args$args"; }
+
+# Универсальная грунтовка PROMIX; старый URL прямо назван source новой карточки
+location = /products/grunt-universalnyj-promix/ { return 301 "/products/universal-primer/$is_args$args"; }
+location = /products/grunt-universalnyj-promix { return 301 "/products/universal-primer/$is_args$args"; }
+
+# Грунт-концентрат PROMIX; отдельный SKU от deep-primer и Миттельгрунта
+location = /products/grunt-konczentrat-glubokogo-proniknoveniya-promix/ { return 301 "/products/primer-concentrate/$is_args$args"; }
+location = /products/grunt-konczentrat-glubokogo-proniknoveniya-promix { return 301 "/products/primer-concentrate/$is_args$args"; }
+
+# Старая XML карта заменяется фактическим новым sitemap index без выдачи HTML
+location = /sitemap.xml { return 301 "/sitemap-index.xml$is_args$args"; }
+

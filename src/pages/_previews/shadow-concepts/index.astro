@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { catalogProducts } from '../../../data/products';
+import '../../../styles/catalog.css';
+const firstRow = catalogProducts.slice(0, 3);
+const concepts = [
+  { id: 1, name: 'Мягкий дневной', description: 'Ровная мягкая опора, естественное рассеивание.', style: '--floor-width:1.22;--floor-height:28px;--floor-blur:12px;--floor-alpha:.13;--floor-y:-1px;--floor-x:0;--contact-width:.84;--contact-height:20px;--contact-blur:5.5px;--contact-alpha:.18;--contact-y:-6px;' },
+  { id: 2, name: 'Студийная опора', description: 'Более собранная и плотная тень у основания.', style: '--floor-width:1.17;--floor-height:26px;--floor-blur:9px;--floor-alpha:.14;--floor-y:-1px;--floor-x:0;--contact-width:.82;--contact-height:20px;--contact-blur:4.5px;--contact-alpha:.21;--contact-y:-6px;' },
+  { id: 3, name: 'Широкое рассеивание', description: 'Широкая мягкая зона с плавным растворением.', style: '--floor-width:1.28;--floor-height:32px;--floor-blur:16px;--floor-alpha:.145;--floor-y:-1px;--floor-x:0;--contact-width:.86;--contact-height:22px;--contact-blur:6.2px;--contact-alpha:.18;--contact-y:-7px;' },
+  { id: 4, name: 'Боковой свет', description: 'Мягкий боковой свет, лёгкое смещение рассеянной тени.', style: '--floor-width:1.25;--floor-height:28px;--floor-blur:12px;--floor-alpha:.14;--floor-y:1px;--floor-x:.045;--contact-width:.84;--contact-height:20px;--contact-blur:5.2px;--contact-alpha:.19;--contact-y:-6px;' },
+];
+---
+<BaseLayout title="Четыре концепта тени — PROMIX H 0,2" description="Четыре варианта контактной и рассеянной тени на одной карточке PROMIX H 0,2." pageClass="catalog-page shadow-concept-review" robots="noindex, nofollow" canonical="/products/">
+  <header class="concept-review-header">
+    <h1>Четыре концепта тени</h1>
+    <p>Одна и та же карточка PROMIX H 0,2 в размере каталога. Меняется только тень.</p>
+  </header>
+  <main class="catalog-main">
+    <div class="concept-catalog-gauge catalog-layout" aria-hidden="true" inert>
+      <div class="catalog-results"><div class="catalog-product-grid">{firstRow.map(product => <ProductCard product={product} variant="open" />)}</div></div>
+    </div>
+    <div class="concept-review-grid">
+      {concepts.map(concept => <section class="shadow-concept" data-shadow-concept={concept.id} style={concept.style} aria-labelledby={`concept-${concept.id}`}>
+        <header class="concept-label"><h2 id={`concept-${concept.id}`}>{concept.id}. {concept.name}</h2><p>{concept.description}</p></header>
+        <div class="concept-card-window">
+          <div class="catalog-product-grid">
+            {firstRow.map((product,index) => index === 0 ? <ProductCard product={product} variant="open" /> : <div class="concept-hidden-neighbor" aria-hidden="true" inert><ProductCard product={product} variant="open" /></div>)}
+          </div>
+        </div>
+      </section>)}
+    </div>
+  </main>
+  <p class="concept-review-note">Предпросмотр для выбора. В общий каталог изменения не внесены.</p>
+  <script src="/previews/shadow-concepts/review.js" is:inline></script>
+</BaseLayout>
+<style is:global>
+  .shadow-concept-review { min-height: 100vh; display: flow-root; background: #fff; }
+  .shadow-concept-review .concept-review-header { padding: 28px 22px 30px; max-width: 920px; margin: 0 auto; }
+  .shadow-concept-review .concept-review-header h1 { margin: 0 0 10px; color: #102336; font: 400 29px/1.2 'PROMIX Product',Inter,sans-serif; letter-spacing: -.025em; }
+  .shadow-concept-review .concept-review-header p,
+  .shadow-concept-review .concept-review-note { margin: 0; color: #53616b; font: 400 14px/1.5 'PROMIX Product',Inter,sans-serif; }
+  .shadow-concept-review .concept-catalog-gauge { position: fixed; left: -200vw; top: 0; width: 100vw; visibility: hidden; pointer-events: none; }
+  .shadow-concept-review .concept-catalog-gauge > .catalog-results { grid-column: 2; }
+  .shadow-concept-review .concept-review-grid { display: grid; grid-template-columns: repeat(2,var(--review-card-width,332.21875px)); gap: 40px 32px; justify-content: center; margin: 0 22px; }
+  .shadow-concept-review .shadow-concept { min-width: 0; }
+  .shadow-concept-review .concept-label { min-height: 104px; padding-bottom: 18px; }
+  .shadow-concept-review .concept-label h2 { margin: 0 0 8px; color: #102336; font: 400 20px/1.3 'PROMIX Product',Inter,sans-serif; letter-spacing: -.015em; }
+  .shadow-concept-review .concept-label p { margin: 0; color: #53616b; font: 400 14px/1.45 'PROMIX Product',Inter,sans-serif; }
+  .shadow-concept-review .concept-card-window { width: var(--review-card-width,332.21875px); height: var(--review-card-height,644.8125px); overflow: clip; }
+  .shadow-concept-review .concept-card-window > .catalog-product-grid { width: var(--review-grid-width,1036.65625px); }
+  .shadow-concept-review .concept-hidden-neighbor { display: contents; visibility: hidden; pointer-events: none; }
+  .shadow-concept-review .concept-hidden-neighbor > .product-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; }
+  .shadow-concept-review .shadow-concept [data-concept-source] { mask-image: url('/previews/catalog-shadows/masks/promix-h-03-f281de343a.svg'); mask-size: 100% 100%; mask-repeat: no-repeat; mask-mode: alpha; }
+  .shadow-concept-review .shadow-concept .product-card-visual > .concept-shadow-layer {
+    position: absolute; z-index: 0;
+    left: calc(var(--body-center) + var(--body-width) * var(--floor-x)); top: calc(var(--body-base) + var(--floor-y));
+    width: calc(var(--body-width) * var(--floor-width)); height: var(--floor-height);
+    border-radius: 50%; background: rgb(40 39 38 / var(--floor-alpha)); filter: blur(var(--floor-blur));
+    transform: translate(-50%,-50%); pointer-events: none; opacity: 0;
+  }
+  .shadow-concept-review .shadow-concept .product-card-visual > .concept-shadow-contact {
+    left: var(--body-center); top: calc(var(--body-base) + var(--contact-y));
+    width: calc(var(--body-width) * var(--contact-width)); height: var(--contact-height);
+    background: rgb(29 29 29 / var(--contact-alpha)); filter: blur(var(--contact-blur));
+  }
+  .shadow-concept-review .shadow-concept [data-concept-ready] > .concept-shadow-layer { opacity: 1; }
+  .shadow-concept-review .concept-review-note { margin: 28px auto 36px; max-width: 920px; padding: 0 22px; }
+  @media (max-width: 760px) {
+    .shadow-concept-review .concept-review-grid { grid-template-columns: var(--review-card-width,calc(100vw - 44px)); gap: 34px; }
+    .shadow-concept-review .concept-label { min-height: 0; }
+    .shadow-concept-review .concept-hidden-neighbor { display: none; }
+    .shadow-concept-review .concept-review-header h1 { font-size: 26px; }
+  }
+</style>

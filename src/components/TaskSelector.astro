@@ -1,0 +1,74 @@
+---
+import '../styles/task-gallery.css';
+
+const stages = [
+  { id: 'preparation', number: '01', title: 'Подготовка', copy: 'Выравнивание, грунтование, укрепление основания — надёжная база для результата.', slogan: ['НАДЁЖНОЕ ОСНОВАНИЕ', 'ДЛЯ БОЛЬШИХ ВОЗМОЖНОСТЕЙ'], image: '/images/task-selector/concept-3/preparation.webp', task: 'preparation' },
+  { id: 'waterproofing', number: '02', title: 'Гидроизоляция', copy: 'Защита от влаги в любых условиях: ванные, фасады, фундаменты.', slogan: ['СУХО', 'СЕГОДНЯ. НАДОЛГО.'], image: '/images/task-selector/concept-3/waterproofing.webp', task: 'wet' },
+  { id: 'masonry', number: '03', title: 'Кладка и монтаж', copy: 'Надёжные смеси для кирпича, блоков и монтажных работ.', slogan: ['СОЗДАЁМ', 'ПРОЧНЫЕ ОСНОВЫ'], image: '/images/task-selector/concept-3/leveling.webp', task: 'leveling' },
+  { id: 'finishing', number: '04', title: 'Отделка', copy: 'Штукатурки, шпатлёвки, декоративные решения — для идеальной поверхности.', slogan: ['КРАСИВЫЕ ПОВЕРХНОСТИ', 'НА ДОЛГИЕ ГОДЫ'], image: '/images/task-selector/concept-3/finishing.webp', task: 'finish' },
+  { id: 'repair', number: '05', title: 'Ремонт и восстановление', copy: 'Решения для сложных задач: бетон, трещины, сколы, усиление конструкций.', slogan: ['ВОССТАНАВЛИВАЕМ', 'ГЛАВНОЕ — НАДЁЖНОСТЬ'], image: '/images/task-selector/concept-3/repair.webp', task: 'preparation' },
+];
+---
+
+<section class="task-editorial" id="selection" aria-labelledby="selection-title" data-task-editorial>
+  <div class="task-editorial__frame">
+    <header class="task-editorial__intro">
+      <div class="task-editorial__heading">
+        <p class="task-editorial__kicker">РЕШЕНИЯ ДЛЯ РЕАЛЬНЫХ ЗАДАЧ</p>
+        <h2 id="selection-title">Подбор по задаче</h2>
+        <p class="task-editorial__subtitle">Не знаете, какой материал нужен?</p>
+      </div>
+      <p class="task-editorial__lead">Расскажите, что нужно сделать — мы подскажем оптимальное решение из линейки PROMIX.</p>
+      <ul class="task-editorial__proofs">
+        <li><img src="/icons/phosphor/circle.svg" alt="" aria-hidden="true" />Проверенные решения</li>
+        <li><img src="/icons/phosphor/circle.svg" alt="" aria-hidden="true" />Под ваши условия</li>
+        <li><img src="/icons/phosphor/circle.svg" alt="" aria-hidden="true" />Рекомендации от экспертов</li>
+      </ul>
+    </header>
+
+    <div class="task-editorial__list">
+      {stages.map((stage, index) => (
+        <article class="task-row" data-task-row data-active={index === 0 ? 'true' : 'false'}>
+          <img class="task-row__photo" src={stage.image} alt="" width="1600" height="420" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+          <button class="task-row__trigger" type="button" aria-expanded={index === 0} data-task-trigger>
+            <span class="task-row__number">{stage.number}</span>
+            <span class="task-row__rule" aria-hidden="true"></span>
+            <span class="task-row__copy">
+              <span class="task-row__status">АКТИВНЫЙ РАЗДЕЛ</span>
+              <strong>{stage.title}</strong>
+              <span>{stage.copy}</span>
+            </span>
+            <span class="task-row__slogan">{stage.slogan.map(line => <span>{line}</span>)}</span>
+            <span class="task-row__arrow" aria-hidden="true"><img src="/icons/phosphor/arrow-right.svg" alt="" width="22" height="22" /></span>
+          </button>
+          <a class="task-row__cta" href={`/products/?task=${stage.task}`}>Подобрать материалы <img src="/icons/phosphor/arrow-right.svg" alt="" width="18" height="18" aria-hidden="true" /></a>
+        </article>
+      ))}
+    </div>
+
+    <footer class="task-editorial__footer">
+      <div><span>БОЛЬШЕ, ЧЕМ МАТЕРИАЛЫ</span><p><strong>PROMIX.</strong> Решения для профессиональных задач.</p></div>
+      <a href="/products/">Перейти в каталог <img src="/icons/phosphor/arrow-right.svg" alt="" width="20" height="20" aria-hidden="true" /></a>
+    </footer>
+  </div>
+</section>
+
+<script>
+  for (const section of document.querySelectorAll<HTMLElement>('[data-task-editorial]')) {
+    const rows = [...section.querySelectorAll<HTMLElement>('[data-task-row]')];
+    const triggers = [...section.querySelectorAll<HTMLButtonElement>('[data-task-trigger]')];
+    const activate = (index: number) => {
+      rows.forEach((row, rowIndex) => row.dataset.active = String(rowIndex === index));
+      triggers.forEach((trigger, triggerIndex) => trigger.setAttribute('aria-expanded', String(triggerIndex === index)));
+    };
+    triggers.forEach((trigger, index) => {
+      trigger.addEventListener('click', () => activate(index));
+      trigger.addEventListener('keydown', (event) => {
+        if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? triggers.length - 1 : (index + (event.key === 'ArrowDown' ? 1 : -1) + triggers.length) % triggers.length;
+        triggers[next].focus();
+      });
+    });
+  }
+</script>

@@ -1,0 +1,95 @@
+{
+  "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-1600.webp": {
+    "src": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-1600.webp",
+    "width": 1600,
+    "height": 1200,
+    "sources": [
+      {
+        "width": 480,
+        "url": "/images/products/performance-2026-10/promix-h-02-475c7396155a-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-640.webp"
+      },
+      {
+        "width": 800,
+        "url": "/images/products/performance-2026-10/promix-h-02-04bce88fc3c9-800.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-960.webp"
+      },
+      {
+        "width": 1200,
+        "url": "/images/products/performance-2026-10/promix-h-02-0344742c065a-1200.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-h-02-26e55032b9e8-1600.webp"
+      }
+    ]
+  },
+  "/images/products/catalog-2026-10/promix-j-55df257e92a1-1600.webp": {
+    "src": "/images/products/catalog-2026-10/promix-j-55df257e92a1-1600.webp",
+    "width": 1600,
+    "height": 1200,
+    "sources": [
+      {
+        "width": 480,
+        "url": "/images/products/performance-2026-10/promix-j-24efc3ac8ed3-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-j-55df257e92a1-640.webp"
+      },
+      {
+        "width": 800,
+        "url": "/images/products/performance-2026-10/promix-j-3e9294c89723-800.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-j-55df257e92a1-960.webp"
+      },
+      {
+        "width": 1200,
+        "url": "/images/products/performance-2026-10/promix-j-20af0a2b8940-1200.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-j-55df257e92a1-1600.webp"
+      }
+    ]
+  },
+  "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-1600.webp": {
+    "src": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-1600.webp",
+    "width": 1600,
+    "height": 1200,
+    "sources": [
+      {
+        "width": 480,
+        "url": "/images/products/performance-2026-10/promix-f-0a8d32587804-480.webp"
+      },
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-640.webp"
+      },
+      {
+        "width": 800,
+        "url": "/images/products/performance-2026-10/promix-f-3ffc966d4ec1-800.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-960.webp"
+      },
+      {
+        "width": 1200,
+        "url": "/images/products/performance-2026-10/promix-f-22222e2d892d-1200.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-f-e29eb8da3aed-1600.webp"
+      }
+    ]
+  }
+}

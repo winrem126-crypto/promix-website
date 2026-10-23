@@ -1,0 +1,107 @@
+.hero-concepts-page { overflow: hidden; background: #050d16; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.concept-preview { --concept-gutter: clamp(28px, 4.2vw, 80px); position: relative; min-height: 100svh; color: #f4f6f7; background: #06111c; }
+.concept-header { height: 82px; padding-inline: var(--concept-gutter); background: linear-gradient(180deg, rgba(3, 9, 15, .46), transparent); }
+.concept-header .brand { flex: 0 0 auto; }
+.concept-header .desktop-nav { gap: clamp(24px, 2vw, 38px); margin-left: auto; margin-right: clamp(24px, 2.15vw, 42px); font-size: 14px; }
+.concept-header-cta { --cta-line: rgba(255,255,255,.46); min-height: 44px; display: inline-flex; align-items: center; gap: 18px; padding: 0; border: 0; border-bottom: 1px solid var(--cta-line); background: transparent; color: #f2f5f7; font-size: 12px; letter-spacing: .03em; cursor: pointer; transition: color .3s ease, border-color .3s ease, padding .35s cubic-bezier(.2,.75,.25,1), background-color .3s ease; }
+.concept-header-cta svg, .concept-actions svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.25; transition: transform .35s cubic-bezier(.2,.75,.25,1); }
+.concept-header-cta:hover svg, .concept-header-cta:focus-visible svg, .concept-actions a:hover svg, .concept-actions a:focus-visible svg { transform: translate(3px, -3px); }
+
+.concept-preview[data-active-concept="2"] .concept-header-cta { min-height: 46px; padding-inline: 14px 2px; border-top: 1px solid rgba(255,255,255,.18); border-bottom-color: rgba(255,255,255,.62); }
+.concept-preview[data-active-concept="3"] .concept-header-cta { min-height: 48px; padding-inline: 20px; border: 1px solid rgba(255,255,255,.42); }
+.concept-preview[data-active-concept="3"] .concept-header-cta:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.72); }
+.concept-preview[data-active-concept="4"] .concept-header-cta { min-height: 45px; padding-left: 18px; border-bottom: 0; border-left: 1px solid rgba(255,255,255,.46); }
+.concept-preview[data-active-concept="4"] .concept-header-cta:hover { padding-left: 24px; color: #fff; }
+
+.concept-hero { position: absolute; inset: 0; min-height: 100svh; overflow: hidden; background: #06111c; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .52s cubic-bezier(.2,.75,.25,1), visibility .52s; }
+.concept-hero[aria-hidden="false"] { opacity: 1; visibility: visible; pointer-events: auto; }
+.concept-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.012); transition: transform 1.1s cubic-bezier(.2,.75,.25,1); }
+.concept-hero[aria-hidden="false"] .concept-media { transform: scale(1); }
+.concept-hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(3,10,17,.18) 0%, transparent 46%); }
+.concept-copy { position: absolute; z-index: 2; left: var(--concept-gutter); top: 50%; width: min(790px, 59vw); transform: translateY(-43%); }
+.concept-copy h2 { margin: 0; font-size: clamp(60px, 5.65vw, 104px); line-height: .95; font-weight: 310; letter-spacing: -.047em; }
+.concept-copy h2 span { display: block; white-space: nowrap; }
+.concept-copy > p { max-width: 470px; margin: 28px 0 34px; color: #d0d8de; font-size: clamp(17px, 1.2vw, 21px); line-height: 1.45; }
+.concept-actions { width: min(420px, 100%); }
+.concept-actions a { color: inherit; }
+
+.concept-actions-line { display: flex; align-items: center; gap: 34px; }
+.concept-actions-line > a:first-child { min-width: 210px; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 14px 0 11px; border-bottom: 1px solid rgba(255,255,255,.68); font-size: 13px; }
+.concept-actions-line > a:first-child::after { content: ""; position: absolute; }
+.concept-secondary { padding-block: 12px 9px; color: #aeb9c2 !important; font-size: 12px; border-bottom: 1px solid transparent; transition: color .3s ease, border-color .3s ease; }
+.concept-secondary:hover, .concept-secondary:focus-visible { color: #fff !important; border-bottom-color: rgba(255,255,255,.38); }
+
+.concept-hero-2 .concept-copy { top: auto; bottom: clamp(128px, 13vh, 164px); transform: none; }
+.concept-actions-architectural { display: grid; border-top: 1px solid rgba(255,255,255,.28); }
+.concept-actions-architectural a { min-height: 48px; display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 14px; border-bottom: 1px solid rgba(255,255,255,.28); color: #e9eef1; font-size: 12px; transition: padding .35s cubic-bezier(.2,.75,.25,1), color .3s ease; }
+.concept-actions-architectural a:last-child { color: #9fabb5; }
+.concept-actions-architectural a:hover, .concept-actions-architectural a:focus-visible { padding-left: 8px; color: #fff; }
+.concept-actions em, .concept-actions-trace em { color: #7f8e99; font: 10px/1 ui-monospace, monospace; font-style: normal; }
+
+.concept-hero-3 .concept-copy { top: 48%; width: min(760px, 55vw); }
+.concept-hero-3 .concept-copy > p { color: #c4cdd4; }
+.concept-actions-outline a { min-width: 250px; min-height: 56px; display: inline-flex; align-items: center; justify-content: space-between; gap: 44px; padding: 0 20px; border: 1px solid rgba(255,255,255,.43); font-size: 13px; transition: background-color .3s ease, border-color .3s ease; }
+.concept-actions-outline a:hover, .concept-actions-outline a:focus-visible { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.75); }
+
+.concept-hero-4 .concept-copy { top: 53%; padding-left: 22px; border-left: 1px solid rgba(255,255,255,.26); }
+.concept-actions-trace { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(120px, .5fr); border-top: 1px solid rgba(255,255,255,.35); }
+.concept-actions-trace a { min-height: 54px; display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,.35); font-size: 12px; transition: background-color .3s ease, padding .35s cubic-bezier(.2,.75,.25,1); }
+.concept-actions-trace a + a { grid-template-columns: 26px 1fr; padding-left: 16px; border-left: 1px solid rgba(255,255,255,.35); color: #a9b3bc; }
+.concept-actions-trace a:hover, .concept-actions-trace a:focus-visible { padding-left: 8px; background: rgba(255,255,255,.04); color: #fff; }
+.concept-actions-trace a + a:hover, .concept-actions-trace a + a:focus-visible { padding-left: 22px; }
+
+.concept-progress { position: absolute; z-index: 2; right: var(--concept-gutter); top: 50%; display: grid; justify-items: center; gap: 11px; color: #aeb8c0; font: 10px/1 ui-monospace, monospace; transform: translateY(-40%); }
+.concept-progress i { width: 1px; height: 64px; display: block; background: rgba(255,255,255,.4); }
+
+.concept-devtools { position: fixed; z-index: 45; left: var(--concept-gutter); right: var(--concept-gutter); bottom: 25px; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; pointer-events: none; }
+.concept-description { width: min(520px, 42vw); display: grid; grid-template-columns: 82px 1fr; column-gap: 16px; row-gap: 4px; color: #c6cfd6; pointer-events: auto; }
+.concept-description > span { grid-row: 1 / span 2; color: #7f8e9a; font: 9px/1.4 ui-monospace, monospace; letter-spacing: .08em; }
+.concept-description strong { font-size: 12px; font-weight: 520; letter-spacing: .02em; }
+.concept-description p { margin: 0; color: #929faa; font-size: 10px; line-height: 1.45; }
+.concept-switcher { display: flex; align-items: center; gap: 5px; padding: 5px; border: 1px solid rgba(255,255,255,.18); background: rgba(4,11,18,.72); backdrop-filter: blur(16px); pointer-events: auto; }
+.concept-switcher button { width: 42px; height: 36px; border: 0; background: transparent; color: #8795a0; font: 10px/1 ui-monospace, monospace; cursor: pointer; transition: background-color .25s ease, color .25s ease; }
+.concept-switcher button:hover, .concept-switcher button:focus-visible { color: #fff; }
+.concept-switcher button[aria-pressed="true"] { background: #d8dad9; color: #071321; }
+
+.hero-concepts-page .modal { z-index: 100; }
+
+@media (max-width: 1180px) {
+  .concept-header .desktop-nav { display: none; }
+  .concept-header-cta { margin-left: auto; margin-right: 24px; }
+  .concept-menu-toggle { display: block; }
+  .concept-copy { width: min(720px, 72vw); }
+  .concept-copy h2 { font-size: clamp(58px, 7.2vw, 86px); }
+}
+
+@media (max-width: 767px) {
+  .hero-concepts-page { overflow-x: hidden; overflow-y: auto; }
+  .concept-preview { --concept-gutter: 22px; }
+  .concept-header { height: 66px; }
+  .concept-header .brand { font-size: 22px; }
+  .concept-header-cta { display: none; }
+  .concept-menu-toggle { margin-left: auto; }
+  .concept-mobile-menu { top: 66px; }
+  .concept-hero { min-height: 100svh; }
+  .concept-media { object-position: 61% center; }
+  .concept-hero-1 .concept-media { object-position: 58% center; }
+  .concept-hero-3 .concept-media { object-position: 60% center; }
+  .concept-copy, .concept-hero-2 .concept-copy, .concept-hero-3 .concept-copy, .concept-hero-4 .concept-copy { left: var(--concept-gutter); right: var(--concept-gutter); top: auto; bottom: 118px; width: auto; padding-left: 0; border-left: 0; transform: none; }
+  .concept-copy h2 { font-size: clamp(32px, 10vw, 48px); line-height: .98; }
+  .concept-copy > p { margin: 18px 0 22px; font-size: 15px; line-height: 1.4; }
+  .desktop-break { display: none; }
+  .concept-actions { width: 100%; }
+  .concept-actions-line { align-items: flex-start; flex-direction: column; gap: 3px; }
+  .concept-actions-line > a:first-child { width: 100%; min-width: 0; }
+  .concept-actions-outline a { width: 100%; min-width: 0; }
+  .concept-actions-trace { grid-template-columns: 1fr; }
+  .concept-actions-trace a + a { display: none; }
+  .concept-progress, .concept-description { display: none; }
+  .concept-devtools { left: 50%; right: auto; bottom: 24px; transform: translateX(-50%); }
+  .concept-switcher button { width: 38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-hero, .concept-media, .concept-header-cta, .concept-actions a, .concept-actions svg { transition-duration: .01ms !important; }
+}

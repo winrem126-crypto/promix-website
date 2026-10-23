@@ -1,0 +1,4 @@
+backend/config/config.php
+backend/vendor/
+/backend/storage/
+

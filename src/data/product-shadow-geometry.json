@@ -1,0 +1,330 @@
+{
+  "/images/products/2026-10/promix-h-03-f281de343a.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/promix-h-03-f281de343a.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/promix-h-02-ac384999d4.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/promix-h-02-ac384999d4.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/promix-j-71ae9842fc.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1769,
+    "mask": "/images/products/shadow-masks/promix-j-71ae9842fc.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/promix-3in1-5ddbc3c12f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1769,
+    "mask": "/images/products/shadow-masks/promix-3in1-5ddbc3c12f.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/promix-f-e71ba1c0b5.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/promix-f-e71ba1c0b5.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/pro-spray-finish-c441eedcda.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/pro-spray-finish-c441eedcda.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/promix-w-b1fc804c1a.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/promix-w-b1fc804c1a.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/promix-fasad-4fa9419c39.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/promix-fasad-4fa9419c39.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/textured-anti-vandal-06ef857cad.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/textured-anti-vandal-06ef857cad.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/polymer-putty-09cd4e5959.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/polymer-putty-09cd4e5959.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/betokontakt-9357d7c5e4.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/betokontakt-9357d7c5e4.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/mittel-grund-707be14614.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/mittel-grund-707be14614.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/primer-paint-36e1e0948e.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/primer-paint-36e1e0948e.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/sous-couche-4f2e9b531f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1769,
+    "mask": "/images/products/shadow-masks/sous-couche-4f2e9b531f.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/super-tack-3-a745b14619.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/super-tack-3-a745b14619.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/super-tack-7-0c47626be9.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/super-tack-7-0c47626be9.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/super-tack-facade-6d66c49261.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/super-tack-facade-6d66c49261.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/super-tack-facade-silicon-f98f92df89.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1769,
+    "mask": "/images/products/shadow-masks/super-tack-facade-silicon-f98f92df89.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/mix-mosaic-c196ed3116.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/mix-mosaic-c196ed3116.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/acrylic-enamel-67cad3d45f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/acrylic-enamel-67cad3d45f.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/tape-adhesive-5741790d4f.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/tape-adhesive-5741790d4f.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/plus-top-01cb1f86f5.png": {
+    "source": [
+      1679,
+      1233
+    ],
+    "bodyWidth": 1208.988,
+    "bodyCenter": 839,
+    "base": 1025,
+    "mask": "/images/products/shadow-masks/plus-top-01cb1f86f5.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/hydro-dcc0155a95.png": {
+    "source": [
+      2048,
+      2048
+    ],
+    "bodyWidth": 1567,
+    "bodyCenter": 1024.5,
+    "base": 1770,
+    "mask": "/images/products/shadow-masks/hydro-dcc0155a95.svg",
+    "family": "bucket"
+  },
+  "/images/products/2026-10/glass-fiber-plus-top-e4f31956bf.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bodyWidth": 223,
+    "bodyCenter": 609.5,
+    "base": 1498,
+    "mask": "/images/products/shadow-masks/glass-fiber-plus-top-e4f31956bf.svg",
+    "family": "roll"
+  },
+  "/images/products/2026-10/nonwoven-plus-top-a846e281ec.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bodyWidth": 216,
+    "bodyCenter": 608,
+    "base": 1490,
+    "mask": "/images/products/shadow-masks/nonwoven-plus-top-a846e281ec.svg",
+    "family": "roll"
+  },
+  "/images/products/2026-10/deep-primer-8c9c918005.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bodyWidth": 847,
+    "bodyCenter": 600.5,
+    "base": 1300,
+    "mask": "/images/products/shadow-masks/deep-primer-8c9c918005.svg",
+    "family": "canister"
+  },
+  "/images/products/2026-10/universal-primer-f832e445e9.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bodyWidth": 847,
+    "bodyCenter": 600.5,
+    "base": 1300,
+    "mask": "/images/products/shadow-masks/universal-primer-f832e445e9.svg",
+    "family": "canister"
+  },
+  "/images/products/2026-10/primer-concentrate-0fd024c39b.png": {
+    "source": [
+      1216,
+      1600
+    ],
+    "bodyWidth": 847,
+    "bodyCenter": 600.5,
+    "base": 1300,
+    "mask": "/images/products/shadow-masks/primer-concentrate-0fd024c39b.svg",
+    "family": "canister"
+  },
+  "/images/products/current/pro-spray-improved.png": {
+    "source": [
+      1024,
+      1024
+    ],
+    "bodyWidth": 662,
+    "bodyCenter": 514.5,
+    "base": 872,
+    "family": "bucket"
+  },
+  "/images/products/current/latex-paint.png": {
+    "source": [
+      1024,
+      1024
+    ],
+    "bodyWidth": 662,
+    "bodyCenter": 514.5,
+    "base": 872,
+    "family": "bucket"
+  }
+}

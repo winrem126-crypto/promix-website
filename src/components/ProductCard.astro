@@ -1,0 +1,74 @@
+---
+import type { Product } from '../data/products';
+import { productImageStyle } from '../data/product-image-layout';
+import FramedProductImage from './FramedProductImage.astro';
+import ProductImageNotice from './ProductImageNotice.astro';
+import CatalogProductShadow from './CatalogProductShadow.astro';
+import ProductStageScene from './ProductStageScene.astro';
+import productShadowGeometry from '../data/product-shadow-geometry.json';
+import catalogProductAssets from '../data/catalog-product-assets.json';
+import '../styles/product-card.css';
+import { responsiveImage, imageSrcset, canonicalAssetUrl } from '../performance/images';
+type ShadowGeometry = { source: number[]; bodyWidth: number; bodyCenter: number; base: number; mask?: string; contactMask?: string; ambientMask?: string; groundMask?: string; family: string; profile?: string; previewState?: 'rest' | 'hover' };
+interface Props { product: Product; filterable?: boolean; variant?: 'default' | 'open'; headingLevel?: 'h2' | 'h3'; groundShadow?: boolean; shadowGeometry?: ShadowGeometry; imageSources?: { width: number; url: string }[]; }
+const { product, filterable = false, variant = 'default', headingLevel: Heading = 'h2', groundShadow = false, shadowGeometry: reviewGeometry, imageSources } = Astro.props;
+const mediaKind = product.imageLayout;
+const catalogAsset = (catalogProductAssets as Record<string, { image: string; catalogScale?: number; geometry: ShadowGeometry }>)[product.slug];
+const catalogScale = !reviewGeometry && catalogAsset?.image === product.image ? catalogAsset.catalogScale ?? 1 : 1;
+const imageFrame = variant === 'open' && product.cardImageFrame ? { ...product.cardImageFrame, opticalScale: (product.cardImageFrame.opticalScale ?? 1) * catalogScale } : undefined;
+const imageFrameStyle = imageFrame ? productImageStyle(imageFrame) : undefined;
+const framedProduct = imageFrame ? { ...product, cardImageFrame: imageFrame } : product;
+const catalogGeometry = catalogAsset?.image === product.image ? catalogAsset.geometry : undefined;
+const shadowGeometry = groundShadow && imageFrame ? reviewGeometry ?? catalogGeometry ?? (productShadowGeometry as Record<string, ShadowGeometry>)[product.image] : undefined;
+const mineralScene = shadowGeometry?.profile === 'reference-mineral';
+const hoverBaseCorrection = shadowGeometry ? (shadowGeometry.source[1] - shadowGeometry.base) / shadowGeometry.source[1] * .015 * 100 : 0;
+const image = responsiveImage(product.image, imageSources ?? product.imageSources);
+const imageSrcSet = imageSrcset(image.sources);
+const shadowStyle = [shadowGeometry?.mask ? `--product-package-mask: url("${canonicalAssetUrl(shadowGeometry.mask)}")` : '', shadowGeometry?.contactMask ? `--product-contact-mask: url("${canonicalAssetUrl(shadowGeometry.contactMask)}")` : '', shadowGeometry?.ambientMask ? `--product-ambient-mask: url("${canonicalAssetUrl(shadowGeometry.ambientMask)}")` : '', shadowGeometry?.groundMask ? `--product-ground-mask: url("${canonicalAssetUrl(shadowGeometry.groundMask)}")` : '', mineralScene ? `--product-hover-base-correction: ${hoverBaseCorrection}%` : ''].filter(Boolean).join('; ') || undefined;
+const cardSpecs = [
+  { label: 'Назначение', value: product.catalogPurpose },
+  { label: 'Упаковка', value: product.catalogPackaging },
+];
+const productHref = `/products/${product.slug}/`;
+---
+
+<article
+  class:list={["product-card", { "product-card--open": variant === "open" }]}
+  data-catalog-card={filterable ? '' : undefined}
+  data-category={product.category}
+  data-tasks={product.tasks.join(' ')}
+  data-applications={product.applications.join(' ')}
+  data-search-name={product.name}
+  data-search-category={product.categoryLabel}
+  data-search-purpose={`${product.catalogPurpose} ${product.subtitle} ${product.description} ${product.specs.map((item) => `${item.label} ${item.value}`).join(' ')} ${product.surfaces.join(' ')}`}
+  data-search-keywords={product.searchKeywords.join(' ')}
+  data-search-short={product.shortName}
+  data-search-series={product.series}
+  data-product-href={productHref}
+  data-preview-state={reviewGeometry?.previewState}
+>
+  <a class="product-card-hitarea" href={productHref} aria-label={`${product.name} — открыть карточку товара`}>
+    <div class:list={[`product-card-visual media-${mediaKind}`, { 'product-card-visual--normalized': imageFrame }]} data-product-shadow={shadowGeometry ? JSON.stringify(shadowGeometry) : undefined} data-shadow-family={shadowGeometry?.family} data-shadow-profile={shadowGeometry?.profile} style={shadowStyle}>
+      <slot name="stage-background">{groundShadow && !product.imageUnavailable && <ProductStageScene />}</slot>
+      {shadowGeometry && !product.imageUnavailable && <CatalogProductShadow synchronized={mineralScene} />}
+      {product.imageUnavailable ? <ProductImageNotice product={product} compact /> : imageFrame?.reference ? (
+        <FramedProductImage product={framedProduct} alt={`Упаковка ${product.name}`} />
+      ) : imageFrame ? (
+        <div class="product-card-image-frame" style={imageFrameStyle}>
+          <img src={image.src} srcset={imageSrcSet} sizes={imageSrcSet ? 'auto, (max-width: 760px) 105vw, (max-width: 1199px) 50vw, 40vw' : undefined} alt={`Упаковка ${product.name}`} width={imageFrame.source[0]} height={imageFrame.source[1]} loading="lazy" decoding="async" />
+        </div>
+      ) : (
+        <img src={image.src} srcset={imageSrcSet} sizes={imageSrcSet ? 'auto, (max-width: 760px) 105vw, (max-width: 1199px) 50vw, 40vw' : undefined} alt={`Упаковка ${product.name}`} width="768" height="768" loading="lazy" decoding="async" />
+      )}
+    </div>
+    <div class="product-card-copy">
+      <span>{product.categoryLabel}</span>
+      <Heading>{product.name}</Heading>
+      <p>{product.subtitle}</p>
+      <dl class="product-card-specs">
+        {cardSpecs.map((spec) => <div><dt><span>{spec.label}</span></dt><dd>{spec.value}</dd></div>)}
+      </dl>
+      <span class="product-card-link">Подробнее <span class="product-card-arrow" aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>

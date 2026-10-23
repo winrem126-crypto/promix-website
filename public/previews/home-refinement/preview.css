@@ -1,0 +1,128 @@
+/* Review-only refinements. The live homepage and shared styles are untouched. */
+.home-refinement-preview astro-dev-toolbar { display:none; }
+.architectural-home.home-refinement-preview {
+  --arch-max:1440px;
+  --arch-edge:clamp(22px,4.4vw,84px);
+  --arch-g:max(var(--arch-edge),calc((100% - var(--arch-max))/2));
+  --site-gutter:var(--arch-g);
+  --arch-muted:#626e77;
+  --site-muted:#626e77;
+  color-scheme:light;
+  min-width:0;
+  font-family:'PROMIX Product',Inter,Arial,sans-serif;
+  overflow-x:visible;
+}
+.home-refinement-preview .site-header,
+.home-refinement-preview .site-footer,
+.home-refinement-preview .mobile-menu { padding-inline:var(--arch-g); }
+.home-refinement-preview .arch-main,
+.home-refinement-preview .mobile-menu { font-family:'PROMIX Product',Inter,Arial,sans-serif; }
+.home-refinement-preview .arch-label { font-size:clamp(11px,.8vw,12px); font-weight:400; letter-spacing:.12em; }
+.home-refinement-preview .desktop-nav,
+.home-refinement-preview .header-consult { font-size:clamp(12px,.86vw,14px); font-weight:400; }
+.home-refinement-preview .arch-solid-link { min-height:48px; font-size:clamp(13px,.98vw,15px); gap:24px; }
+.home-refinement-preview .arch-hero-copy>p { font-size:clamp(14px,1vw,16px); }
+.home-refinement-preview .arch-hero-end,
+.home-refinement-preview .arch-hero-caption { font-size:clamp(11px,.8vw,12px); }
+.architectural-home.home-refinement-preview .arch-products {
+  height:clamp(510px,calc(100svh - var(--site-header-height)),650px);
+  min-height:0;
+  max-height:none;
+  padding-block:clamp(30px,4.3svh,48px) 28px;
+}
+.home-refinement-preview .arch-section-heading { grid-template-columns:1fr 1fr; gap:32px; }
+.home-refinement-preview .arch-section-heading h2 { font-size:clamp(36px,4.1vw,64px); margin-top:16px; }
+.home-refinement-preview .arch-section-heading .arch-aside p { font-size:clamp(14px,1vw,16px); max-width:310px; }
+.home-refinement-preview .arch-collection { margin-top:28px; }
+.home-refinement-preview .arch-piece,
+.home-refinement-preview .arch-piece:first-child,
+.home-refinement-preview .arch-piece:last-child {
+  container-type:inline-size;
+  padding:0 clamp(10px,1vw,16px) 10px;
+  background:transparent;
+  transition:background-color .2s ease;
+}
+.home-refinement-preview .arch-piece:first-child { border-left:0; }
+.architectural-home.home-refinement-preview .arch-piece .arch-art {
+  --size:min(30svh,125cqi,260px);
+  --ratio:1;
+  --bottom:.1484;
+}
+.architectural-home.home-refinement-preview .arch-piece.arch-canister .arch-art {
+  --size:min(33svh,137cqi,278px);
+  --ratio:.667101;
+  --bottom:.1557;
+}
+.architectural-home.home-refinement-preview .arch-piece.arch-roll .arch-art {
+  --size:min(29svh,135cqi,246px);
+  --ratio:.166667;
+  --bottom:.0068;
+}
+.home-refinement-preview .arch-piece .arch-art .arch-product-image {
+  object-fit:contain;
+  transform:translateX(-50%);
+  z-index:1;
+}
+.home-refinement-preview .arch-piece.arch-roll .arch-product-image {
+  transform:translateX(-50%) rotate(-12deg);
+  transform-origin:center center;
+}
+.home-refinement-preview .arch-piece h3 {
+  font-size:clamp(15px,1.08vw,17px);
+  font-weight:400;
+  line-height:1.35;
+  min-height:46px;
+  letter-spacing:-.025em;
+}
+.home-refinement-preview .arch-piece-bottom { font-size:clamp(11px,.81vw,12px); margin-top:8px; gap:8px; }
+.home-refinement-preview .arch-piece-bottom>span:last-child { font-size:18px; line-height:1; color:var(--arch-ink); }
+.home-refinement-preview .arch-collection-foot { margin-top:16px; padding-top:18px; gap:20px; }
+.home-refinement-preview .arch-collection-foot>span { font-size:clamp(12px,.87vw,14px); }
+.home-refinement-preview .arch-collection-foot a { font-size:clamp(13px,.96vw,15px); min-height:32px; }
+.home-refinement-preview .arch-tasks-intro,
+.home-refinement-preview .arch-task-detail p { font-size:clamp(14px,1vw,16px); }
+.home-refinement-preview .arch-task-detail a,
+.home-refinement-preview .arch-task-help { font-size:clamp(12px,.9vw,14px); }
+.home-refinement-preview .arch-task-choice .arch-num { font-size:12px; }
+@media(hover:hover) {
+  .home-refinement-preview .arch-piece:hover { background:#eeefeb; }
+}
+.home-refinement-preview .arch-piece:focus-visible { background:#eeefeb; }
+@media(min-width:761px) and (max-width:1000px) {
+  .architectural-home.home-refinement-preview .arch-products { height:auto; padding-block:40px; }
+  .home-refinement-preview .arch-collection { grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px 0; }
+  .home-refinement-preview .arch-piece { border-left:1px solid var(--arch-line); }
+  .home-refinement-preview .arch-piece:nth-child(3n + 1) { border-left:0; }
+  .home-refinement-preview .arch-piece .arch-art { height:230px; flex:none; }
+  .home-refinement-preview .arch-hero-copy { padding-right:26px; }
+  .home-refinement-preview .arch-task-choice { gap:14px; }
+  .home-refinement-preview .arch-task-choice .arch-name { font-size:clamp(18px,2.2vw,21px); }
+}
+@media(max-width:760px) {
+  .architectural-home.home-refinement-preview { --arch-edge:22px; }
+  .home-refinement-preview .arch-hero-caption { gap:20px; font-size:11px; }
+  .home-refinement-preview .arch-hero-visual { height:clamp(240px,62vw,360px); }
+  .architectural-home.home-refinement-preview .arch-products { height:auto; padding-block:38px; }
+  .home-refinement-preview .arch-section-heading { display:block; }
+  .home-refinement-preview .arch-section-heading h2 { font-size:clamp(34px,8.8vw,48px); }
+  .home-refinement-preview .arch-section-heading .arch-aside { margin-top:18px; }
+  .home-refinement-preview .arch-collection { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:20px; row-gap:24px; }
+  .home-refinement-preview .arch-piece,
+  .home-refinement-preview .arch-piece:first-child,
+  .home-refinement-preview .arch-piece:last-child { padding:0 10px 15px; border-left:0; }
+  .home-refinement-preview .arch-piece:nth-child(even) { border-left:1px solid var(--arch-line); }
+  .architectural-home.home-refinement-preview .arch-piece .arch-art { height:clamp(160px,45vw,260px); flex:none; --size:min(125cqi,240px); }
+  .architectural-home.home-refinement-preview .arch-piece.arch-canister .arch-art { --size:min(137cqi,255px); }
+  .architectural-home.home-refinement-preview .arch-piece.arch-roll .arch-art { --size:min(130cqi,235px); }
+  .home-refinement-preview .arch-piece h3 { font-size:clamp(14px,3.8vw,17px); min-height:46px; overflow-wrap:normal; }
+  .home-refinement-preview .arch-piece-bottom { font-size:11px; gap:3px; }
+  .home-refinement-preview .arch-collection-foot { margin-top:2px; padding-top:18px; align-items:center; }
+  .home-refinement-preview .arch-collection-foot>span { font-size:12px; max-width:140px; }
+  .home-refinement-preview .arch-collection-foot a { font-size:13px; gap:12px; white-space:nowrap; }
+  .home-refinement-preview .arch-task-copy>h2 { font-size:clamp(34px,8.8vw,48px); }
+  .home-refinement-preview .arch-task-choice .arch-name { font-size:clamp(18px,4.7vw,24px); }
+  .home-refinement-preview .arch-task-choice { gap:16px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .home-refinement-preview .arch-piece { transition:none; }
+}

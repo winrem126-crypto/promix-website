@@ -1,0 +1,21 @@
+---
+import '../styles/product-shadow.css';
+interface Props { synchronized?: boolean; }
+const { synchronized = false } = Astro.props;
+---
+<div class="catalog-ground-plane" aria-hidden="true">
+  {synchronized ? (
+    <div class="catalog-ground-source">
+      <div class="catalog-ground-diffuse"></div>
+      <div class="catalog-ground-contact"></div>
+    </div>
+  ) : (
+    <>
+      <div class="catalog-ground-diffuse"></div>
+      <div class="catalog-ground-contact"></div>
+    </>
+  )}
+</div>
+<script>
+  import '../scripts/catalog-product-shadows';
+</script>

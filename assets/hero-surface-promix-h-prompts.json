@@ -1,0 +1,25 @@
+{
+  "asset": "hero-surface-promix-h",
+  "mode": "builtin-image-gen-edit",
+  "createdAt": "2026-09-21",
+  "approvedReference": "C:/Users/winre/.codex/generated_images/01a0c4ab-f8d6-7fb0-b0d7-3aabb9904dbf/exec-2787c5c8-5ea1-4373-a11b-705c6f21ea9b.png",
+  "generatedSource": "C:/Users/winre/.codex/generated_images/01a0c4e3-05ce-7cc3-a707-1a43fbec2592/exec-109b5e9d-a19d-4e3b-8852-9a2e522d61f7.png",
+  "prompt": "Use case: precise-object-edit.\nAsset type: production website hero photograph extracted from an approved mockup.\nInput Image 1 is the EDIT TARGET: a complete 1586x992 webpage mockup. The approved photograph is ONLY the right rectangle from approximately x=744,y=119 to x=1519,y=955, width775,height836.\nPrimary request: deliver ONLY that rectangular scene as a separate clean photograph, filling the whole output image, aspect ratio775:836 (about960x1040). Remove the surrounding webpage interface completely: no left text column, no header, no white outer margins. Within the photograph remove ONLY the superimposed small upper-left label 'СИСТЕМА ОТДЕЛКИ / 01', its L-shaped corner line, and the horizontal lower separator and all two lower captions. Replace their tiny footprints with matching uninterrupted surface texture. Retain all lettering on the product packaging.\nLOCK the source composition and scene. Preserve the large softly textured light ivory mineral wall at left, its angled right edge at64.4% of the scene width, the narrow gray side plane through76.4% width, and the deep navy vertical plane at right. Preserve gray concrete floor and its perspective. Preserve the PROMIX H bucket in the lower right EXACTLY as pictured, at x67%-96%,y59%-84% of scene, about29% scene width and24% scene height. It stays secondary, naturally standing on the floor, including its precise grounded contact shadow.\nPreserve product shape, body geometry, proportions, black lid, white top rim, handle, white base, navy-blue printed label and the exact visible PROMIX wordmark and large H. Do not redesign, smooth, idealize or enlarge the product. Preserve scene lighting, natural material texture, small photographic imperfections, colors, focus, camera angle, crop and contrasts. This is a faithful extraction/cleanup, NOT a new creative direction.\nAvoid any new objects, new text, UI, captions, decorative marks, gradients, glow, glassmorphism, CGI styling, overly smooth packaging, altered floor, additional products, oversized bucket or interior scene.",
+  "outputs": {
+    "png": {
+      "path": "assets/generated-sources/hero-surface-promix-h.png",
+      "width": 1207,
+      "height": 1303,
+      "bytes": 1848522
+    },
+    "webp": {
+      "path": "public/images/hero-surface-promix-h.webp",
+      "width": 1207,
+      "height": 1303,
+      "bytes": 129774,
+      "quality": 93,
+      "effort": 6
+    }
+  },
+  "fidelityNotes": "Approved wall, navy plane, gray floor, bucket scale and lower-right composition preserved. Interface labels removed for semantic HTML overlays. AI cleanup subtly reinterprets wall texture and small packaging print; PROMIX and large H remain readable. No further image rerendering or resizing after generation; WebP is a technical format conversion."
+}

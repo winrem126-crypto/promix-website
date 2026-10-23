@@ -1,0 +1,124 @@
+---
+import BrandLockup from './BrandLockup.astro';
+---
+
+<footer class="home-footer" id="contacts">
+  <div class="home-footer__container">
+    <div class="home-footer__main">
+      <div class="home-footer__brand">
+        <BrandLockup class="home-footer__logo" />
+        <p class="home-footer__slogan">Там, где важен<br>результат.</p>
+        <p class="home-footer__description">Профессиональные материалы<br>для комплексной отделки.</p>
+      </div>
+      <div class="home-footer__contacts">
+        <h2 class="home-footer__label">Связаться напрямую</h2>
+        <a class="home-footer__phone" href="tel:+78422229042">+7 (8422) 22-90-42</a>
+        <a class="home-footer__email" href="mailto:simkraski@mail.ru">simkraski@mail.ru</a>
+        <address>Ульяновск, ул. Урицкого, 112<br>офис&nbsp;1</address>
+      </div>
+      <nav class="home-footer__products" aria-labelledby="footer-products-title">
+        <h2 class="home-footer__label" id="footer-products-title">Продукция</h2>
+        <ul class="home-footer__links">
+          <li><a href="/products/">Каталог</a></li>
+          <li><a href="/#selection">Подбор по задаче</a></li>
+          <li><a href="/documents/">Документы</a></li>
+        </ul>
+      </nav>
+      <nav class="home-footer__company" aria-labelledby="footer-company-title">
+        <h2 class="home-footer__label" id="footer-company-title">Компания</h2>
+        <ul class="home-footer__links">
+          <li><a href="/#production">Производство</a></li>
+          <li><a href="/#partners">Партнёрам</a></li>
+          <li><a href="/#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="home-footer__bottom">
+      <nav class="home-footer__legal" aria-label="Правовая информация">
+        <a href="/privacy/">Политика конфиденциальности</a>
+        <a href="/cookies/">Политика использования Cookie</a>
+        <a href="/personal-data/">Политика обработки персональных данных</a>
+        <button type="button" data-cookie-settings>Настройки Cookie</button>
+      </nav>
+      <p class="home-footer__copyright">© ООО «ПРОМИКС», 2026</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+@font-face {
+  font-family: 'PROMIX Contact Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/manrope/manrope-latin-variable.woff2') format('woff2');
+}
+.home-footer {
+  --footer-muted: #bcc5cc;
+  --footer-column-gap: 32px;
+  padding: 56px 0 26px;
+  background: #102336;
+  color: #f8f8f5;
+  font: 400 15px/1.5 'PROMIX Hero Manrope', Arial, sans-serif;
+  scroll-margin-top: var(--site-header-height);
+}
+.home-footer *, .home-footer *::before, .home-footer *::after { box-sizing: border-box; }
+.home-footer__container { width: min(var(--site-content-max), calc(100% - var(--site-content-gutter) * 2)); margin-inline: auto; }
+.home-footer :is(p,h2,ul) { margin: 0; }
+.home-footer a { color: inherit; text-decoration: none; }
+.home-footer__main { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); grid-template-areas: 'brand brand brand brand products products company company contacts contacts contacts contacts'; column-gap: var(--footer-column-gap); align-items: start; }
+.home-footer__main > * { min-width: 0; }
+.home-footer__brand { grid-area: brand; }
+.home-footer__products { grid-area: products; }
+.home-footer__company { grid-area: company; }
+.home-footer__contacts { grid-area: contacts; }
+.home-footer__brand :global(.home-footer__logo) { --brand-width: 152px; --brand-color: #f8f8f5; vertical-align: top; }
+
+.home-footer .home-footer__slogan { max-width: 250px; margin-top: 22px; font-size: 32px; font-weight: 400; line-height: 1.19; letter-spacing: -.025em; }
+.home-footer .home-footer__description { max-width: 250px; margin-top: 18px; color: var(--footer-muted); font-size: 15px; line-height: 1.55; }
+.home-footer .home-footer__label { margin: 0 0 26px; color: #adbdcb; font-size: 12px; font-weight: 500; line-height: 1.5; letter-spacing: .085em; text-transform: uppercase; }
+.home-footer__links { display: grid; gap: 16px; max-width: 200px; padding: 0; list-style: none; }
+.home-footer__links a { display: inline-flex; align-items: center; min-height: 24px; font-size: 16px; line-height: 1.5; }
+.home-footer__contacts { display: flex; flex-direction: column; align-items: flex-start; }
+.home-footer__contacts > * { max-width: min(300px,100%); }
+.home-footer__phone { font-family: 'PROMIX Contact Manrope', 'PROMIX Hero Manrope', Arial, sans-serif; font-size: 25px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; white-space: nowrap; }
+.home-footer__email { margin-top: 14px; font-size: 17px; font-weight: 500; line-height: 1.5; }
+.home-footer address { margin-top: 24px; color: var(--footer-muted); font-style: normal; font-size: 15px; line-height: 1.5; }
+.home-footer__bottom { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); grid-template-areas: 'copyright copyright copyright copyright legal legal legal legal legal legal legal legal'; column-gap: var(--footer-column-gap); align-items: start; margin-top: 48px; padding-top: 26px; border-top: 1px solid #425361; color: var(--footer-muted); font-size: 12px; line-height: 1.5; }
+.home-footer .home-footer__copyright { grid-area: copyright; padding-block: 6px; }
+.home-footer__legal { grid-area: legal; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 22px; min-width: 0; }
+.home-footer__legal :is(a,button) { display: inline-flex; align-items: center; min-height: 30px; max-width: 100%; padding: 6px 0; font: inherit; text-align: left; }
+.home-footer__legal button { border: 0; background: none; color: inherit; cursor: pointer; }
+.home-footer :global(a), .home-footer button { text-decoration-thickness: 1px; text-underline-offset: 5px; transition: color 160ms ease; }
+.home-footer :global(a:focus-visible), .home-footer button:focus-visible { outline: 2px solid #e2d9cb; outline-offset: 5px; color: #fff; text-decoration: underline; }
+@media (hover:hover) and (pointer:fine) {
+  .home-footer :global(a:hover), .home-footer button:hover { color: #fff; text-decoration: underline; }
+  .home-footer__brand :global(.home-footer__logo:hover) { text-decoration: none; }
+}
+@media (max-width: 1100px) {
+  .home-footer__main { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-areas: 'brand contacts' 'products company'; gap: 40px; }
+  .home-footer__brand { grid-area: brand; }
+  .home-footer__contacts { grid-area: contacts; }
+  .home-footer__products { grid-area: products; }
+  .home-footer__company { grid-area: company; }
+  .home-footer__bottom { grid-template-columns: minmax(0,1fr); grid-template-areas: 'copyright' 'legal'; gap: 8px; }
+  .home-footer__legal { justify-content: flex-start; }
+  .home-footer__phone { font-size: 24px; }
+}
+@media (max-width: 760px) {
+  .home-footer { padding-block: 36px 28px; }
+  .home-footer__main { grid-template-columns: minmax(0,1fr); grid-template-areas: 'brand' 'contacts' 'products' 'company'; gap: 32px; }
+  .home-footer__brand :global(.home-footer__logo) { --brand-width: 140px; }
+  .home-footer .home-footer__slogan { margin-top: 20px; font-size: 28px; line-height: 1.2; }
+  .home-footer .home-footer__description { margin-top: 16px; font-size: 14px; }
+  .home-footer__phone { font-size: 23.5px; }
+  .home-footer address { font-size: 15px; }
+  .home-footer__links { gap: 0; }
+  .home-footer__links a { min-height: 40px; }
+  .home-footer__bottom { grid-template-areas: 'legal' 'copyright'; gap: 18px; margin-top: 36px; padding-top: 24px; }
+  .home-footer__legal { flex-direction: column; align-items: flex-start; gap: 0; }
+  .home-footer__legal :is(a,button) { min-height: 38px; padding-block: 8px; }
+  .home-footer .home-footer__copyright { padding: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .home-footer :is(a,button) { transition: none; } }
+</style>

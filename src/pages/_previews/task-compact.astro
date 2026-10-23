@@ -1,0 +1,50 @@
+---
+import SiteIcons from '../../components/SiteIcons.astro';
+import TaskSelector from '../../components/TaskSelector.astro';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/playfair-display/400.css';
+---
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>PROMIX — компактный подбор по задаче</title><SiteIcons /></head>
+<body><main><TaskSelector /></main></body></html>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => document.querySelector('[data-gallery-tab="preparation"]')?.click());
+</script>
+<style is:global>
+  *{box-sizing:border-box}body{margin:0;background:#061521;font-family:Inter,sans-serif;--gutter:clamp(20px,4.7vw,68px)}button{font-family:inherit}img{max-width:100%}
+  .task-gallery{padding:28px var(--gutter)}
+  @media(min-width:901px){
+    .gallery-frame{aspect-ratio:2;max-width:1440px}
+    .gallery-scenery{object-fit:fill}
+    .gallery-heading{top:6%;width:27%}
+    .gallery-heading h2{font-size:clamp(24px,2.3cqw,33px);margin-top:18px}
+    .gallery-rail{top:30%;width:24%}
+    .gallery-step{min-height:4.65cqw;gap:12px;padding:12px 0}
+    .gallery-step strong{font-size:clamp(12px,1.06cqw,15px)}
+    .gallery-step::before{top:62%;bottom:-38%}
+    .gallery-step[aria-selected='true']::after{height:44px;top:1px}
+    .gallery-active-marker{top:18px}
+    .gallery-chapter{font-size:14cqw;top:0;left:34%}
+    .gallery-panel>.gallery-results-label{top:8%;left:34%}
+    .gallery-results-label{font-size:14px}
+    .gallery-product--1{left:32%;top:66%;width:23%}
+    .gallery-product--2{left:63%;top:47.5%;width:16%}
+    .gallery-product--3{left:77%;top:69.25%;width:17%}
+    .gallery-product--1 .gallery-product-copy{margin-top:6.5cqw}
+    .gallery-product--2 .gallery-product-copy{margin-top:1.8cqw}
+    .gallery-product--3 .gallery-product-copy{margin-top:2.8cqw}
+    .gallery-product-copy{padding-right:22px}
+    .gallery-product h3{font-size:clamp(18px,1.5cqw,22px)}
+    .gallery-product--1 h3{font-size:clamp(24px,2cqw,29px)}
+    .gallery-product p{font-size:clamp(12px,1cqw,14px);line-height:1.45;margin-top:8px}
+    .gallery-catalog{bottom:3%;font-size:12px}
+  }
+  @media(min-width:901px) and (max-width:1100px){
+    .gallery-frame{aspect-ratio:1.4}
+    .gallery-product--2 .gallery-product-copy{margin-top:.8cqw;padding-right:0}
+    .gallery-product--2 .gallery-product-arrow{right:-18px}
+  }
+  @media(max-width:900px){.task-gallery{padding:20px var(--gutter)}.gallery-heading{padding-top:24px;padding-bottom:22px}}
+</style>

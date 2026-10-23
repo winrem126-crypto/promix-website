@@ -1,0 +1,130 @@
+---
+import { responsiveImage, imageSrcset } from '../performance/images';
+import { homeImagePlaceholder } from '../performance/home-image-placeholder';
+const workshop = responsiveImage('/images/production-realistic-1600.webp');
+const laboratory = responsiveImage('/images/laboratory-realistic-1600.webp');
+---
+<section class="home-production" id="production" aria-labelledby="production-title">
+  <div class="home-production__container">
+    <header class="home-production__heading" data-motion-reveal>
+      <p class="home-production__label">03 / Производство и контроль</p>
+      <h2 id="production-title">Производим. Проверяем.<br />Отвечаем за результат.</h2>
+    </header>
+
+    <div class="home-production__gallery">
+      <figure class="home-production__workshop">
+        <div class="home-production__photo" style={homeImagePlaceholder('/images/production-realistic-1600.webp')} data-motion-reveal="visual">
+          <img src={workshop.src} srcset={imageSrcset(workshop.sources)} sizes="auto, (max-width: 760px) calc(100vw - 44px), (min-width: 1496px) 804px, calc((100vw - 156px) * .6)" width="1600" height="900" loading="lazy" decoding="async" alt="Производственная линия PROMIX" />
+        </div>
+        <figcaption><span>Производство</span><span>Ульяновск</span></figcaption>
+      </figure>
+      <figure class="home-production__laboratory">
+        <div class="home-production__photo" style={homeImagePlaceholder('/images/laboratory-realistic-1600.webp')} data-motion-reveal="visual">
+          <img src={laboratory.src} srcset={imageSrcset(laboratory.sources)} sizes="auto, (max-width: 760px) calc(100vw - 44px), (min-width: 1496px) 536px, calc((100vw - 156px) * .4)" width="1600" height="900" loading="lazy" decoding="async" alt="Контроль качества материалов" />
+        </div>
+        <figcaption><span>Лаборатория</span><span>Проверка свойств материалов</span></figcaption>
+      </figure>
+    </div>
+
+    <ul class="home-production__proof">
+      <li>Профессиональные рецептуры</li>
+      <li>Контроль каждой партии</li>
+      <li>Поставки по России и СНГ</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .home-production {
+    padding-block: 80px;
+    color: #102336;
+    font-family: 'PROMIX Hero Manrope', Arial, sans-serif;
+  }
+  .home-production__container {
+    width: min(var(--site-content-max), calc(100% - var(--site-content-gutter) * 2));
+    margin-inline: auto;
+  }
+  .home-production__label {
+    color: #53616b;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .home-production .home-production__heading h2 {
+    margin-top: 16px;
+    font-family: inherit;
+    font-size: clamp(48px, 3.6vw, 56px);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -.045em;
+  }
+  .home-production__gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 28px;
+    margin-top: 36px;
+  }
+  .home-production__gallery figure {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-width: 0;
+    margin: 0;
+  }
+  .home-production__photo { position: relative; min-width: 0; background-size: cover; background-position: center; }
+  /* The uncropped workshop determines the shared height; the laboratory
+     centers the hands, material sample and work surface within that height. */
+  .home-production__workshop .home-production__photo { aspect-ratio: 16 / 9; }
+  .home-production__photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .home-production__gallery figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 16px;
+    padding-top: 12px;
+    color: #53616b;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .home-production__proof {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 32px 0 0;
+    padding: 24px 0 0;
+    border-top: 1px solid var(--arch-line);
+    list-style: none;
+  }
+  .home-production__proof li {
+    padding-inline: 24px;
+    border-left: 1px solid var(--arch-line);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .home-production__proof li:first-child { padding-left: 0; border-left: 0; }
+  .home-production__proof li:last-child { padding-right: 0; }
+
+  @media (max-width: 760px) {
+    .home-production { padding-block: 48px 56px; }
+    .home-production .home-production__heading h2 {
+      font-size: clamp(32px, 9.2vw, 36px);
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+    .home-production__gallery { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 28px; }
+    /* Keep all workshop equipment in frame. The closer laboratory view
+       can use 4:3 while retaining both hands and the material sample. */
+    .home-production__laboratory .home-production__photo { aspect-ratio: 4 / 3; }
+    .home-production__proof { grid-template-columns: minmax(0, 1fr); margin-top: 28px; padding-top: 0; }
+    .home-production__proof li,
+    .home-production__proof li:first-child,
+    .home-production__proof li:last-child { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--arch-line); }
+  }
+</style>

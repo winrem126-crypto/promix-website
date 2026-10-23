@@ -1,0 +1,74 @@
+---
+import { categories } from '../data/products';
+import '../styles/product-category-showcase.css';
+
+// Keep the existing preview caller compatible with the homepage component.
+interface Props { previewVariant?: 'final'; }
+
+const sceneRoot = '/images/home-category-cards/clean-ui-2026-10';
+const sceneWidths = [480, 768, 960, 1440];
+const sceneSizes = '(max-width: 760px) calc(100vw - 44px), (max-width: 1100px) calc((100vw - 84px) / 2), (max-width: 1496px) calc((91.6vw - 40px) / 3), 443px';
+// Tiny photo previews are inline so cards never wait for a separate placeholder request.
+const scenePreviews: Record<string, string> = {
+  putties: 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwBACdASoeABQAPv1sq06rJiOiMBgMAWAfiWQAzNBX8M2Pfe5qS/VjbwPLDU4dnUAA/vfuZyGunGMCRekfYPOE91FS8PnF8kwJvhqOnKC6/5fz3Puv/zMJQRwVn+7c7+K/4Zjqg9IGsNEpjUhEAA==',
+  primers: 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwBACdASoeABQAPwFyrFGrJqOiqA1RYCAJQBndiLvpHTdSFCZHLonDjUfF8vUAAP736ZPP+ILjZIgAQ+1euE5Wmxy/cN7mUVMpCCqIB4FKG7MFIdpbXKPj0p+Bwif9ydtVPJJYwZQxRAhEAAAAAA==',
+  paints: 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABwBACdASoeABQAPu1eqE6ppSQiN/qoATAdiWcAy6Qhuqs2n1SVR/mgupnBsAD+8dAlF7BIR5NRXHjVk1/zCaPVy9wVQ7eJJuA9hZbf6OTeQNe/5EEqrYlUQ4w2S1cZT1WEFBjrQHT4gDVoKVugAA==',
+  adhesives: 'data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwBACdASoeABQAPwFyr0+rJyQiMAgBYCAJZwC9WCFrzlwgYxsfrs4mlB6LUqpUBIAA/u/DqdbczZJEODRtgoYPtc82wgNkKqjebIO+2vfbD6MjZvWc51PCrpdjvPT2HH7J8DXoAAA=',
+  waterproofing: 'data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwBACdASoeABQAPwFyrVGrJqQiqA1RYCAJYwAAvY5O/yjdzBBf+dWKkIyRiKNVO4AA/vfurI4Jjit8dji7WBnV0eBqguofy+JSsDoqExTSoBdllMT1BLkqfNxZHynutE2KMwJq8AA=',
+  'roll-materials': 'data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwBACdASoeABQAPwF0sVIrJqSiqAqpYCAJYwABHui86mB+ikUlXpytI7EV/6glb+AA/voh6tzqf5nOSA7qpom3qqHKInaPJptvJDdHq45N+Iy3Z+AsGkOcrzDBDW5yPh2EuD8G2IYmYUdhupkQFD+z1hbMn/nYk6RimIAA',
+};
+const captions: Record<string, readonly [string, string]> = {
+  putties: ['РОВНЫЕ ПОВЕРХНОСТИ', 'ДЛЯ БОЛЬШИХ ДЕЛ'],
+  primers: ['НАДЁЖНАЯ ОСНОВА', 'ДЛЯ ДОЛГОВЕЧНОСТИ'],
+  paints: ['ЦВЕТ, КОТОРЫЙ', 'СОЗДАЁТ ПРОСТРАНСТВО'],
+  adhesives: ['ПРОЧНОЕ РЕШЕНИЕ', 'В ДЕТАЛЯХ'],
+  waterproofing: ['ЗАЩИТА', 'В ЛЮБЫХ УСЛОВИЯХ'],
+  'roll-materials': ['ИДЕАЛЬНАЯ ОСНОВА', 'ДЛЯ ПРЕМИАЛЬНОЙ ОТДЕЛКИ'],
+};
+const materialCount = (count: number) => {
+  const last = count % 10;
+  const lastTwo = count % 100;
+  const word = last === 1 && lastTwo !== 11 ? 'материал'
+    : last >= 2 && last <= 4 && (lastTwo < 12 || lastTwo > 14) ? 'материала' : 'материалов';
+  return `${count} ${word}`;
+};
+---
+
+<nav class="home-category-grid" aria-label="Направления продукции PROMIX">
+  {categories.map((category) => (
+    <div class="home-category-hover">
+    <a class="home-category-card"
+      href={`/products/?category=${category.id}`}
+      data-category-scene={category.id}
+      aria-labelledby={`home-category-title-${category.id} home-category-count-${category.id}`}>
+      <span class="home-category-surface" aria-hidden="true"
+        style={`--category-preview: url("${scenePreviews[category.id]}")`}>
+        <picture>
+          <source type="image/webp"
+            srcset={sceneWidths.map((width) => `${sceneRoot}/${category.id}-${width}.webp ${width}w`).join(', ')}
+            sizes={sceneSizes} />
+          <img class="home-category-scene"
+            src={`${sceneRoot}/${category.id}-960.jpg`}
+            width="960" height="640" alt="" loading="lazy" decoding="async" />
+        </picture>
+      </span>
+      <div class="home-category-content">
+        <div class="home-category-copy">
+          <h3 class="home-category-title" id={`home-category-title-${category.id}`}>
+            {category.id === 'roll-materials'
+              ? <>Стеклохолст<br />и флизелин</>
+              : category.title}
+          </h3>
+          <span class="home-category-count" id={`home-category-count-${category.id}`}>{materialCount(category.count)}</span>
+          <svg class="home-category-arrow" width="36" height="28" viewBox="0 0 36 28" fill="none" aria-hidden="true" focusable="false">
+            <path d="M2 14h30M22 3l11 11-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <span class="home-category-caption" aria-hidden="true">
+          {captions[category.id].map((line) => <span>{line}</span>)}
+        </span>
+      </div>
+    </a>
+    </div>
+  ))}
+</nav>

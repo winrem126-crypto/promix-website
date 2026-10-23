@@ -1,0 +1,71 @@
+---
+// One packaging-independent scene for catalog, recommendations and product detail.
+---
+<div class="product-stage-scene" data-product-scene="mineral" aria-hidden="true">
+  <div class="product-scene-wall"></div>
+  <div class="product-scene-floor"></div>
+  <div class="product-scene-transition"></div>
+</div>
+
+<style is:global>
+  :is(.product-card-visual, .product-studio-stage):has(> [data-product-scene="mineral"]) {
+    --scene-horizon: 63.1%;
+    isolation: isolate;
+  }
+  .product-stage-scene {
+    position: absolute; inset: 0; z-index: 0;
+    isolation: isolate; overflow: hidden; pointer-events: none;
+    background: #eee6de;
+  }
+  /* A scene owns its lighting even when a product has no shadow metadata. */
+  .product-card.product-card--open .product-card-visual:has(> [data-product-scene="mineral"])::before,
+  .product-card.product-card--open .product-card-visual:has(> [data-product-scene="mineral"])::after {
+    content: none;
+  }
+  .product-stage-scene > .product-scene-wall,
+  .product-stage-scene > .product-scene-floor,
+  .product-stage-scene > .product-scene-transition {
+    position: absolute; left: 0; right: 0; z-index: 0; pointer-events: none;
+  }
+  .product-stage-scene > .product-scene-wall {
+    top: 0; height: var(--scene-horizon); overflow: hidden;
+    background: linear-gradient(110deg, #f1eae5, #eae2dc 40%, #dbd1cb);
+  }
+  .product-stage-scene > .product-scene-wall::before,
+  .product-stage-scene > .product-scene-wall::after,
+  .product-stage-scene > .product-scene-floor::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+  }
+  .product-stage-scene > .product-scene-wall::before {
+    background: url('/images/catalog/mineral-studio.webp') center top / 100% 150% no-repeat;
+    mix-blend-mode: multiply; opacity: .55;
+    filter: grayscale(.55) contrast(1.18) brightness(1.04);
+  }
+  .product-stage-scene > .product-scene-wall::after {
+    background: url('/images/catalog/mineral-plaster-grain.svg') 0 0 / 180px 180px;
+    mix-blend-mode: multiply; opacity: .12;
+  }
+  .product-stage-scene > .product-scene-floor {
+    top: var(--scene-horizon); bottom: 0; overflow: hidden;
+    background: linear-gradient(180deg, rgb(147 127 108 / .055), transparent 28%),
+      linear-gradient(105deg, #fcf7f1, #f7f1eb 60%, #eae2da);
+  }
+  .product-stage-scene > .product-scene-floor::before {
+    /* Start below the raster's old seam; the transition is drawn separately. */
+    background: url('/images/catalog/mineral-studio.webp') center bottom / 100% 380% no-repeat;
+    mix-blend-mode: multiply; opacity: .60;
+    filter: grayscale(.7) brightness(1.03) blur(.2px);
+  }
+  .product-stage-scene > .product-scene-transition {
+    top: calc(var(--scene-horizon) - 2px); height: 5px;
+    background: linear-gradient(180deg, transparent, rgb(147 127 111 / .04) 32%, rgb(255 253 249 / .20) 60%, transparent);
+  }
+  /* Clip the scene's shadow group at the horizon. Its children keep the image's
+     measured coordinates, so the visible base remains fixed during hover. */
+  :is(.product-card-visual, .product-studio-stage)[data-product-shadow]:has(> [data-product-scene="mineral"]) > .catalog-ground-plane {
+    z-index: auto;
+    clip-path: inset(var(--scene-horizon) 0 0);
+  }
+  :is(.product-card-visual, .product-studio-stage):has(> [data-product-scene="mineral"]) .catalog-ground-diffuse { z-index: 1; }
+  :is(.product-card-visual, .product-studio-stage):has(> [data-product-scene="mineral"]) .catalog-ground-contact { z-index: 2; }
+</style>

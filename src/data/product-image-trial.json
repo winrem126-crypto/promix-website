@@ -1,0 +1,61 @@
+{
+  "slug": "promix-h-03",
+  "originalFilename": "01_H_02_bordovaya_transparent_4344x3258.png",
+  "sourceHash": "7c8b790ba644",
+  "image": "/images/products/reference-trial/promix-h-03-7c8b790ba644-1600.webp",
+  "sources": [
+    {
+      "width": 640,
+      "url": "/images/products/reference-trial/promix-h-03-7c8b790ba644-640.webp"
+    },
+    {
+      "width": 960,
+      "url": "/images/products/reference-trial/promix-h-03-7c8b790ba644-960.webp"
+    },
+    {
+      "width": 1600,
+      "url": "/images/products/reference-trial/promix-h-03-7c8b790ba644-1600.webp"
+    }
+  ],
+  "referenceFrame": {
+    "source": [
+      963,
+      769
+    ],
+    "bounds": [
+      72,
+      31,
+      778,
+      680
+    ]
+  },
+  "frame": {
+    "source": [
+      1600,
+      1200
+    ],
+    "bounds": [
+      208,
+      66,
+      1185,
+      1033
+    ],
+    "opticalScale": 1,
+    "builtInShadow": false
+  },
+  "geometry": {
+    "source": [
+      1600,
+      1200
+    ],
+    "bodyWidth": 964,
+    "bodyCenter": 801,
+    "base": 1099,
+    "contactMask": "/images/products/reference-trial/promix-h-03-7c8b790ba644-contact-85ebe6369b50.svg",
+    "ambientMask": "/images/products/reference-trial/promix-h-03-7c8b790ba644-ambient-e735a9a7795e.svg",
+    "groundMask": "/images/products/reference-trial/promix-h-03-7c8b790ba644-ground-4ebc55903049.svg",
+    "family": "bucket",
+    "profile": "reference-mineral"
+  },
+  "reference": "/previews/h-shadow-reference/shadow-reference-e1eb67960527.png"
+}

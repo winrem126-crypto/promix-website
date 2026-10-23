@@ -1,0 +1,28 @@
+---
+import BrandLockup from './BrandLockup.astro';
+
+const pathname = Astro.url.pathname;
+const nav = [
+  ['Продукция', '/products/', pathname === '/products' || pathname.startsWith('/products/')],
+  ['Подбор по задаче', '/#selection', false],
+  ['Производство', '/#production', false],
+  ['Партнёрам', '/#partners', false],
+  ['Контакты', '/#contacts', false],
+];
+---
+
+<header class="site-header commercial-header" data-header>
+  <BrandLockup class="header-brand" />
+  <nav class="desktop-nav commercial-nav" aria-label="Основная навигация">
+    {nav.map(([label, href, active], index) => <a class={index === 0 ? 'nav-product' : undefined} href={String(href)} aria-current={active ? 'page' : undefined}><span class="site-nav-label">{label}</span></a>)}
+  </nav>
+  <button class="header-consult" type="button" data-open-form data-form-context="header"><span>Получить консультацию</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" /></svg></button>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+    <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  {nav.map(([label, href, active]) => <a href={String(href)} aria-current={active ? 'page' : undefined}><span class="site-nav-label">{label}</span></a>)}
+  <button type="button" data-open-form data-form-context="header">Получить консультацию</button>
+</div>

@@ -1,0 +1,122 @@
+/* PROMIX motion: reactions and orientation, with static content as the fallback. */
+:root {
+  --motion-press: 100ms;
+  --motion-fast: 160ms;
+  --motion-base: 240ms;
+  --motion-medium: 320ms;
+  --motion-slow: 520ms;
+  --motion-stagger: 80ms;
+  --ease-premium: cubic-bezier(.22, 1, .36, 1);
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --motion-button-transition: background-color var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), scale var(--motion-press) var(--ease-standard);
+}
+
+/* Keep native anchor navigation and account for the sticky header. */
+body .pd-main #characteristics { scroll-margin-top: calc(var(--site-header-height) + 24px); }
+body .button { transform: none; }
+body :is(.button, .header-consult, .home-hero__cta, .home-partners__cta, .mobile-menu button) {
+  transition: var(--motion-button-transition);
+}
+body :is(.button, .header-consult, .home-hero__cta, .home-partners__cta, .mobile-menu button):is(:active, [data-pressed]):not(:disabled) { scale: .985; }
+body :is(.header-consult svg, .home-hero__cta svg, .home-partners__arrow, .home-products__arrow, .pd-support button > span, .pd-related-head a > span) {
+  transition: transform var(--motion-fast) var(--ease-premium), color var(--motion-fast) var(--ease-standard);
+}
+body :is(.desktop-nav a, .home-products h3, .site-footer a, .site-footer button, .home-footer a, .home-footer button, .finishing-system__number, .finishing-system__nav a, .catalog-filters button, .pd-main a) {
+  transition: color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard);
+}
+body .header-consult:focus-visible svg { transform: translateX(4px); }
+body .home-products .home-products__image {
+  transform-origin: center bottom;
+  transition: scale var(--motion-medium) var(--ease-premium);
+}
+body .product-card.product-card--open .product-card-visual img {
+  transition: transform var(--motion-medium) var(--ease-premium);
+}
+body .product-card.product-card--open .product-card-link {
+  transition: color var(--motion-fast) var(--ease-standard);
+}
+body .product-card.product-card--open .product-card-link .product-card-arrow {
+  transition: transform var(--motion-fast) var(--ease-premium);
+}
+@media (hover: hover) and (pointer: fine) {
+  body .button:hover { transform: none; }
+  body .header-consult:hover svg,
+  body .home-hero__cta:hover svg,
+  .home-partners__cta:hover .home-partners__arrow,
+  .home-products__category:hover .home-products__arrow,
+  .home-products__catalog a:hover .home-products__arrow,
+  .pd-support button:hover > span,
+  .pd-related-head a:hover > span { transform: translateX(4px); }
+  body .home-products__category:hover .home-products__image { scale: 1.02; }
+}
+
+/* Native dialogs retain top-layer semantics, focus containment and scroll lock
+   until their closing transition finishes. JS has a cancellation-safe fallback. */
+body .modal {
+  opacity: 0; transform: translateY(12px) scale(.985);
+  transition: opacity var(--motion-base) var(--ease-premium), transform var(--motion-base) var(--ease-premium);
+  overscroll-behavior: contain;
+}
+body .modal[data-motion-state='open'] { opacity: 1; transform: none; }
+body .modal[data-motion-state='closing'] { transition-duration: var(--motion-fast); }
+body .modal::backdrop {
+  opacity: 0;
+  transition: opacity var(--motion-fast) var(--ease-standard);
+}
+body .modal[data-motion-state='open']::backdrop { opacity: 1; }
+/* Navigation is available at full contrast as soon as the button is pressed. */
+body .mobile-menu { opacity: 1; transform: none; transition: none; }
+body[data-menu-fullscreen] { overflow: hidden; }
+body .menu-toggle-icon i { transition: transform var(--motion-base) var(--ease-standard), opacity var(--motion-fast) var(--ease-standard); }
+body .menu-toggle[aria-expanded='true'] .menu-toggle-icon i:nth-child(1) { top: 1px; transform: translateY(7px) rotate(45deg); }
+body .menu-toggle[aria-expanded='true'] .menu-toggle-icon i:nth-child(3) { top: 15px; transform: translateY(-7px) rotate(-45deg); }
+
+body .cookie-banner {
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 260ms var(--ease-premium), transform 260ms var(--ease-premium);
+}
+body .cookie-banner[data-motion-state='open'] { opacity: 1; transform: none; }
+body .cookie-banner[data-motion-state='closing'] { transform: translateY(6px); pointer-events: none; transition-duration: 200ms; }
+body :is(input, textarea, select) { transition: border-color var(--motion-fast) var(--ease-standard); }
+body .form-status:not([hidden]) { animation: motion-fade var(--motion-base) var(--ease-standard); }
+body .catalog-product-grid[data-motion-updated] { animation: motion-results var(--motion-fast) var(--ease-standard); }
+
+/* Only chosen headings/visual groups reveal, once. No hidden content without JS. */
+body .reveal { opacity: 1; transform: none; transition: none; }
+body [data-motion-reveal] { opacity: 1; }
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body [data-motion-reveal].motion-pending { opacity: 0; transform: translateY(16px); }
+  body [data-motion-reveal='visual'].motion-pending { transform: scale(.99); }
+  body [data-motion-reveal].motion-visible { animation: motion-reveal var(--motion-slow) var(--ease-premium) both; }
+  body [data-motion-reveal='visual'].motion-visible { animation-name: motion-visual; }
+  body [data-motion-reveal]:focus-within { opacity: 1; transform: none; animation: none; }
+}
+@media (min-width: 1101px) and (min-height: 720px) and (prefers-reduced-motion: no-preference) {
+  .finishing-system__step[data-active='true'] .finishing-system__description {
+    --reveal-y: 8px; animation: motion-reveal var(--motion-base) var(--ease-premium) backwards;
+  }
+}
+@keyframes motion-reveal { from { opacity: 0; transform: translateY(var(--reveal-y, 16px)); } to { opacity: 1; transform: none; } }
+@keyframes motion-visual { from { opacity: 0; transform: scale(.99); } to { opacity: 1; transform: none; } }
+@keyframes motion-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes motion-results { from { opacity: .85; } to { opacity: 1; } }
+
+/* Touch has immediate navigation and state feedback, never hover transforms.
+   Keep the category image's static translateX(-50%) used for positioning. */
+@media (hover: none), (pointer: coarse) {
+  body .home-products .home-products__image { scale: none; transition: none; }
+  body .product-card.product-card--open .product-card-visual img,
+  body .product-card.product-card--open .product-card-link .product-card-arrow,
+  body :is(.header-consult svg, .home-hero__cta svg, .home-partners__arrow, .home-products__arrow) { transform: none; transition: none; }
+  body :is(a, button) { touch-action: manipulation; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  body :is(.modal, .mobile-menu, .cookie-banner, [data-motion-reveal], .reveal) { transform: none !important; }
+  body [data-motion-reveal] { opacity: 1; }
+  body :is(.button, .header-consult, .home-hero__cta, .home-partners__cta, .mobile-menu button, .home-products__image) { scale: none !important; }
+  body .product-card.product-card--open .product-card-visual img,
+  body .product-card.product-card--open .product-card-link .product-card-arrow,
+  body :is(.header-consult svg, .home-hero__cta svg, .home-partners__arrow, .home-products__arrow, .pd-support button > span, .pd-related-head a > span) { transform: none !important; }
+}
