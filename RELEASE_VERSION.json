@@ -1,0 +1,22 @@
+{
+  "releaseId": "promix-2026.10.23-rc1",
+  "gitTag": "promix-2026.10.23-rc1",
+  "preparedUTC": "2026-10-23T07:40:30.141Z",
+  "status": "CANDIDATE_NOT_DEPLOYED",
+  "qaBaselineCommit": "0a1b466f45a685c86eec5abcc2d4e1650f2a87a4",
+  "canonicalOrigin": "https://pro-mix.ru",
+  "runtime": "Astro static dist + standalone PHP/PHPMailer endpoint",
+  "publicRoot": "dist",
+  "apiPath": "/api/lead.php",
+  "productionServerVerified": false,
+  "productionMailDeliveryVerified": false,
+  "sourceArchiveIncludesDependencies": false,
+  "runtimeArchiveIncludesComposerVendor": false,
+  "buildToolchain": {
+    "node": "v24.19.0",
+    "pnpm": "11.25.0",
+    "lockfile": "pnpm-lock.yaml",
+    "install": "pnpm install --frozen-lockfile",
+    "build": "pnpm run build"
+  }
+}

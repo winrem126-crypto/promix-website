@@ -1,4 +1,32 @@
+# Private configuration and state
+.env
+.env.*
+!.env.example
 backend/config/config.php
 backend/vendor/
-/backend/storage/
-
+backend/storage/
+*.pem
+*.key
+*.p12
+*.pfx
+# Generated dependencies and build output
+node_modules/
+.astro/
+dist/
+# Local diagnostics, browser state, archives and backups
+.cache/
+artifacts/
+playwright-report/
+test-results/
+logs/
+*.log
+*.har
+*.zip
+*.7z
+*.rar
+*.bak
+*.backup
+*.tmp
+.DS_Store
+Thumbs.db
+.tmp-chrome-shot/

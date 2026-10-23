@@ -1,0 +1,1844 @@
+{
+  "generatedAtUTC": "2026-10-23T07:37:04.470Z",
+  "state": "PROPOSED_NOT_APPLIED",
+  "scope": "Ровно 52 pending URL из завершённого QA.42 имеющихся301,3 сохранённых200 и отдельное удаление латексной товарной страницы не пересматриваются.",
+  "method": "Только чтение локальных завершённых QA, title/H1/сохранённых текстов и существующих исходников фильтров. Новых public GET/форм/аналитики/изменений production не было.",
+  "sourceFiles": [
+    {
+      "path": "E:/bulat/design/PROMIX_FINAL_QA_2026-10-22_20-58-49/results/old-new-map.json",
+      "sha256": "926094ebce93c2bcc384125d1d7dabb97d72f4c4b6d4ce1409d9910e3b235543"
+    },
+    {
+      "path": "E:/bulat/design/PROMIX_FINAL_QA_2026-10-22_20-58-49/results/legacy-pages.json",
+      "sha256": "b57dcfb636019d189568d75ef3ecb05651b5e47639e26f704ac320f9931cc757"
+    },
+    {
+      "path": "E:/bulat/design/PROMIX_FINAL_QA_2026-10-22_20-58-49/results/legacy-remaining-pages.json",
+      "sha256": "39084c7b28f34b08cda6184bc587fcf2244c678edc08e769be8c035e43a8badb"
+    },
+    {
+      "path": "E:/bulat/design/PROMIX_FINAL_QA_2026-10-22_20-58-49/results/final-full-crawl.json",
+      "sha256": "1381a4c75e37ea18d9046a7e479525dc5c4da38c6b935fe0ec5e0a58f7268be7"
+    }
+  ],
+  "counts": {
+    "301": 32,
+    "404": 3,
+    "410": 17
+  },
+  "approvalPolicy": "Каждая строка имеет одну конкретную рекомендацию. PROPOSED не означает установленный410/301 или решение компании. Не применять автоматически; сначала утвердить строку и отдельное разрешение production.404 предлагается только при доказанной неопределённости назначения/состава, не как утверждение вечного удаления.",
+  "rows": [
+    {
+      "id": "LEGACY-P01",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-5/",
+      "oldPath": "/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-5/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:34.567Z",
+      "oldTitle": "Если бы Promix Mittelgrunt был человеком… - Promix",
+      "oldH1": [
+        "Если бы Promix Mittelgrunt был человеком…"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "576fb7af7d51028079977eeb56d851cb7c3c0364c82b3e726c45a94650c0e07d",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Если бы Promix Mittelgrunt был человеком…». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P02",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta-4/",
+      "oldPath": "/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta-4/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:34.657Z",
+      "oldTitle": "ЛАЙФХАКИ ПО РАБОТЕ С PROMIX H - Promix",
+      "oldH1": [
+        "ЛАЙФХАКИ ПО РАБОТЕ С PROMIX H"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "686ab6c0c16072ed9bfdb1bbc7d2b8beab2abc1e44e275401d7d95afc748ddcb",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «ЛАЙФХАКИ ПО РАБОТЕ С PROMIX H». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P03",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta-3/",
+      "oldPath": "/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta-3/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:35.419Z",
+      "oldTitle": "PROMIX Plus Тор — клей, который работает за вас! - Promix",
+      "oldH1": [
+        "PROMIX Plus Тор — клей, который работает за вас!"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "189b9439ff66e67816662c4fae37aa735f642f69141e946b5509f82c2ff5eeb0",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «PROMIX Plus Тор — клей, который работает за вас!». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P04",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/nashi-shagi-k-ustojchivomu-budushhemu-3/",
+      "oldPath": "/news/nashi-shagi-k-ustojchivomu-budushhemu-3/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:35.573Z",
+      "oldTitle": "Леонардо да Винчи и идеальная адгезия: была бы ему полезна шпатлёвка PROMIX? - Promix",
+      "oldH1": [
+        "Леонардо да Винчи и идеальная адгезия: была бы ему полезна шпатлёвка PROMIX?"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "f797dd135feda4535120b75e1498e44d83d737e2eb9a4d49ff72631c3cf5d29f",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Леонардо да Винчи и идеальная адгезия: была бы ему полезна шпатлёвка PROMIX?». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P05",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/novyj-produkt-2-universalnaya-gruntovka-s-usilennoj-adgeziej-2/",
+      "oldPath": "/news/novyj-produkt-2-universalnaya-gruntovka-s-usilennoj-adgeziej-2/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:36.133Z",
+      "oldTitle": "Вулканический цемент Древнего Рима: прочность, проверенная веками - Promix",
+      "oldH1": [
+        "Вулканический цемент Древнего Рима: прочность, проверенная веками"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "787579224d833c57b30ccf75b4e19a30fccd1a3c6eaa34347de27af05546b120",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Вулканический цемент Древнего Рима: прочность, проверенная веками». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P06",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-4/",
+      "oldPath": "/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-4/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:36.358Z",
+      "oldTitle": "Почему дешевая краска — это не экономия, а риск для здоровья и качества - Promix",
+      "oldH1": [
+        "Почему дешевая краска — это не экономия, а риск для здоровья и качества"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "aaa97f9c782d433a23265486a7b3073d3f8552e6a0735e3944811387f359b93a",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Почему дешевая краска — это не экономия, а риск для здоровья и качества». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P07",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta-2/",
+      "oldPath": "/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta-2/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:36.788Z",
+      "oldTitle": "Как правильно выбрать шпаклевку для вашего проекта - Promix",
+      "oldH1": [
+        "Как правильно выбрать шпаклевку для вашего проекта"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "3d4f6ac0223e090ec18f456eec92b5eb58d473e54f1646ad20af78928c51a1a5",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Как правильно выбрать шпаклевку для вашего проекта». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P08",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta/",
+      "oldPath": "/news/kak-pravilno-vybrat-shpaklevku-dlya-vashego-proekta/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:37.047Z",
+      "oldTitle": "Как правильно выбрать шпаклевку для вашего проекта - Promix",
+      "oldH1": [
+        "Как правильно выбрать шпаклевку для вашего проекта"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "57269a1f56294e2d180d9b7c4256e3c8f1100acb04bef941ee269022e97fa7ed",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Как правильно выбрать шпаклевку для вашего проекта». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P09",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej/",
+      "oldPath": "/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:37.462Z",
+      "oldTitle": "Новый продукт: универсальная грунтовка с усиленной адгезией! - Promix",
+      "oldH1": [
+        "Новый продукт: универсальная грунтовка с усиленной адгезией!"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "1e1ed10c178d0dffade487f0dfec0b3683b7939d3810ab5d189687322cf5813c",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Новый продукт: универсальная грунтовка с усиленной адгезией!». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P10",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/nashi-shagi-k-ustojchivomu-budushhemu/",
+      "oldPath": "/news/nashi-shagi-k-ustojchivomu-budushhemu/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:37.770Z",
+      "oldTitle": "Наши шаги к устойчивому будущему - Promix",
+      "oldH1": [
+        "Наши шаги к устойчивому будущему"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "c5faaa639450a661643e189039957ec82df5c2e0585371731e881c6afec664c0",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Наши шаги к устойчивому будущему». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P11",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/novyj-produkt-2-universalnaya-gruntovka-s-usilennoj-adgeziej/",
+      "oldPath": "/news/novyj-produkt-2-universalnaya-gruntovka-s-usilennoj-adgeziej/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:38.104Z",
+      "oldTitle": "Новый продукт-2: универсальная грунтовка с усиленной адгезией! - Promix",
+      "oldH1": [
+        "Новый продукт-2: универсальная грунтовка с усиленной адгезией!"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "d4a21255d9e94874544592a357b4133529f3e48e1fc2f0dd3e09f5f1c6b4e2b1",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Новый продукт-2: универсальная грунтовка с усиленной адгезией!». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P12",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/nashi-shagi-k-ustojchivomu-budushhemu-2/",
+      "oldPath": "/news/nashi-shagi-k-ustojchivomu-budushhemu-2/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:38.412Z",
+      "oldTitle": "Наши шаги к устойчивому будущему - Promix",
+      "oldH1": [
+        "Наши шаги к устойчивому будущему"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "2331fc6f3666842445979afb4c8fe71a5c2b62737f376256c2e3cdac7b0082f9",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Наши шаги к устойчивому будущему». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P13",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-2/",
+      "oldPath": "/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-2/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:38.747Z",
+      "oldTitle": "Новый продукт: универсальная грунтовка с усиленной адгезией! - Promix",
+      "oldH1": [
+        "Новый продукт: универсальная грунтовка с усиленной адгезией!"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "8a446fbfd62d7231295c79367543c4730002cdbedc24bb2fa44b4e1635885acf",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Новый продукт: универсальная грунтовка с усиленной адгезией!». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P14",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-3/",
+      "oldPath": "/news/novyj-produkt-universalnaya-gruntovka-s-usilennoj-adgeziej-3/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:39.061Z",
+      "oldTitle": "Новый продукт: универсальная грунтовка с усиленной адгезией! - Promix",
+      "oldH1": [
+        "Новый продукт: универсальная грунтовка с усиленной адгезией!"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "057b7770e0769e4dc3d8d5faec96c10c18f0afbe1e13bc8d86de13df7574d234",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Сохранённый фактический заголовок: «Новый продукт: универсальная грунтовка с усиленной адгезией!». В текущей принятой структуре нет перенесённой статьи или эквивалентного редакционного материала. Карточка упомянутого товара не заменяет статью; slug местами не совпадает с реальным заголовком. Предлагается окончательное снятие этого старого материала.",
+      "confidence": "средняя для снятия; полного текста статьи в доказательствах нет",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие именно этой статьи (желательно сверить её ценность по имеющимся Search Console/входящим ссылкам, если они доступны). Пока решение PROPOSED, 410 не применять. Если текст нужно сохранить — сначала перенос текста и затем новое решение 301.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P15",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/products/shpatlevka-vlagostojkaya-promix-w/",
+      "oldPath": "/products/shpatlevka-vlagostojkaya-promix-w/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T17:04:53.419Z",
+      "oldTitle": "Шпатлевка влагостойкая W - Promix",
+      "oldH1": [
+        "Шпатлевка влагостойкая W"
+      ],
+      "evidence": {
+        "file": "results/legacy-pages.json",
+        "responseSha256": "111d459afbb18c6e729b830e418b7cf0f2d908fc2c96bef1ab3a7e0ee2c64659",
+        "savedSafeTextAvailable": true,
+        "scopeNote": "Сохранён безопасный текст старой товарной страницы; это не текущая проверка production."
+      },
+      "proposedAction": "404",
+      "target": null,
+      "reason": "Сохранённые title/H1 называют влагостойкую W, а основной текст начинается «Шпатлевка Фасадная PROMIX Fasad» и описывает фасадный продукт. Сейчас нельзя доказать, что перенос должен вести на promix-w или promix-fasad; 410 также утверждал бы недоказанное окончательное удаление.",
+      "confidence": "низкая для выбора товарной замены; высокая для отказа от угадывания",
+      "approvalNeeded": "До идентификации компанией оставить настоящий 404 с полезной навигацией. Технолог/владелец подтверждает SKU и тогда отдельно утверждает замену на 301. Не выбирать по одному slug.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P16",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/category/news/",
+      "oldPath": "/category/news/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:39.678Z",
+      "oldTitle": "Новости - Promix",
+      "oldH1": [
+        "Новости"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "e21f983e28d3c83036b35fbe2091dca19dfd3b922939319cd42673344b5bd43d",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Старый архив «Новости» объединял статьи. В принятой новой структуре нет раздела новостей или перенесённого архива. Предлагается окончательно закрыть архив вместе со снятием перечисленных статей, а не перенаправлять его в каталог/на главную.",
+      "confidence": "средняя; редакционное решение ещё не принято",
+      "approvalNeeded": "Владелец контента утверждает окончательное снятие старого новостного архива и 14 статей. Пока это PROPOSED, не применять410; если архив нужно сохранить, сначала отдельно переносить контент.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P17",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt/",
+      "oldPath": "/product_category/grunt/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:40.186Z",
+      "oldTitle": "Грунтовки - Promix",
+      "oldH1": [
+        "Грунтовки"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "25956771ae044595d7c473b65a965a6d3572d00c0d57b516eb5377c2f1c6e900",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/?category=primers",
+      "reason": "Старый заголовок «Грунтовки» соответствует существующей категории primers; общий каталог без фильтра терял бы предмет выбора.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          }
+        ],
+        "queryPolicy": "category/task существуют в products.ts и читаются catalog.js; сервер отдаёт /products/, затем JavaScript устанавливает фильтр. Без JS виден общий каталог. Query не является отдельной индексируемой HTML-страницей; canonical=/products/."
+      }
+    },
+    {
+      "id": "LEGACY-P18",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt-kraska/",
+      "oldPath": "/product_category/grunt-kraska/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:40.502Z",
+      "oldTitle": "Грунт краска - Promix",
+      "oldH1": [
+        "Грунт краска"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "eaead6f202a9fdd7bef85c7165839cb6c3e2dc1dbd179fea0ccf963b29971e5f",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/primer-paint/",
+      "reason": "Старая однопродуктовая таксономия «Грунт краска» соответствует действующей карточке «Грунт-краска PROMIX»; такое же назначение уже проверено для старой товарной страницы.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт-краска PROMIX — Грунт-краска для внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт-краска PROMIX — Грунт-краска для внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P19",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt-konczentrat-glubokogo-proniknoviniya/",
+      "oldPath": "/product_category/grunt-konczentrat-glubokogo-proniknoviniya/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:40.825Z",
+      "oldTitle": "Грунт-концентрат глубокого проникновиния - Promix",
+      "oldH1": [
+        "Грунт-концентрат глубокого проникновиния"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "13003f043f7e5893415e9e67a1628208e54810766cb7e4dec4ebe929053005ad",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/primer-concentrate/",
+      "reason": "Название прямо содержит «Грунт-концентрат глубокого проникновения»; сохранённая старая товарная страница этого наименования уже сопоставлена с primer-concentrate. Это перенос назначения страницы, не подтверждение отсутствующих технических данных.",
+      "confidence": "средняя",
+      "approvalNeeded": "Утвердить прежнее соответствие концентрата; сохранить отдельную deep-primer и открытый вопрос CAT-02, не смешивать эти SKU. Затем отдельно разрешить production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт-концентрат PROMIX — Грунт-концентрат глубокого проникновения | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт-концентрат PROMIX — Грунт-концентрат глубокого проникновения | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P20",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt-universalnyj/",
+      "oldPath": "/product_category/grunt-universalnyj/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:41.186Z",
+      "oldTitle": "Грунт универсальный - Promix",
+      "oldH1": [
+        "Грунт универсальный"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "d41299fed1d33c8666afd6931b0d51e3f01d1079d108045e1ffa8d57933c02da",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/universal-primer/",
+      "reason": "Заголовок «Грунт универсальный» и ранее сопоставленная старая товарная страница указывают на существующий universal-primer. Недостающие условия применения остаются CAT-02.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт универсальный — Универсальный грунт для минеральных оснований | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт универсальный — Универсальный грунт для минеральных оснований | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P21",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevki/",
+      "oldPath": "/product_category/shpatlevki/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:41.555Z",
+      "oldTitle": "Шпатлевки - Promix",
+      "oldH1": [
+        "Шпатлевки"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "78a4272578c1965be056c4d7412f08297fd89a6af4a4a20a26ac12a0d8a1eea7",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/?category=putties",
+      "reason": "Старый раздел «Шпатлевки» заменяется существующей категорией putties с тем же товарным назначением.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          }
+        ],
+        "queryPolicy": "category/task существуют в products.ts и читаются catalog.js; сервер отдаёт /products/, затем JavaScript устанавливает фильтр. Без JS виден общий каталог. Query не является отдельной индексируемой HTML-страницей; canonical=/products/."
+      }
+    },
+    {
+      "id": "LEGACY-P22",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/kraski/",
+      "oldPath": "/product_category/kraski/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:41.846Z",
+      "oldTitle": "Краски - Promix",
+      "oldH1": [
+        "Краски"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "b754bffbda7ef6d3344d0f22a37ba982b0743fe053947d196b9d722330cfcb24",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/?category=paints",
+      "reason": "Старый раздел «Краски» заменяется существующей категорией paints.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          }
+        ],
+        "queryPolicy": "category/task существуют в products.ts и читаются catalog.js; сервер отдаёт /products/, затем JavaScript устанавливает фильтр. Без JS виден общий каталог. Query не является отдельной индексируемой HTML-страницей; canonical=/products/."
+      }
+    },
+    {
+      "id": "LEGACY-P23",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/klei/",
+      "oldPath": "/product_category/klei/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:42.169Z",
+      "oldTitle": "Клеи - Promix",
+      "oldH1": [
+        "Клеи"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "506ec73fa22d1db00fb2215c6d65aca65b8d6c436df8fdfe31b726a620331238",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/?category=adhesives",
+      "reason": "Старый раздел «Клеи» заменяется существующей категорией adhesives.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          }
+        ],
+        "queryPolicy": "category/task существуют в products.ts и читаются catalog.js; сервер отдаёт /products/, затем JavaScript устанавливает фильтр. Без JS виден общий каталог. Query не является отдельной индексируемой HTML-страницей; canonical=/products/."
+      }
+    },
+    {
+      "id": "LEGACY-P24",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/dekorativnye-sostavy/",
+      "oldPath": "/product_category/dekorativnye-sostavy/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:42.491Z",
+      "oldTitle": "Декоративные составы - Promix",
+      "oldH1": [
+        "Декоративные составы"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "d4b94aa41aa13c00ebb74a7ffd927f66988c75ca83214ced9860fa0e6004555b",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "404",
+      "target": null,
+      "reason": "Сохранённый заголовок — общий раздел «Декоративные составы». В новом каталоге нет одноимённой категории, а гидроизоляция, мозаичная краска и текстурная шпатлёвка имеют разные назначения. Сохранённые title/H1 не доказывают точный состав архива; перенаправление на один из этих продуктов было бы догадкой.",
+      "confidence": "средняя для отсутствия доказанного эквивалента",
+      "approvalNeeded": "До подтверждения состава старого архива оставить 404, не объявляя его окончательно удалённым. После решения владельца возможен отдельный точный301 или утверждённый410.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P25",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-finishnaya/",
+      "oldPath": "/product_category/shpatlevka-finishnaya/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:42.796Z",
+      "oldTitle": "Шпатлевка финишная - Promix",
+      "oldH1": [
+        "Шпатлевка финишная"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "b0ed49390bdedb1150334303f22d4b54ba1d56633021ae8d8cca08842bec0d0c",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/?category=putties&task=finish",
+      "reason": "Архив с общим названием «Шпатлевка финишная» не устанавливает конкретный артикул; существующий фильтр шпатлёвок по задаче finish сохраняет этот выбор без подмены на один F/PRO SPRAY.",
+      "confidence": "средняя",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          }
+        ],
+        "queryPolicy": "category/task существуют в products.ts и читаются catalog.js; сервер отдаёт /products/, затем JavaScript устанавливает фильтр. Без JS виден общий каталог. Query не является отдельной индексируемой HTML-страницей; canonical=/products/."
+      }
+    },
+    {
+      "id": "LEGACY-P26",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-vlagostojkaya-promix-w/",
+      "oldPath": "/product_category/shpatlevka-vlagostojkaya-promix-w/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:43.128Z",
+      "oldTitle": "Шпатлевка влагостойкая W - Promix",
+      "oldH1": [
+        "Шпатлевка влагостойкая W"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "734d3f2781c74d0a83026ee8f6265731b46085f8cf349416a23a92c459492a60",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "404",
+      "target": null,
+      "reason": "Название архива указывает W, но его связанный старый product URL имеет W/FASAD конфликт. В сохранённом проходе архива есть title/H1, но нет полного состава и текста: нельзя доказать, какой товар он действительно группировал.",
+      "confidence": "низкая для назначения одного товара",
+      "approvalNeeded": "До подтверждения состава архива и идентичности W/FASAD оставить 404. Компания подтверждает, что это архив именно W, после чего можно отдельно согласовать301 на /products/promix-w/.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P27",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/emal-akrilovaya-universalnaya-glyanczevaya/",
+      "oldPath": "/product_category/emal-akrilovaya-universalnaya-glyanczevaya/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:43.467Z",
+      "oldTitle": "Эмаль акриловая универсальная глянцевая - Promix",
+      "oldH1": [
+        "Эмаль акриловая универсальная глянцевая"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "db6d41904c493b630b42a07572fd57f6aa11697c2c5b3e2ad5dbc7f8345e341c",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/acrylic-enamel/",
+      "reason": "Название совпадает с ранее проверенной старой товарной страницей эмали; её существующая новая карточка — acrylic-enamel.",
+      "confidence": "высокая по названию; публикация SKU требует решения",
+      "approvalNeeded": "Компания подтверждает сохранение прямой страницы скрытой эмали (CAT-01), затем отдельно разрешает применение на production. Не делать скрытый SKU видимым этим правилом.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Эмаль акриловая — Универсальная глянцевая эмаль | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Эмаль акриловая — Универсальная глянцевая эмаль | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P28",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/kraska-super-tack-3-promix/",
+      "oldPath": "/product_category/kraska-super-tack-3-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:43.754Z",
+      "oldTitle": "Краска Super Tack 3 - Promix",
+      "oldH1": [
+        "Краска Super Tack 3"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "3820432bbbe12c94e2c2d6bc04e3bcafaa733b230a2336ddc9c3289cf053629c",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/super-tack-3/",
+      "reason": "Заголовок указывает именно SUPER TACK 3; такая же старая товарная страница уже имеет проверенное назначение super-tack-3.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK 3 — Глубоко-матовая акриловая краска для стен и потолков | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK 3 — Глубоко-матовая акриловая краска для стен и потолков | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P29",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt-glubokogo-proniknoveniya-promix/",
+      "oldPath": "/product_category/grunt-glubokogo-proniknoveniya-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:44.099Z",
+      "oldTitle": "Грунт глубокого проникновения - Promix",
+      "oldH1": [
+        "Грунт глубокого проникновения"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "202ca612e3c70023c715370d603932c8b10469499b760a47fb84781b10a0cda9",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/deep-primer/",
+      "reason": "Таксономия с названием «Грунт глубокого проникновения» соответствует прежнему deep-primer, а не отдельному концентрату. Существующее сопоставление старой товарной страницы сохранено; identity conflict CAT-02 не объявляется решённым.",
+      "confidence": "средняя",
+      "approvalNeeded": "Подтвердить сохранение двух прямых грунтовок и прежнее назначение deep-primer до решения CAT-02; отдельно разрешить production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт глубокого проникновения — Грунтовка для укрепления впитывающих оснований | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Грунт глубокого проникновения — Грунтовка для укрепления впитывающих оснований | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P30",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-polimernaya-universalnaya-shpatlevki/",
+      "oldPath": "/product_category/shpatlevka-polimernaya-universalnaya-shpatlevki/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:44.393Z",
+      "oldTitle": "Шпатлевка полимерная универсальная - Promix",
+      "oldH1": [
+        "Шпатлевка полимерная универсальная"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "e2b9c029d6e39564f604c7c8f1d9bf13a7fcbcf9c92f7909685842af97d65853",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/polymer-putty/",
+      "reason": "Заголовок «Шпатлевка полимерная универсальная» совпадает с ранее сопоставленной старой товарной страницей и существующей polymer-putty.",
+      "confidence": "высокая по названию; публикация SKU требует решения",
+      "approvalNeeded": "Компания подтверждает сохранение прямой страницы скрытой полимерной шпатлёвки (CAT-01), затем отдельно разрешает production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Шпатлёвка полимерная — Универсальная шпатлёвка ручного нанесения | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Шпатлёвка полимерная — Универсальная шпатлёвка ручного нанесения | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P31",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-polimernaya-prospray/",
+      "oldPath": "/product_category/shpatlevka-polimernaya-prospray/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:44.748Z",
+      "oldTitle": "Шпатлевка базовая финишная Prospray - Promix",
+      "oldH1": [
+        "Шпатлевка базовая финишная Prospray"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "e597a7bfeab87962b82ddbfc00fa45f8c72f27bf068917489f8572427adb7021",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/pro-spray-finish/",
+      "reason": "Сохранённый H1 говорит «Шпатлевка базовая финишная Prospray»; это PRO SPRAY/Базовая финишная, не скрытая «Улучшенная». Совпадает с ранее проверенной товарной картой.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Pro Spray — Базовая финишная шпатлёвка для внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Pro Spray — Базовая финишная шпатлёвка для внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P32",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-lateksnaya-promix/",
+      "oldPath": "/product_category/shpatlevka-lateksnaya-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:45.051Z",
+      "oldTitle": "Шпатлевка латексная - Promix",
+      "oldH1": [
+        "Шпатлевка латексная"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "658dd495dce27242e516599223fe2e22a5072befbf87c42e4dfb8b795cf03b23",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Пользователь прямо распорядился «латексная убрать вообще ... её в каталоге быть не должно». Текущий latex-paint уже удалён; релевантная замена не утверждена. Старую однопродуктовую таксономию следует окончательно снять, без переноса на другую шпатлёвку/краску.",
+      "confidence": "высокая по решению об удалении продукта",
+      "approvalNeeded": "Снятие товара уже разрешено пользователем; отдельно согласовать именно production-статус410 старого архива. Текущий404 сайта не изменять до разрешения.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    },
+    {
+      "id": "LEGACY-P33",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-shovnaya/",
+      "oldPath": "/product_category/shpatlevka-shovnaya/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:45.466Z",
+      "oldTitle": "Шпатлевка шовная - Promix",
+      "oldH1": [
+        "Шпатлевка шовная"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "81cb27669cc7993fca7381e7c875d5670575902e3cf69955890bdf62f665e2a1",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/promix-j/",
+      "reason": "Заголовок «Шпатлевка шовная» и одноимённая старая товарная страница указывают на PROMIX J.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX J — Шовная шпатлёвка для наружных и внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX J — Шовная шпатлёвка для наружных и внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P34",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-vyravnivayushhaya/",
+      "oldPath": "/product_category/shpatlevka-vyravnivayushhaya/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:45.973Z",
+      "oldTitle": "Шпатлевка выравнивающая - Promix",
+      "oldH1": [
+        "Шпатлевка выравнивающая"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "23457dc9be3dac0a74f0b358afe7e1790d748ecfd3321e81bb18cfb0e9634152",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/?category=putties&task=leveling",
+      "reason": "Заголовок архива «Шпатлевка выравнивающая» не содержит фракции. Фильтр leveling оставляет выбор H0,2/H0,3, вместо назначения одного варианта по недоказанной фракции.",
+      "confidence": "средняя",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          }
+        ],
+        "queryPolicy": "category/task существуют в products.ts и читаются catalog.js; сервер отдаёт /products/, затем JavaScript устанавливает фильтр. Без JS виден общий каталог. Query не является отдельной индексируемой HTML-страницей; canonical=/products/."
+      }
+    },
+    {
+      "id": "LEGACY-P35",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-fasadnaya-promix-na-polimernoj-osnove/",
+      "oldPath": "/product_category/shpatlevka-fasadnaya-promix-na-polimernoj-osnove/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:46.126Z",
+      "oldTitle": "Шпатлевка фасадная на полимерной основе - Promix",
+      "oldH1": [
+        "Шпатлевка фасадная на полимерной основе"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "ab0419c609c43e63d36de5fed932cae40946c198342b52ce66aa04c7790ca691",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/promix-fasad/",
+      "reason": "Заголовок явно называет фасадную шпатлёвку; прежняя отдельная товарная страница фасадной PROMIX уже сопоставлена с promix-fasad. Этот путь не используется как решение неоднозначного W URL.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX FASAD — Фасадная шпатлёвка для наружных и внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX FASAD — Фасадная шпатлёвка для наружных и внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P36",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-super-finishnaya-promix-f/",
+      "oldPath": "/product_category/shpatlevka-super-finishnaya-promix-f/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:46.834Z",
+      "oldTitle": "Шпатлевка супер финишная F - Promix",
+      "oldH1": [
+        "Шпатлевка супер финишная F"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "d1bafffbf394472588c565e907b02d25e06ff849f191f99faf5c46e8915c3e6c",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/promix-f/",
+      "reason": "Заголовок явно указывает суперфинишную F; одноимённая старая товарная страница уже сопоставлена с PROMIX F.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX F — Супер финишная шпатлёвка для внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX F — Супер финишная шпатлёвка для внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P37",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/mnogofunkczionalnoe-pokrytie-3v1-promix/",
+      "oldPath": "/product_category/mnogofunkczionalnoe-pokrytie-3v1-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:46.969Z",
+      "oldTitle": "Многофункциональное покрытие 3в1 - Promix",
+      "oldH1": [
+        "Многофункциональное покрытие 3в1"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "6ec4f92bfd7dbb17e73506c5fb8eaf2383cd8c92d54df54c821fbb972c7d0c49",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/promix-3in1/",
+      "reason": "Старый H1 «Многофункциональное покрытие 3в1» соответствует PROMIX 3в1 и ранее проверенному переносу товарной страницы.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX 3в1 — Многофункциональное финишное покрытие для внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX 3в1 — Многофункциональное финишное покрытие для внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P38",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/klej-dlya-lent-promix/",
+      "oldPath": "/product_category/klej-dlya-lent-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:47.636Z",
+      "oldTitle": "Клей для лент - Promix",
+      "oldH1": [
+        "Клей для лент"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "ba732a5fc689f6d34660685abbf49d77a6d8e5d4470256490ab8926751489f7f",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/tape-adhesive/",
+      "reason": "Старое название «Клей для лент» соответствует существующему PROMIX/Клей для лент и прежнему переносу товарной страницы.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Клей для лент PROMIX — Высокопрочный клей для наружных и внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Клей для лент PROMIX — Высокопрочный клей для наружных и внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P39",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/klej-promix-plus-top-dlya-steklooboev-malyarnogo-steklovolokna-flizelina-gotovyj-10-kg/",
+      "oldPath": "/product_category/klej-promix-plus-top-dlya-steklooboev-malyarnogo-steklovolokna-flizelina-gotovyj-10-kg/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:47.740Z",
+      "oldTitle": "Клей Plus Top для стеклообоев, малярного стекловолокна, флизелина готовый 10 кг - Promix",
+      "oldH1": [
+        "Клей Plus Top для стеклообоев, малярного стекловолокна, флизелина готовый 10 кг"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "d33f0bfac2fd8b77f9e6662a4b59906668b0a0c503846e0b6bc1cfcde46d4cce",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/plus-top/",
+      "reason": "Старое полное название Plus Top с назначением для стеклообоев/стекловолокна/флизелина соответствует существующему Plus Top. Перенос не создаёт отдельный неподтверждённый артикул 10кг.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Plus Top — Готовый к применению влагостойкий клей для обоев | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Plus Top — Готовый к применению влагостойкий клей для обоев | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P40",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt-betonokontakt-promix/",
+      "oldPath": "/product_category/grunt-betonokontakt-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:48.407Z",
+      "oldTitle": "Грунт Бетоноконтакт - Promix",
+      "oldH1": [
+        "Грунт Бетоноконтакт"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "5e28eb7a206e621576a1f711f62597c9e1cb6af3952f612e940c4ee0274e9ad4",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/betokontakt/",
+      "reason": "Заголовок «Грунт Бетоноконтакт» соответствует PROMIX Бетоноконтакт и уже проверенному переносу товарного URL.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Бетоноконтакт — Грунт для наружных и внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Бетоноконтакт — Грунт для наружных и внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P41",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt-konczentrat-mittelgrunt-promix/",
+      "oldPath": "/product_category/grunt-konczentrat-mittelgrunt-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:48.484Z",
+      "oldTitle": "Грунт концентрат Миттельгрунт - Promix",
+      "oldH1": [
+        "Грунт концентрат Миттельгрунт"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "c5a70272ea05faed62e6609901511cef59099daf3b2772cdcf7f6207023ef35e",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/mittel-grund/",
+      "reason": "Заголовок прямо называет Миттельгрунт-концентрат; существующая карточка mittel-grund уже является целью старых товарных URL этого продукта.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Миттельгрунт — Грунтовка-концентрат для сильновпитывающих оснований | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Миттельгрунт — Грунтовка-концентрат для сильновпитывающих оснований | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P42",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/grunt-su-kush-promix/",
+      "oldPath": "/product_category/grunt-su-kush-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:49.193Z",
+      "oldTitle": "Грунт Су-Куш - Promix",
+      "oldH1": [
+        "Грунт Су-Куш"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "5de9856b84a95090090771dac3696078a0c0a2d0ea9df9959ec83e7a4c17a899",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/sous-couche/",
+      "reason": "Заголовок «Грунт Су-Куш» соответствует PROMIX Су-Куш и ранее проверенному переносу товарного URL.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Су-Куш — Многофункциональный грунт внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "PROMIX Су-Куш — Многофункциональный грунт внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P43",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/gidroizolyacziya-promix/",
+      "oldPath": "/product_category/gidroizolyacziya-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:49.291Z",
+      "oldTitle": "Гидроизоляция - Promix",
+      "oldH1": [
+        "Гидроизоляция"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "f057cffa357ad0422beaadcd60dd51da04e33b39a7c3c8739def0f6badb0ed1c",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/hydro/",
+      "reason": "Старое название «Гидроизоляция» соответствует единственной действующей карточке гидроизоляции PROMIX; её старый товарный URL уже сопоставлен с hydro.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Гидроизоляция PROMIX — Акриловая гидроизоляция для наружных и внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Гидроизоляция PROMIX — Акриловая гидроизоляция для наружных и внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P44",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/mix-kraska-mozaichnaya-promix/",
+      "oldPath": "/product_category/mix-kraska-mozaichnaya-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:49.962Z",
+      "oldTitle": "MIX Краска мозаичная - Promix",
+      "oldH1": [
+        "MIX Краска мозаичная"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "a7ddb26c0749e1db0dd8832e071dd6c6c4e849d5943df21ceb3876515fc64f59",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/mix-mosaic/",
+      "reason": "Заголовок прямо называет MIX мозаичную краску; существующая mix-mosaic уже является целью одноимённого товарного URL.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "MIX Краска — Многоцветное декоративное покрытие для наружных и внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "MIX Краска — Многоцветное декоративное покрытие для наружных и внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P45",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/kraska-akrilovaya-super-tack-7/",
+      "oldPath": "/product_category/kraska-akrilovaya-super-tack-7/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:50.048Z",
+      "oldTitle": "Краска акриловая Super Tack 7 - Promix",
+      "oldH1": [
+        "Краска акриловая Super Tack 7"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "c28adb16d3a5fed51168d6740f51ca298528ae08730c265682cfbf0cae41464b",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/super-tack-7/",
+      "reason": "Заголовок содержит SUPER TACK 7; существующая карточка super-tack-7 и перенос одноимённого товарного URL подтверждены.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK 7 — Матовая износостойкая акриловая краска для стен и потолков | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK 7 — Матовая износостойкая акриловая краска для стен и потолков | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P46",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/kraska-akrilovaya-super-tack-fasad/",
+      "oldPath": "/product_category/kraska-akrilovaya-super-tack-fasad/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:50.768Z",
+      "oldTitle": "Краска акриловая Super Tack Фасад - Promix",
+      "oldH1": [
+        "Краска акриловая Super Tack Фасад"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "647e7d4b797b66ff3da65cd5bd39bc1078885478ba57345cbae5ed2925ffec41",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/super-tack-facade/",
+      "reason": "Заголовок содержит SUPER TACK Фасад; существующая карточка super-tack-facade является прежней проверенной целью товарного URL.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK ФАСАД — Матовая акриловая краска для фасадов и интерьеров | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK ФАСАД — Матовая акриловая краска для фасадов и интерьеров | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P47",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/kraska-akrilovaya-super-tack-fasad-silikonovyj/",
+      "oldPath": "/product_category/kraska-akrilovaya-super-tack-fasad-silikonovyj/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:50.861Z",
+      "oldTitle": "Краска акриловая Susper Tack Фасад силиконовый - Promix",
+      "oldH1": [
+        "Краска акриловая Susper Tack Фасад силиконовый"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "aec29959a1050d64d6cc6354daae49e4d9034cf2387222ad83857701310e409b",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/super-tack-facade-silicon/",
+      "reason": "Сохранённый заголовок содержит опечатку Susper, но серию Фасад силиконовый; одноимённый товарный URL уже сопоставлен с SUPER TACK ФАСАД SILICON.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK ФАСАД SILICON — Матовая акрил-силиконовая краска для фасадов и интерьеров | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "SUPER TACK ФАСАД SILICON — Матовая акрил-силиконовая краска для фасадов и интерьеров | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P48",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/shpatlevka-fasadnaya-teksturnaya-promix/",
+      "oldPath": "/product_category/shpatlevka-fasadnaya-teksturnaya-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:51.634Z",
+      "oldTitle": "Шпатлевка текстурная антивандальная - Promix",
+      "oldH1": [
+        "Шпатлевка текстурная антивандальная"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "51ce07e3187a89665fce47fe7ac9bc19707ce123a348761d073aba4c920d195b",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/textured-anti-vandal/",
+      "reason": "Фактический H1 — «Шпатлевка текстурная антивандальная», поэтому цель textured-anti-vandal, как у ранее проверенного товарного URL; не обычная FASAD только по словам slug.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Текстурная антивандальная — Антивандальная шпатлёвка для наружных и внутренних работ | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Текстурная антивандальная — Антивандальная шпатлёвка для наружных и внутренних работ | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P49",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/aksessuary/",
+      "oldPath": "/product_category/aksessuary/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:51.703Z",
+      "oldTitle": "Аксессуары - Promix",
+      "oldH1": [
+        "Аксессуары"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "85bbff0d482d0cb49c0f47ff1ed649ecd941281b5f042cf3f48a9e0fcb350e19",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/?category=roll-materials",
+      "reason": "Сохранённое старое меню относит к «Аксессуарам» Флизелин и Малярный стеклохолст. Обе действующие карточки объединены категорией roll-materials («Стеклохолст и флизелин»).",
+      "confidence": "средняя",
+      "approvalNeeded": "Подтвердить, что старый архив аксессуаров не включал иных товаров сверх двух найденных в сохранённом меню. Если включал — сначала уточнить перенос, не применять этот 301. Затем отдельно разрешить production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Каталог продукции PROMIX"
+          }
+        ],
+        "queryPolicy": "category/task существуют в products.ts и читаются catalog.js; сервер отдаёт /products/, затем JavaScript устанавливает фильтр. Без JS виден общий каталог. Query не является отдельной индексируемой HTML-страницей; canonical=/products/."
+      }
+    },
+    {
+      "id": "LEGACY-P50",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/flizelin-promix/",
+      "oldPath": "/product_category/flizelin-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:52.464Z",
+      "oldTitle": "Флизелин - Promix",
+      "oldH1": [
+        "Флизелин"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "59264f80873c8b27ac81ae0b356b6045f7a98732bbb4c03f59cf278d3840368d",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/nonwoven-plus-top/",
+      "reason": "Старый заголовок «Флизелин» и ранее сопоставленная старая товарная страница указывают на существующий флизелин PROMIX Plus Top.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Флизелин PROMIX Plus Top — Армирующее полотно премиум-класса | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Флизелин PROMIX Plus Top — Армирующее полотно премиум-класса | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P51",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_category/malyarnyj-stekloholst-promix/",
+      "oldPath": "/product_category/malyarnyj-stekloholst-promix/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:52.480Z",
+      "oldTitle": "Малярный Стеклохолст - Promix",
+      "oldH1": [
+        "Малярный Стеклохолст"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "97f45e9f63926134f66918125a025083aaac582f613960f1fa9ea9b9dc4f13f4",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "301",
+      "target": "/products/glass-fiber-plus-top/",
+      "reason": "Старый заголовок «Малярный Стеклохолст» и ранее сопоставленная старая товарная страница указывают на существующий малярный стеклохолст PROMIX.",
+      "confidence": "высокая",
+      "approvalNeeded": "Утвердить перенос старой таксономии на существующую страницу товара/фильтр; отдельное разрешение применения на production.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": {
+        "existingFinalQAPages": [
+          {
+            "width": 390,
+            "status": 200,
+            "pass": true,
+            "title": "Малярный стеклохолст PROMIX — Армирующий материал для стен и потолков | PROMIX"
+          },
+          {
+            "width": 1440,
+            "status": 200,
+            "pass": true,
+            "title": "Малярный стеклохолст PROMIX — Армирующий материал для стен и потолков | PROMIX"
+          }
+        ],
+        "queryPolicy": null
+      }
+    },
+    {
+      "id": "LEGACY-P52",
+      "optionStatus": "PROPOSED",
+      "oldUrl": "https://pro-mix.ru/product_tags/populyarnye-tovary/",
+      "oldPath": "/product_tags/populyarnye-tovary/",
+      "oldStatusAtQA": 200,
+      "oldObservedAtUTC": "2026-10-22T18:04:53.123Z",
+      "oldTitle": "Популярные товары - Promix",
+      "oldH1": [
+        "Популярные товары"
+      ],
+      "evidence": {
+        "file": "results/legacy-remaining-pages.json",
+        "responseSha256": "b043fc0fdf47c88a0e14cfb91ba23fe51df172ec3ee1aa5c58083232452ff015",
+        "savedSafeTextAvailable": false,
+        "scopeNote": "Сохранены HTTP/title/H1/canonical/responseSHA, но не полный текст статьи/состав архива."
+      },
+      "proposedAction": "410",
+      "target": null,
+      "reason": "Старый тег «Популярные товары» не имеет существующего нового эквивалента с такой же утверждённой выборкой/критерием популярности. Предлагается снять ненужный WordPress-архив тега; общий каталог не воспроизводит обещание «популярные».",
+      "confidence": "средняя; владелец мерчандайзинга должен утвердить",
+      "approvalNeeded": "Владелец ассортимента утверждает отказ от старого тега/подборки. До решения не включать 410; не подменять его общим каталогом как якобы эквивалентом.",
+      "currentBehaviorChangeApplied": false,
+      "targetEvidence": null
+    }
+  ]
+}

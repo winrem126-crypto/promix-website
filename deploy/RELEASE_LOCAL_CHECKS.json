@@ -1,0 +1,3605 @@
+{
+  "releaseId": "promix-2026.10.23-rc1",
+  "preparedUTC": "2026-10-23T07:50:51.867Z",
+  "qaBaselineCommit": "0a1b466f45a685c86eec5abcc2d4e1650f2a87a4",
+  "build": {
+    "command": "pnpm run build",
+    "exitCode": 0,
+    "inputsStable": true,
+    "buildInputsMatchFinalQA": true
+  },
+  "publicBuild": {
+    "startedUTC": "2026-10-23T07:47:13.216Z",
+    "finishedUTC": "2026-10-23T07:47:19.923Z",
+    "project": "E:\\bulat\\design\\promix-site",
+    "dist": "E:\\bulat\\design\\promix-site\\dist",
+    "releaseOutput": "E:\\bulat\\design\\PROMIX_RELEASE_PREP_2026-10-23_11-16-07",
+    "mode": "LOCAL_STATIC_BUILD_ONLY",
+    "node": "v24.19.0",
+    "status": "PASS",
+    "scope": "Acceptance of the completed local production artifact against the frozen 29-SKU route set. No repeated rendered UI QA, public requests, server changes, live SMTP or actual production confirmation.",
+    "productionHTTPStatus": "NOT TESTED",
+    "productionHTTPSAndTLS": "NOT TESTED",
+    "productionMailDelivery": "NOT TESTED",
+    "counts": {
+      "files": 662,
+      "bytes": 289257885,
+      "html": 36,
+      "normalRoutes": 35,
+      "pdp": 29,
+      "sitemapPages": 35,
+      "assertions": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "inventorySHA": "df78f0bb88529fc95655f7ae34326560d009a684c8f6df626f82e93c5c8f5466",
+    "inventorySHAMethod": "SHA256 of UTF8 JSON.stringify(sorted[{path,size,sha256}]); relative paths use forward slashes. Per-fileSHA256 is of exact bytes. mtime is excluded from inventorySHA.",
+    "expectedNormalRoutes": [
+      "/",
+      "/cookies/",
+      "/documents/",
+      "/personal-data/",
+      "/privacy/",
+      "/products/",
+      "/products/acrylic-enamel/",
+      "/products/betokontakt/",
+      "/products/deep-primer/",
+      "/products/glass-fiber-plus-top/",
+      "/products/hydro/",
+      "/products/mittel-grund/",
+      "/products/mix-mosaic/",
+      "/products/nonwoven-plus-top/",
+      "/products/plus-top/",
+      "/products/polymer-putty/",
+      "/products/primer-concentrate/",
+      "/products/primer-paint/",
+      "/products/pro-spray-finish/",
+      "/products/pro-spray-improved/",
+      "/products/promix-3in1/",
+      "/products/promix-f/",
+      "/products/promix-fasad/",
+      "/products/promix-h-02/",
+      "/products/promix-h-03/",
+      "/products/promix-j/",
+      "/products/promix-w/",
+      "/products/sous-couche/",
+      "/products/super-tack-3/",
+      "/products/super-tack-7/",
+      "/products/super-tack-facade-silicon/",
+      "/products/super-tack-facade/",
+      "/products/tape-adhesive/",
+      "/products/textured-anti-vandal/",
+      "/products/universal-primer/"
+    ],
+    "assertions": [
+      {
+        "id": "dist-exists",
+        "status": "PASS",
+        "evidence": {
+          "dist": "E:\\bulat\\design\\promix-site\\dist"
+        }
+      },
+      {
+        "id": "dist-stable-during-inventory",
+        "status": "PASS",
+        "evidence": {
+          "fileCount": 662,
+          "method": "lstat before/after every file read plus a second sorted directory snapshot; no symlinks followed"
+        }
+      },
+      {
+        "id": "exactly-36-html",
+        "status": "PASS",
+        "evidence": {
+          "actual": 36,
+          "expected": 36,
+          "explanation": "35 normal pages plus the 404.html document"
+        }
+      },
+      {
+        "id": "exact-html-file-set",
+        "status": "PASS",
+        "evidence": {
+          "missing": [],
+          "unexpected": []
+        }
+      },
+      {
+        "id": "exactly-35-normal-routes",
+        "status": "PASS",
+        "evidence": {
+          "actual": 35,
+          "expected": 35,
+          "routes": [
+            "/",
+            "/cookies/",
+            "/documents/",
+            "/personal-data/",
+            "/privacy/",
+            "/products/",
+            "/products/acrylic-enamel/",
+            "/products/betokontakt/",
+            "/products/deep-primer/",
+            "/products/glass-fiber-plus-top/",
+            "/products/hydro/",
+            "/products/mittel-grund/",
+            "/products/mix-mosaic/",
+            "/products/nonwoven-plus-top/",
+            "/products/plus-top/",
+            "/products/polymer-putty/",
+            "/products/primer-concentrate/",
+            "/products/primer-paint/",
+            "/products/pro-spray-finish/",
+            "/products/pro-spray-improved/",
+            "/products/promix-3in1/",
+            "/products/promix-f/",
+            "/products/promix-fasad/",
+            "/products/promix-h-02/",
+            "/products/promix-h-03/",
+            "/products/promix-j/",
+            "/products/promix-w/",
+            "/products/sous-couche/",
+            "/products/super-tack-3/",
+            "/products/super-tack-7/",
+            "/products/super-tack-facade-silicon/",
+            "/products/super-tack-facade/",
+            "/products/tape-adhesive/",
+            "/products/textured-anti-vandal/",
+            "/products/universal-primer/"
+          ]
+        }
+      },
+      {
+        "id": "exactly-29-pdp",
+        "status": "PASS",
+        "evidence": {
+          "actual": 29,
+          "expected": 29,
+          "note": "26 visible and 3 deliberately retained hidden direct pages; visibility policy is unchanged"
+        }
+      },
+      {
+        "id": "no-latex-page",
+        "status": "PASS",
+        "evidence": {
+          "forbiddenRoute": "/products/latex-paint/",
+          "oldLegacyAliasesAlsoChecked": true
+        }
+      },
+      {
+        "id": "no-preview-html",
+        "status": "PASS",
+        "evidence": {
+          "previewHtmlFiles": []
+        }
+      },
+      {
+        "id": "no-service-source-report-secret-backup-test-files",
+        "status": "PASS",
+        "evidence": {
+          "forbiddenPaths": [],
+          "ruleScope": "Path/filename/extension hygiene only; this does not replace separate secret-content scanning of release files"
+        }
+      },
+      {
+        "id": "404-has-noindex",
+        "status": "PASS",
+        "evidence": {
+          "artifact": "404.html",
+          "boundary": "This proves the static artifact exists with noindex; actual HTTP404 is NOT TESTED by this helper"
+        }
+      },
+      {
+        "id": "sitemap-files-exist",
+        "status": "PASS",
+        "evidence": {
+          "sitemapFiles": [
+            "sitemap-0.xml",
+            "sitemap-index.xml"
+          ]
+        }
+      },
+      {
+        "id": "sitemap-no-404-preview-latex-or-wrong-origin",
+        "status": "PASS",
+        "evidence": {
+          "invalidSitemapLocs": [],
+          "expectedOrigin": "https://pro-mix.ru"
+        }
+      },
+      {
+        "id": "sitemap-exact-35-normal-pages",
+        "status": "PASS",
+        "evidence": {
+          "count": 35,
+          "distinctCount": 35,
+          "missing": [],
+          "unexpected": []
+        }
+      },
+      {
+        "id": "sitemap-index-target",
+        "status": "PASS",
+        "evidence": {
+          "sitemapIndexLocs": [
+            "/sitemap-0.xml"
+          ]
+        }
+      },
+      {
+        "id": "no-internal-service-preview-latex-references",
+        "status": "PASS",
+        "evidence": {
+          "forbiddenReferences": [],
+          "allowedApiRoute": "/api/lead.php",
+          "apiReferenceCount": 36,
+          "note": "API implementation belongs outside static document root; a reference to the exact intended endpoint is allowed"
+        }
+      }
+    ],
+    "informational": [
+      {
+        "id": "retained-unused-latex-image-assets",
+        "status": "INFORMATIONAL",
+        "count": 7,
+        "paths": [
+          "images/performance/latex-paint-2ca987e72010-480.webp",
+          "images/performance/latex-paint-8ab99c2e1496-320.webp",
+          "images/performance/latex-paint-af17bc3d3144-1024.webp",
+          "images/performance/latex-paint-b08e8cda6ac7-960.webp",
+          "images/performance/latex-paint-d899265acb28-640.webp",
+          "images/products/current/latex-paint.png",
+          "images/products/latex-paint.png"
+        ],
+        "policy": "The accepted source-image preservation policy retains these7 historical raster assets. This is not a page, sitemap entry or internal product link. Their presence alone is not a failed release check."
+      },
+      {
+        "id": "source-word-in-approved-image-filename",
+        "status": "INFORMATIONAL",
+        "paths": [
+          "images/system-layers-source.png"
+        ],
+        "policy": "Approved raster filename, not source code. Do not remove or classify it as a service source directory."
+      }
+    ],
+    "fatalError": null,
+    "inventory": [
+      {
+        "path": "404.html",
+        "size": 21945,
+        "sha256": "bc92a6de4d9d4991e0f7c4c1c3a21e3c124e08547ea0a94c9a56caf906e4f5f2"
+      },
+      {
+        "path": "_astro/404.astro_astro_type_script_index_0_lang.5w-bX6iJ.js",
+        "size": 72,
+        "sha256": "185f38fef4123be7f7604389aac017754e3c9effa84d25c36777bcfab97a4271"
+      },
+      {
+        "path": "_astro/LegalLayout.astro_astro_type_script_index_0_lang.CGwtbAHe.js",
+        "size": 21579,
+        "sha256": "a6b8be7474bd2fa6e88ce2ffa6b6bce129303b5f85eeefc392644eb4468fe24f"
+      },
+      {
+        "path": "_astro/_slug_.CyvvBmgX.css",
+        "size": 10914,
+        "sha256": "7c1dc9b056dc3cf5f1821f5ee53e34bf3cef4a7ca222a5a6fe8bde92bea199f1"
+      },
+      {
+        "path": "_astro/_slug_.DrgC_HQM.css",
+        "size": 16985,
+        "sha256": "b8240b8260c6afba4e29faaf3591ad17cc89dd90b2065b6ca37041bb99b48b19"
+      },
+      {
+        "path": "_astro/_slug_.astro_astro_type_script_index_0_lang.5w-bX6iJ.js",
+        "size": 72,
+        "sha256": "185f38fef4123be7f7604389aac017754e3c9effa84d25c36777bcfab97a4271"
+      },
+      {
+        "path": "_astro/cookies.Cls45seu.css",
+        "size": 80165,
+        "sha256": "ac61856915c6d798c86bbf5edff22c75f01787c56917080517961a306fae39b2"
+      },
+      {
+        "path": "_astro/index.DgKOhuN-.css",
+        "size": 16152,
+        "sha256": "426f2a69e44b086d944527e22d311e1a1e0f68fe19643cd14a10a353ed44ae9e"
+      },
+      {
+        "path": "_astro/index.DsD98S0f.css",
+        "size": 56492,
+        "sha256": "d076402f50b5f0bda4e0ee1754e6f48970c2572ade5ad5a2941c6b4d208e59ed"
+      },
+      {
+        "path": "_astro/index.astro_astro_type_script_index_0_lang.5w-bX6iJ.js",
+        "size": 72,
+        "sha256": "185f38fef4123be7f7604389aac017754e3c9effa84d25c36777bcfab97a4271"
+      },
+      {
+        "path": "_astro/index.astro_astro_type_script_index_0_lang.BpEP1rXq.js",
+        "size": 72,
+        "sha256": "185f38fef4123be7f7604389aac017754e3c9effa84d25c36777bcfab97a4271"
+      },
+      {
+        "path": "_astro/index.astro_astro_type_script_index_1_lang.DmJPl8zt.js",
+        "size": 6942,
+        "sha256": "6903df948ff7510ea8b2cbbd95292d2178d302743749f6ed5da2a7bdee2c6727"
+      },
+      {
+        "path": "_astro/index.astro_astro_type_script_index_2_lang.5w-bX6iJ.js",
+        "size": 72,
+        "sha256": "185f38fef4123be7f7604389aac017754e3c9effa84d25c36777bcfab97a4271"
+      },
+      {
+        "path": "_astro/inter-cyrillic-300-normal.BnqRxXuy.woff2",
+        "size": 7812,
+        "sha256": "2f4d3f2e59e0dd665765f7e6d52f0cd8173a1ec1732b544622e3a4780ad3877c"
+      },
+      {
+        "path": "_astro/inter-cyrillic-400-normal.obahsSVq.woff2",
+        "size": 7712,
+        "sha256": "f0bb586459ce8f09b238285040f17e3e9e9538b2c5a7aae0775194e33c36c3c3"
+      },
+      {
+        "path": "_astro/inter-cyrillic-500-normal.BasfLYem.woff2",
+        "size": 7900,
+        "sha256": "b77a86ec16aadc157f4a99e8898d71cd75ea264753d9bdf13f962f8c3988cbb0"
+      },
+      {
+        "path": "_astro/inter-cyrillic-600-normal.CWCymEST.woff2",
+        "size": 7972,
+        "sha256": "6c2a37f82a676bcd441b735e4e2cda4edb8873a059ab9c362a84f0711f257041"
+      },
+      {
+        "path": "_astro/inter-cyrillic-700-normal.CjBOestx.woff2",
+        "size": 7904,
+        "sha256": "5917871d3cc970d8ce195101cbf65c1f68ec948022eb6070030342bb7edfb3bb"
+      },
+      {
+        "path": "_astro/inter-latin-300-normal.BVlfKGgI.woff2",
+        "size": 23916,
+        "sha256": "be0276550393a72b94d673505567dceba801511d5e1ca5a87793190dc5d5a6ca"
+      },
+      {
+        "path": "_astro/inter-latin-400-normal.C38fXH4l.woff2",
+        "size": 23664,
+        "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+      },
+      {
+        "path": "_astro/inter-latin-500-normal.Cerq10X2.woff2",
+        "size": 24272,
+        "sha256": "f3779f1efccc4bdcdf9c0a02ab95bf6bd092ed09c48c08cedc725889edd1d19f"
+      },
+      {
+        "path": "_astro/inter-latin-600-normal.LgqL8muc.woff2",
+        "size": 24452,
+        "sha256": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a"
+      },
+      {
+        "path": "android-chrome-192x192.png",
+        "size": 4778,
+        "sha256": "f6ff730bcb5aa3f44df15487a0aee3f18768b1299fa3747bc675b9f406892c8e"
+      },
+      {
+        "path": "android-chrome-512x512.png",
+        "size": 13235,
+        "sha256": "b52dfe9010fd35264a772da3b3130a4f484718feb192f3a00227867b48288ca4"
+      },
+      {
+        "path": "apple-touch-icon.png",
+        "size": 4459,
+        "sha256": "2530f06e440bcbba46bf53eb76e4fcaa83addffe361a1b730b16b383aadf5f30"
+      },
+      {
+        "path": "brand/promix-wordmark-navy.svg",
+        "size": 1400,
+        "sha256": "5fb24b1d0a9f7a541bbd515929d4a226a3bdb37a8d6e6347bb444ae7b4221947"
+      },
+      {
+        "path": "brand/promix-wordmark-white.svg",
+        "size": 1400,
+        "sha256": "95ef7601095bd2333da3238a7b7222f5ba273e07b3c4362c1f37a10063ea52f8"
+      },
+      {
+        "path": "cookies/index.html",
+        "size": 23586,
+        "sha256": "959c35343c5fbb08d900270fc0fdad1dc5ab6ad0406564d36882c15cfe6eb04d"
+      },
+      {
+        "path": "documents/index.html",
+        "size": 25986,
+        "sha256": "29433b1e8121e649b48b6534932a8dbf9c9b4575610caf44e255b9ded14a1da6"
+      },
+      {
+        "path": "documents/promix-sgr-shpatlevki-2026.pdf",
+        "size": 4640389,
+        "sha256": "9037bbe0ed3dce99e82d8d87fc579b29669a930bb7cd0a339af1e0c3b34ddad0"
+      },
+      {
+        "path": "favicon-16x16.png",
+        "size": 570,
+        "sha256": "1379a8afe2a10b3cd321ef766bbb30bde209c71feafe71a2efae605d44006c36"
+      },
+      {
+        "path": "favicon-32x32.png",
+        "size": 1057,
+        "sha256": "3c2dd8e1e66d4a9a4b277974241c877432f76610edc79576cf0b7b0520838c7f"
+      },
+      {
+        "path": "favicon-48x48.png",
+        "size": 1453,
+        "sha256": "b8a5762c342a0ac5ba177e961d2024abe41424ffa65ab4965fd029962d0f2953"
+      },
+      {
+        "path": "favicon-master.png",
+        "size": 13235,
+        "sha256": "b52dfe9010fd35264a772da3b3130a4f484718feb192f3a00227867b48288ca4"
+      },
+      {
+        "path": "favicon.ico",
+        "size": 3119,
+        "sha256": "986b68c07112155bf8c6cc539487a17bcd403faa4d7ff411328e6c4f501aee71"
+      },
+      {
+        "path": "favicon.svg",
+        "size": 574,
+        "sha256": "5383dd1ac1108f961ada18ba5b65313b570041717ef394b48de234d4b2939a11"
+      },
+      {
+        "path": "fonts/manrope/OFL.txt",
+        "size": 4387,
+        "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+      },
+      {
+        "path": "fonts/manrope/manrope-cyrillic-variable.woff2",
+        "size": 14500,
+        "sha256": "c268b459a9329e59fecf39a17618efd44c71735532048d60b12aab76a8c14914"
+      },
+      {
+        "path": "fonts/manrope/manrope-latin-variable.woff2",
+        "size": 24836,
+        "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+      },
+      {
+        "path": "icon-192.png",
+        "size": 4778,
+        "sha256": "f6ff730bcb5aa3f44df15487a0aee3f18768b1299fa3747bc675b9f406892c8e"
+      },
+      {
+        "path": "icon-512.png",
+        "size": 13235,
+        "sha256": "b52dfe9010fd35264a772da3b3130a4f484718feb192f3a00227867b48288ca4"
+      },
+      {
+        "path": "icons/phosphor/LICENSE",
+        "size": 1092,
+        "sha256": "ddbe6082ec3cf979db47e5af549d2849c5d6182b3e005ef91ce1dbb9eb122f11"
+      },
+      {
+        "path": "icons/phosphor/arrow-right.svg",
+        "size": 241,
+        "sha256": "546e2ebfd0cae821c9a192ef8169eac2f1944688a373e3cb158316c311ca773a"
+      },
+      {
+        "path": "icons/phosphor/caret-down.svg",
+        "size": 209,
+        "sha256": "f90a5ae97d000696a67c5a7787a78620bb3744648a63b0fe9cdbdc10476fecab"
+      },
+      {
+        "path": "icons/phosphor/circle.svg",
+        "size": 206,
+        "sha256": "bb09e2539fc65394760823bb12a06f3bd0d63afaad5b9fb5cb9037eed09ad10e"
+      },
+      {
+        "path": "icons/phosphor/drop.svg",
+        "size": 514,
+        "sha256": "2067c983a7d443fa33515189fe1b21bece9e5a4deb5035302db8e300d3db5a7b"
+      },
+      {
+        "path": "icons/phosphor/paint-brush.svg",
+        "size": 637,
+        "sha256": "ea97c2fedc94b4d907fdbac110ec0a35689eae7b1f44a6d146df234a3af9d76e"
+      },
+      {
+        "path": "icons/phosphor/paint-roller.svg",
+        "size": 481,
+        "sha256": "eb291ce73f0454b0525c8dc33f691111ffcd2b40de37d3052d264bd9cd83af11"
+      },
+      {
+        "path": "icons/phosphor/ruler.svg",
+        "size": 539,
+        "sha256": "4e23a090aae41a1195e0b2c98557b59c9712623df86cf79b053b5371cbef5530"
+      },
+      {
+        "path": "icons/phosphor/stack.svg",
+        "size": 459,
+        "sha256": "9803255a4fc3fd5bf33e4f73a444047a4de352401156f7419a16ddbc6d564953"
+      },
+      {
+        "path": "images/catalog/mineral-plaster-grain.svg",
+        "size": 529,
+        "sha256": "0b5da6187fa515074aa80eb90e5671f73396e0c274545a961c221c60463b951f"
+      },
+      {
+        "path": "images/catalog/mineral-studio.webp",
+        "size": 38642,
+        "sha256": "01cfcf0439774e7e3ef97fcd797a6f1bc321243c9cb1623d159794538db1580b"
+      },
+      {
+        "path": "images/catalog/search.svg",
+        "size": 2191,
+        "sha256": "c0ad7d4b85c7688039bde1bb5b371d2bc4b2e4f73b491f54932e2475da085564"
+      },
+      {
+        "path": "images/categories/adhesives-tape-cutout.png",
+        "size": 614916,
+        "sha256": "ee445440000eeed44f7d4960363acfb4262594f392f9df90c21df3eff4e4d722"
+      },
+      {
+        "path": "images/categories/adhesives-tape.png",
+        "size": 580858,
+        "sha256": "3f0583b51ef0d9d573141f8591972f6d3d6177883b61b9d600115b495fdd55e9"
+      },
+      {
+        "path": "images/categories/approved/adhesives-1280.webp",
+        "size": 108496,
+        "sha256": "bd0938c8095bd764127b0e1ff98ae736ff8018e7e59e455957f90d2790eed1fb"
+      },
+      {
+        "path": "images/categories/approved/adhesives-768.webp",
+        "size": 48600,
+        "sha256": "8f42bd468805d2a7594441763d240be2578c4d891ec9b203c3d2b1eef3d2e039"
+      },
+      {
+        "path": "images/categories/approved/paints-1280.webp",
+        "size": 85668,
+        "sha256": "a784d869a5e7d714be9c9dbe448954468e4577b62453ce99d8d05b4c583563d8"
+      },
+      {
+        "path": "images/categories/approved/paints-768.webp",
+        "size": 30368,
+        "sha256": "72fe1c1b23c4e43ea4fde19568a17ed2447a856c3860c3eb9e0f63751392b0e4"
+      },
+      {
+        "path": "images/categories/approved/primers-1280.webp",
+        "size": 156812,
+        "sha256": "d75d0b50e8b37313ab33c8b8026d841d0e48e45c5c271744d0e47ebe491281b5"
+      },
+      {
+        "path": "images/categories/approved/primers-768.webp",
+        "size": 63772,
+        "sha256": "1d0babf0a65eaf998eccffb71799ad9b2e108def384bc02013441bd79ebf9549"
+      },
+      {
+        "path": "images/categories/approved/putties-1280.webp",
+        "size": 160082,
+        "sha256": "8de235d896c2115f930c2afcf230365fcff11180e33392f9acd4ffd9555c0012"
+      },
+      {
+        "path": "images/categories/approved/putties-768.webp",
+        "size": 65208,
+        "sha256": "ccba4e4bc07cc45f79fc0ffc9daf353d0ad1651e86a12d2566510673533f8a55"
+      },
+      {
+        "path": "images/categories/approved/roll-materials-1280.webp",
+        "size": 170712,
+        "sha256": "270eaf27826db48b5b60c604d67e1fbd4ae7decaca19bacc9c8da242f39579ad"
+      },
+      {
+        "path": "images/categories/approved/roll-materials-768.webp",
+        "size": 79114,
+        "sha256": "f708ac7feef69d517db1324ee1c84b3f893c200bf13f1cdc495f6d5a21081064"
+      },
+      {
+        "path": "images/categories/approved/waterproofing-1280.webp",
+        "size": 167226,
+        "sha256": "d124c2e92b7f5d59b633f8725de5413a831136d9fc15eb0ae582952f0c669950"
+      },
+      {
+        "path": "images/categories/approved/waterproofing-768.webp",
+        "size": 73112,
+        "sha256": "10c3912bf4b114630165a6ee3de9667f713123056a4a92af904faa9e50bb394b"
+      },
+      {
+        "path": "images/categories/concept-1/adhesive.png",
+        "size": 757562,
+        "sha256": "ab9b34d4b1f1ac1ed5e07b8af67ff2247636a761582ceac8dab6e8abed45956f"
+      },
+      {
+        "path": "images/categories/concept-1/glass-fiber.png",
+        "size": 670407,
+        "sha256": "29aa3996a0e919404eb28af1e9fb3c7acdcf49bb6b282f977effa515c4aaa8c3"
+      },
+      {
+        "path": "images/categories/concept-1/nonwoven.png",
+        "size": 631674,
+        "sha256": "8bb60498a8ca68bdf96dbd2774b5e5c6d0cec5c3ac810b3f80c5dc7db81b6ba5"
+      },
+      {
+        "path": "images/categories/concept-1/paint.png",
+        "size": 819601,
+        "sha256": "ef3dce6d5afc7887b76f14e055fa2218ee0b4e1ae495fc24c81116c400ca533a"
+      },
+      {
+        "path": "images/categories/concept-1/primer.png",
+        "size": 772438,
+        "sha256": "55716e62e888934f4e30aa6202ce41a2ed73b9a0053b96f27f196292643d4ba0"
+      },
+      {
+        "path": "images/categories/concept-1/putty.png",
+        "size": 769245,
+        "sha256": "50b1c18e401b263ad92cf60f13310379ea76909e7229323fd0918950a7f22dca"
+      },
+      {
+        "path": "images/categories/concept-1/texture-adhesive.png",
+        "size": 2206024,
+        "sha256": "59ca6fe0c932416f3ca5f3e7e3fb2bc550556dff5afc6ec9bdb7cf3f7fa62e37"
+      },
+      {
+        "path": "images/categories/concept-1/texture-paint.png",
+        "size": 2035498,
+        "sha256": "b904622714f94626080bfff3e1efc9d49be5abef903586613c6bf2c1caab09dc"
+      },
+      {
+        "path": "images/categories/concept-1/texture-primer.png",
+        "size": 3144870,
+        "sha256": "16223bcea108223a3b548c9d2e085bed29bd737654e6df24432105ea331f97cd"
+      },
+      {
+        "path": "images/categories/concept-1/texture-putty.png",
+        "size": 2143504,
+        "sha256": "32a791fdfcf63993a415d8fcf346cd6069bdd0a4863b883dc1676093c0f51ed9"
+      },
+      {
+        "path": "images/categories/concept-1/texture-rolls.png",
+        "size": 1919237,
+        "sha256": "a14e45ee308b51ebec6d4e78b89a6bf0645e7e76872b9944312e94b15f113d24"
+      },
+      {
+        "path": "images/categories/concept-1/texture-waterproofing.png",
+        "size": 2197714,
+        "sha256": "3d29d5e06fb36aa0a9d78d86fc77dfe6ffddff78c5d8476ca87e6e71bb0c8bf6"
+      },
+      {
+        "path": "images/categories/concept-1/waterproofing.png",
+        "size": 787513,
+        "sha256": "6fedd2bd2a4acf30f663517ca92e7ad98a9a52507401948ddb6ff1f2a5e8103c"
+      },
+      {
+        "path": "images/categories/material-backdrops/adhesive.webp",
+        "size": 36870,
+        "sha256": "39c2172430d36e8db64f84921d349525b60925ebde4f0b22cf283d600d585a41"
+      },
+      {
+        "path": "images/categories/material-backdrops/cloth.webp",
+        "size": 21524,
+        "sha256": "024cbea18d2709d55495f5a5876e57f1897006039a3a08d1b367e779fb7dce76"
+      },
+      {
+        "path": "images/categories/material-backdrops/paint.webp",
+        "size": 3720,
+        "sha256": "edad9c46d1ad0c45ad05d2b35cb68fd3a7256e97c79f1a91f37007ed33be38d6"
+      },
+      {
+        "path": "images/categories/material-backdrops/primer.webp",
+        "size": 103778,
+        "sha256": "249557c6f2945b583f430dab5cc27e0b299296636a532e02440f5fd954af5a7b"
+      },
+      {
+        "path": "images/categories/material-backdrops/putty.webp",
+        "size": 31054,
+        "sha256": "f05708b8f9b32620c78846d386f737cfd62db8db84a91710d003b9a58fc65b8e"
+      },
+      {
+        "path": "images/categories/material-backdrops/waterproofing.webp",
+        "size": 42574,
+        "sha256": "37b9497ece034065410e5219310a9919fac7b641dadc719823b60c38713461c9"
+      },
+      {
+        "path": "images/categories/paints-super-tack-3-cutout.png",
+        "size": 674996,
+        "sha256": "6d529966c76a0eff9a4d27f9adbe006b37d00ccdd945e345066bd1b0df5b5c44"
+      },
+      {
+        "path": "images/categories/paints-super-tack-3.png",
+        "size": 635427,
+        "sha256": "ffe9c67020a18e9836f9f81cfeef238c9b2466d4c36462a9fb5015af9bdd40c8"
+      },
+      {
+        "path": "images/categories/primers-mittel-cutout.png",
+        "size": 617362,
+        "sha256": "d0dc6ea2a8b1650fda0d6ba321f3dac80ce39bf49f3df48d884f00119314d409"
+      },
+      {
+        "path": "images/categories/primers-mittel.png",
+        "size": 581733,
+        "sha256": "d1a9a03cd733a0c0cfa36d2421c11bb4dadf532b5a2c5565483fc4ae5b49fb6f"
+      },
+      {
+        "path": "images/categories/putties-f-cutout.png",
+        "size": 615161,
+        "sha256": "cbde3f31e8f8a9a87a1d1bd302f0e108fe96123b76fb77eae4b7b4442620ba14"
+      },
+      {
+        "path": "images/categories/putties-f.png",
+        "size": 583023,
+        "sha256": "f36753fc31834def2d8142d3feb3877905d615fce89ee348c9c4eadf1828fdb8"
+      },
+      {
+        "path": "images/categories/roll-glass-fiber-cutout.png",
+        "size": 462104,
+        "sha256": "9d192c803b71a9de119301bf67e01c566f7352a050c21cdcd43dde12ed397f92"
+      },
+      {
+        "path": "images/categories/roll-glass-fiber.png",
+        "size": 516200,
+        "sha256": "183b0f6c0f9c515b9b5c34c5b87cbacdd02690a170b00e8b0be89c7ca4dd5912"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/adhesives-1280.webp",
+        "size": 85000,
+        "sha256": "24ed583e75a7a4fbca237c834d52caddab32c0827b560f9390a7f42c2f3c5240"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/adhesives-768.webp",
+        "size": 38252,
+        "sha256": "0cf7a203f8f08cd8c273fdd3de234e7b9329b211dbaba64207e165c0b9245c42"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/paints-1280.webp",
+        "size": 71814,
+        "sha256": "bf899bf4a195b137fcf37194b0eae2d6e6baed5d4c69c81a2824651133ccd0f6"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/paints-768.webp",
+        "size": 28496,
+        "sha256": "3a50ca8a45c8d4902c270ef675ceebe112eb5d1a3289da0f47064f20811f5016"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/primers-1280.webp",
+        "size": 175746,
+        "sha256": "212f529c42466a349130d3e5f607c8dd299fc2b1b21c6c412c510b9f2297544d"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/primers-768.webp",
+        "size": 72078,
+        "sha256": "8cb40563692f1e00c00967aa0e6fb4dce30a465869783b2353ac1f5a66815394"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/putties-1280.webp",
+        "size": 183774,
+        "sha256": "c6bff4d20c6743d0f715ae1c32a80fcfa97ef57c717ce5dbf6a59be1fb80d613"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/putties-768.webp",
+        "size": 70560,
+        "sha256": "d47462e574ea893c5334f7f295b0bf0a61eb98654b4d408dcaf0370354128855"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/roll-materials-1280.webp",
+        "size": 189918,
+        "sha256": "94f505afc0ceda091e4cea2d22ded220599f364811320bbdb5f02868a3c09243"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/roll-materials-768.webp",
+        "size": 95890,
+        "sha256": "3c1d4fb8fc0a1c0af0e155d74022c87333adad5df184d1be076bb82986075695"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/waterproofing-1280.webp",
+        "size": 176512,
+        "sha256": "9f09aa72c79bf3748fa75b6d693d88f5e2a0b057c257c70099795025e3968867"
+      },
+      {
+        "path": "images/categories/showcase-backgrounds/waterproofing-768.webp",
+        "size": 76456,
+        "sha256": "e24c64f97b2143b235742e182ab10b09a827e4ce47689cc2aad5549b03a101bb"
+      },
+      {
+        "path": "images/categories/waterproofing-hydro-cutout.png",
+        "size": 642734,
+        "sha256": "043cdba84c3f9380347b35581cf18efb9409e795ce2e3e167e96f2786bf17ced"
+      },
+      {
+        "path": "images/categories/waterproofing-hydro.png",
+        "size": 606893,
+        "sha256": "bec81bf9e15c5455b3a4e1e37f4e5970d4319b64d6cc9879d44b677cc934aa04"
+      },
+      {
+        "path": "images/certificate-appendix.jpg",
+        "size": 444441,
+        "sha256": "956afaa9e99584982b4bc6ea97b81a65438978c52afe362f177058f0d2538b83"
+      },
+      {
+        "path": "images/certificate-conformity.jpg",
+        "size": 480434,
+        "sha256": "aac7078a05d437f69f6c4da8088f800e6dc97e1c90768a9ca239af2d2f091b01"
+      },
+      {
+        "path": "images/consultation.png",
+        "size": 2767795,
+        "sha256": "3b09a324e28bb4186f57c77aecb0006864f97f9f29a15c0f372b6be21a0f78a0"
+      },
+      {
+        "path": "images/hero-architecture-no-product-1600.webp",
+        "size": 121430,
+        "sha256": "c5aba543ae8b5360defc0826770c80b8714d3243474dc5bec3561fb0f4d99f75"
+      },
+      {
+        "path": "images/hero-architecture-no-product-960.webp",
+        "size": 40900,
+        "sha256": "ad6540ec9d419fffc9c2cb7d5ab0488000686c535926210cfa40b3f5d50713a3"
+      },
+      {
+        "path": "images/hero-architecture-v2.png",
+        "size": 2102255,
+        "sha256": "eda9eb05e2bc3fc98dd8b992415c0a77bd074536be74f42ff52e3305e53933f9"
+      },
+      {
+        "path": "images/hero-architecture.png",
+        "size": 3758451,
+        "sha256": "c2d42736cf37ab4980785882ac1d8e4536f5c97ab933586e276c58966e216980"
+      },
+      {
+        "path": "images/hero-concepts/concept-01-material-strata.png",
+        "size": 2270562,
+        "sha256": "5ad74f0d41ee766dfb3391eb8e7d7241e4824f705fc7b65bc916f433b3a5c533"
+      },
+      {
+        "path": "images/hero-concepts/concept-01-material-strata.webp",
+        "size": 206496,
+        "sha256": "0e7e068a9f28801fffa05576322b0edcd477c5e1510bbb9fae4bb6d7df63743b"
+      },
+      {
+        "path": "images/hero-concepts/concept-02-surface-continuum-960.webp",
+        "size": 82602,
+        "sha256": "919e68565b90fd9f46d18542ec59d0cad85c293ee07ab106e72b876d742576c6"
+      },
+      {
+        "path": "images/hero-concepts/concept-02-surface-continuum.png",
+        "size": 2480580,
+        "sha256": "70fe1bb6d69d36c14b49717554c87dca874aaa43e9b693b667d670e8b1743334"
+      },
+      {
+        "path": "images/hero-concepts/concept-02-surface-continuum.webp",
+        "size": 266218,
+        "sha256": "712f6b7d35ec980eb0626531542728acf44dfedaa77dcdf16c88d05b5440af1e"
+      },
+      {
+        "path": "images/hero-concepts/concept-03-mineral-monolith.png",
+        "size": 1798341,
+        "sha256": "4e623b404c917359b483f91108ffb17dffd21094fd86d475a5e927ebcc1139ad"
+      },
+      {
+        "path": "images/hero-concepts/concept-03-mineral-monolith.webp",
+        "size": 96702,
+        "sha256": "412bceb8a32c347ee1b13758796c26e8cbac43f8a39bcea55194c5b6f7de2187"
+      },
+      {
+        "path": "images/hero-concepts/concept-04-precision-trace.png",
+        "size": 2147014,
+        "sha256": "35c8c88c3a5378accf4976efbc608121f6b8244eeb15006de8dea3dffa6ce965"
+      },
+      {
+        "path": "images/hero-concepts/concept-04-precision-trace.webp",
+        "size": 195356,
+        "sha256": "e896b0554bf044c9941a3d6e457a30248981e13fb1db1d6047dd803e360c3cba"
+      },
+      {
+        "path": "images/hero-material-layers-wide.webp",
+        "size": 94688,
+        "sha256": "f7f9d23c2ef68735c1db4ec306d224d49fa8acfcc4108aa593086aacd86c4ccc"
+      },
+      {
+        "path": "images/hero-material-layers.webp",
+        "size": 119044,
+        "sha256": "6d7b4467056dd90bf4e7be747e492003d23653148bcb77b1ca55fbcd5862152d"
+      },
+      {
+        "path": "images/hero-surface-promix-h.webp",
+        "size": 129774,
+        "sha256": "5b9e33336aefbe516e91cf64db11aac2555a02767492aad3eb6a8be5fefabe88"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/adhesives.png",
+        "size": 2090824,
+        "sha256": "219b60c3cd4b0c8f91a6e7adc2d82acdd987b4588a3815f27422f57e4df9ac72"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/adhesives.webp",
+        "size": 1297530,
+        "sha256": "8b0d8cd99fff2634e4c0a75700e0cf91819f12d54dd1209992b4ffda2f65770b"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/paints.png",
+        "size": 1714738,
+        "sha256": "674514e8b62cce7f65ee7cc914e5ce64009161fe39b7d8692e0be9fa01194d4c"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/paints.webp",
+        "size": 1110170,
+        "sha256": "786d4e7159950b20e7e377e7cc6aa11aa6d675ed9be855fdc06a8fe63c6721b6"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/primers.png",
+        "size": 2068947,
+        "sha256": "2cd65a418bc4b05ec1fa885e01b36c6c28b0cc086598386d01ef391d19c5dcee"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/primers.webp",
+        "size": 1305496,
+        "sha256": "b7af47cbf976b3d692a6294b91e30bda34b5a90bba0ca5fbcd4929bdc2145e02"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/putties.png",
+        "size": 2092056,
+        "sha256": "4acdf089e067df2ec3e767effb7053f512ad556299f24d7a83bc99603ea0fa71"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/putties.webp",
+        "size": 1396926,
+        "sha256": "bb79e0fd9562c2f21bb94e2a81536bf353ceac2903e7966d0d50f4c01652d960"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/roll-materials.png",
+        "size": 2340992,
+        "sha256": "fb1eb4f7d07b41cc2d219766474ee91694b7ec0ba088cd193f7edd00e8f4ff28"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/roll-materials.webp",
+        "size": 1461900,
+        "sha256": "a00b1303b213e4ae97ef97d89ceb0066290a3c31fe54ed2dc6e361f8c095c1c1"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/waterproofing.png",
+        "size": 2348030,
+        "sha256": "ace6fb4a2b5818a2352f2617e63eb25ce56ef9b8cb53d7266313b4a6c3f30646"
+      },
+      {
+        "path": "images/home-category-cards/approved-2026-10/waterproofing.webp",
+        "size": 1421506,
+        "sha256": "2b6611d6098ac25b983ff58158b60b1ff0d96d8f8b641f701788ebbdb2d0cdf2"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/adhesives-1440.webp",
+        "size": 99758,
+        "sha256": "15072e250a5133b7c40625b9fdaf1772f97dcef806bab60d8d266aa4e15f33a0"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/adhesives-480.webp",
+        "size": 20020,
+        "sha256": "5b1730c45f04b5e0bc23f7cec51faaf798b31f4883019b53d21178d3aa5e4f87"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/adhesives-768.webp",
+        "size": 41152,
+        "sha256": "a168d36780fd5565c2dca669cdc50ae3d3098b994058633cd58d4c8c2ddf7c86"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/adhesives-960.jpg",
+        "size": 71961,
+        "sha256": "a8f583d2195300330eea43f0d7c8566be2bc4ef8edef1b666f8282c189e46fb5"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/adhesives-960.webp",
+        "size": 56892,
+        "sha256": "90af5790b546b3b16c49e53ccbd96d3b50d0e25a88ce4a6170996a86385fb455"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/adhesives.png",
+        "size": 2737153,
+        "sha256": "362bdd37f223750cdf6a0df775a8b272d14283639c6df222a9751e522c44fa42"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/adhesives.webp",
+        "size": 1300046,
+        "sha256": "c68ef250228c22b4cdcb8a84e435a95a96a7451f6cf10d3bec368bfb6b9afe25"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/paints-1440.webp",
+        "size": 50322,
+        "sha256": "3cfeb641b340eff4b3e39cf7bd1f3f395a2bc516ea8cd983b270d2d088458bb2"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/paints-480.webp",
+        "size": 9478,
+        "sha256": "c0784c895190a1d0a0a15ef1c7f625860d3a14774699ce6064337355a41ccd47"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/paints-768.webp",
+        "size": 19568,
+        "sha256": "a6c7ba8fcd826ada7e6c3942a966297608bc764e5c5a1d40fcc99c31683f37f5"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/paints-960.jpg",
+        "size": 42841,
+        "sha256": "af709811f09c68ba031c02f484f85e0979b0816feb839c7ce7c1fd94d9c19489"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/paints-960.webp",
+        "size": 27920,
+        "sha256": "8f8ab6d557e228d94c88b4f1d1223d6a430e1cd311cc5f4ac96e3c67fc522ef0"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/paints.png",
+        "size": 2389893,
+        "sha256": "9ac7e7b9a7efdc254944e2686e7908dc1367ab40077145b76cd3dc6bb268f698"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/paints.webp",
+        "size": 1127706,
+        "sha256": "922f5e21273a4bc265c5ba1e649f2d2c31d794bcdffaa573714e0ab9424d23b5"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/primers-1440.webp",
+        "size": 94850,
+        "sha256": "d9f0444ad1bb82bad375c5889210b2e4503c77b20173ee9cc8039d547d8fc022"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/primers-480.webp",
+        "size": 20874,
+        "sha256": "e8543bdf0643aa979b77c61452021aff8be78c488f5621dce1318e64a3a3dbe5"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/primers-768.webp",
+        "size": 41810,
+        "sha256": "ee58aae61921d6bbc0dc05ab48499f1ac739b578dc2ca17cac6e11dc6fd94ee4"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/primers-960.jpg",
+        "size": 72139,
+        "sha256": "14a63ab9ef143f940cee9a0c0d3c1ca1f644a75b6bd87469ed29dbc030be5489"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/primers-960.webp",
+        "size": 57198,
+        "sha256": "e3a1e730c44f4b9834df8c52548d3c780fb3736ae209c583c20814fe023bf040"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/primers.png",
+        "size": 2560253,
+        "sha256": "26194fb1e7721aae356fa4e458b7f997c2b4747206fde33a077e82d786ee7829"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/primers.webp",
+        "size": 1307970,
+        "sha256": "6e4ccdca54dcfa78d6b752fec504aca0b9418434362c719a03233876a42bd317"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/putties-1440.webp",
+        "size": 105622,
+        "sha256": "aa32431a36f3fc92e5c6bd3c3e8d4fe51b4d1dc92f111cf3bd375e2d2ffb3858"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/putties-480.webp",
+        "size": 18576,
+        "sha256": "f17edebac34a289047cc1530249de90c842605bcb7aac51d8024b08abfcd79c5"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/putties-768.webp",
+        "size": 40294,
+        "sha256": "9c00a45b075e69542bd16222ad4f087c41a717189eeba4215a38276ecd9dc9be"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/putties-960.jpg",
+        "size": 70636,
+        "sha256": "835761f5c404733dfcce433f9a0c8d7ac044259364b1fb03a841f39c84c7c14e"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/putties-960.webp",
+        "size": 57348,
+        "sha256": "58f05fda365101c11e8a114748e59c6a9a4a3a1f392556f5db8e985a8fee071f"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/putties.png",
+        "size": 2783289,
+        "sha256": "4996301b4f3007b1d6cc2e454068b48418cf528314921e933f392892268670a4"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/putties.webp",
+        "size": 1447022,
+        "sha256": "c8ae35ff9e7d4144ea90fab7c42c9648c46c18c59959576f13ac2aea8aa95299"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/roll-materials-1440.webp",
+        "size": 127606,
+        "sha256": "e11b772de0b8e0bfde4f3df01bfe2d72e90bf8bea7122320dfd682ac0c70093d"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/roll-materials-480.webp",
+        "size": 22222,
+        "sha256": "ea25c3fc8f3ad815085390dad2aaa1fff715838e2e8f71137b34dde3ffefe608"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/roll-materials-768.webp",
+        "size": 51672,
+        "sha256": "f4da14d34268737f96e683b0494fc6b3a48dfc4560a9d257431347de38698fe7"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/roll-materials-960.jpg",
+        "size": 80471,
+        "sha256": "16fb9edfc09924438aabee149660ccda94cf709f567a3345fe1ea933e6a596b1"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/roll-materials-960.webp",
+        "size": 73606,
+        "sha256": "bd578d2ddbf0c37bd79bd7db9c1962692c25aefa04dcc44b2fe680a04004cc2c"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/roll-materials.png",
+        "size": 3039507,
+        "sha256": "1b2c7e489b6e26dc80d799f1d4d21911e457662f772d47c1d71174e51e62cc15"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/roll-materials.webp",
+        "size": 1505848,
+        "sha256": "6b0faf830f62ae6e47df6f5883105141a9581d0bbed3f44445da8de6a45f2f30"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/waterproofing-1440.webp",
+        "size": 157862,
+        "sha256": "ef4ea427f35371281055d64f9434046b0cce009d6eab5c40a93d0d4206520626"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/waterproofing-480.webp",
+        "size": 35214,
+        "sha256": "35c1f1ff714586e9b2b6ae9e912ca1805b5d707eea418fec0aef5cc05e3e7091"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/waterproofing-768.webp",
+        "size": 71844,
+        "sha256": "645978104569dfb9e22dfc0c29fa44b278bc45593fa45469d09a6529f416ff34"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/waterproofing-960.jpg",
+        "size": 102869,
+        "sha256": "60f6b5b22b5f0d5acd0724b0758cecb4c1550334734ef5faa1d3dfd825ee8210"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/waterproofing-960.webp",
+        "size": 96596,
+        "sha256": "828a14f0bdd726b07a4bb1de55e600ffd6c21039eea41f5042912bbe00379652"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/waterproofing.png",
+        "size": 2979823,
+        "sha256": "a674de3a10d40dcea7de907d12c99908914ccd87b6d93ecfb6d0921ea883b339"
+      },
+      {
+        "path": "images/home-category-cards/clean-ui-2026-10/waterproofing.webp",
+        "size": 1513234,
+        "sha256": "7a43b4f6909fb797a6862b31a6c7aa35342ea37ebd970d810e73c1fb3713d553"
+      },
+      {
+        "path": "images/laboratory-realistic-1600.webp",
+        "size": 87442,
+        "sha256": "944c720dba5874ed39772add5ec3e5eae6acf6b28dbec2947f3e81a84a22634c"
+      },
+      {
+        "path": "images/laboratory-realistic-960.webp",
+        "size": 43916,
+        "sha256": "5720999d766ae2e5cc7741eda6c156794190589c88c85461944113ee7b9674db"
+      },
+      {
+        "path": "images/laboratory.png",
+        "size": 3355525,
+        "sha256": "2b68710a1a10d69008c7008b69cff80f40a2131546a3de35879ae3ba29aacb01"
+      },
+      {
+        "path": "images/performance/acrylic-enamel-67cad3d45f-5963417e16e2-1600.webp",
+        "size": 735810,
+        "sha256": "5963417e16e2e2dd10699e08b355f65d1717f48241ef08f43e1acd7cd2b91680"
+      },
+      {
+        "path": "images/performance/acrylic-enamel-67cad3d45f-78dc5a7f27c7-640.webp",
+        "size": 177222,
+        "sha256": "78dc5a7f27c7f0f3b6c0d8e1677f628701af1da0526a4e133d6c04b6404b8755"
+      },
+      {
+        "path": "images/performance/acrylic-enamel-67cad3d45f-811959b04916-480.webp",
+        "size": 108772,
+        "sha256": "811959b04916dcf41ea16831a102a19dd61ca9958f4a3e0e98914c40988f97b2"
+      },
+      {
+        "path": "images/performance/acrylic-enamel-67cad3d45f-aeca788f673b-960.webp",
+        "size": 345736,
+        "sha256": "aeca788f673b7743d9c94bbe562192880adcc500583af4a2da938fe9e5784296"
+      },
+      {
+        "path": "images/performance/acrylic-enamel-67cad3d45f-c975cc5db977-2048.webp",
+        "size": 981326,
+        "sha256": "c975cc5db977befa31fe95917e426afcc1840e9ca5495e059346c6721ad571d7"
+      },
+      {
+        "path": "images/performance/acrylic-enamel-67cad3d45f-d16eb7b41268-320.webp",
+        "size": 55082,
+        "sha256": "d16eb7b4126804783d4c59abf9187db8acdc109fb1a47481ffc3a31b32e3e5f4"
+      },
+      {
+        "path": "images/performance/glass-fiber-1d638a4b41de-480.webp",
+        "size": 82694,
+        "sha256": "1d638a4b41deba00d9b4c624fc941c53fdb7b9fa9ec10684a59cde2ee3c96865"
+      },
+      {
+        "path": "images/performance/glass-fiber-30d2cf1c7923-320.webp",
+        "size": 41588,
+        "sha256": "30d2cf1c79239fbb61cbcbb29269e5b12842ccc596d03bcf59043ab9dff25835"
+      },
+      {
+        "path": "images/performance/glass-fiber-5d3d0fab5113-960.webp",
+        "size": 297080,
+        "sha256": "5d3d0fab511342ce70b35dd72ceb11db166501334dd6bc47a78010ec06494274"
+      },
+      {
+        "path": "images/performance/glass-fiber-5ed88b5ab1fb-640.webp",
+        "size": 139688,
+        "sha256": "5ed88b5ab1fb57e3170aa360f44f35d21119b4b74287346c79213ec0e80bedaf"
+      },
+      {
+        "path": "images/performance/glass-fiber-c69c0f491138-1024.webp",
+        "size": 320592,
+        "sha256": "c69c0f4911381a51a38654934138747274456629e6fa965deab40f1b26886d5e"
+      },
+      {
+        "path": "images/performance/hero-surface-promix-h-5b9e33336aef-1207.webp",
+        "size": 129774,
+        "sha256": "5b9e33336aefbe516e91cf64db11aac2555a02767492aad3eb6a8be5fefabe88"
+      },
+      {
+        "path": "images/performance/hydro-141199e0f9e7-1024.webp",
+        "size": 390020,
+        "sha256": "141199e0f9e7240a1732850ffa53bfc42242b03f28bf045e1e30f104a7ab94af"
+      },
+      {
+        "path": "images/performance/hydro-5122897db48e-640.webp",
+        "size": 187146,
+        "sha256": "5122897db48e1d1f62a9424e172d901b9e833ad46875a246f24bb17a2e8cf0ec"
+      },
+      {
+        "path": "images/performance/hydro-52eec248ba82-320.webp",
+        "size": 56628,
+        "sha256": "52eec248ba82e4f71d8cebd75047e1eecbd992649eb54e4223140593e4d54501"
+      },
+      {
+        "path": "images/performance/hydro-96321cc91b0d-960.webp",
+        "size": 375242,
+        "sha256": "96321cc91b0dcde4eb97c92663c51364be7dc414552c32e3fff026c61f5f7694"
+      },
+      {
+        "path": "images/performance/hydro-9c23a7e795ed-480.webp",
+        "size": 114196,
+        "sha256": "9c23a7e795edf9bea3d94d7c300ac2f813285cf2efcba328f7efbfc837f06145"
+      },
+      {
+        "path": "images/performance/laboratory-realistic-5720999d766a-960.webp",
+        "size": 43916,
+        "sha256": "5720999d766ae2e5cc7741eda6c156794190589c88c85461944113ee7b9674db"
+      },
+      {
+        "path": "images/performance/laboratory-realistic-944c720dba58-1600.webp",
+        "size": 87442,
+        "sha256": "944c720dba5874ed39772add5ec3e5eae6acf6b28dbec2947f3e81a84a22634c"
+      },
+      {
+        "path": "images/performance/latex-paint-2ca987e72010-480.webp",
+        "size": 100032,
+        "sha256": "2ca987e720102d1622cc0080f0d511f196a29a22f67afdb07ce7bfbd62820fd0"
+      },
+      {
+        "path": "images/performance/latex-paint-8ab99c2e1496-320.webp",
+        "size": 50834,
+        "sha256": "8ab99c2e14963020ddd1e94ad9814421c47e27a1c1f2dd6bf8dfcd6a3cffb16c"
+      },
+      {
+        "path": "images/performance/latex-paint-af17bc3d3144-1024.webp",
+        "size": 346890,
+        "sha256": "af17bc3d3144814fe00d872d9b484306847c659139d30873bac641ff31a994f4"
+      },
+      {
+        "path": "images/performance/latex-paint-b08e8cda6ac7-960.webp",
+        "size": 334882,
+        "sha256": "b08e8cda6ac73a21a48b77fe2d11501b5eb040b6cd885e62b94efd6b6da1de7e"
+      },
+      {
+        "path": "images/performance/latex-paint-d899265acb28-640.webp",
+        "size": 165584,
+        "sha256": "d899265acb28100fc33ab96abb95a73fc54ae4e39069dfe58221f4103bebcd36"
+      },
+      {
+        "path": "images/performance/plus-top-12d2146f689c-960.webp",
+        "size": 375526,
+        "sha256": "12d2146f689ce45538937017a88c82c72c99058ec10388a60e23e5f44e6fc6d3"
+      },
+      {
+        "path": "images/performance/plus-top-6aa7724c3682-640.webp",
+        "size": 174338,
+        "sha256": "6aa7724c36828631e2698fc501ea9c79e6b353ce3261d4b81b40a546b621fe8e"
+      },
+      {
+        "path": "images/performance/plus-top-80b86b9b5b8b-480.webp",
+        "size": 103166,
+        "sha256": "80b86b9b5b8bc7e05d09af6392563e6e1202568eaf9aa618e1a7447380342252"
+      },
+      {
+        "path": "images/performance/plus-top-e065bd7dce74-320.webp",
+        "size": 49458,
+        "sha256": "e065bd7dce74aec1c41d5e9d56d4e6492e0413dd23af0fd49927578781ff8169"
+      },
+      {
+        "path": "images/performance/plus-top-f9349cd8f67b-1024.webp",
+        "size": 396908,
+        "sha256": "f9349cd8f67ba27eda646e55bae72d99935e1efbce79bc0c3f9343119afb4106"
+      },
+      {
+        "path": "images/performance/polymer-putty-09cd4e5959-192ea8f2d0e6-640.webp",
+        "size": 181860,
+        "sha256": "192ea8f2d0e666214828952ba336d2a63329f7a350e244dd9605181ec0c12bfa"
+      },
+      {
+        "path": "images/performance/polymer-putty-09cd4e5959-1b53d6a03fef-960.webp",
+        "size": 361716,
+        "sha256": "1b53d6a03fef8d0dbaa4dfd1ac024fd205cbf579001feeba2a7e27bb34646298"
+      },
+      {
+        "path": "images/performance/polymer-putty-09cd4e5959-30343f6e9140-480.webp",
+        "size": 111184,
+        "sha256": "30343f6e91404e5b2e5beccba2b703bc6602fb2c03dac9a598f66d4fe3591937"
+      },
+      {
+        "path": "images/performance/polymer-putty-09cd4e5959-83b2855b0a4a-2048.webp",
+        "size": 1083252,
+        "sha256": "83b2855b0a4a78d47b26c9f151f5a00a9caf95f2678b014320f0c762b5e6e604"
+      },
+      {
+        "path": "images/performance/polymer-putty-09cd4e5959-a68f7e00fefb-320.webp",
+        "size": 56578,
+        "sha256": "a68f7e00fefbe8af88b4bd79e51508e6cf670537e910f9e469e25dc8f1dc0478"
+      },
+      {
+        "path": "images/performance/polymer-putty-09cd4e5959-b459a5b9193e-1600.webp",
+        "size": 797668,
+        "sha256": "b459a5b9193ede100bd73372d95d087e79bcf8df6aae6e0a2a5f0b0e9511b587"
+      },
+      {
+        "path": "images/performance/pro-spray-improved-1469ab8fa7c7-320.webp",
+        "size": 51718,
+        "sha256": "1469ab8fa7c734378c6f4cbbb5d072853982123816c31d466b0997f9c7565064"
+      },
+      {
+        "path": "images/performance/pro-spray-improved-7c90421b73ae-640.webp",
+        "size": 172428,
+        "sha256": "7c90421b73ae2cb991183ae4679af5961e21eb044bc36273d4a6a5ff27ff2045"
+      },
+      {
+        "path": "images/performance/pro-spray-improved-9bf8cb5f429b-480.webp",
+        "size": 104238,
+        "sha256": "9bf8cb5f429b2467383a12cb2020e64899295806d05e090b58767783532cadc5"
+      },
+      {
+        "path": "images/performance/pro-spray-improved-c5ba3e36f1e7-960.webp",
+        "size": 358938,
+        "sha256": "c5ba3e36f1e7674ed6aeea4a98020d20390ffcde0501de105d2e812980050b9a"
+      },
+      {
+        "path": "images/performance/pro-spray-improved-c9421cc9f4f2-1024.webp",
+        "size": 380182,
+        "sha256": "c9421cc9f4f2f9a72581117a79b85ca2d1ac78b19e7e1ff6f60c53a4e262cc44"
+      },
+      {
+        "path": "images/performance/production-realistic-c6712369a881-960.webp",
+        "size": 65312,
+        "sha256": "c6712369a88187b7aa9b426a611f958c01f7ed8bf4be4e7d07f4330cb112f142"
+      },
+      {
+        "path": "images/performance/production-realistic-f1a7a82517c4-1600.webp",
+        "size": 134886,
+        "sha256": "f1a7a82517c4a50142a346f169f11c9ee4711e189d94a505ed935c85a7291765"
+      },
+      {
+        "path": "images/performance/promix-f-740d9201fb14-1024.webp",
+        "size": 346660,
+        "sha256": "740d9201fb149e995ac97cfae0c98bdca088a12f29f402644bb32ef94617f43f"
+      },
+      {
+        "path": "images/performance/promix-f-7c7d9b2374f9-320.webp",
+        "size": 48296,
+        "sha256": "7c7d9b2374f99a96833728f463aeeccf0fc9380a4d2974a5a377d9c625dd23a8"
+      },
+      {
+        "path": "images/performance/promix-f-832135085f96-960.webp",
+        "size": 333784,
+        "sha256": "832135085f96034a1b1090bdd437e469b758d1feac66bdad12ab31cb15a7c077"
+      },
+      {
+        "path": "images/performance/promix-f-b38481e68a5a-480.webp",
+        "size": 97162,
+        "sha256": "b38481e68a5a37b22b02768fe5da2f6b9098edb7e16b3f46afd2393050a1a24a"
+      },
+      {
+        "path": "images/performance/promix-f-bd75ab3a9005-640.webp",
+        "size": 160718,
+        "sha256": "bd75ab3a900502410b44fa869558f19a4647b46e61e9d8452d930570acddb4ed"
+      },
+      {
+        "path": "images/product-showcase-environment-1120.webp",
+        "size": 134320,
+        "sha256": "50a15606d523cce782bb2736841b5c0608492cce35bde067a11e167bb81b0c98"
+      },
+      {
+        "path": "images/product-showcase-environment-768.webp",
+        "size": 51246,
+        "sha256": "fe0863ef60cd641bc60e718279234c6281cfdd3aafb439e8ecfdbeaf3a7700d5"
+      },
+      {
+        "path": "images/product-showcase-light-environment-1120.webp",
+        "size": 22392,
+        "sha256": "697187479715b299227d2b1d0ec561edf1d3398c7dbf36b0b7d9b6833f88182d"
+      },
+      {
+        "path": "images/product-showcase-light-environment-768.webp",
+        "size": 9574,
+        "sha256": "5cf49154d25803a52c4618d3437631c20fa885a22e4af213ff1c6f698faf4381"
+      },
+      {
+        "path": "images/production-realistic-1600.webp",
+        "size": 134886,
+        "sha256": "f1a7a82517c4a50142a346f169f11c9ee4711e189d94a505ed935c85a7291765"
+      },
+      {
+        "path": "images/production-realistic-960.webp",
+        "size": 65312,
+        "sha256": "c6712369a88187b7aa9b426a611f958c01f7ed8bf4be4e7d07f4330cb112f142"
+      },
+      {
+        "path": "images/production.png",
+        "size": 3044840,
+        "sha256": "02045a99420c9b657247be777cb472893abf9a78d188b12c3ab0bd602e53bd84"
+      },
+      {
+        "path": "images/products/2026-10/acrylic-enamel-67cad3d45f.png",
+        "size": 2229215,
+        "sha256": "67cad3d45f805df1d60a4a1559063c1272a4eb898fc5e0a0696567be8159f59e"
+      },
+      {
+        "path": "images/products/2026-10/betokontakt-9357d7c5e4.png",
+        "size": 2124312,
+        "sha256": "9357d7c5e49e842c3f7839187f31264b5e356eefb30a8e7be5a4a0c660c1dbf0"
+      },
+      {
+        "path": "images/products/2026-10/deep-primer-8c9c918005.png",
+        "size": 1542566,
+        "sha256": "8c9c9180056d57de22bfa7c84fea1326b7aabb352ec9a9a6a0b76541985ee32f"
+      },
+      {
+        "path": "images/products/2026-10/glass-fiber-plus-top-e4f31956bf.png",
+        "size": 767099,
+        "sha256": "e4f31956bf1c57baa5ef7c1b9dcee81ef6a851296af24bcf9d2939d7a583618b"
+      },
+      {
+        "path": "images/products/2026-10/hydro-dcc0155a95.png",
+        "size": 1362059,
+        "sha256": "dcc0155a952a0af98953a6ac10ed8e2b58ce43f5db2ba309443b96f695cf8c87"
+      },
+      {
+        "path": "images/products/2026-10/mittel-grund-707be14614.png",
+        "size": 1562702,
+        "sha256": "707be146142db0607b7cb5172e179900c785afa196892247b0508ee3649875e6"
+      },
+      {
+        "path": "images/products/2026-10/mix-mosaic-c196ed3116.png",
+        "size": 3641964,
+        "sha256": "c196ed3116f54a3f45a3dbad89b19ad1aa262deabe5f86c19d47cb62625263f1"
+      },
+      {
+        "path": "images/products/2026-10/nonwoven-plus-top-a846e281ec.png",
+        "size": 713157,
+        "sha256": "a846e281ec604f4c46d925258c03c3be8fe92abe5a8bc18bf2f373fc814fd497"
+      },
+      {
+        "path": "images/products/2026-10/plus-top-01cb1f86f5.png",
+        "size": 1314498,
+        "sha256": "01cb1f86f596539df088c961f6dfec9bd279be3594a778ef9d0a481a9af273f2"
+      },
+      {
+        "path": "images/products/2026-10/polymer-putty-09cd4e5959.png",
+        "size": 2428863,
+        "sha256": "09cd4e59594a3ae262e95c2c10a789c386b05d4cdc9065a6a07d60730b7c68f5"
+      },
+      {
+        "path": "images/products/2026-10/primer-concentrate-0fd024c39b.png",
+        "size": 1358856,
+        "sha256": "0fd024c39b8500e10a22f98ad31a75d98cb8e759aaf26579edfed36b10e16721"
+      },
+      {
+        "path": "images/products/2026-10/primer-paint-36e1e0948e.png",
+        "size": 2302441,
+        "sha256": "36e1e0948e685d856fd38299c42fdb2b9872440b584cf4478a9f6eae4d7263e8"
+      },
+      {
+        "path": "images/products/2026-10/pro-spray-finish-c441eedcda.png",
+        "size": 1524983,
+        "sha256": "c441eedcda6a4f7ee81c52a60a7f7b768594a9b52aa7b9d0784e5c799554d47e"
+      },
+      {
+        "path": "images/products/2026-10/promix-3in1-5ddbc3c12f.png",
+        "size": 2316121,
+        "sha256": "5ddbc3c12f99adca5bf38852d3629f6f07f8d2b553112e91f0c02abd0b113b63"
+      },
+      {
+        "path": "images/products/2026-10/promix-f-e71ba1c0b5.png",
+        "size": 2136692,
+        "sha256": "e71ba1c0b59427b780cad05155f0c0521f9b6e5b345e6ee31f457da67421c7c6"
+      },
+      {
+        "path": "images/products/2026-10/promix-fasad-4fa9419c39.png",
+        "size": 2485426,
+        "sha256": "4fa9419c392da303aa9303b9dfe167b07630c70267a69d132f708410d8865f7f"
+      },
+      {
+        "path": "images/products/2026-10/promix-h-02-ac384999d4.png",
+        "size": 2246423,
+        "sha256": "ac384999d47649f3bcb8aee06232fc9e6c41767432e5fd6c5a2f144319a6bc81"
+      },
+      {
+        "path": "images/products/2026-10/promix-h-03-f281de343a.png",
+        "size": 1543452,
+        "sha256": "f281de343ab14a302dad54dbd77fa3b970bccab98549b4b9958a2a76f1c8addb"
+      },
+      {
+        "path": "images/products/2026-10/promix-j-71ae9842fc.png",
+        "size": 2380420,
+        "sha256": "71ae9842fcbaa54db0fef4228c23d698acb7983426a21f1f3c7aac579863a5f3"
+      },
+      {
+        "path": "images/products/2026-10/promix-w-b1fc804c1a.png",
+        "size": 1684405,
+        "sha256": "b1fc804c1af4a83bcacfad291e743491b9221ce20a18cc5e30ae6d82404caf4a"
+      },
+      {
+        "path": "images/products/2026-10/sous-couche-4f2e9b531f.png",
+        "size": 1746888,
+        "sha256": "4f2e9b531fd8e959de7149d3f228539b300aeef139041c30bf9c11a1248147a8"
+      },
+      {
+        "path": "images/products/2026-10/super-tack-3-a745b14619.png",
+        "size": 1682498,
+        "sha256": "a745b14619e244c58f86a2b05405cd585ef9379f406cc60f9c8d6eadc4b0e30c"
+      },
+      {
+        "path": "images/products/2026-10/super-tack-7-0c47626be9.png",
+        "size": 1890205,
+        "sha256": "0c47626be915b9935f6a08dcbc12d80c25556685ea24c814aa22560297c768c4"
+      },
+      {
+        "path": "images/products/2026-10/super-tack-facade-6d66c49261.png",
+        "size": 1778556,
+        "sha256": "6d66c492610073565f33612f081a41eacb231ba4c22dcf70bbca2a7b0b3bf2ea"
+      },
+      {
+        "path": "images/products/2026-10/super-tack-facade-silicon-f98f92df89.png",
+        "size": 1725280,
+        "sha256": "f98f92df89589a05994f47f1536bf03f1dc87990027e7170e92b322734cf92e6"
+      },
+      {
+        "path": "images/products/2026-10/tape-adhesive-5741790d4f.png",
+        "size": 2153818,
+        "sha256": "5741790d4f070f8827b6e56d6fef1f1628e394dac7ce5446fe0ccb3572b4fae6"
+      },
+      {
+        "path": "images/products/2026-10/textured-anti-vandal-06ef857cad.png",
+        "size": 1826745,
+        "sha256": "06ef857cad6a86027ed36de0742b071164e344547efa2949859d15ef35ab4e35"
+      },
+      {
+        "path": "images/products/2026-10/universal-primer-f832e445e9.png",
+        "size": 1489768,
+        "sha256": "f832e445e93d9ba42ef4d9570512e1a820f214d71993cf0bb9d387ed0871088b"
+      },
+      {
+        "path": "images/products/acrylic-enamel.png",
+        "size": 695951,
+        "sha256": "41c58fdac345242bb60a56a1594f47642721bafb54a1663703ff1be6247a27e9"
+      },
+      {
+        "path": "images/products/betokontakt.png",
+        "size": 782585,
+        "sha256": "a26a0101c2d829de4b6ffcb1632f62009063f772e6934b777d3d1939707dce92"
+      },
+      {
+        "path": "images/products/catalog-2026-10/betokontakt-613d6fe67c64-1600.webp",
+        "size": 769294,
+        "sha256": "0297f2dd87fb2b81d08debf32000da5bf493b2ae4e7f645c34085fd611145fb1"
+      },
+      {
+        "path": "images/products/catalog-2026-10/betokontakt-613d6fe67c64-640.webp",
+        "size": 153736,
+        "sha256": "0a452cbe60ffdeb3e5806ea04237e79aa9ab9166da64f573cec4f5441904cdd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/betokontakt-613d6fe67c64-960.webp",
+        "size": 318374,
+        "sha256": "aed2bf2c8c129b3b12eff6f4b260c62b5fcc1ceccb9f07ede5d24b36ee30f9e9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/betokontakt-613d6fe67c64-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/betokontakt-613d6fe67c64-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/betokontakt-613d6fe67c64-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-1600.webp",
+        "size": 599324,
+        "sha256": "4cefcd4c28cb1d9fde9194d6d01a4bf795414d40c1cd6989a517b5f97464629c"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-640.webp",
+        "size": 110920,
+        "sha256": "9ee29f6ef6c807e3c6f8cf45db4f1c848d8a13572beb4a3dd83b433c19b64299"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-960.webp",
+        "size": 233986,
+        "sha256": "775fb0c275579bf8c73e88792a4c01a5698dbf0a0f4d60f17fe6bcae5a54545b"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-ambient-a5f10b34396b.svg",
+        "size": 63755,
+        "sha256": "a5f10b34396b778174824813e3082e5d7ae29460eabb6f15844c137606706339"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-ambient-d1f1a6600dcf.svg",
+        "size": 98659,
+        "sha256": "d1f1a6600dcfcaa0a5c778fa65c68ae62c748a915b3657e6af21f526c7f6602f"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-ambient-f7f2f285783e.svg",
+        "size": 64103,
+        "sha256": "f7f2f285783e0efd4b8614f89f60a8518d3ebe6203c1a4981a93c67698b41a50"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-contact-493c5ced8276.svg",
+        "size": 57879,
+        "sha256": "493c5ced82764ad7d5fc568707caffda1b990200bee66ff742fc127910847ce8"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-contact-f37828cc1328.svg",
+        "size": 65795,
+        "sha256": "f37828cc13284b5f055801f26105dc5c4079947f2cb2145d2c8d3caa2eac0403"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-ground-b440bdf868aa.svg",
+        "size": 36195,
+        "sha256": "b440bdf868aac9ecaa899e6959423f4851a93a3766e2d4871246ab84b6816957"
+      },
+      {
+        "path": "images/products/catalog-2026-10/deep-primer-7d7b6b2b1613-ground-cf479c77a733.svg",
+        "size": 36199,
+        "sha256": "cf479c77a733c11ee8d511d58f15e42b8bbefa197f463dc6770fd4ef1c92aaee"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-1600.webp",
+        "size": 172648,
+        "sha256": "3de301d9cba36f1df551b6a94b52b8f535bf32a0aa30643923cf0a02ee396c25"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-640.webp",
+        "size": 35604,
+        "sha256": "a5ec8752cb7778eba51bb3aadc714e645685fe2691c9e72a246dda89eaea4a17"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-960.webp",
+        "size": 68452,
+        "sha256": "1fefc6f642d25d01d5bff62f8e768d29f97acffe697d0247d120739bfb7abb1c"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ambient-151ae8ce3366.svg",
+        "size": 59415,
+        "sha256": "151ae8ce336648516b81a30bcbc33bac5fceb0d5df51422fba1f7726bf893eea"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ambient-533994fd7934.svg",
+        "size": 66259,
+        "sha256": "533994fd7934b2aa5a67fcc9ff7622c8ffb2cea156d1c2bce5103fd914131722"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ambient-7fafb7a09e05.svg",
+        "size": 61247,
+        "sha256": "7fafb7a09e058fe5beaa60b44ef991059a01ef152b3db183dcb63ebc1d6efaf7"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ambient-ed294817e367.svg",
+        "size": 57259,
+        "sha256": "ed294817e367c695502620ac212cebee55e4bbd9dbafddff68504331a102dfc2"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-contact-b8181542ad96.svg",
+        "size": 55743,
+        "sha256": "b8181542ad965858e1087d40e5571d33a714d724af83cf14d788c2e0585e350b"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-contact-cfefdceef49e.svg",
+        "size": 55039,
+        "sha256": "cfefdceef49e98729231a1eff63e7824df1d0886761c49798a9b7e0d631fd622"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ground-4be78cf6fdcc.svg",
+        "size": 29559,
+        "sha256": "4be78cf6fdcc60dde93355a66073da8a8ffaf0b62797dcc7b3b298e775bc3f58"
+      },
+      {
+        "path": "images/products/catalog-2026-10/glass-fiber-plus-top-409cb287f83a-ground-ceeacda3c4de.svg",
+        "size": 21763,
+        "sha256": "ceeacda3c4dece4021156aa4b5e4f74317f085f90b4da95407eb2148ee4a2a85"
+      },
+      {
+        "path": "images/products/catalog-2026-10/hydro-be230cdd86df-1600.webp",
+        "size": 739166,
+        "sha256": "1df02433d528860b62e4393d82ef1b05e3ff0df0b1f880cd04bca190903db6aa"
+      },
+      {
+        "path": "images/products/catalog-2026-10/hydro-be230cdd86df-640.webp",
+        "size": 147782,
+        "sha256": "f16eda6d9e421a5d2ab534eb36c7c1103ac40e2811cecb7e5c4367ef44a85d19"
+      },
+      {
+        "path": "images/products/catalog-2026-10/hydro-be230cdd86df-960.webp",
+        "size": 304114,
+        "sha256": "9713caaae27d9de6219e7525dd9bebf561f68fd52b5bd411bae299ae602f57d7"
+      },
+      {
+        "path": "images/products/catalog-2026-10/hydro-be230cdd86df-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/hydro-be230cdd86df-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/hydro-be230cdd86df-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mittel-grund-9676d3bec759-1600.webp",
+        "size": 703774,
+        "sha256": "2c37cc9db553042e28bf68028919e1bf6e866aeb20899f42349f9fc2365f422d"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mittel-grund-9676d3bec759-640.webp",
+        "size": 139542,
+        "sha256": "7a08153a13d2a7cf5bc0cffe2607f0b60432a2f534008cd7c462a472e3b9a658"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mittel-grund-9676d3bec759-960.webp",
+        "size": 288256,
+        "sha256": "1c51aa0d949136f835fa3bd95eef1539545c61cafd2669cb5cfd2291c5d3635a"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mittel-grund-9676d3bec759-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mittel-grund-9676d3bec759-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mittel-grund-9676d3bec759-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mix-mosaic-5e6da5543814-1600.webp",
+        "size": 1170876,
+        "sha256": "a2dc68605ada024b453c2d657e7d1d778d6f08f2576c02cd20808f9f4027e762"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mix-mosaic-5e6da5543814-640.webp",
+        "size": 234840,
+        "sha256": "795094b3b87db8045f0352b99358ee6c20d594d4a23557c2bf4d02772f1df16b"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mix-mosaic-5e6da5543814-960.webp",
+        "size": 496874,
+        "sha256": "1db12e5acecadff4520fe0345bcd81507999446da26f45d19fa72ecb9e2d32fd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mix-mosaic-5e6da5543814-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mix-mosaic-5e6da5543814-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/mix-mosaic-5e6da5543814-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-1600.webp",
+        "size": 156724,
+        "sha256": "7bcdff2ffc4adc1f2d03810abce3b3ce159a772256b3368a4b5a16f846c806d3"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-640.webp",
+        "size": 31244,
+        "sha256": "bed831f22a804896e3851d63207ca254ecfc4b498f8fd31b436d1e2611f48842"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-960.webp",
+        "size": 62280,
+        "sha256": "5769f8d7415a77e94b2552ad79800e6d1b1bd2fc384aac0a3b52ef2044650e1a"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ambient-79e87221e806.svg",
+        "size": 66055,
+        "sha256": "79e87221e806fb1fa3289d1a21dd556504c459a4219585cf8ee4b7459c9ca92e"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ambient-7c64bb07e82d.svg",
+        "size": 57075,
+        "sha256": "7c64bb07e82dca6b9ae3c25e0ab50b1be270f65160d808bfb525ad4250bdf18e"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ambient-aaaa40fa0be8.svg",
+        "size": 60775,
+        "sha256": "aaaa40fa0be8a76c4663317ab00c0394877be099db2895cbfec6a1130188943f"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ambient-c58376dce44a.svg",
+        "size": 59127,
+        "sha256": "c58376dce44a8746d5dd0d3518ffa0a45bbbec476dc766a4fe712f7c3fb096cf"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-contact-5eb189e66034.svg",
+        "size": 54935,
+        "sha256": "5eb189e660343ad791168f21d9e36a7da78602e3e4ead8ead6f72aa42793a4a5"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-contact-f8f1fb07d8eb.svg",
+        "size": 55691,
+        "sha256": "f8f1fb07d8eb877c49ba5bee520ab1e1141eed2296928a9938c19b2b43a93e7c"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ground-16fa27a58704.svg",
+        "size": 30227,
+        "sha256": "16fa27a58704f5e0fe79f7dc292047318b71ca53cc71e09ae03ca7764d5af6b3"
+      },
+      {
+        "path": "images/products/catalog-2026-10/nonwoven-plus-top-ea94d8292c93-ground-892748ae3945.svg",
+        "size": 21807,
+        "sha256": "892748ae39458da574e29182b4100046e613615c001761085e91327e16949cce"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-1600.webp",
+        "size": 860892,
+        "sha256": "7336fe3eac614ed4b35da17df5da4352364b9537840bd7f35d0d337cec06e992"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-640.webp",
+        "size": 158034,
+        "sha256": "09fc4529327d590977daae7e5788d23c877c50be1849f168f59f9b723bdcd3ad"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-960.webp",
+        "size": 355316,
+        "sha256": "2adaaf74a056ab0118e4465a904f498bb996693da275b94ed545dac158e7fd45"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-ambient-681ca6cd968e.svg",
+        "size": 72615,
+        "sha256": "681ca6cd968eadb0564c7621b3e6d2ab9073a7876c4d5bab31056cc5fef1be7d"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-ambient-c3eb3670aae2.svg",
+        "size": 121223,
+        "sha256": "c3eb3670aae2dbc351d5c5783f7a193ee0bcb268d45451ae95d0269daf1d46be"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-ambient-e6f63a5119fc.svg",
+        "size": 69595,
+        "sha256": "e6f63a5119fc6eb1edb239c3f389da9470ff49b6ef7ae6232beeea65fb1a5871"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-contact-384e61108659.svg",
+        "size": 64439,
+        "sha256": "384e611086593216b33a2e3160443c30bd97308d11467aa6258668e0fc28d4dd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-contact-8e790985ca82.svg",
+        "size": 64555,
+        "sha256": "8e790985ca824f0497e4532391368d31c25c96f7f55c6f9b342ac134fa5c3f48"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-contact-a2befbfc06e6.svg",
+        "size": 82283,
+        "sha256": "a2befbfc06e61678e89c8edbcb02d109ac6fe725dbba1be7367d79ee9cb76a07"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-ground-2dcc2f6cbc0b.svg",
+        "size": 67871,
+        "sha256": "2dcc2f6cbc0bb0c4a9000dbb89918d4877e68586772c3378dc08ed3a3385293a"
+      },
+      {
+        "path": "images/products/catalog-2026-10/plus-top-81a9aefabc66-ground-a12cad17c598.svg",
+        "size": 44531,
+        "sha256": "a12cad17c598750d3d48f4eb4e28deda82a56d889d958b748f025d41631b9b03"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-1600.webp",
+        "size": 563072,
+        "sha256": "a965731cc387c717de250a89f353280eea520025fcda0f8e57de8480bd7a88dd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-640.webp",
+        "size": 103974,
+        "sha256": "e7c508929aafa5c3f96e39c0a550b3f5e705000e63d13de43f8c6f3044066917"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-960.webp",
+        "size": 222376,
+        "sha256": "d95ef7fa4fad403dc8ee3b3ea3dd0c41336b948a9995b30237effbe1170ef717"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-ambient-a5f10b34396b.svg",
+        "size": 63755,
+        "sha256": "a5f10b34396b778174824813e3082e5d7ae29460eabb6f15844c137606706339"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-ambient-d1f1a6600dcf.svg",
+        "size": 98659,
+        "sha256": "d1f1a6600dcfcaa0a5c778fa65c68ae62c748a915b3657e6af21f526c7f6602f"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-ambient-f7f2f285783e.svg",
+        "size": 64103,
+        "sha256": "f7f2f285783e0efd4b8614f89f60a8518d3ebe6203c1a4981a93c67698b41a50"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-contact-493c5ced8276.svg",
+        "size": 57879,
+        "sha256": "493c5ced82764ad7d5fc568707caffda1b990200bee66ff742fc127910847ce8"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-contact-f37828cc1328.svg",
+        "size": 65795,
+        "sha256": "f37828cc13284b5f055801f26105dc5c4079947f2cb2145d2c8d3caa2eac0403"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-ground-b440bdf868aa.svg",
+        "size": 36195,
+        "sha256": "b440bdf868aac9ecaa899e6959423f4851a93a3766e2d4871246ab84b6816957"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-concentrate-8e7f5216daec-ground-cf479c77a733.svg",
+        "size": 36199,
+        "sha256": "cf479c77a733c11ee8d511d58f15e42b8bbefa197f463dc6770fd4ef1c92aaee"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-1600.webp",
+        "size": 762202,
+        "sha256": "1be3492362489b6bc5c38af5edc24c7434e42897a6aea4797183c768f5bda25e"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-640.webp",
+        "size": 150810,
+        "sha256": "f336d459f4043a9603d8bee0d4a39255ce4ed72b9d0a7decf4d02d1a95d72c63"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-960.webp",
+        "size": 313750,
+        "sha256": "2b95a1ea5574ba987e7980c79453bbe28796fbb143f0c4a8086b02c22d39de2b"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/primer-paint-07f2d9a5ec71-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-1600.webp",
+        "size": 764914,
+        "sha256": "bd40a278bcb20665411d604f7cee29fe1b74e5840a11af61696cf788c5277ca9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-640.webp",
+        "size": 149426,
+        "sha256": "047809e5eea06bd63237676f7d2879dd74595e4fc6332d828bda25d65e709948"
+      },
+      {
+        "path": "images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-960.webp",
+        "size": 312384,
+        "sha256": "6cee3d113a1b02304725dafa71ede63b43c7f44d8cda1a5de8e89f6c473624ef"
+      },
+      {
+        "path": "images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/pro-spray-finish-2ce7e5bd1b9b-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-3in1-6f04c9413772-1600.webp",
+        "size": 681718,
+        "sha256": "534309731f24364eb49f06bfc9f23f57cd0a93a61c60e7f87281b990d2bb8401"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-3in1-6f04c9413772-640.webp",
+        "size": 132894,
+        "sha256": "092833b056476311d09b2e4a042a8856c4cb4e7baf8393e3240abf12db9f20e1"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-3in1-6f04c9413772-960.webp",
+        "size": 280310,
+        "sha256": "57c2dd8f79e35975bdabc17672330b3730fd50f54a817b17adfdfe3b84e429bd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-3in1-6f04c9413772-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-3in1-6f04c9413772-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-3in1-6f04c9413772-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-f-e29eb8da3aed-1600.webp",
+        "size": 716752,
+        "sha256": "aa9ac181a84947b93b227cd945a35c8714456cc4ed77855c35ad3379d99fe736"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-f-e29eb8da3aed-640.webp",
+        "size": 136498,
+        "sha256": "5d2a4f580276e901f50d44bddfa7e9d3265ff04413d73cc21a9c820053bd7d85"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-f-e29eb8da3aed-960.webp",
+        "size": 290472,
+        "sha256": "0148076e036e2c180964f440bee9faad21deae3bcbb68e7ed1f6308bf4932ece"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-f-e29eb8da3aed-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-f-e29eb8da3aed-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-f-e29eb8da3aed-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-fasad-745418051688-1600.webp",
+        "size": 762578,
+        "sha256": "62622db354a0b125f1c61c518eed0a03e23e64a6e45ee0df5bc02dd1813e029c"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-fasad-745418051688-640.webp",
+        "size": 144534,
+        "sha256": "ec1149998476e8b9f7286edefb12fa5a8ef2242aa128091d8ce97191b1024ceb"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-fasad-745418051688-960.webp",
+        "size": 307120,
+        "sha256": "e12b78b95264a6cbdab751de5216f7ebf26390505d0e0b0a743b5ad7f9e1cbf6"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-fasad-745418051688-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-fasad-745418051688-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-fasad-745418051688-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-02-26e55032b9e8-1600.webp",
+        "size": 731366,
+        "sha256": "8989929a0d3adf36911525a3ac99004f0acfc93e2269d85ed4aa9060b715d3c7"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-02-26e55032b9e8-640.webp",
+        "size": 140992,
+        "sha256": "7e8af8f1be44570f377ac890d90213c42f6dbbedd096f6d0c6df2aa83d54b157"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-02-26e55032b9e8-960.webp",
+        "size": 296388,
+        "sha256": "144e9e310210004b812501f19552c5b3d5021af9802d781fd5ca8a67acd0c39d"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-02-26e55032b9e8-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-02-26e55032b9e8-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-02-26e55032b9e8-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-1600.webp",
+        "size": 837394,
+        "sha256": "a605a3774a90db629fc391c0974e0fd1757e3aaa895531bc4720a95f39ca0a8c"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-640.webp",
+        "size": 159236,
+        "sha256": "a0f234b115b5808d557c58665ab9d60b8c33d8a7bd363ad5de4c8ef47fc9e9ba"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-960.webp",
+        "size": 340942,
+        "sha256": "efc53b97de82aca5a6206b17af55374429ad3299d2256eae64fd3472adc5bc8b"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-j-55df257e92a1-1600.webp",
+        "size": 707482,
+        "sha256": "7d6b6c5e5c1b295d7a38cc46b563ddd88bafd658514ccb3a5881f11afc3a4d57"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-j-55df257e92a1-640.webp",
+        "size": 133600,
+        "sha256": "8743055d204ef9b5bfbbfcae9bd4a4dc98aefa63d053f6307e3db27edcfd014e"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-j-55df257e92a1-960.webp",
+        "size": 285656,
+        "sha256": "1713b46b78fa034a2a7f81ce4e41f3ccd86e92c8b7780c2ec3c56cb499ddcc3b"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-j-55df257e92a1-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-j-55df257e92a1-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-j-55df257e92a1-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-w-62aa53c331ed-1600.webp",
+        "size": 737146,
+        "sha256": "b081508a9a89cf926143ae05e1614c1dcbfd9aea58d1051c30d91deb3542c1df"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-w-62aa53c331ed-640.webp",
+        "size": 142534,
+        "sha256": "9aeeb14261b2f7b0d1e498a53602f8e795eb502799d7e969d1cc5eba72c6fdc8"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-w-62aa53c331ed-960.webp",
+        "size": 300668,
+        "sha256": "f7146b1479094527f15f6ba5c4e737ac217fe355565478fa8e82a04d17b110cd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-w-62aa53c331ed-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-w-62aa53c331ed-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/promix-w-62aa53c331ed-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-1600.webp",
+        "size": 802354,
+        "sha256": "7bc36996192c9b9e3e74bc27e2b563dd41c52a3ea3d261e092ef4aef0c9189d6"
+      },
+      {
+        "path": "images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-640.webp",
+        "size": 151928,
+        "sha256": "8779d4e703d8459038a234de6a051df3e21bdb09da41fb1c0f6ad6ee93d66252"
+      },
+      {
+        "path": "images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-960.webp",
+        "size": 320728,
+        "sha256": "e24cd1d01dde623e02d59dadcfc6129e82bf8a61cdf191bba80a0710b36fcb08"
+      },
+      {
+        "path": "images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/sous-couche-aaf8fb4ae3fb-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-62a5df86ab74-1600.webp",
+        "size": 658732,
+        "sha256": "794e6cffbde07d619aa99b6507c30f999f4f999a8929a6c5d96b78c561235b7e"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-62a5df86ab74-640.webp",
+        "size": 131782,
+        "sha256": "ba747887ae1cde934e65c862b1a93636a98926ae25732da1616eef73cc943e82"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-62a5df86ab74-960.webp",
+        "size": 275058,
+        "sha256": "98df6a8839f3e8ac81bd186514c71ad495f42b83d15e2c9c7d985d4581168f01"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-62a5df86ab74-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-62a5df86ab74-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-62a5df86ab74-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-952003b7c139-1600.webp",
+        "size": 668766,
+        "sha256": "fa0180d5073512105d57d7ae98b77d82e1d81fd1f3da72e7e61098dfb8069018"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-952003b7c139-640.webp",
+        "size": 132566,
+        "sha256": "a2f0317148186ae424832eee2fe281c04a70d8d1aabbfbbfa68ca0c62389b8e2"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-952003b7c139-960.webp",
+        "size": 279016,
+        "sha256": "1aaa2d1011b2e9fa99c8777bb05bda5d7f0204457224cc282b3edbec0876f174"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-952003b7c139-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-952003b7c139-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-3-952003b7c139-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-9713303dcb5f-1600.webp",
+        "size": 639248,
+        "sha256": "1b758b2355c64aa0716c199a55b96fb25817ec40abb9c52e414d1582e221ec35"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-9713303dcb5f-640.webp",
+        "size": 127422,
+        "sha256": "156d01b483d395633e926a2f8a62bd1a4ef368a4da2bc2089b7339809e84605c"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-9713303dcb5f-960.webp",
+        "size": 267926,
+        "sha256": "7d1dd7b4f52f125a78d9c168d50d1abb132639c98cf167c6bb8d30da31fdce80"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-9713303dcb5f-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-9713303dcb5f-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-9713303dcb5f-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-dab800351482-1600.webp",
+        "size": 623284,
+        "sha256": "1d59cc82f78a05b92e28338d467b5c44a484cd786e937968ade44e3a6d87901d"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-dab800351482-640.webp",
+        "size": 124958,
+        "sha256": "35a67a52a1600bd512645e2814af267a7b2878832be0ed8b3094fc349a10def9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-dab800351482-960.webp",
+        "size": 262398,
+        "sha256": "299b00381d0f624ffc731b47a55bf5a0c80ab9f23a2bd8c462e0b9e34906f23d"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-dab800351482-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-dab800351482-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-7-dab800351482-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-28fc28049f07-1600.webp",
+        "size": 611042,
+        "sha256": "33e1f68d3c26917bcfa6392a13ffb9ae4ae334b8dc439f82c3f89e80d8d370e5"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-28fc28049f07-640.webp",
+        "size": 123356,
+        "sha256": "bbff0b6f66946f7064a7992eed479a3fb612c3513dcc21bc8c6b6b4c7723ebce"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-28fc28049f07-960.webp",
+        "size": 259094,
+        "sha256": "4c70c90205719b7afdd509d229f7c5677c81036c892412ca329e60fbfb4d239d"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-28fc28049f07-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-28fc28049f07-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-28fc28049f07-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-1600.webp",
+        "size": 629542,
+        "sha256": "e5023da5f3da7f06a30d6c711daaad1f27a0a3c5e378798a03de64d9da69bdee"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-640.webp",
+        "size": 125490,
+        "sha256": "46594865e5669354f4fbc527c7376ea596b4b49b50142a6d1566b0e895f71a1a"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-960.webp",
+        "size": 267008,
+        "sha256": "e3cba7d6c3d47f8f9a159c5608b398c9f9b3eb4a52030991a0a27d4835dbd35c"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-145b145b2537-1600.webp",
+        "size": 622902,
+        "sha256": "250a9fe66f65437d8897a8a601a446cd4d7696fb5ecef17e2215585f622e5c73"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-145b145b2537-640.webp",
+        "size": 127348,
+        "sha256": "ba17ba87ff7f46f88312fcdb5ade42f46a5e24f918d41e6fb9b49d2da37af6a9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-145b145b2537-960.webp",
+        "size": 265582,
+        "sha256": "8ce14e3a68625e7bd1bb647147c45836dbb8f79e06f8b678f821bd7a4a742045"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-145b145b2537-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-145b145b2537-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-145b145b2537-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-1600.webp",
+        "size": 633912,
+        "sha256": "0ad83c87c7640be54d8b0645dae51756e06e235053a59c6ac720fbdbb86585cd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-640.webp",
+        "size": 129026,
+        "sha256": "9d797f647efb3aaaf0e815237115c3014f51b6f96732cf7a0b3c55adf9b96452"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-960.webp",
+        "size": 270254,
+        "sha256": "65be5491460055e5106185c9f7c2613f8b0637b47a5ec1cc233dd558380ac66b"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-1600.webp",
+        "size": 773154,
+        "sha256": "4577b8d895ea1ecfeeaaafc34e70ca4cb381212a9ca49ec035c3332004a771c4"
+      },
+      {
+        "path": "images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-640.webp",
+        "size": 140376,
+        "sha256": "c7796d4ebdcc841dfbdb08a7d7fbc7cc799ab4e78eed978d76e47004bd7c9ad2"
+      },
+      {
+        "path": "images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-960.webp",
+        "size": 302276,
+        "sha256": "f53b1fadf042a1b4c48e130cd3900c7bbd2c3e2e59c3e4bff9094e736cef848e"
+      },
+      {
+        "path": "images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/tape-adhesive-a1ee65eb50e2-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-1600.webp",
+        "size": 758870,
+        "sha256": "2d157b24dee44fab3db3cecd59bd1c2407ea61655896e66b071f129ce8356798"
+      },
+      {
+        "path": "images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-640.webp",
+        "size": 150048,
+        "sha256": "6f9c76f2dc9795c8305274af7fbef99302e9d6f28b225124c707cb2921a8887f"
+      },
+      {
+        "path": "images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-960.webp",
+        "size": 314238,
+        "sha256": "5445b4d0c8dde1d83484b775f7770396229da0a3afba3e4f25e34d647814949e"
+      },
+      {
+        "path": "images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-1600.webp",
+        "size": 606268,
+        "sha256": "bf7d69e7aee5cc6ea0be5142e46f934721c600f0eee2ac141a36804723b31b4a"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-640.webp",
+        "size": 110266,
+        "sha256": "ec31ef33f7aeb5a1a30e931033b7017253630e784472aa04e52c023ec322272d"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-960.webp",
+        "size": 234178,
+        "sha256": "f7d8898c74acfba2349fb27c37b178c28c38e6e822a1e2d27ead0b16278da9c4"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-ambient-a5f10b34396b.svg",
+        "size": 63755,
+        "sha256": "a5f10b34396b778174824813e3082e5d7ae29460eabb6f15844c137606706339"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-ambient-d1f1a6600dcf.svg",
+        "size": 98659,
+        "sha256": "d1f1a6600dcfcaa0a5c778fa65c68ae62c748a915b3657e6af21f526c7f6602f"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-ambient-f7f2f285783e.svg",
+        "size": 64103,
+        "sha256": "f7f2f285783e0efd4b8614f89f60a8518d3ebe6203c1a4981a93c67698b41a50"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-contact-493c5ced8276.svg",
+        "size": 57879,
+        "sha256": "493c5ced82764ad7d5fc568707caffda1b990200bee66ff742fc127910847ce8"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-contact-f37828cc1328.svg",
+        "size": 65795,
+        "sha256": "f37828cc13284b5f055801f26105dc5c4079947f2cb2145d2c8d3caa2eac0403"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-ground-b440bdf868aa.svg",
+        "size": 36195,
+        "sha256": "b440bdf868aac9ecaa899e6959423f4851a93a3766e2d4871246ab84b6816957"
+      },
+      {
+        "path": "images/products/catalog-2026-10/universal-primer-d706f35b751d-ground-cf479c77a733.svg",
+        "size": 36199,
+        "sha256": "cf479c77a733c11ee8d511d58f15e42b8bbefa197f463dc6770fd4ef1c92aaee"
+      },
+      {
+        "path": "images/products/current/acrylic-enamel.png",
+        "size": 781107,
+        "sha256": "087714b2bc5e6497b20acb6d2a1a20fc1ac8332f9e5da112c76caf1b556dc9e4"
+      },
+      {
+        "path": "images/products/current/betokontakt.png",
+        "size": 858295,
+        "sha256": "6bbe33eb06b9024a1436b56833e65e9b234383e0af5d3767e3721eac6ff7fc9a"
+      },
+      {
+        "path": "images/products/current/deep-primer-ru.png",
+        "size": 1656936,
+        "sha256": "ee67d50f0a01fda1d6e7ac728e9abca4d1d85e5c2c6fc218ad2f187da5a2af4a"
+      },
+      {
+        "path": "images/products/current/deep-primer.png",
+        "size": 1672519,
+        "sha256": "109254a7f12b900ecd7c94db5322b56305a6ee98b33adcba264f21ff6f0de088"
+      },
+      {
+        "path": "images/products/current/fasad.png",
+        "size": 766166,
+        "sha256": "38f160ba8db32bbcd03472f3201e8e049cceed2e1dc9672510a9077ee6cfa957"
+      },
+      {
+        "path": "images/products/current/hydro.png",
+        "size": 787513,
+        "sha256": "6fedd2bd2a4acf30f663517ca92e7ad98a9a52507401948ddb6ff1f2a5e8103c"
+      },
+      {
+        "path": "images/products/current/latex-paint.png",
+        "size": 762604,
+        "sha256": "19863a059748a59bd0cc6f7ff954f7a0d39ac3001daa0c1767d025f022072f34"
+      },
+      {
+        "path": "images/products/current/mittel-grund.png",
+        "size": 772438,
+        "sha256": "55716e62e888934f4e30aa6202ce41a2ed73b9a0053b96f27f196292643d4ba0"
+      },
+      {
+        "path": "images/products/current/mix-mosaic.png",
+        "size": 947181,
+        "sha256": "0d885d700cac7b360f79bea0b90283bda34051b89e338ef8b3dc2195a87fd3c3"
+      },
+      {
+        "path": "images/products/current/plus-top.png",
+        "size": 849712,
+        "sha256": "55707cbef57fda15071aea0dba971747551bfcbec62d3c2cf33d80d1d679366e"
+      },
+      {
+        "path": "images/products/current/polymer-putty.png",
+        "size": 814005,
+        "sha256": "30d52b9c4d55b0abce9136072a993bc13eb7d7358f7665a1b48511d84213729f"
+      },
+      {
+        "path": "images/products/current/primer-concentrate.png",
+        "size": 291809,
+        "sha256": "e26bacd2e59ff1760600606a6595b230ae613923f2f076a5b7f45495f621668e"
+      },
+      {
+        "path": "images/products/current/primer-paint.png",
+        "size": 775724,
+        "sha256": "d9c889f15b459a69ad5db8d7fc20c6b25070ada0929a4487dd7607eeb8c3ecfb"
+      },
+      {
+        "path": "images/products/current/pro-spray-finish.png",
+        "size": 639804,
+        "sha256": "1a710423829fd912c4d80f0e524e8ba0903e75c97b7eba0de1c34f8122a4b57e"
+      },
+      {
+        "path": "images/products/current/pro-spray-improved.png",
+        "size": 799344,
+        "sha256": "82e7e7736641981d8b6c4aa0a60ad3f27f0f4c0aa4d922afb0f3a424aa05844b"
+      },
+      {
+        "path": "images/products/current/promix-3in1.png",
+        "size": 817034,
+        "sha256": "6ff8046985b5bc38c2551de5dd6b2ee2249d01cba10376e33caaf821124348d0"
+      },
+      {
+        "path": "images/products/current/promix-f.png",
+        "size": 769245,
+        "sha256": "50b1c18e401b263ad92cf60f13310379ea76909e7229323fd0918950a7f22dca"
+      },
+      {
+        "path": "images/products/current/promix-h-02.png",
+        "size": 760773,
+        "sha256": "5988363d78e25bc32229cde6ecd4efc8b7fe0ac733024bee52ffc1ba51227f2f"
+      },
+      {
+        "path": "images/products/current/promix-h-03.png",
+        "size": 761600,
+        "sha256": "b8d0e7d5a8b8e61a37fec21fdda1b689bfd5c4ccf90ab9091724678f7adc4dc9"
+      },
+      {
+        "path": "images/products/current/promix-j.png",
+        "size": 754885,
+        "sha256": "8fd4a9eb167ef00b7984320a5a0673e7b1cb2b33bbb728ca7c2024ba7005d14f"
+      },
+      {
+        "path": "images/products/current/promix-w.png",
+        "size": 749167,
+        "sha256": "d26c8f4a9b54b845c8326351c25df27380a59df80e3f0846d1e5b2002685a7bc"
+      },
+      {
+        "path": "images/products/current/sous-couche-ru.png",
+        "size": 1263596,
+        "sha256": "eda79fb59e2cb4381bc7ec7b88711348d4cd938a819f760788ff3ad222a9a24a"
+      },
+      {
+        "path": "images/products/current/sous-couche.png",
+        "size": 934288,
+        "sha256": "842e049f5d04fe49f3eb04b5ce3cfc0408a750bf7ac3ce6ea7f25915aaa5e8ad"
+      },
+      {
+        "path": "images/products/current/su-kush-updated.png",
+        "size": 1263596,
+        "sha256": "eda79fb59e2cb4381bc7ec7b88711348d4cd938a819f760788ff3ad222a9a24a"
+      },
+      {
+        "path": "images/products/current/super-tack-3-approved.png",
+        "size": 1075677,
+        "sha256": "7ec07d0303629fc5b0d93867bdf87d2ced82e5cc873779e2496321d69ee2b1c4"
+      },
+      {
+        "path": "images/products/current/super-tack-3-transparent.png",
+        "size": 825457,
+        "sha256": "57394ae43745600c98d556ade7ab96c3ef1835b7b2bbb89589a2fe369f955c91"
+      },
+      {
+        "path": "images/products/current/super-tack-3.png",
+        "size": 819601,
+        "sha256": "ef3dce6d5afc7887b76f14e055fa2218ee0b4e1ae495fc24c81116c400ca533a"
+      },
+      {
+        "path": "images/products/current/super-tack-7-approved.png",
+        "size": 1078994,
+        "sha256": "1584c96050b87148251eeb343578a8a8e1424313a5dda8a92616174bff71625e"
+      },
+      {
+        "path": "images/products/current/super-tack-7-transparent.png",
+        "size": 873374,
+        "sha256": "755279115efad49bf37d805c029dd0e8b195420d1cfc3985fb23fc272c8fe05e"
+      },
+      {
+        "path": "images/products/current/super-tack-7.png",
+        "size": 796731,
+        "sha256": "e17bcde9080f7cedefafd6b8f983ebba33f445eba6942071cb556bb0348aa3ca"
+      },
+      {
+        "path": "images/products/current/super-tack-facade-approved.png",
+        "size": 1089439,
+        "sha256": "ae026721f499c30efdb8434fe8de0e5edd96d16085e0f91f37b18123c353fc58"
+      },
+      {
+        "path": "images/products/current/super-tack-facade-silicon-approved.png",
+        "size": 1056488,
+        "sha256": "e9ddad8dbed3480eaee51785b240d7a9e80561797541ad9e18adc969f6046e9b"
+      },
+      {
+        "path": "images/products/current/super-tack-facade-silicon-transparent.png",
+        "size": 840637,
+        "sha256": "51f650edb23e3496c8ec8b552c6d8481b5e8b36c50afae66b6956b22cd6cc547"
+      },
+      {
+        "path": "images/products/current/super-tack-facade-silicon.png",
+        "size": 798724,
+        "sha256": "e4f7522bf8f0df841c8b07f2c867b8d27db234d64e90ab5b4d6b54cc1e8e03a9"
+      },
+      {
+        "path": "images/products/current/super-tack-facade-transparent.png",
+        "size": 817541,
+        "sha256": "38d06a653f990992b1cfa4f2721e81631fa9e5045dd2ff11523b64f118c023be"
+      },
+      {
+        "path": "images/products/current/super-tack-facade.png",
+        "size": 788715,
+        "sha256": "e977f5836f56c10670466898140db1388e6df3d4cb84805b0eaed6a835111d02"
+      },
+      {
+        "path": "images/products/current/tape-adhesive.png",
+        "size": 757562,
+        "sha256": "ab9b34d4b1f1ac1ed5e07b8af67ff2247636a761582ceac8dab6e8abed45956f"
+      },
+      {
+        "path": "images/products/current/textured-anti-vandal.png",
+        "size": 780279,
+        "sha256": "6f0c3212e469c773999078d24eed8a538242b8e2eaa3ee1a93a061ef2b481c19"
+      },
+      {
+        "path": "images/products/current/universal-primer.png",
+        "size": 1761533,
+        "sha256": "b511ceba44b1ae9bf87b485aa61afaecbe4198971d135a3979160c65ca735c9b"
+      },
+      {
+        "path": "images/products/deep-primer.png",
+        "size": 1259772,
+        "sha256": "cdd7606ee885733a337cddc994629d5ff4dbf12b766edd39f41d1bb1c966db0e"
+      },
+      {
+        "path": "images/products/fasad.png",
+        "size": 678235,
+        "sha256": "5db248aa9bc05607803bc43a50aacef3022d8b5a7d556a43da756d28c8a822a6"
+      },
+      {
+        "path": "images/products/glass-fiber.png",
+        "size": 499876,
+        "sha256": "86d035ab4901d4b00f768bae0e7f09e09bcc8b8800c726307eecab4b2cecf315"
+      },
+      {
+        "path": "images/products/hydro.png",
+        "size": 713267,
+        "sha256": "654cb760ff0d9101bd42a59da9b902eb03652e4d59b22f69186b576682f492b5"
+      },
+      {
+        "path": "images/products/latex-paint.png",
+        "size": 682097,
+        "sha256": "a77e8955076434bac585679d46bce8353b5117f68da4603e97c04ac4ceea5872"
+      },
+      {
+        "path": "images/products/mittel-grund.png",
+        "size": 676642,
+        "sha256": "b367fc892bb6896b4f87642da678f3f8bc98efb055c459099ab1aed7640148fa"
+      },
+      {
+        "path": "images/products/mix-mosaic.png",
+        "size": 895786,
+        "sha256": "dda0ecc803b370f3b0006eb832fb7b25a3f62fbd08c29e121fe03e8a81e97b38"
+      },
+      {
+        "path": "images/products/nonwoven.png",
+        "size": 474938,
+        "sha256": "d36804adb3423dd59ed2aaf1ac972e99bd6b5cddfa43004097ffdee190ec0009"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-f-0a8d32587804-480.webp",
+        "size": 83826,
+        "sha256": "0a8d32587804c6cff8535f01bd1b2755bd532fb5a5476d150c861f416f2b839b"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-f-22222e2d892d-1200.webp",
+        "size": 436844,
+        "sha256": "22222e2d892d0427221eafef56af6dd0316bf07a16f0ac4d83c590f314acf89d"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-f-3ffc966d4ec1-800.webp",
+        "size": 206798,
+        "sha256": "3ffc966d4ec16dd6a6d9b8fa3e98e255f3e49849bdb69ffa5cf068a9762aebb6"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-h-02-0344742c065a-1200.webp",
+        "size": 444278,
+        "sha256": "0344742c065aca8c858383a90fd1f53104aa733bdebd177e0ec720285c512aab"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-h-02-04bce88fc3c9-800.webp",
+        "size": 211874,
+        "sha256": "04bce88fc3c9b416cc7ff693e9d5f6ebb7633ea1ad4765b81e29f3639294bed3"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-h-02-475c7396155a-480.webp",
+        "size": 86214,
+        "sha256": "475c7396155af2cf9f30a2ca7b36398a51d6f82d95a53d814524b8b7308cb234"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-j-20af0a2b8940-1200.webp",
+        "size": 429384,
+        "sha256": "20af0a2b8940e8ba07d3906579ea0af541058e5d01a582df3d1c9a4105f62fe9"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-j-24efc3ac8ed3-480.webp",
+        "size": 80860,
+        "sha256": "24efc3ac8ed3cd0643894950622c26e56590ff374153ddc696729d160eb3bad7"
+      },
+      {
+        "path": "images/products/performance-2026-10/promix-j-3e9294c89723-800.webp",
+        "size": 201006,
+        "sha256": "3e9294c89723bd3f3a52a1c27bebb394dd5443db3f4e6ce4760dd631ea1c0fc5"
+      },
+      {
+        "path": "images/products/plus-top-final.png",
+        "size": 1673449,
+        "sha256": "5f83fc6cc96f1de6bcde7fd1275e47fb9fcca34c21caca59f697092866b368b0"
+      },
+      {
+        "path": "images/products/plus-top.png",
+        "size": 752640,
+        "sha256": "266da6605cf951f05409a7cec998eac8664a4bc960a90364ae18e97810900111"
+      },
+      {
+        "path": "images/products/polymer-putty.png",
+        "size": 746388,
+        "sha256": "b3b53496a914e1be67e786d61c6cc696f10e7eb801868185eddc2f843867077b"
+      },
+      {
+        "path": "images/products/primer-concentrate.png",
+        "size": 279437,
+        "sha256": "f0aa672fa3989610f80d1ce9ff7664a24c54a931ddc932e3a817c1df93af0342"
+      },
+      {
+        "path": "images/products/primer-paint.png",
+        "size": 697225,
+        "sha256": "04ef31d676ecf8c1c99677b80f5009fa943ae4ab9c3c5a602c35c9b59eecb095"
+      },
+      {
+        "path": "images/products/pro-spray-finish.png",
+        "size": 620056,
+        "sha256": "82d89f15836861c8fdea9088f3a73fde992d7180d0ab61ec285a0cb0468933f0"
+      },
+      {
+        "path": "images/products/pro-spray-improved.png",
+        "size": 755009,
+        "sha256": "2e611a5c64f3665d5036715b36c80e9fa840d74e6208fe3b6090d8f8f6d015b4"
+      },
+      {
+        "path": "images/products/promix-3in1.png",
+        "size": 690103,
+        "sha256": "a729ea72b640ffd0cc6a6f08abc6c0918bc4928ae68ee1b58a057df5f6cc22af"
+      },
+      {
+        "path": "images/products/promix-f.png",
+        "size": 696225,
+        "sha256": "35bb0e8fc5eb83a118f6a355e15df99bbbe4f3cbd3126d46742daf487f5f18a4"
+      },
+      {
+        "path": "images/products/promix-h-03.png",
+        "size": 681696,
+        "sha256": "6667adbf5969885746137bef20854a30c538a1954501ff6df244bb7c5de061f7"
+      },
+      {
+        "path": "images/products/promix-h.png",
+        "size": 680354,
+        "sha256": "7e0d5d1d9f243aa3c168fb5f6bb5eb65a68afa9bdc0b09bc26f4abf609734e8f"
+      },
+      {
+        "path": "images/products/promix-j.png",
+        "size": 681772,
+        "sha256": "fe440dd206bb1f6844e2b4bb70d323d94ae3098f38e6fe3695f7a68d79e50869"
+      },
+      {
+        "path": "images/products/promix-w.png",
+        "size": 668689,
+        "sha256": "c4220c9590032012317e5bb22b4a43cfbf6ff947cf78f6dd28f4b7376a010973"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-2da3e5c4c5c9-1600.webp",
+        "size": 843916,
+        "sha256": "131986c6f2f0f74c0d50b22d370cc1247eeb9a348c1118ae05be98497114c805"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-2da3e5c4c5c9-640.webp",
+        "size": 159260,
+        "sha256": "ae5edd049ece0c3ffb0832366e7381b121049b7a54fb8fc00db49169d9b3dae0"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-2da3e5c4c5c9-960.webp",
+        "size": 344764,
+        "sha256": "9ef0a645ebd276c9c8fd21d607fb10840cb39856e7d86480c122eca07fa1e1f6"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-2da3e5c4c5c9-contact-7b79b9153529.svg",
+        "size": 1269,
+        "sha256": "7b79b9153529116d4253d185e6e54995c4f49dbc9a164c51a544fd23e4bf6f90"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-2da3e5c4c5c9-contact-83448a87f691.svg",
+        "size": 1269,
+        "sha256": "83448a87f691fba4c0864bf8e148d3b2ff64a1e1e4e628c33805e3d038aa5038"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-2da3e5c4c5c9-contact-e646ed267f50.svg",
+        "size": 1270,
+        "sha256": "e646ed267f507ba9a35854d9e3a7cd9a10f27e2ec620fc7ff231260b8b7d0b9f"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-2da3e5c4c5c9-contact.svg",
+        "size": 1269,
+        "sha256": "85e68e1b66601c1fe7d8470df08d5ce761581f0afab2cdec626d0ef3d20f6ba6"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-1600.webp",
+        "size": 835244,
+        "sha256": "34f6a7500ea25a198d3c7ecd8424410ff85e2bbb1e378e154a1966875b78607d"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-640.webp",
+        "size": 158436,
+        "sha256": "d6179bfb4e91ce8fe84a71c42c116f79d99d5d2a8d71d17552d75415aa7bdf76"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-960.webp",
+        "size": 340168,
+        "sha256": "5ebf51aa54c9908dc37c650f850209c3c161e1aced5328b87389cf382569036c"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-ambient-02cecfbbb698.svg",
+        "size": 58094,
+        "sha256": "02cecfbbb69860ee9b716fc12452a0afccf7289b1423d63c2f7f81b87a665d54"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-ambient-a1b8eaa74495.svg",
+        "size": 1465,
+        "sha256": "a1b8eaa7449511f22c07d430ababd00016b72023b7aafd896d74e70822f93c81"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-ambient-e735a9a7795e.svg",
+        "size": 60770,
+        "sha256": "e735a9a7795e13cbc7369837dc76e6a285d678e8344849d9078e416990aabbcd"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-ambient-fab6c7db62ab.svg",
+        "size": 119785,
+        "sha256": "fab6c7db62abf87b806f1a231f2b9ef39d3557cadf32ea127509b1f93bb43a59"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-contact-29746ffa4176.svg",
+        "size": 1271,
+        "sha256": "29746ffa417615d10a88766869788f46360aa59cb117961197b19fe414896825"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-contact-68f8e6b8efbd.svg",
+        "size": 1271,
+        "sha256": "68f8e6b8efbd0fb5f127dfbb08fc4c06d0b85991be96696e9451426326d38885"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-contact-85ebe6369b50.svg",
+        "size": 34558,
+        "sha256": "85ebe6369b508aebd6c3289911dade58746882d5c8ec3f63544fdc4cb2503974"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-contact-da84c5156682.svg",
+        "size": 63083,
+        "sha256": "da84c5156682f20d7797ecc0201a9473ba4edb7f2297f07afe2492cf48d680e5"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-contact-df1cfab1e874.svg",
+        "size": 1269,
+        "sha256": "df1cfab1e87442d52118c2c0111f751b84ddfc22178d3ea37632df18cd2a0d6a"
+      },
+      {
+        "path": "images/products/reference-trial/promix-h-03-7c8b790ba644-ground-4ebc55903049.svg",
+        "size": 20101,
+        "sha256": "4ebc55903049105f76749b72406e12d3d3602458cd3370c779b416740bbc4fd9"
+      },
+      {
+        "path": "images/products/shadow-masks/acrylic-enamel-67cad3d45f.svg",
+        "size": 33602,
+        "sha256": "542cfc85dc91e0fb54eecd4ebcdca7d5fe1cbd9ebb64a347cf06c93f4d2c99b6"
+      },
+      {
+        "path": "images/products/shadow-masks/betokontakt-9357d7c5e4.svg",
+        "size": 33602,
+        "sha256": "5c1a52fa24762b6ba8691fcd540cf812ad168d5b39b4ddc64b2ec6b810e6214c"
+      },
+      {
+        "path": "images/products/shadow-masks/deep-primer-8c9c918005.svg",
+        "size": 26361,
+        "sha256": "42654c721716146dc2695b62be68bb282ac9e13b36f099bae5be63caf27141da"
+      },
+      {
+        "path": "images/products/shadow-masks/glass-fiber-plus-top-e4f31956bf.svg",
+        "size": 31363,
+        "sha256": "df0c84d6f5ef5e3bf3b612d0f2c1150df297d0e8201a0210678f80337b15c389"
+      },
+      {
+        "path": "images/products/shadow-masks/hydro-dcc0155a95.svg",
+        "size": 33602,
+        "sha256": "cdb4fb8e01f5e271b81dcbfc537d11e19b3f7688b8590dd7782f73ba60dda9e4"
+      },
+      {
+        "path": "images/products/shadow-masks/mittel-grund-707be14614.svg",
+        "size": 33602,
+        "sha256": "f45e53a2521fcf2c61b49a755b4117fae99be1700356d4dc78a594c1501de6a0"
+      },
+      {
+        "path": "images/products/shadow-masks/mix-mosaic-c196ed3116.svg",
+        "size": 33602,
+        "sha256": "53cb54f766e4223060c3167faae225dd3321f9f79bbb45adeecc4f3a86d71a8e"
+      },
+      {
+        "path": "images/products/shadow-masks/nonwoven-plus-top-a846e281ec.svg",
+        "size": 31011,
+        "sha256": "62c6c4ac9a0afc3f2f8ffac2a4c02bde915043b489baafe71489118affeabc8c"
+      },
+      {
+        "path": "images/products/shadow-masks/plus-top-01cb1f86f5.svg",
+        "size": 18529,
+        "sha256": "57defb4171a83d6769cd9433aca2ab2831329af793787c63e07beb0e08678c12"
+      },
+      {
+        "path": "images/products/shadow-masks/polymer-putty-09cd4e5959.svg",
+        "size": 33602,
+        "sha256": "c1a7ae026a919ccd13ecb4877bae794921ad1430353962d27fdc691af1d19163"
+      },
+      {
+        "path": "images/products/shadow-masks/primer-concentrate-0fd024c39b.svg",
+        "size": 26361,
+        "sha256": "42654c721716146dc2695b62be68bb282ac9e13b36f099bae5be63caf27141da"
+      },
+      {
+        "path": "images/products/shadow-masks/primer-paint-36e1e0948e.svg",
+        "size": 33602,
+        "sha256": "720baf5257105cfc635a1029eea165254e48ed0d19fd4a5d36a3c9ededc19143"
+      },
+      {
+        "path": "images/products/shadow-masks/pro-spray-finish-c441eedcda.svg",
+        "size": 33602,
+        "sha256": "540268b3c9bb2026fa4a00aaa9784804ccb5e253eb3f7cc5f9f33bdbcedd57a5"
+      },
+      {
+        "path": "images/products/shadow-masks/promix-3in1-5ddbc3c12f.svg",
+        "size": 33602,
+        "sha256": "a0ddcf01a695b22ed9b852147464043b21f96d94021834b8992448a51681a23c"
+      },
+      {
+        "path": "images/products/shadow-masks/promix-f-e71ba1c0b5.svg",
+        "size": 33602,
+        "sha256": "19a36208f5ea393b05c4948982573f9cd5a18078f6df76a71bd8f7ec535cd4f3"
+      },
+      {
+        "path": "images/products/shadow-masks/promix-fasad-4fa9419c39.svg",
+        "size": 33602,
+        "sha256": "02dbfb1339489654cd46a83e964e09310dc389e990be50683ab99fae5b10bb39"
+      },
+      {
+        "path": "images/products/shadow-masks/promix-h-02-ac384999d4.svg",
+        "size": 33602,
+        "sha256": "95f6b4010c18eb5e683201a34e82af9ee643f522a859ec0b373f9e6fc06c6651"
+      },
+      {
+        "path": "images/products/shadow-masks/promix-h-03-f281de343a.svg",
+        "size": 33604,
+        "sha256": "6ddbb50a8d00273d20dfaa9be6a9479bd26068f91009bdcd927f32a970e02c8f"
+      },
+      {
+        "path": "images/products/shadow-masks/promix-j-71ae9842fc.svg",
+        "size": 33602,
+        "sha256": "a935e4a627216c3b3973de0842d2af4f40894d3a84668b69ea0bbbef24551733"
+      },
+      {
+        "path": "images/products/shadow-masks/promix-w-b1fc804c1a.svg",
+        "size": 33602,
+        "sha256": "33de048254d10b981db61538e701c3326e3338539ebd32b896cdb27ab32dd4ba"
+      },
+      {
+        "path": "images/products/shadow-masks/sous-couche-4f2e9b531f.svg",
+        "size": 33372,
+        "sha256": "22fef84e35749eadd2e38cc8635edac5fd707960e7afc0e114fba04eb3cbeeb5"
+      },
+      {
+        "path": "images/products/shadow-masks/super-tack-3-a745b14619.svg",
+        "size": 33832,
+        "sha256": "852275d5507a0adba336d1ad0bfd53e118856dbe70c24aea5132097cc4fda6e5"
+      },
+      {
+        "path": "images/products/shadow-masks/super-tack-7-0c47626be9.svg",
+        "size": 33970,
+        "sha256": "991fc87e48d9c643c267fb0044ed23405b01a586e28f558ae0f5e65400540319"
+      },
+      {
+        "path": "images/products/shadow-masks/super-tack-facade-6d66c49261.svg",
+        "size": 32958,
+        "sha256": "99339bf6e3f02d198550f6e3a8f8bfa1d2ab5cbf5e37a68311066a28173252bf"
+      },
+      {
+        "path": "images/products/shadow-masks/super-tack-facade-silicon-f98f92df89.svg",
+        "size": 33740,
+        "sha256": "450aa7369185bc887d4ba6c5a9833d994aa54b21821efffac516a9fa97911ca2"
+      },
+      {
+        "path": "images/products/shadow-masks/tape-adhesive-5741790d4f.svg",
+        "size": 33604,
+        "sha256": "15c0d16a4e1af59f089ae080d28c0bafd5797b93171acb63ed89ebd8191d41c5"
+      },
+      {
+        "path": "images/products/shadow-masks/textured-anti-vandal-06ef857cad.svg",
+        "size": 33604,
+        "sha256": "8e2fb73052b801ac39ae6e3ce6133a8c9a195d6d3d370fdcefc3ffe6d131aaf8"
+      },
+      {
+        "path": "images/products/shadow-masks/universal-primer-f832e445e9.svg",
+        "size": 26361,
+        "sha256": "42654c721716146dc2695b62be68bb282ac9e13b36f099bae5be63caf27141da"
+      },
+      {
+        "path": "images/products/sous-couche.png",
+        "size": 683397,
+        "sha256": "7c345ec36bc83e7fa50a93899cc774416d2cd3c3b01a3b02de71a7badfce24ed"
+      },
+      {
+        "path": "images/products/super-tack-3.png",
+        "size": 751100,
+        "sha256": "b0f671fd1448b5f0bd72dece795353c7b54520ccdcfc7b01642c39a9e5c9e4ea"
+      },
+      {
+        "path": "images/products/super-tack-7.png",
+        "size": 719138,
+        "sha256": "aad95a87bf277431910a268d981da4fca5b9fdeb664bdeaac7a9bd6328a1dd53"
+      },
+      {
+        "path": "images/products/super-tack-facade-silicon.png",
+        "size": 721730,
+        "sha256": "44ff874224bfc284bf9761806f1db2dd20daf7996aae10fddf2ddaddcb96a52e"
+      },
+      {
+        "path": "images/products/super-tack-facade.png",
+        "size": 712275,
+        "sha256": "99cdd2e12cc179704be3b5e7cd9553f537ea35d0f5f8d5e4bc369d15cdb842a6"
+      },
+      {
+        "path": "images/products/tape-adhesive.png",
+        "size": 682905,
+        "sha256": "7e784a65eb62bac348e11ee9b4fb5a95fe6ebe0a551ffb82a7264776d9d61684"
+      },
+      {
+        "path": "images/products/textured-anti-vandal.png",
+        "size": 712910,
+        "sha256": "c65789b3afcf44334c64defb99a6206d8bb60ba1aa0d433671b05a550430ea19"
+      },
+      {
+        "path": "images/products/universal-primer-final.png",
+        "size": 1515454,
+        "sha256": "87d0adc44d624fb657d728917b96f00a36421ebd7dd0ff7c273a2f760ff5936e"
+      },
+      {
+        "path": "images/products/universal-primer.png",
+        "size": 1013943,
+        "sha256": "39ac4d59496fa4a10c845b02c8efd7e43c9383fb7486b5b671aba647d0274097"
+      },
+      {
+        "path": "images/system-layers-source.png",
+        "size": 2660935,
+        "sha256": "834805b34aaa58a46ee30b46bb49412e7e3d2162f7c7c35ab4ea157cc4f8d045"
+      },
+      {
+        "path": "images/system-layers/layer-01.png",
+        "size": 756472,
+        "sha256": "4b5d321c913a8d107fb5ff27c8bad9f94163dc63c96c3b810c6b9f58cb7a8b08"
+      },
+      {
+        "path": "images/system-layers/layer-02.png",
+        "size": 494217,
+        "sha256": "68b06d3de6b5f8670a3b335c410a757f957f35db4e82aff97b98aea1b37c6a47"
+      },
+      {
+        "path": "images/system-layers/layer-03.png",
+        "size": 382817,
+        "sha256": "62804da2127adde88e6d8fc1a18589df9b7ea86459fcfc733b895210eeeacf0f"
+      },
+      {
+        "path": "images/system-layers/layer-04.png",
+        "size": 571307,
+        "sha256": "0ade3686f89e5700ad9c821798a2e7967e87a0ee760ba53544c1609e933731ff"
+      },
+      {
+        "path": "images/system-layers/layer-05.png",
+        "size": 329061,
+        "sha256": "bca407421c8291f2000dd063cc00d5d3f57eb532e5006c2fea99630674cc28bd"
+      },
+      {
+        "path": "images/task-selector/concept-3/finishing.webp",
+        "size": 31280,
+        "sha256": "ef2eac2224b6e77df26fe99ba3399f1d192357bd46324ca5bfa9b8254fe6bd9e"
+      },
+      {
+        "path": "images/task-selector/concept-3/leveling.webp",
+        "size": 41862,
+        "sha256": "a095f1570a12f258a2c1df9c2f78aa8936aed47e7f708eab6ecc320b6c3d0c46"
+      },
+      {
+        "path": "images/task-selector/concept-3/preparation.webp",
+        "size": 33240,
+        "sha256": "00b4649a300a3805bb54c6f6af67f3907d813d284ef8e0eba16ea4ca1fa7bc37"
+      },
+      {
+        "path": "images/task-selector/concept-3/repair.webp",
+        "size": 54052,
+        "sha256": "97750ed117e99453121de452f9b1500a99a5373192c14831765f5ecb2c7678d4"
+      },
+      {
+        "path": "images/task-selector/concept-3/waterproofing.webp",
+        "size": 60032,
+        "sha256": "f2bc8583e85a495e8c32eb5080f891af49018b8cadb359d677b7a34e1b62aea7"
+      },
+      {
+        "path": "images/task-selector/gallery-stage-v1.webp",
+        "size": 44522,
+        "sha256": "3e696a8279673f5875fb7c362c1e85214a405841432a37b91c3872fe0e28f9f3"
+      },
+      {
+        "path": "images/task-selector/gallery-stage.webp",
+        "size": 54472,
+        "sha256": "4deeaac3beec1a0826b759c4597f206227284915b11cd516f18176802fef9046"
+      },
+      {
+        "path": "images/task-selector/marble-stage.webp",
+        "size": 34548,
+        "sha256": "c1a33f5b17dc8e3465229312f6357ee202a3b256c2d234faf077494e9395bb28"
+      },
+      {
+        "path": "images/tasks/finishing/finish-v1.webp",
+        "size": 238700,
+        "sha256": "7d5f85c695116deed73e1db911c2f5fcc13f411c9c749f290f1213db655d1f2a"
+      },
+      {
+        "path": "images/tasks/finishing/leveling-v1.webp",
+        "size": 363536,
+        "sha256": "441b3ef6ed3569b470aa3e49eb95baf8a59c2c234ef0db9e17c0fcf6b9f1e858"
+      },
+      {
+        "path": "images/tasks/finishing/painting-v1.webp",
+        "size": 380902,
+        "sha256": "a3cf09d665176d28dcc96dac711f43a57c26008ed9cfa1ab2935febe3059202e"
+      },
+      {
+        "path": "images/tasks/finishing/preparation-v1.webp",
+        "size": 403762,
+        "sha256": "09c2343fef1858c4650e0118062d96693e5c67ba8683ab4a08b6e3d01a3c95ef"
+      },
+      {
+        "path": "images/tasks/finishing/reinforcement-v1.webp",
+        "size": 274766,
+        "sha256": "9e65e5aa03cbd68f342d906e660f6a05081a48f3c47b26d712b598fe9d4f8d94"
+      },
+      {
+        "path": "images/tasks/material-process/finishing.webp",
+        "size": 141732,
+        "sha256": "a7a465b8656b65ebadaeb044fdfebc89362a160444e03f3468fa301428449ae9"
+      },
+      {
+        "path": "images/tasks/material-process/leveling.webp",
+        "size": 277538,
+        "sha256": "55bd7ad189e0e6cd4ef3d83ff2f9906582efc176ecf24aecd6cd7946d7e480da"
+      },
+      {
+        "path": "images/tasks/material-process/preparation.webp",
+        "size": 505682,
+        "sha256": "fd5eb20db39775a65ed49333229a11b90afb1b68ae5a9e65875a3841c0bb411d"
+      },
+      {
+        "path": "images/tasks/material-process/waterproofing.webp",
+        "size": 401886,
+        "sha256": "70688010d575e971cb64f3939d6d64719ccf314fafd32af16259f95266f9b0cc"
+      },
+      {
+        "path": "images/wall-system.png",
+        "size": 3586565,
+        "sha256": "434be9d61b6ef9c2fd38a5c6fe718b52fdc72c414fa930aa188d80df365fdfc9"
+      },
+      {
+        "path": "index.html",
+        "size": 58347,
+        "sha256": "b6c78950a29955797a4b2686b9d34a8987549f0931fbd2ad7e496e11af83a871"
+      },
+      {
+        "path": "personal-data/index.html",
+        "size": 30177,
+        "sha256": "441559ce0d77951fc1ec0a23b29987cba26957401df18cf9012c3811762fe9e4"
+      },
+      {
+        "path": "privacy/index.html",
+        "size": 24264,
+        "sha256": "fa894f65f9912b215c7e86f03356a7bac01d58209acaf965245a632f35984506"
+      },
+      {
+        "path": "products/acrylic-enamel/index.html",
+        "size": 43509,
+        "sha256": "59309560702f5c7914f0cb1fa8892fee9379fdbaa4b4cfea4b851ee2e70c7ec6"
+      },
+      {
+        "path": "products/betokontakt/index.html",
+        "size": 49692,
+        "sha256": "c472496dc8a1161e7f3cc512f8f5090d38fa5bf7c3bc353ee9c5bc820c1c4907"
+      },
+      {
+        "path": "products/deep-primer/index.html",
+        "size": 48231,
+        "sha256": "e73a50d3dcb771fc3edeaf42fe12134a942618e25e17823caf6ecee30fcb60fe"
+      },
+      {
+        "path": "products/glass-fiber-plus-top/index.html",
+        "size": 38814,
+        "sha256": "2cd2c93d6f105731e64c8d56e9c8be0e050ee9ce1887599d7cbb624c5fb4a263"
+      },
+      {
+        "path": "products/hydro/index.html",
+        "size": 34880,
+        "sha256": "7323c09407e4a211995ca6a3e355d68d8e1159ca6c41c78ccaedc64bd6b75bd0"
+      },
+      {
+        "path": "products/index.html",
+        "size": 148593,
+        "sha256": "3073ca7ee73f6910bb9d16b93a6ab0f4d31ce9aa6a075aa6b7871fae473b45bc"
+      },
+      {
+        "path": "products/mittel-grund/index.html",
+        "size": 50569,
+        "sha256": "379755b977db8d3ae9461c44560f137bba1dddb45f294c808984ea069166cb1d"
+      },
+      {
+        "path": "products/mix-mosaic/index.html",
+        "size": 48306,
+        "sha256": "f0eeacf702241dfb5b5be1519763cd1ba2ce1221f55402c5a53c2bdf71070eac"
+      },
+      {
+        "path": "products/nonwoven-plus-top/index.html",
+        "size": 38137,
+        "sha256": "ba7a87baebb4daafa2fe147a7efc95e93385eb8915673b3baa1350f14c479348"
+      },
+      {
+        "path": "products/plus-top/index.html",
+        "size": 39342,
+        "sha256": "308b07ac7e4a2fecc5aed5d6f3738f7dec9c2e2f74e4d8448f16dbb1356d270f"
+      },
+      {
+        "path": "products/polymer-putty/index.html",
+        "size": 42768,
+        "sha256": "c9b637effb7f4a5cbd18a3ef8f86998476661cad79ce721fa501b2f01cc2a387"
+      },
+      {
+        "path": "products/primer-concentrate/index.html",
+        "size": 51046,
+        "sha256": "57b675226df33a8b37c59926b1ced50c3ebc8bf19a3ade7b28c5236f687c9ee6"
+      },
+      {
+        "path": "products/primer-paint/index.html",
+        "size": 49354,
+        "sha256": "68c6cadd9043cfe4b768fe63d5b76c4dafd880657d66142892b81beed7069634"
+      },
+      {
+        "path": "products/pro-spray-finish/index.html",
+        "size": 48140,
+        "sha256": "cc949b387bd2ed44ae6fe7dd07b2f104b291921bf688602a2f44d277dd3cc453"
+      },
+      {
+        "path": "products/pro-spray-improved/index.html",
+        "size": 42756,
+        "sha256": "955b1a23a0fcfb082982afb4c17e572be8e658b68752c8a04bab9bbe2e3b1a5c"
+      },
+      {
+        "path": "products/promix-3in1/index.html",
+        "size": 47870,
+        "sha256": "0b3a631cfea62b5b28463927e3be5f8686b9665976a33abf419952265f5a5a4c"
+      },
+      {
+        "path": "products/promix-f/index.html",
+        "size": 47703,
+        "sha256": "5f92e51e436e2b660ed9772ba831062bb9e5c2561dc3c87357bfe0afd7478c7f"
+      },
+      {
+        "path": "products/promix-fasad/index.html",
+        "size": 47523,
+        "sha256": "3b4320c8052fde17f9993891c98abd189270ac6f9aae764ddd2c289f103f66b4"
+      },
+      {
+        "path": "products/promix-h-02/index.html",
+        "size": 47504,
+        "sha256": "bbbd69c821f4d21f93799891cbd846db04e0aeb9bc546df33e5dc5d7587b570c"
+      },
+      {
+        "path": "products/promix-h-03/index.html",
+        "size": 48926,
+        "sha256": "bd7570257e5fe90d902492750908845c3dfdebcc65f0277dd5011d66a0563e8a"
+      },
+      {
+        "path": "products/promix-j/index.html",
+        "size": 47050,
+        "sha256": "e7467d8de5a27713f44cc325c55b398d3663573790bc22f4d1450cfee653269a"
+      },
+      {
+        "path": "products/promix-w/index.html",
+        "size": 47479,
+        "sha256": "1aba6b1ccf8f53e7df4fb82a93dab8a3fceeca3eb2a913481dcf4e7efb4d4c79"
+      },
+      {
+        "path": "products/sous-couche/index.html",
+        "size": 49653,
+        "sha256": "b12cc36e69950d67f6265f9d1d5ac7311898ffe6e9852535fe8a08d901b109e6"
+      },
+      {
+        "path": "products/super-tack-3/index.html",
+        "size": 49211,
+        "sha256": "4185619fd79223aa09fd96954d46e146bd421f584eadf4ccd110e4e8812e22cf"
+      },
+      {
+        "path": "products/super-tack-7/index.html",
+        "size": 48835,
+        "sha256": "f4eac0333818f37786f6484a0aceba23530446bd4ab00473a5f7b05def01a43a"
+      },
+      {
+        "path": "products/super-tack-facade-silicon/index.html",
+        "size": 49269,
+        "sha256": "4bf54b68ce61bbbe36e86d5151be4edac433be923eca0fc0d4bd97757fd19aea"
+      },
+      {
+        "path": "products/super-tack-facade/index.html",
+        "size": 49107,
+        "sha256": "132a0e796f6b7d18bc1b91186bc912e3357287e7925227095d73aaccfd5af49d"
+      },
+      {
+        "path": "products/tape-adhesive/index.html",
+        "size": 38952,
+        "sha256": "8020c1c85de3f9553173e7ee822411104e2b2ec2ce41745fc4abf697ba9507c6"
+      },
+      {
+        "path": "products/textured-anti-vandal/index.html",
+        "size": 48507,
+        "sha256": "ee20e2ebb44ead13eb9257dea28ddb004fc996c3fb230db84b315fe329753108"
+      },
+      {
+        "path": "products/universal-primer/index.html",
+        "size": 47793,
+        "sha256": "46f8f7c92375f03982bae3d77deec0a4439db23e1f312369c8896eb0837c4e4f"
+      },
+      {
+        "path": "robots.txt",
+        "size": 70,
+        "sha256": "c2e6b90adbe127afe5fd5fef9a9def2fd15b2b5535da4c33a909451ebbb59e68"
+      },
+      {
+        "path": "site.webmanifest",
+        "size": 412,
+        "sha256": "7a17f557e4cab63958eac7d4403870ca6130aa654ea97c6f98adec8cb71b75ff"
+      },
+      {
+        "path": "sitemap-0.xml",
+        "size": 2488,
+        "sha256": "49e28eea568070f5ef96f38cd1e958b6358ac1198237b0b91a46a26404ca95bf"
+      },
+      {
+        "path": "sitemap-index.xml",
+        "size": 181,
+        "sha256": "22a4e9f07918578eba2a7fa2d3dc90692d960d4e3f00bb54b3173203aa9d2c50"
+      }
+    ]
+  },
+  "nginx": {
+    "status": "PASS_LOCAL_ADAPTER",
+    "syntax": 0,
+    "redirectVariants": 228,
+    "allRedirectsPass": true,
+    "scope": "Local Windows nginx, real candidate maps/locations/redirects/cache/gzip/error_page. TLS/listeners/paths adapted; FastCGI stub only. No FirstVDS, production configuration, external HTTP, real PHP-FPM, SMTP, API POST, real form or mailbox.",
+    "limitations": {
+      "firstVDS": "NOT TESTED",
+      "TLS": "NOT TESTED",
+      "PHP_FPM": "NOT TESTED",
+      "unixPermissions": "NOT TESTED",
+      "realMail": "NOT TESTED",
+      "SMTP": "NOT TESTED",
+      "DNS": "NOT TESTED",
+      "symlinkSwitch": "NOT TESTED"
+    },
+    "sourceHashes": {
+      "E:/bulat/design/promix-site/deploy/nginx-promix-release.conf.example": "46ad505f2910de2bed8f2f27e4d80e765855759b3d5728fc6421a369a3f82160",
+      "E:/bulat/design/promix-site/deploy/nginx-promix-release-redirects.conf.example": "8aefe9f0160ad7c255f32cbcda6508b94f4e343bf7e1cc92e92e795ef8fa1e4a",
+      "E:/bulat/design/promix-site/deploy/nginx-promix-redirects.conf.example": "bce20c707d5c5f95c0088870f87e96387efe90e6a2b202c59bc8d9f47123522a",
+      "E:/bulat/design/promix-site/deploy/nginx-promix-performance.conf.example": "1ff404a33d60372cf439427ca5fdf5b6200552b2c2dd50fe4e8f64bf9ab942f6"
+    }
+  },
+  "production": "NOT TESTED",
+  "productionMail": "NOT TESTED",
+  "noExternalDeploymentOrMail": true
+}

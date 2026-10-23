@@ -1,0 +1,145 @@
+# CANDIDATE ONLY. Not applied to FirstVDS. Include ONCE in nginx http {}.
+# Choose this OR nginx-promix-performance.conf.example, not both (map names overlap).
+# Replace PHP_FPM_SOCKET and verify certificate, paths, users and nginx version.
+# Same approved mappings in a separate absolute-canonical redirect companion.
+# The original QA-tested relative redirect companion remains unchanged.
+
+map $status $promix_cacheable_response {
+    default 0;
+    200 1;
+    206 1;
+    304 1;
+}
+map "$promix_cacheable_response:$uri" $promix_cache_control {
+    default "no-cache";
+    ~^[01]:/api/ "no-store";
+    "~^1:/_astro/[^/]+\.[A-Za-z0-9_-]{8,}\.(?:js|css|woff2?|ttf|otf|png|jpe?g|webp|avif|svg)$" "public, max-age=31536000, immutable";
+    "~^1:/images/products/catalog-2026-10/[a-z0-9-]+-[a-f0-9]{12}-(?:640|960|1600)\.webp$" "public, max-age=31536000, immutable";
+    "~^1:/images/products/catalog-2026-10/[a-z0-9-]+-[a-f0-9]{12}-(?:contact|ambient|ground)-[a-f0-9]{12}\.svg$" "public, max-age=31536000, immutable";
+    "~^1:/images/performance/[a-z0-9-]+-[a-f0-9]{12}-(?:320|480|640|960|1024|1207|1600|2048)\.webp$" "public, max-age=31536000, immutable";
+    ~*^1:/.+\.pdf$ "public, max-age=86400, must-revalidate";
+    ~*^1:/.+\.(?:css|js|mjs|json|xml|webmanifest|svg|png|jpe?g|gif|webp|avif|ico|woff2?|ttf|otf)$ "public, max-age=0, must-revalidate";
+}
+# No query, request body, Referer or raw client IP in this application's access log.
+log_format promix_minimal '$time_iso8601 "$request_method $uri $server_protocol" '
+                          '$status $body_bytes_sent $request_time';
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name pro-mix.ru www.pro-mix.ru;
+    access_log /var/log/nginx/promix-access.log promix_minimal;
+    include /etc/nginx/snippets/nginx-promix-release-redirects.conf;
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/promix/shared/acme;
+        default_type text/plain;
+        try_files $uri =404;
+    }
+    location / { return 301 https://pro-mix.ru$request_uri; }
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name www.pro-mix.ru;
+    ssl_certificate /etc/letsencrypt/live/pro-mix.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pro-mix.ru/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    access_log /var/log/nginx/promix-access.log promix_minimal;
+    include /etc/nginx/snippets/nginx-promix-release-redirects.conf;
+    location / { return 301 https://pro-mix.ru$request_uri; }
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    # Optional after nginx -V: http2 on; (nginx >= 1.25.1 + http_v2 module).
+    # Older versions require `http2` on the listen directives instead.
+    server_name pro-mix.ru;
+    ssl_certificate /etc/letsencrypt/live/pro-mix.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pro-mix.ru/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_cache shared:PROMIX_RELEASE_TLS:10m;
+    ssl_session_timeout 1d;
+
+    root /var/www/promix/current/dist;
+    index index.html;
+    autoindex off;
+    open_file_cache off;
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    charset utf-8;
+    etag on;
+    sendfile on;
+    tcp_nopush on;
+    access_log /var/log/nginx/promix-access.log promix_minimal;
+    # nginx error_log may contain URI/query: restrict access and retention;
+    # do not enable debug logging or place PII into URLs.
+    error_log /var/log/nginx/promix-error.log warn;
+
+    add_header Cache-Control $promix_cache_control always;
+    add_header X-Content-Type-Options nosniff always;
+    include /etc/nginx/snippets/nginx-promix-release-redirects.conf;
+    # The 52 proposed legacy decisions are a separate, NOT enabled candidate.
+
+    gzip on;
+    gzip_comp_level 5;
+    gzip_min_length 1024;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_types text/plain text/css text/javascript application/javascript
+        application/x-javascript application/json application/ld+json
+        application/xml text/xml image/svg+xml application/manifest+json;
+    # Brotli only if a verified installed module is available. No HSTS rollout here.
+
+    location = /api/lead.php {
+        client_max_body_size 32k;
+        client_body_timeout 15s;
+        fastcgi_pass unix:PHP_FPM_SOCKET;
+        # Resolve current/dist to the immutable release, so PHP opcache keys vary
+        # by release. Both directories are siblings under that same release.
+        fastcgi_param SCRIPT_FILENAME $realpath_root/../backend/public/api/lead.php;
+        fastcgi_param SCRIPT_NAME /api/lead.php;
+        fastcgi_param DOCUMENT_ROOT $realpath_root/../backend/public;
+        fastcgi_param QUERY_STRING $query_string;
+        fastcgi_param REQUEST_METHOD $request_method;
+        fastcgi_param CONTENT_TYPE $content_type;
+        fastcgi_param CONTENT_LENGTH $content_length;
+        fastcgi_param REQUEST_URI $request_uri;
+        fastcgi_param DOCUMENT_URI $document_uri;
+        fastcgi_param SERVER_PROTOCOL $server_protocol;
+        fastcgi_param REQUEST_SCHEME $scheme;
+        fastcgi_param HTTPS $https if_not_empty;
+        fastcgi_param GATEWAY_INTERFACE CGI/1.1;
+        fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;
+        fastcgi_param REMOTE_ADDR $remote_addr;
+        fastcgi_param REMOTE_PORT $remote_port;
+        fastcgi_param SERVER_ADDR $server_addr;
+        fastcgi_param SERVER_PORT $server_port;
+        fastcgi_param SERVER_NAME $server_name;
+        fastcgi_param REDIRECT_STATUS 200;
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_connect_timeout 5s;
+        fastcgi_read_timeout 60s;
+        fastcgi_intercept_errors off;
+        fastcgi_cache off;
+        fastcgi_next_upstream off;
+        fastcgi_hide_header Cache-Control;
+        access_log off;
+    }
+    location ^~ /api/ { return 404; }
+    location ~* \.php(?:/|$) { return 404; }
+    location ~ /\.(?!well-known/) { return 404; }
+    location ^~ /backend/ { return 404; }
+    location = /preview { return 404; }
+    location ^~ /preview/ { return 404; }
+    location = /previews { return 404; }
+    location ^~ /previews/ { return 404; }
+    location = /site.webmanifest {
+        types { application/manifest+json webmanifest; }
+        try_files $uri =404;
+    }
+    location / { try_files $uri $uri/ =404; }
+    error_page 404 /404.html;
+    location = /404.html { internal; }
+}
