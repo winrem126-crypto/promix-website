@@ -5,9 +5,9 @@ import SiteFooter from '../components/SiteFooter.astro';
 import SiteDialogs from '../components/SiteDialogs.astro';
 ---
 
-<BaseLayout title="Страница не найдена — PROMIX" description="Такой страницы нет на сайте PROMIX. Перейдите в каталог материалов или вернитесь на главную." canonical="/404/" robots="noindex, follow" pageClass="not-found-page">
+<BaseLayout title="Страница не найдена — PROMIX" description="Такой страницы нет на сайте PROMIX. Перейдите в каталог материалов или вернитесь на главную." canonical="/404.html" robots="noindex, follow" pageClass="not-found-page">
   <SiteHeader />
-  <main class="not-found-main">
+  <main id="main-content" class="not-found-main" tabindex="-1">
     <p class="not-found-code" aria-hidden="true">404</p>
     <h1>Страница не найдена</h1>
     <p class="not-found-message">Возможно, адрес изменился или в ссылке есть ошибка. Найти нужный материал можно в каталоге.</p>

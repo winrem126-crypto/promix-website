@@ -115,3 +115,7 @@
   }
   :is(.product-card-visual, .product-studio-stage)[data-shadow-profile="reference-mineral"] .catalog-ground-contact { transition: none; }
 }
+
+@media (scripting: enabled) {
+  .catalog-ground-plane[data-shadow-lazy]:not([data-shadow-active]) { display: none; }
+}

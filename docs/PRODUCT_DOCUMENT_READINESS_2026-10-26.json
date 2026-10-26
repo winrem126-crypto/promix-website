@@ -1,0 +1,2696 @@
+{
+  "date": "2026-10-26",
+  "scope": "Local project and related local source/transfer material; no production or external source checks",
+  "policy": "No invented product values, approval, certificate, or official technical sheet",
+  "summary": {
+    "activeProducts": 25,
+    "hiddenProducts": 4,
+    "currentMatchedActive": 23,
+    "activeWithCurrentTransportationReview": 20,
+    "additionalLegacyTransportationReview": [
+      "promix-h-03"
+    ],
+    "activeWithDownloadableDocument": 8,
+    "activeWithoutDownloadableDocument": 17,
+    "approvedTechnicalSheetsFound": 0,
+    "eligibleForOfficialTechnicalSheetGeneration": 0,
+    "originalAuditActiveProducts": 26,
+    "originalAuditProductsCovered": 26,
+    "additionalLegacyTransportationReviewScope": "Hidden H 0,3 retained from the original audit; not a current visible SKU."
+  },
+  "searchEvidence": {
+    "searchedRoots": [
+      "E:/bulat/design",
+      "C:/Users/winre/.codex/attachments"
+    ],
+    "scannedFiles": 17951,
+    "files": [
+      "E:\\bulat\\design\\.promix-handoff-final-verify-20261022\\promix-site\\public\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\.promix-handoff-verify-20261022\\promix-site\\dist\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\.promix-handoff-verify-20261022\\promix-site\\public\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\.promix-handoff-work-20261022\\package\\promix-site\\public\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\catalog-shadow-preview-qa\\build\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\promix-site\\artifacts\\performance\\before-dist\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\promix-site\\artifacts\\performance\\optimized-dist\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\promix-site\\dist\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\promix-site\\public\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\PROMIX_AUDIT_2026-10-22_18-06-20\\work-copy\\promix-site\\dist\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\PROMIX_AUDIT_2026-10-22_18-06-20\\work-copy\\promix-site\\public\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\PROMIX_FINAL_QA_2026-10-22_20-58-49\\perf-dist\\documents\\promix-sgr-shpatlevki-2026.pdf",
+      "E:\\bulat\\design\\Политика использования Cookie.docx"
+    ],
+    "archives": [
+      {
+        "archive": "E:\\bulat\\design\\promix-project-2026-09-28.zip",
+        "exitCode": 0,
+        "error": null,
+        "documents": [
+          "design/�������� ������������� Cookie.docx"
+        ],
+        "sourceCandidates": [
+          "design/promix-site/src/data/product-brochure-2025.json",
+          "design/promix-site/src/data/product-brochure.ts",
+          "design/promix-site/src/components/ProductBrochure.astro",
+          "design/promix-site/docs/brochure-2025-review.json",
+          "design/promix-site/docs/brochure-2025-review.md",
+          "design/.work-brochure/baseline.cjs",
+          "design/.work-brochure/baseline.json",
+          "design/.work-brochure/before-h03.png",
+          "design/.work-brochure/import-brochure.py",
+          "design/.work-brochure/md-pages.json",
+          "design/.work-brochure/pdf-text.json",
+          "design/.work-brochure/products.before.json",
+          "design/.work-brochure/products.before.ts",
+          "design/.work-brochure/qa.cjs",
+          "design/.work-brochure/verify-source.py",
+          "design/.work-brochure/pages/page-03.png",
+          "design/.work-brochure/pages/page-04.png",
+          "design/.work-brochure/pages/page-05.png",
+          "design/.work-brochure/pages/page-06.png",
+          "design/.work-brochure/pages/page-07.png",
+          "design/.work-brochure/pages/page-08.png",
+          "design/.work-brochure/pages/page-09.png",
+          "design/.work-brochure/pages/page-10.png",
+          "design/.work-brochure/pages/page-11.png",
+          "design/.work-brochure/pages/page-12.png",
+          "design/.work-brochure/pages/page-13.png",
+          "design/.work-brochure/pages/page-14.png",
+          "design/.work-brochure/pages/page-15.png",
+          "design/.work-brochure/pages/page-16.png",
+          "design/.work-brochure/pages/page-17.png",
+          "design/.work-brochure/pages/page-18.png",
+          "design/.work-brochure/pages/page-19.png",
+          "design/.work-brochure/pages/page-20.png",
+          "design/.work-brochure/pages/page-21.png",
+          "design/.work-brochure/pages/page-22.png",
+          "design/.work-brochure/pages/page-23.png",
+          "design/.work-brochure/pages/page-24.png",
+          "design/.work-brochure/pages/page-25.png",
+          "design/.work-brochure/pages/page-26.png",
+          "design/.work-brochure/pages/page-27.png"
+        ]
+      },
+      {
+        "archive": "E:\\bulat\\design\\PROMIX_RELEASE_PREP_2026-10-23_11-16-07\\archives\\promix-2026.10.23-rc1-runtime-d5d46cfef8bd.zip",
+        "exitCode": 0,
+        "error": null,
+        "documents": [
+          "dist/documents/promix-sgr-shpatlevki-2026.pdf"
+        ],
+        "sourceCandidates": []
+      },
+      {
+        "archive": "E:\\bulat\\design\\PROMIX_RELEASE_PREP_2026-10-23_11-16-07\\archives\\promix-2026.10.23-rc1-source-d5d46cfef8bd.zip",
+        "exitCode": 0,
+        "error": null,
+        "documents": [
+          "promix-site/public/documents/promix-sgr-shpatlevki-2026.pdf"
+        ],
+        "sourceCandidates": [
+          "promix-site/docs/brochure-2025-review.json",
+          "promix-site/docs/brochure-2025-review.md",
+          "promix-site/src/components/ProductBrochure.astro",
+          "promix-site/src/data/current-brochure.ts",
+          "promix-site/src/data/product-brochure-2025.json",
+          "promix-site/src/data/product-brochure-current.json",
+          "promix-site/src/data/product-brochure.ts"
+        ]
+      },
+      {
+        "archive": "E:\\bulat\\design\\PROMIX_SITE_TRANSFER.zip",
+        "exitCode": 0,
+        "error": null,
+        "documents": [
+          "PROMIX_SITE_TRANSFER/public/documents/promix-sgr-shpatlevki-2026.pdf"
+        ],
+        "sourceCandidates": [
+          "PROMIX_SITE_TRANSFER/docs/brochure-2025-review.json",
+          "PROMIX_SITE_TRANSFER/docs/brochure-2025-review.md",
+          "PROMIX_SITE_TRANSFER/src/components/ProductBrochure.astro",
+          "PROMIX_SITE_TRANSFER/src/data/current-brochure.ts",
+          "PROMIX_SITE_TRANSFER/src/data/product-brochure-2025.json",
+          "PROMIX_SITE_TRANSFER/src/data/product-brochure-current.json",
+          "PROMIX_SITE_TRANSFER/src/data/product-brochure.ts"
+        ]
+      },
+      {
+        "archive": "E:\\bulat\\design\\PROMIX_SITE_TRANSFER_2026-10-22.zip",
+        "exitCode": 0,
+        "error": null,
+        "documents": [
+          "promix-site/public/documents/promix-sgr-shpatlevki-2026.pdf"
+        ],
+        "sourceCandidates": [
+          "promix-site/docs/brochure-2025-review.json",
+          "promix-site/docs/brochure-2025-review.md",
+          "promix-site/src/components/ProductBrochure.astro",
+          "promix-site/src/data/current-brochure.ts",
+          "promix-site/src/data/product-brochure-2025.json",
+          "promix-site/src/data/product-brochure-current.json",
+          "promix-site/src/data/product-brochure.ts"
+        ]
+      },
+      {
+        "archive": "E:\\bulat\\design\\super-tack-white\\review-fasad-v2\\SUPER_TACK_Fasad-v2-review.zip",
+        "exitCode": 0,
+        "error": null,
+        "documents": [],
+        "sourceCandidates": []
+      },
+      {
+        "archive": "E:\\bulat\\design\\super-tack-white\\SUPER_TACK-results.zip",
+        "exitCode": 0,
+        "error": null,
+        "documents": [],
+        "sourceCandidates": []
+      }
+    ],
+    "legacyReview": [
+      {
+        "id": "Q01",
+        "productSlug": "super-tack-3",
+        "product": "SUPER TACK 3",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 3
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q02",
+        "productSlug": "super-tack-7",
+        "product": "SUPER TACK 7",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 4
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q03",
+        "productSlug": "super-tack-facade",
+        "product": "SUPER TACK ФАСАД",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 5
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q04",
+        "productSlug": "super-tack-facade-silicon",
+        "product": "SUPER TACK ФАСАД SILICON",
+        "field": "Тип краски",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 6
+        },
+        "current": "Матовая акрил-силиконовая краска",
+        "candidate": "матовая акриловая краска Super Так ФАСАД Silicon",
+        "reason": "Подзаголовок PDF называет краску акрил-силиконовой, абзац назначения — акриловой.",
+        "decision": "Противоречащее обозначение в начале нового абзаца опущено. Состав с силиконовыми добавками перенесён буквально; заголовок сайта сохранён."
+      },
+      {
+        "id": "Q05",
+        "productSlug": "super-tack-facade-silicon",
+        "product": "SUPER TACK ФАСАД SILICON",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 6
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q06",
+        "productSlug": "betokontakt",
+        "product": "PROMIX Бетоноконтакт",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 7
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q07",
+        "productSlug": "mittel-grund",
+        "product": "Миттельгрунт",
+        "field": "Точность записи расхода",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 8
+        },
+        "current": "Около 0,05 кг/м²",
+        "candidate": "при однослойном покрытии НЕ РАЗБАВ- ЛЕННОЙ грунтовки — 0,05кг/м2. (см. табл.)",
+        "reason": "Сайт содержит «около», PDF — 0,05 кг/м² без этого уточнения. Расход раствора в таблице является другим показателем.",
+        "decision": "Краткое поле сохранено; в подробном тексте оно используется по ссылке, с контекстом неразбавленной грунтовки. Таблица раствора перенесена отдельно."
+      },
+      {
+        "id": "Q08",
+        "productSlug": "mittel-grund",
+        "product": "Миттельгрунт",
+        "field": "Высыхание",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 8
+        },
+        "current": "Около 1 часа",
+        "candidate": "12 часов при температуре +20°С и относительной влажности воздуха (80±5)%.",
+        "reason": "На сайте около 1 часа; в буклете 12 часов с условиями. Значение буклета не заменяет существующее.",
+        "decision": "Сохранено поле сайта; новое значение не опубликовано."
+      },
+      {
+        "id": "Q09",
+        "productSlug": "mittel-grund",
+        "product": "Миттельгрунт",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 8
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q10",
+        "productSlug": "hydro",
+        "product": "Гидроизоляция PROMIX",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 9
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q11",
+        "productSlug": "primer-concentrate",
+        "product": "Грунт-концентрат PROMIX",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 10
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q12",
+        "productSlug": "primer-paint",
+        "product": "Грунт-краска PROMIX",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 11
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q13",
+        "productSlug": "sous-couche",
+        "product": "PROMIX Су-Куш",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 12
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 30 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах. На этом листе срок указан «не более 30 день», а не 21 день.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q14",
+        "productSlug": "promix-j",
+        "product": "PROMIX J",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 13
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q15",
+        "productSlug": "tape-adhesive",
+        "product": "Клей для лент PROMIX",
+        "field": "Нанесение",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 14
+        },
+        "current": "Шпатель / валик / кисть",
+        "candidate": "шпателем, валиком или боксом для нанесения шпатлёвки.",
+        "reason": "В текущем списке есть кисть, в буклете вместо неё бокс для шпатлёвки. Полный перечень требует согласования.",
+        "decision": "Сохранено поле сайта; новое значение не опубликовано."
+      },
+      {
+        "id": "Q16",
+        "productSlug": "tape-adhesive",
+        "product": "Клей для лент PROMIX",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 14
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q17",
+        "productSlug": "promix-h-03",
+        "product": "PROMIX H 0,3",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 15
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q18",
+        "productSlug": "promix-h-02",
+        "product": "PROMIX H 0,2",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 17
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q19",
+        "productSlug": "promix-3in1",
+        "product": "PROMIX 3в1",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 18
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q20",
+        "productSlug": "promix-f",
+        "product": "PROMIX F",
+        "field": "Расход",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 19
+        },
+        "current": "1,65 кг/м² при 1 мм",
+        "candidate": "зависит от толщины наносимого слоя. При толщине слоя 1 мм расход составит 1 л/1,75 кг на 1 м.кв.",
+        "reason": "Число и запись размерности расходятся; не пересчитывать 1 л/1,75 кг.",
+        "decision": "Сохранено поле сайта; новое значение не опубликовано."
+      },
+      {
+        "id": "Q21",
+        "productSlug": "promix-f",
+        "product": "PROMIX F",
+        "field": "Толщина слоя",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 19
+        },
+        "current": "До 1 мм",
+        "candidate": "до 2 мм за один проход.",
+        "reason": "Различается максимальная толщина за проход.",
+        "decision": "Сохранено поле сайта; новое значение не опубликовано."
+      },
+      {
+        "id": "Q22",
+        "productSlug": "promix-f",
+        "product": "PROMIX F",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 19
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q23",
+        "productSlug": "promix-w",
+        "product": "PROMIX W",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 21
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q24",
+        "productSlug": "promix-fasad",
+        "product": "PROMIX FASAD",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 22
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q25",
+        "productSlug": "textured-anti-vandal",
+        "product": "Текстурная антивандальная",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 23
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q26",
+        "productSlug": "plus-top",
+        "product": "PROMIX Plus Top",
+        "field": "Транспортировка",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 24
+        },
+        "current": null,
+        "candidate": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+        "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+        "decision": "Вся неоднозначная инструкция перевозки оставлена кандидатом. Опубликованы отдельные однозначные сведения: 5 циклов и хранение выше +5 °С."
+      },
+      {
+        "id": "Q27",
+        "productSlug": "mix-mosaic",
+        "product": "MIX Краска",
+        "field": "description",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 25
+        },
+        "current": "Многоцветное декоративное покрытие для наружных и внутренних работ.",
+        "candidate": "MIX-краска предназначена для декоративной отделки стен и потолков внутри жилых и общественных помещений, а также детских учреждений и зданий ЛПУ.",
+        "reason": "Подзаголовок PDF и текущий сайт включают наружные работы; абзац назначения PDF описывает внутренние помещения. Не вводить вторую область применения до подтверждения.",
+        "decision": "Сохранено поле сайта; новое значение не опубликовано."
+      },
+      {
+        "id": "Q28",
+        "productSlug": "deep-primer",
+        "product": "Грунт глубокого проникновения",
+        "field": "Соответствие варианта",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 10
+        },
+        "current": "Грунт-концентрат для впитывающих оснований; Грунт-концентрат глубокого проникновения для укрепления впитывающих и ослабленных минеральных поверхностей.",
+        "candidate": "PROMIX Грунт-концентрат глубокого проникновения",
+        "reason": "Текст сайта называет deep-primer концентратом, но это отдельный от primer-concentrate товар с другой надписью на этикетке. В буклете отдельной готовой версии не найдено.",
+        "decision": "deep-primer оставлен полностью без изменений; инструкция и таблица листа 10 привязаны только к явно обозначенному primer-concentrate."
+      },
+      {
+        "id": "Q29",
+        "productSlug": "pro-spray-finish",
+        "product": "PRO SPRAY",
+        "field": "Соответствие варианта",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 20
+        },
+        "current": "PRO SPRAY / PRO SPRAY Улучшенная",
+        "candidate": "Стр. 20: заголовок «БАЗОВАЯ ФИНИШНАЯ», но упаковка «Улучшенная». В проекте существуют обе версии с такими признаками. Выбор только по изображению или части названия не выполнен.",
+        "reason": "Заголовок и текст упаковки листа 20 позволяют выбрать разные существующие SKU.",
+        "decision": "Обе страницы Pro Spray оставлены без расширения до подтверждения варианта."
+      },
+      {
+        "id": "Q30",
+        "productSlug": "primer-concentrate",
+        "product": "Грунт-концентрат PROMIX",
+        "field": "Состояние",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 10
+        },
+        "current": "Готовый состав",
+        "candidate": "Перед разбавлением перемешать. Разбавить грунт чистой водой согласно таблице. Без разбавления не наносить.",
+        "reason": "Автоматический общий шаблон «готовый состав» не определяет готовность концентрата к нанесению.",
+        "decision": "Исходные данные не перезаписаны. Шаблонные поля Назначение/Состояние не дублируются в расширенных разделах; инструкция разбавления показана полностью. В видимой карточке и hero это поле не используется."
+      },
+      {
+        "id": "Q31",
+        "productSlug": "promix-h-03",
+        "product": "PROMIX H 0,3",
+        "field": "Надпись на действующем изображении",
+        "source": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 15
+        },
+        "current": "public/images/products/current/promix-h-03.png: читается «фракция 0,2 мм»; имя товара и поле Фракция — 0,3 мм.",
+        "candidate": "Страница 15: ВЫРАВНИВАЮЩАЯ фракция 0,3 мм PROMIX H; Величина зерна: 0,3 мм.",
+        "reason": "Существующая этикетка изображения не согласуется с именем/полем товара. Не определять фракцию по цвету и не подменять листом H 0,2.",
+        "decision": "Изображение и файл сохранены по прямому требованию пользователя. Текст дополнен по однозначному имени, назначению и полю фракции SKU promix-h-03; требуется подтверждение/исправление исходного изображения владельцем."
+      }
+    ],
+    "referencedOriginalSearch": {
+      "wanted": [
+        "PROMIX_актуальные_данные_из_нового_буклета.md",
+        "PROMIX_актуальные_данные_из_нового_буклета.docx",
+        "IMG_9338.jpeg",
+        "IMG_9340.jpeg",
+        "IMG_9341.jpeg",
+        "IMG_9342.jpeg",
+        "IMG_9343.jpeg",
+        "IMG_9344.jpeg",
+        "IMG_9345.jpeg",
+        "IMG_9346.jpeg",
+        "IMG_9347.jpeg",
+        "IMG_9348.jpeg",
+        "IMG_9349.jpeg",
+        "IMG_9350.jpeg",
+        "IMG_9351.jpeg",
+        "IMG_9352.jpeg",
+        "IMG_9353.jpeg",
+        "IMG_9354.jpeg",
+        "IMG_9355.jpeg",
+        "IMG_9356.jpeg",
+        "IMG_9357.jpeg",
+        "IMG_9358.jpeg",
+        "IMG_9359.jpeg",
+        "IMG_9360.jpeg",
+        "IMG_9361.jpeg",
+        "IMG_9362.jpeg",
+        "IMG_9363.jpeg",
+        "Буклет 2025г-1.pdf",
+        "Буклет 2025г-1(2).pdf",
+        "PROMIX_buklet_2025_dlya_Codex.md"
+      ],
+      "matches": []
+    }
+  },
+  "sourceMatchingWarnings": [
+    {
+      "sourceNumber": 1,
+      "name": "SUPER TACK PROMIX",
+      "slug": null,
+      "status": "missing",
+      "source": {
+        "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+        "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+        "image": "IMG_9338.jpeg",
+        "page": 3
+      }
+    },
+    {
+      "sourceNumber": 14,
+      "name": "PROMIX H 0,2 — красная упаковка",
+      "slug": null,
+      "status": "unmatched",
+      "source": {
+        "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+        "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+        "image": "IMG_9352.jpeg",
+        "page": 16
+      }
+    }
+  ],
+  "ownerDecision": {
+    "source": "deploy/OWNER_DECISIONS_2026-10-26.md",
+    "date": "2026-10-26",
+    "quote": "Актуальных документов пока нет, мы добавим их потом, ведра красного 0.3 нет, оставляем только синее в каталоге",
+    "originalAuditActiveProducts": 26,
+    "currentActiveProducts": 25,
+    "currentHiddenProducts": 4,
+    "removedFromCatalog": [
+      "promix-h-03"
+    ],
+    "retainedVisible": [
+      "promix-h-02"
+    ],
+    "currentDocumentsDeferred": true,
+    "directH03PagePreserved": true
+  },
+  "originalAuditProducts": [
+    {
+      "slug": "promix-h-03",
+      "name": "PROMIX H 0,3",
+      "catalogVisibleNow": false,
+      "inventorySection": "hiddenProducts"
+    },
+    {
+      "slug": "promix-h-02",
+      "name": "PROMIX H 0,2",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "promix-j",
+      "name": "PROMIX J",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "promix-3in1",
+      "name": "PROMIX 3в1",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "promix-f",
+      "name": "PROMIX F",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "pro-spray-finish",
+      "name": "PROMIX Pro Spray",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "promix-w",
+      "name": "PROMIX W",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "promix-fasad",
+      "name": "PROMIX FASAD",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "textured-anti-vandal",
+      "name": "Текстурная антивандальная",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "betokontakt",
+      "name": "PROMIX Бетоноконтакт",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "mittel-grund",
+      "name": "Миттельгрунт",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "deep-primer",
+      "name": "Грунт глубокого проникновения",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "primer-concentrate",
+      "name": "Грунт-концентрат PROMIX",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "primer-paint",
+      "name": "Грунт-краска PROMIX",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "universal-primer",
+      "name": "Грунт универсальный",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "sous-couche",
+      "name": "PROMIX Су-Куш",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "super-tack-3",
+      "name": "SUPER TACK 3",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "super-tack-7",
+      "name": "SUPER TACK 7",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "super-tack-facade",
+      "name": "SUPER TACK ФАСАД",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "super-tack-facade-silicon",
+      "name": "SUPER TACK ФАСАД SILICON",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "mix-mosaic",
+      "name": "MIX Краска",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "tape-adhesive",
+      "name": "Клей для лент PROMIX",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "plus-top",
+      "name": "PROMIX Plus Top",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "hydro",
+      "name": "Гидроизоляция PROMIX",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "glass-fiber-plus-top",
+      "name": "Малярный стеклохолст PROMIX",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    },
+    {
+      "slug": "nonwoven-plus-top",
+      "name": "Флизелин PROMIX Plus Top",
+      "catalogVisibleNow": true,
+      "inventorySection": "activeProducts"
+    }
+  ],
+  "activeProducts": [
+    {
+      "slug": "promix-h-02",
+      "name": "PROMIX H 0,2",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX H 0,2 — синяя упаковка",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9353.jpeg",
+          "page": 17
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9353.jpeg",
+            "page": 17
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "promix-j",
+      "name": "PROMIX J",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX J",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9350.jpeg",
+          "page": 14
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка: формулировка «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9350.jpeg",
+            "page": 14
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "promix-3in1",
+      "name": "PROMIX 3в1",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX 3в1",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9354.jpeg",
+          "page": 18
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 7,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9354.jpeg",
+            "page": 18
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "promix-f",
+      "name": "PROMIX F",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX F",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9355.jpeg",
+          "page": 19
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9355.jpeg",
+            "page": 19
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "pro-spray-finish",
+      "name": "PROMIX Pro Spray",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX Pro Spray",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9356.jpeg",
+          "page": 20
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9356.jpeg",
+            "page": 20
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "promix-w",
+      "name": "PROMIX W",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX W",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9357.jpeg",
+          "page": 21
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9357.jpeg",
+            "page": 21
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "promix-fasad",
+      "name": "PROMIX FASAD",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX FASAD",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9358.jpeg",
+          "page": 22
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9358.jpeg",
+            "page": 22
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "textured-anti-vandal",
+      "name": "Текстурная антивандальная",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "Текстурная антивандальная PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9359.jpeg",
+          "page": 23
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9359.jpeg",
+            "page": 23
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "betokontakt",
+      "name": "PROMIX Бетоноконтакт",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX Бетоноконтакт",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9344.jpeg",
+          "page": 8
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 6,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Цвет",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка сформулирована в буклете как «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9344.jpeg",
+            "page": 8
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "mittel-grund",
+      "name": "Миттельгрунт",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX-Миттельгрунт концентрат",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9345.jpeg",
+          "page": 9
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 6,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 1
+        },
+        "specLabels": [
+          "Расход концентрата",
+          "Время высыхания",
+          "Цвет",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете указана как «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9345.jpeg",
+            "page": 9
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "deep-primer",
+      "name": "Грунт глубокого проникновения",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": null,
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "manufacturerMatchedTechnicalSource",
+        "composition",
+        "applicationAndDilution",
+        "consumption",
+        "dryingConditions",
+        "applicationTemperature",
+        "storageAndTransportation",
+        "shelfLife",
+        "packaging",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [],
+      "requiredActions": [
+        "Предоставить отдельную утверждённую инструкцию именно для deep-primer.",
+        "Подтвердить готовность к применению/необходимость разбавления; не переносить таблицу primer-concentrate на другой SKU.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "primer-concentrate",
+      "name": "Грунт-концентрат PROMIX",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "Грунт глубокого проникновения PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9347.jpeg",
+          "page": 11
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 6,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 1
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Цвет",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9347.jpeg",
+            "page": 11
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "primer-paint",
+      "name": "Грунт-краска PROMIX",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "Грунт-краска PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9348.jpeg",
+          "page": 12
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 6,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Цвет",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9348.jpeg",
+            "page": 12
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "universal-primer",
+      "name": "Грунт универсальный",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": null,
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "manufacturerMatchedTechnicalSource",
+        "composition",
+        "applicationAndDilution",
+        "consumption",
+        "dryingConditions",
+        "applicationTemperature",
+        "storageAndTransportation",
+        "shelfLife",
+        "packaging",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [],
+      "requiredActions": [
+        "Предоставить отдельную утверждённую инструкцию универсального грунта; в текущем и 2025 сопоставлении отдельной записи нет.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "sous-couche",
+      "name": "PROMIX Су-Куш",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX Су-Куш",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9349.jpeg",
+          "page": 13
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 6,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Цвет",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. В буклете указано: транспортировка при отрицательных температурах не ниже 30 °C, сроком не более 30 дней — формулировка требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 30 дней",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9349.jpeg",
+            "page": 13
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 30 дней. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "super-tack-3",
+      "name": "SUPER TACK 3",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "SUPER TACK 3 PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9340.jpeg",
+          "page": 4
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 7,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Эксплуатация после окраски",
+          "Цвет / база",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Формулировка транспортировки в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9340.jpeg",
+            "page": 4
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "super-tack-7",
+      "name": "SUPER TACK 7",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "SUPER TACK 7 PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9341.jpeg",
+          "page": 5
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 7,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Эксплуатация после окраски",
+          "Цвет / база",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка сформулирована в буклете как «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9341.jpeg",
+            "page": 5
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "super-tack-facade",
+      "name": "SUPER TACK ФАСАД",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "SUPER TACK ФАСАД PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9342.jpeg",
+          "page": 6
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 7,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Набор свойств",
+          "Цвет / база",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Формулировка транспортировки в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9342.jpeg",
+            "page": 6
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "super-tack-facade-silicon",
+      "name": "SUPER TACK ФАСАД SILICON",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "SUPER TACK ФАСАД SILICON PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9343.jpeg",
+          "page": 7
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 7,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Набор свойств",
+          "Цвет / база",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете указана как «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9343.jpeg",
+            "page": 7
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "mix-mosaic",
+      "name": "MIX Краска",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "MIX-краска PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9361.jpeg",
+          "page": 25
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 4,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "application.scope",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [],
+      "requiredActions": [
+        "Уточнить область применения: subtitle указывает наружные и внутренние работы, purpose перечисляет только внутренние помещения. Противоречие соответствует историческому Q27 и сохраняется в текущем JSON.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "tape-adhesive",
+      "name": "Клей для лент PROMIX",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "Клей для лент PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9351.jpeg",
+          "page": 15
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Цвет",
+          "Величина зерна",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9351.jpeg",
+            "page": 15
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "plus-top",
+      "name": "PROMIX Plus Top",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "PROMIX Plus Top",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9360.jpeg",
+          "page": 24
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 0,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 6,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Время высыхания",
+          "Цвет",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "composition",
+        "Состав",
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {
+        "Состав": "На странице нового буклета отдельный раздел «Состав» не указан."
+      },
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Транспортировка в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9360.jpeg",
+            "page": 24
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Предоставить состав именно клея PROMIX Plus Top; в current source отдельный раздел отсутствует. Не заимствовать состав другого клея.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "hydro",
+      "name": "Гидроизоляция PROMIX",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "Гидроизоляция PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9346.jpeg",
+          "page": 10
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 8,
+          "warnings": 1,
+          "storage": 1,
+          "tables": 0
+        },
+        "specLabels": [
+          "Расход",
+          "Толщина слоя",
+          "Время высыхания",
+          "Набор гидроизоляционных свойств",
+          "Цвет",
+          "Морозостойкость",
+          "Срок годности",
+          "Упаковка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "status": "needsReview",
+          "sourceText": "Хранить выше +5 °C. Формулировка транспортировки в буклете: «при отрицательных температурах не ниже 30 °C, сроком не более 21 день» — требует проверки знака температуры.",
+          "rawTemperature": "30 °C",
+          "duration": "не более 21 день",
+          "reason": "Отрицательная температура указана без знака минус.",
+          "publicNotice": "Температурный предел и условия транспортировки при отрицательных температурах требуют подтверждения производителя.",
+          "source": {
+            "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+            "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+            "image": "IMG_9346.jpeg",
+            "page": 10
+          },
+          "origin": "current.needsReview"
+        }
+      ],
+      "requiredActions": [
+        "Подтвердить transportation.temperature: в исходнике «30 °C» без минуса при отрицательных температурах; исходный срок не более 21 день. Не заменять значение на −30 °C догадкой.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "glass-fiber-plus-top",
+      "name": "Малярный стеклохолст PROMIX",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "Малярный стеклохолст PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9362.jpeg",
+          "page": 26
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 3,
+          "warnings": 1,
+          "storage": 0,
+          "tables": 0
+        },
+        "specLabels": [
+          "Срок годности",
+          "Ширина рулона",
+          "Плотность / намотка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "storage",
+        "transportation",
+        "Хранение и транспортировка",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {
+        "Хранение и транспортировка": "Отдельные условия хранения на странице буклета не указаны."
+      },
+      "reviewItems": [],
+      "requiredActions": [
+        "Предоставить условия хранения и транспортировки рулонов стеклохолста.",
+        "Для самостоятельного скачивания подтверждения КМ1 предоставить документ с областью действия именно на этот материал; заявление буклета не является файлом сертификата.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "nonwoven-plus-top",
+      "name": "Флизелин PROMIX Plus Top",
+      "catalogVisible": true,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "blocked_missing_confirmed_material",
+      "contentSource": {
+        "file": "src/data/product-brochure-current.json",
+        "edition": "current",
+        "name": "Флизелин PROMIX",
+        "reference": {
+          "document": "PROMIX_актуальные_данные_из_нового_буклета.md",
+          "controlDocument": "PROMIX_актуальные_данные_из_нового_буклета.docx",
+          "image": "IMG_9363.jpeg",
+          "page": 27
+        },
+        "originalFilesFound": false,
+        "sections": {
+          "purpose": 1,
+          "properties": 1,
+          "composition": 1,
+          "application": 1,
+          "applicationMethod": 1,
+          "specs": 3,
+          "warnings": 0,
+          "storage": 0,
+          "tables": 0
+        },
+        "specLabels": [
+          "Срок годности",
+          "Ширина рулона",
+          "Плотность / намотка"
+        ]
+      },
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "warningsAndRestrictions",
+        "storage",
+        "transportation",
+        "Ограничения / важные замечания",
+        "Хранение и транспортировка",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {
+        "Ограничения / важные замечания": "Отдельные предупреждения на странице буклета не выделены.",
+        "Хранение и транспортировка": "Отдельные условия хранения на странице буклета не указаны."
+      },
+      "reviewItems": [],
+      "requiredActions": [
+        "Предоставить ограничения/предупреждения и условия хранения/транспортировки именно флизелина. Отсутствие раздела не означает отсутствие ограничений.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    }
+  ],
+  "hiddenProducts": [
+    {
+      "slug": "promix-h-03",
+      "name": "PROMIX H 0,3",
+      "catalogVisible": false,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "hidden_by_owner_decision",
+      "contentSource": {
+        "file": "src/data/product-brochure-2025.json",
+        "edition": "2025",
+        "reference": {
+          "document": "Буклет 2025г-1.pdf",
+          "page": 15,
+          "section": "PROMIX H 0,3"
+        },
+        "originalPdfFound": false,
+        "sections": {
+          "description": 2,
+          "characteristics": 6,
+          "application": 2,
+          "storage": 4
+        }
+      },
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "currentSkuTechnicalData",
+        "currentPackagingPhoto",
+        "transportation.temperature",
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [
+        {
+          "field": "transportation.temperature",
+          "source": {
+            "document": "Буклет 2025г-1.pdf",
+            "page": 15
+          },
+          "status": "needsReview",
+          "sourceText": "Транспортировка при отрицательных температурах не ниже 30°С, сроком не более 21 день.",
+          "reason": "В изображении PDF отсутствует минус перед 30 при формулировке об отрицательных температурах.",
+          "duration": "не более 21 день",
+          "origin": "legacy.Q17"
+        }
+      ],
+      "requiredActions": [
+        "Решение владельца: H 0,3 исключён из витрины, остаётся только синий H 0,2. Прямая страница H 0,3 сохранена; перечисленные ниже материалы остаются неподтверждёнными.",
+        "Подтвердить актуальность данных H 0,3 из издания 2025, стр. 15, включая фракцию 0,3 мм.",
+        "Уточнить знак температурного предела перевозки и срок 21 день из Q17.",
+        "Предоставить оригинальное фото актуальной упаковки именно H 0,3; изображение H 0,2 не использовать.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ],
+      "photoEvidence": {
+        "currentAsset": "public/images/products/2026-10/promix-h-03-f281de343a.png",
+        "visibleLabel": "фракция 0,2 мм",
+        "decision": "Не является подтверждённым изображением H 0,3; imageUnavailable сохраняет достоверность.",
+        "historicalScan": "E:/bulat/design/.work-brochure/pages/page-15.png",
+        "historicalScanHeading": "ВЫРАВНИВАЮЩАЯ фракция 0,3 мм PROMIX H",
+        "historicalUseLimit": "Это иллюстрация из издания 2025, не подтверждение актуальной упаковки. Оригинальная текущая pack-photo H 0,3 не найдена."
+      },
+      "originalAuditVisible": true,
+      "ownerDecision": {
+        "source": "deploy/OWNER_DECISIONS_2026-10-26.md",
+        "catalogAction": "exclude_from_catalog_keep_direct_page",
+        "documentsAction": "deferred_until_owner_supplies_current_materials"
+      },
+      "requiredActionsContext": "Historical and retained direct-page readiness; not a request to restore catalog visibility."
+    },
+    {
+      "slug": "pro-spray-improved",
+      "name": "PRO SPRAY Улучшенная",
+      "catalogVisible": false,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "hidden_owner_decision_required",
+      "contentSource": null,
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [],
+      "requiredActions": [
+        "Получить решение по самостоятельному SKU «Улучшенная» и отдельный актуальный лист; не подменять его материалом сопоставленного Pro Spray.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "polymer-putty",
+      "name": "Шпатлёвка полимерная",
+      "catalogVisible": false,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "hidden_owner_decision_required",
+      "contentSource": null,
+      "downloadableDocuments": [
+        {
+          "id": "sgr-shpatlevki-2026",
+          "type": "sgr",
+          "number": "RU.54.HC.01.008.E.000359.04.26",
+          "date": "2026-04-06",
+          "file": "/documents/promix-sgr-shpatlevki-2026.pdf",
+          "exists": true
+        }
+      ],
+      "missingOrUnconfirmedFields": [
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [],
+      "requiredActions": [
+        "Получить актуальные технические данные и решение об ассортименте; наличие СГР не подтверждает полную инструкцию.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    },
+    {
+      "slug": "acrylic-enamel",
+      "name": "Эмаль акриловая",
+      "catalogVisible": false,
+      "technicalSheetFound": false,
+      "eligibleForOfficialTechnicalSheetGeneration": false,
+      "status": "hidden_owner_decision_required",
+      "contentSource": null,
+      "downloadableDocuments": [],
+      "missingOrUnconfirmedFields": [
+        "technicalSheet.file",
+        "technicalSheet.revisionAndSourceConfirmation"
+      ],
+      "sourceAbsences": {},
+      "reviewItems": [],
+      "requiredActions": [
+        "Получить отдельные подтверждённые технические данные акриловой эмали и решение об ассортименте; не смешивать с красками SUPER TACK.",
+        "Утверждённый технический лист не найден; получить файл производителя либо полный подтверждённый набор данных для листа с идентификацией SKU и редакции.",
+        "Сверить источник, версию/дату и область применения перед публикацией; СГР не заменяет технологическую инструкцию."
+      ]
+    }
+  ]
+}

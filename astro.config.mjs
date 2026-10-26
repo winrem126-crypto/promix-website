@@ -4,6 +4,7 @@ import productionAssets from './scripts/production-assets.mjs';
 
 export default defineConfig({
   site: 'https://pro-mix.ru',
+  compressHTML: true,
   integrations: [
     productionAssets(),
     sitemap({ filter: (page) => !/^\/(?:previews?(?:\/|$)|404\/?$)/.test(new URL(page).pathname) }),

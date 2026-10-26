@@ -3,7 +3,7 @@ import '../styles/product-shadow.css';
 interface Props { synchronized?: boolean; }
 const { synchronized = false } = Astro.props;
 ---
-<div class="catalog-ground-plane" aria-hidden="true">
+<div class="catalog-ground-plane" data-shadow-lazy aria-hidden="true">
   {synchronized ? (
     <div class="catalog-ground-source">
       <div class="catalog-ground-diffuse"></div>

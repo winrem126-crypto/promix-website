@@ -388,7 +388,7 @@ html:has(> body.architectural-home) {
   filter:saturate(.65) brightness(.8);
   opacity:0;
   transform:scale(1.015);
-  transition:opacity var(--task-image-duration) var(--task-var(--ease-standard)),transform var(--task-image-duration) var(--task-var(--ease-standard))
+  transition:opacity var(--task-image-duration) var(--task-ease),transform var(--task-image-duration) var(--task-ease)
 }
 .architectural-home .arch-task-visual.is-active .arch-task-image img {
   opacity:1;
@@ -401,7 +401,7 @@ html:has(> body.architectural-home) {
   gap:24px;
   opacity:0;
   transform:translateY(8px);
-  transition:opacity var(--task-copy-duration) var(--task-var(--ease-standard)),transform var(--task-copy-duration) var(--task-var(--ease-standard))
+  transition:opacity var(--task-copy-duration) var(--task-ease),transform var(--task-copy-duration) var(--task-ease)
 }
 .architectural-home .arch-task-visual.is-active .arch-task-detail {
   opacity:1;

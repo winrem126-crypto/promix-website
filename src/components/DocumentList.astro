@@ -19,9 +19,14 @@ const { documents, showScope = false, headingLevel: Heading = 'h3' } = Astro.pro
       <p class="document-date">от <time datetime={document.dateISO}>{document.date}</time></p>
       <p class="document-format">PDF · {documentPageLabel(document.pages)}</p>
     </div>
-    <a class="document-open" href={document.file} target="_blank" rel="noopener noreferrer" aria-label={`Открыть PDF: ${document.title} PROMIX, № ${document.number} (в новой вкладке)`}>
-      Открыть PDF <span aria-hidden="true">↗</span>
-    </a>
+    <div class="document-actions">
+      <a class="document-open" href={document.file} target="_blank" rel="noopener noreferrer" aria-label={`Открыть PDF: ${document.title} PROMIX, № ${document.number} (в новой вкладке)`}>
+        Открыть PDF <span aria-hidden="true">↗</span>
+      </a>
+      <a class="document-open document-download" href={document.file} download aria-label={`Скачать PDF: ${document.title} PROMIX, № ${document.number}`}>
+        Скачать PDF <span aria-hidden="true">↓</span>
+      </a>
+    </div>
   </li>)}
 </ul>
 
@@ -36,12 +41,14 @@ const { documents, showScope = false, headingLevel: Heading = 'h3' } = Astro.pro
   .document-number { overflow-wrap: anywhere; }
   .document-date { color: #46565f; }
   .document-copy .document-format { margin-top: 16px; color: #53616b; font-size: 13px; }
+  .document-actions { display: flex; flex-direction: column; align-items: flex-start; }
   .document-open { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 0; color: #102336; font-size: 15px; line-height: 1.5; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
   .document-open:focus-visible { outline: 2px solid #55151b; outline-offset: 4px; }
   @media (hover: hover) and (pointer: fine) { .document-open:hover { color: #55151b; } }
   @media (max-width: 760px) {
     .document-row { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-bottom: 18px; }
     .document-list .document-title { font-size: 19px; }
+    .document-actions { flex-direction: row; flex-wrap: wrap; gap: 0 24px; }
     .document-open { justify-self: start; }
   }
 </style>

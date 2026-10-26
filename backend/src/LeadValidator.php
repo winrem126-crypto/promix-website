@@ -20,7 +20,7 @@ final class LeadValidator
             'submissionId' => $this->text($payload, 'submissionId', 64, $errors, true),
             'name' => $this->text($payload, 'name', 120, $errors, true),
             'phone' => $this->text($payload, 'phone', 40, $errors, true),
-            'city' => $this->text($payload, 'city', 120, $errors),
+            'city' => $this->text($payload, 'city', 120, $errors, true),
             'message' => $this->text($payload, 'message', 3000, $errors),
             'product' => $this->text($payload, 'product', 160, $errors),
             'productSlug' => $this->text($payload, 'productSlug', 160, $errors),

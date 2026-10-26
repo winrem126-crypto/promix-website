@@ -1,5 +1,7 @@
 # Changed files
 
+> Historical performance-pass inventory. Referenced QA reports and `artifacts/` are local evidence excluded from the current Git snapshot. See `README.md` for the audited version of 26.10.2026.
+
 **Frozen snapshot inventory: 20.10.2026 18:49:09 Europe/Astrakhan. PROVISIONAL.** Current shared project edits continue in another chat. The saved18:59:50 source-freeze check detected subsequent changes to ProductCard.astro and ProductStageScene.astro. Those external changes are not attributed to this performance pass. This table was preserved from the tested snapshot; it is not regenerated against the live working tree and does not imply current-project acceptance.
 
 The two-file observation above is historical, not an exhaustive current drift list. Use the latest `artifacts/performance/final-source-freeze-check.json` for the as-of change list; later edits may include other files.

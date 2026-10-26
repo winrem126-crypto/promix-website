@@ -27,6 +27,14 @@ const observer = new ResizeObserver(entries => {
   entries.forEach(({ target }) => measurements.get(target)?.());
 });
 
+const shadowProximityObserver = typeof IntersectionObserver === 'undefined' ? null : new IntersectionObserver((entries, visibilityObserver) => {
+  entries.forEach(({ isIntersecting, target }) => {
+    if (!isIntersecting) return;
+    target.querySelector<HTMLElement>('.catalog-ground-plane[data-shadow-lazy]')?.setAttribute('data-shadow-active', '');
+    visibilityObserver.unobserve(target);
+  });
+}, { rootMargin: '600px 0px' });
+
 document.querySelectorAll<HTMLElement>('.product-card-visual[data-product-shadow], .product-studio-stage[data-product-shadow]').forEach(stage => {
   if (stage.hasAttribute('data-shadow-initialized')) return;
   const image = stage.querySelector<HTMLImageElement>('img');
@@ -35,6 +43,11 @@ document.querySelectorAll<HTMLElement>('.product-card-visual[data-product-shadow
   const geometry = JSON.parse(stage.dataset.productShadow!) as ShadowGeometry;
   const synchronized = stage.dataset.shadowProfile === 'reference-mineral';
   stage.dataset.shadowInitialized = '';
+  const groundPlane = stage.querySelector<HTMLElement>('.catalog-ground-plane[data-shadow-lazy]');
+  if (groundPlane) {
+    if (shadowProximityObserver) shadowProximityObserver.observe(stage);
+    else groundPlane.dataset.shadowActive = '';
+  }
 
   function measure() {
     const area = stage.getBoundingClientRect();

@@ -7,11 +7,13 @@ import '../styles/cookie-banner.css';
     <svg viewBox="0 0 32 32" fill="none"><path d="M27.5 17a6.5 6.5 0 0 1-8-8 5 5 0 0 1-6-5.2A12.5 12.5 0 1 0 28.3 19a5 5 0 0 1-.8-2Z" /><circle cx="10.5" cy="13" r="1" /><circle cx="19" cy="22" r="1" /><circle cx="10" cy="22" r="1" /><circle cx="16" cy="16.5" r="1" /></svg>
   </span>
   <div class="cookie-content">
-    <h2 id="cookie-banner-title">Мы используем файлы cookie</h2>
-    <p>Они помогают нам анализировать посещаемость и улучшать работу сайта. <button type="button" class="cookie-link" data-cookie-settings aria-haspopup="dialog">Настроить</button></p>
+    <h2 id="cookie-banner-title">Настройки cookie</h2>
+    <p>Аналитика — только с вашего согласия.</p>
   </div>
   <div class="cookie-actions">
-    <button type="button" class="button cookie-accept" data-cookie-accept>Разрешить аналитику <span aria-hidden="true">→</span></button>
+    <button type="button" class="cookie-choice cookie-reject" data-cookie-reject aria-label="Отклонить аналитические cookie">Отклонить</button>
+    <button type="button" class="cookie-choice cookie-accept" data-cookie-accept aria-label="Разрешить аналитические cookie">Разрешить</button>
+    <button type="button" class="cookie-choice cookie-settings" data-cookie-settings aria-haspopup="dialog">Настроить</button>
   </div>
 </div>
 
@@ -21,9 +23,12 @@ import '../styles/cookie-banner.css';
     <label class="toggle-row"><span><strong>Необходимые</strong><small id="cookie-necessary-description">Обеспечивают базовую работу сайта.</small><small class="cookie-always-active">Всегда активны</small></span><input type="checkbox" role="switch" aria-label="Необходимые cookie" aria-describedby="cookie-necessary-description" checked disabled /></label>
     <label class="toggle-row"><span><strong>Аналитика</strong><small id="cookie-analytics-description">Помогает нам понимать, как используется сайт, и улучшать его.</small></span><input type="checkbox" role="switch" data-analytics-toggle aria-label="Разрешить аналитические cookie" aria-describedby="cookie-analytics-description" /></label>
     <p class="cookie-policies"><a href="/cookies/">Политика Cookie</a> и <a href="/personal-data/">Политика обработки персональных данных</a>.</p>
+    <p class="cookie-persistence-status" data-cookie-status role="status" aria-live="polite" hidden></p>
     <menu><button class="button cookie-save" type="button" data-cookie-save>Сохранить выбор</button></menu>
   </form>
 </dialog>
+
+<p class="cookie-storage-status" data-cookie-status role="status" aria-live="polite" hidden></p>
 
 <dialog class="modal consultation-modal" data-consultation-modal aria-modal="true" aria-labelledby="consultation-dialog-title">
   <form class="consult-form" method="post" action="/api/lead.php" data-consult-form>
@@ -64,6 +69,11 @@ import '../styles/cookie-banner.css';
     <p class="form-status" role="status" aria-live="polite" hidden></p>
   </form>
 </dialog>
+
+<script>
+  import { initCookieLayout } from '../scripts/cookie-layout';
+  initCookieLayout();
+</script>
 
 <style>
   .consult-form .form-field { display: grid; gap: 8px; }

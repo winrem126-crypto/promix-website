@@ -144,17 +144,39 @@ window.addEventListener('resize', () => {
 }, { passive: true });
 
 const consentKey = 'promix-cookie-consent';
+const consentDenialKey = 'promix-cookie-denial-v1';
 const consentVersion = 1;
 let currentConsent = null;
+let consentPersisted = false;
 const analyticsToggle = document.querySelector('[data-analytics-toggle]');
 
+const parseConsent = (stored) => {
+  const value = JSON.parse(stored || 'null');
+  return value?.version === consentVersion && value.necessary === true && typeof value.analytics === 'boolean'
+    && typeof value.updatedAt === 'string' && Number.isFinite(Date.parse(value.updatedAt)) ? value : null;
+};
+
 const readConsent = () => {
+  consentPersisted = false;
   try {
-    const value = JSON.parse(localStorage.getItem(consentKey) || 'null');
-    return value?.version === consentVersion ? value : null;
-  } catch {
-    return null;
-  }
+    const denial = parseConsent(sessionStorage.getItem(consentDenialKey));
+    if (denial && !denial.analytics) {
+      try {
+        const stored = JSON.stringify(denial);
+        localStorage.setItem(consentKey, stored);
+        consentPersisted = localStorage.getItem(consentKey) === stored;
+      } catch {}
+      return denial;
+    }
+  } catch {}
+  try {
+    const stored = localStorage.getItem(consentKey);
+    const value = parseConsent(stored);
+    if (!value) return null;
+    localStorage.setItem(consentKey, stored);
+    consentPersisted = localStorage.getItem(consentKey) === stored;
+    return consentPersisted ? value : null;
+  } catch { return null; }
 };
 
 const activateDeferredAnalytics = () => {
@@ -170,14 +192,35 @@ const activateDeferredAnalytics = () => {
 };
 
 const publishConsent = (detail) => {
-  currentConsent = detail;
-  window.dispatchEvent(new CustomEvent('promix:consent', { detail }));
-  if (detail.analytics) activateDeferredAnalytics();
+  currentConsent = detail ? Object.freeze({ ...detail }) : null;
+  window.dispatchEvent(new CustomEvent('promix:consent', { detail: currentConsent ? { ...currentConsent } : { necessary: true, analytics: false } }));
+  if (currentConsent?.analytics) activateDeferredAnalytics();
 };
 
 const saveConsent = (analytics) => {
-  const detail = { version: consentVersion, necessary: true, analytics, updatedAt: new Date().toISOString() };
-  try { localStorage.setItem(consentKey, JSON.stringify(detail)); } catch { /* Consent remains valid for this page. */ }
+  const detail = { version: consentVersion, necessary: true, analytics: analytics === true, updatedAt: new Date().toISOString() };
+  const stored = JSON.stringify(detail);
+  consentPersisted = false;
+  try {
+    localStorage.setItem(consentKey, stored);
+    consentPersisted = localStorage.getItem(consentKey) === stored;
+  } catch {}
+  if (!consentPersisted) {
+    try { localStorage.removeItem(consentKey); } catch {}
+  }
+  if (!detail.analytics || !consentPersisted) {
+    const denial = JSON.stringify({ ...detail, analytics: false });
+    try { sessionStorage.setItem(consentDenialKey, denial); } catch {}
+  } else {
+    try {
+      sessionStorage.removeItem(consentDenialKey);
+      consentPersisted = sessionStorage.getItem(consentDenialKey) === null;
+    } catch { consentPersisted = false; }
+  }
+  document.querySelectorAll('[data-cookie-status]').forEach((status) => {
+    status.textContent = consentPersisted ? '' : 'Выбор действует на этой странице. Браузер не позволяет сохранить настройки; при следующем открытии потребуется новый выбор.';
+    status.hidden = consentPersisted;
+  });
   if (cookieBanner && !cookieBanner.hidden) {
     cookieBanner.inert = true;
     hideSurface(cookieBanner, () => { cookieBanner.hidden = true; });
@@ -187,23 +230,29 @@ const saveConsent = (analytics) => {
 };
 
 const openCookieSettings = (opener) => {
-  const consent = readConsent();
-  if (analyticsToggle) analyticsToggle.checked = Boolean(consent?.analytics);
+  if (analyticsToggle) analyticsToggle.checked = currentConsent?.analytics === true;
   openDialog(cookieModal, opener);
+};
+
+window.promixConsent = {
+  get: () => currentConsent ? { ...currentConsent, persisted: consentPersisted } : null,
+  has: (category) => category === 'necessary' || category === 'analytics' && currentConsent?.analytics === true,
+  openSettings: () => openCookieSettings(document.activeElement),
 };
 
 const initialConsent = readConsent();
 if (!initialConsent && cookieBanner) showSurface(cookieBanner);
-if (initialConsent) publishConsent(initialConsent);
+publishConsent(initialConsent);
 
-window.promixConsent = {
-  get: readConsent,
-  has: (category) => category === 'necessary' || Boolean(readConsent()?.[category]),
-  openSettings: () => openCookieSettings(document.activeElement),
-};
+window.addEventListener('pageshow', (event) => {
+  if (!event.persisted) return;
+  const restoredConsent = readConsent();
+  publishConsent(restoredConsent);
+  if (!restoredConsent && cookieBanner) showSurface(cookieBanner);
+});
 
 document.querySelectorAll('[data-cookie-accept], [data-cookie-accept-all]').forEach((button) => button.addEventListener('click', () => saveConsent(true)));
-document.querySelector('[data-cookie-necessary]')?.addEventListener('click', () => saveConsent(false));
+document.querySelectorAll('[data-cookie-reject], [data-cookie-necessary]').forEach((button) => button.addEventListener('click', () => saveConsent(false)));
 document.querySelectorAll('[data-cookie-settings]').forEach((button) => button.addEventListener('click', (event) => openCookieSettings(event.currentTarget)));
 document.querySelector('[data-cookie-save]')?.addEventListener('click', () => saveConsent(Boolean(analyticsToggle?.checked)));
 
@@ -265,7 +314,9 @@ if (consultationForm) {
   consultationForm.noValidate = true;
   const refreshFieldError = (event) => {
     const field = event.target;
-    if (!consultationFields.includes(field.name) || field.getAttribute('aria-invalid') !== 'true') return;
+    if (!consultationFields.includes(field.name)) return;
+    if (consultationSubmit?.textContent === 'Проверить отправку' && !consultationSubmit.disabled) consultationSubmit.innerHTML = consultationSubmitIdleHtml;
+    if (field.getAttribute('aria-invalid') !== 'true') return;
     setConsultationFieldError(consultationForm, field.name, getConsultationFieldError(field));
     if (!consultationForm.querySelector('[aria-invalid="true"]')) {
       const status = consultationForm.querySelector('.form-status');
@@ -496,97 +547,47 @@ const attributionKey = 'promix-lead-attribution-v1';
 const attributionLifetime = 30 * 60 * 1000;
 const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 let attribution = null;
+let attributionHydrated = false;
+let attributionTimer;
 const safeUtm = (value) => {
   const text = normalizeConsultationText(typeof value === 'string' ? value : '');
   // Campaign labels only: reject control characters, URLs, emails and phone-shaped values.
   return [...text].length <= 255 && !/[\x00-\x1f\x7f@]|https?:\/\/|(?:\+?\d[\s().-]*){7}/i.test(text) ? text : '';
 };
 const applyAttribution = (capture = false) => {
+  clearTimeout(attributionTimer);
+  attributionTimer = undefined;
   if (!currentConsent?.analytics) {
     attribution = null;
-    try { sessionStorage.removeItem(attributionKey); } catch { /* No storage is required. */ }
+    attributionHydrated = true;
   } else {
-    try { attribution = JSON.parse(sessionStorage.getItem(attributionKey) || 'null'); } catch { /* Use this page's memory only. */ }
-    if (!attribution || !Number.isFinite(attribution.expiresAt) || attribution.expiresAt <= Date.now() || attribution.expiresAt > Date.now() + attributionLifetime) attribution = null;
+    if (!attributionHydrated) {
+      try { attribution = JSON.parse(sessionStorage.getItem(attributionKey) || 'null'); } catch {}
+      attributionHydrated = true;
+    }
+    if (!attribution || attribution.consentUpdatedAt !== currentConsent.updatedAt || !Number.isFinite(attribution.expiresAt)
+      || attribution.expiresAt <= Date.now() || attribution.expiresAt > Date.now() + attributionLifetime) attribution = null;
     const params = new URLSearchParams(location.search);
     if (capture && utmKeys.some((key) => params.has(key))) {
-      attribution = { expiresAt: Date.now() + attributionLifetime, values: Object.fromEntries(utmKeys.map((key) => [key, safeUtm(params.get(key))])) };
-      try { sessionStorage.setItem(attributionKey, JSON.stringify(attribution)); } catch { /* Internal navigation cannot persist when storage is unavailable. */ }
+      attribution = { expiresAt: Date.now() + attributionLifetime, consentUpdatedAt: currentConsent.updatedAt, values: Object.fromEntries(utmKeys.map((key) => [key, safeUtm(params.get(key))])) };
+      try { sessionStorage.setItem(attributionKey, JSON.stringify(attribution)); } catch {}
     }
+  }
+  if (!attribution) {
+    try { sessionStorage.removeItem(attributionKey); } catch {}
+  } else {
+    attributionTimer = window.setTimeout(() => applyAttribution(false), Math.max(0, attribution.expiresAt - Date.now()));
   }
   utmKeys.forEach((key) => setConsultationValue(key, currentConsent?.analytics ? safeUtm(attribution?.values?.[key]) : ''));
 };
 applyAttribution(performance.getEntriesByType('navigation')[0]?.type !== 'back_forward');
 window.addEventListener('promix:consent', () => applyAttribution(true));
 window.addEventListener('pageshow', () => applyAttribution(false));
+window.addEventListener('pagehide', () => { clearTimeout(attributionTimer); attributionTimer = undefined; });
 
-// Retain IDs and SHA-256 digests only, never form values. A retry keeps its identity for 24h.
-const submissionKey = 'promix-lead-attempts-v1';
-const submissionHistoryKey = 'promixLeadAttemptsV1';
-const submissionLifetime = 24 * 60 * 60 * 1000;
-let submissionAttempts = [];
-const mergeSubmissionAttempts = (stored) => {
-  if (!Array.isArray(stored)) return;
-  stored.forEach((item) => {
-    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(item?.id || '') || !/^[0-9a-f]{64}$/.test(item?.digest || '') || !['new', 'pending', 'unknown', 'accepted', 'rejected'].includes(item.state) || !Number.isFinite(item.createdAt) || item.createdAt <= Date.now() - submissionLifetime || item.createdAt > Date.now() + 60000) return;
-    const existing = submissionAttempts.find((entry) => entry.id === item.id);
-    if (!existing) { submissionAttempts.push({ ...item }); return; }
-    // A newer rejection of a first attempt resolves its older in-flight snapshot.
-    // Prior uncertainty is preserved by advanceSubmissionState before it is written.
-    const newer = (item.revision || 0) > (existing.revision || 0)
-      || (item.revision || 0) === (existing.revision || 0) && (item.updatedAt || item.createdAt) > (existing.updatedAt || existing.createdAt);
-    const state = existing.state === 'accepted' || item.state === 'accepted' ? 'accepted' : newer ? item.state : existing.state;
-    existing.state = state;
-    existing.eventSent = existing.eventSent || item.eventSent;
-    existing.revision = Math.max(existing.revision || 0, item.revision || 0);
-    existing.updatedAt = Math.max(existing.updatedAt || 0, item.updatedAt || 0);
-  });
-};
-const refreshSubmissionAttempts = () => {
-  try { mergeSubmissionAttempts(JSON.parse(sessionStorage.getItem(submissionKey) || '[]')); } catch { /* History is an independent fallback. */ }
-  try { mergeSubmissionAttempts(history.state?.[submissionHistoryKey]); } catch { /* Sending requires at least one writable persistent store. */ }
-};
-refreshSubmissionAttempts();
-const saveSubmissionAttempts = () => {
-  submissionAttempts = submissionAttempts.filter((item) => item.createdAt > Date.now() - submissionLifetime).slice(-30);
-  submissionAttempts.forEach((item) => { item.updatedAt = Date.now(); item.revision = (Number.isSafeInteger(item.revision) ? item.revision : 0) + 1; });
-  let saved = false;
-  try { sessionStorage.setItem(submissionKey, JSON.stringify(submissionAttempts)); saved = true; } catch { /* Try the current history entry. */ }
-  try {
-    const state = history.state && typeof history.state === 'object' ? history.state : {};
-    history.replaceState({ ...state, [submissionHistoryKey]: submissionAttempts }, '');
-    saved = true;
-  } catch { /* Fail closed before POST when neither store is writable. */ }
-  return saved;
-};
-// Request rejection does not resolve an earlier operation with an uncertain outcome.
-const advanceSubmissionState = (previous, outcome) => {
-  if (previous === 'accepted' || outcome === 'accepted') return 'accepted';
-  if (['pending', 'unknown'].includes(previous) && outcome === 'rejected') return 'unknown';
-  return outcome;
-};
-const identifySubmission = async (payload, signal) => {
-  const content = { ...payload };
-  delete content.startedAt;
-  delete content.submissionId;
-  const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(content)));
-  // A closed dialog has not sent this request. Do not create phantom pending state.
-  if (signal.aborted) return null;
-  // A BFcache document may hold an older copy than the tab's latest confirmed retry.
-  refreshSubmissionAttempts();
-  submissionAttempts = submissionAttempts.filter((item) => item.createdAt > Date.now() - submissionLifetime);
-  const digest = [...new Uint8Array(bytes)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
-  let attempt = submissionAttempts.find((item) => item.digest === digest);
-  if (!attempt && submissionAttempts.some((item) => ['pending', 'unknown'].includes(item.state))) {
-    throw new Error('unresolved-content-change');
-  }
-  if (!attempt) {
-    attempt = { id: crypto.randomUUID(), digest, state: 'new', createdAt: Date.now(), eventSent: false };
-    submissionAttempts.push(attempt);
-  }
-  if (!saveSubmissionAttempts()) throw new Error('submission-persistence-unavailable');
-  return attempt;
-};
+import { advanceSubmissionState, createSubmissionHistory } from './lead-submissions';
+
+const { identifySubmission, refreshSubmissionAttempts, saveSubmissionAttempts } = createSubmissionHistory();
 
 consultationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -622,6 +623,7 @@ consultationForm?.addEventListener('submit', async (event) => {
   const timeout = window.setTimeout(() => controller.abort(), 12000);
   let attempt;
   let previousState;
+  let responseStatus;
   let requestStarted = false;
   let outcomeHandled = false;
 
@@ -643,6 +645,7 @@ consultationForm?.addEventListener('submit', async (event) => {
       body: JSON.stringify(payload),
       signal: controller.signal,
     });
+    responseStatus = response.status;
     const result = await response.json().catch(() => null);
     if (formRequest !== controller) return;
     const outcome = result?.state === 'accepted' && response.ok && result?.ok === true && result?.submissionId === payload.submissionId ? 'accepted'
@@ -690,20 +693,23 @@ consultationForm?.addEventListener('submit', async (event) => {
     }
     if (formRequest !== controller) return;
     status.textContent = error?.message === 'submission-persistence-unavailable'
-      ? 'Не удалось безопасно сохранить идентификатор заявки. Отправка не начата. Свяжитесь с нами по телефону.'
-      : error?.message === 'unresolved-content-change'
-      ? 'Исход предыдущей отправки ещё не установлен. Повторите заявку без изменения полей или свяжитесь с нами по телефону: изменение заявки может создать дубль.'
+      ? 'В этом браузере не удалось подготовить заявку. Отправка не начата. Позвоните нам или попробуйте другой браузер.'
+      : responseStatus === 429
+        ? 'Слишком много обращений. Подождите немного и повторите отправку или позвоните нам.'
       : attempt?.state === 'accepted'
         ? 'Эта заявка уже была подтверждена ранее. Повторную проверку выполнить не удалось. При необходимости свяжитесь с нами по телефону.'
       : attempt?.state === 'pending'
-        ? 'Заявка ещё обрабатывается. Повторите проверку без изменения полей чуть позже.'
-      : attempt?.state === 'unknown' || attempt?.state === 'pending'
-        ? 'Не удалось подтвердить отправку. Повтор без изменения полей проверит ту же заявку. Также можно связаться с нами по телефону.'
+        ? 'Заявка ещё обрабатывается. Проверьте отправку чуть позже. Повтор без изменения полей не создаст новую заявку.'
+      : controller.signal.aborted
+        ? 'Сервер не ответил вовремя. Повторите отправку без изменения полей, чтобы проверить ту же заявку, или измените данные для нового запроса.'
+      : attempt?.state === 'unknown'
+        ? 'Не удалось подтвердить отправку. Повтор без изменения полей проверит ту же заявку. Вы также можете изменить данные для нового запроса или позвонить нам.'
         : 'Заявка не принята. Проверьте поля, попробуйте позже или свяжитесь с нами по телефону.';
     status.dataset.state = 'error';
     status.hidden = false;
     submit.disabled = false;
     submit.innerHTML = consultationSubmitIdleHtml;
+    if (['pending', 'unknown'].includes(attempt?.state)) submit.textContent = 'Проверить отправку';
   } finally {
     window.clearTimeout(timeout);
     if (formRequest === controller) formRequest = undefined;

@@ -11,6 +11,16 @@
   --site-line: #d6dbdb;
 }
 
+.skip-link {
+  position: fixed; z-index: 100; top: 12px; left: 12px;
+  max-width: calc(100vw - 24px); padding: 12px 18px;
+  border: 2px solid #102336; background: #fff; color: #102336;
+  font: 500 15px/1.5 Inter, sans-serif; text-decoration: underline;
+  transform: translateY(calc(-100% - 24px));
+}
+.skip-link:focus { transform: none; outline: 3px solid #55151b; outline-offset: 3px; }
+#main-content { scroll-margin-top: calc(var(--site-header-height) + 16px); }
+
 .site-header {
   position: sticky; z-index: 40; top: 0; left: 0; right: 0;
   height: var(--site-header-height);

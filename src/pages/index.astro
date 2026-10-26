@@ -32,7 +32,8 @@ const schema = {
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
   <SiteHeader />
-  <main id="top" class="arch-main">
+  <main id="main-content" class="arch-main" tabindex="-1">
+    <div id="top" aria-hidden="true"></div>
     <HomeHero />
     <HomeProducts />
 <ArchitecturalTasks />

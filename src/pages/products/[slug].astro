@@ -9,6 +9,7 @@ import DocumentList from '../../components/DocumentList.astro';
 import { getProductDocuments } from '../../data/documents';
 import { products, catalogProducts, type Product } from '../../data/products';
 import { getProductBrochure } from '../../data/product-brochure';
+import productSeoDescriptions from '../../data/product-seo.json';
 import ProductStudioImage from '../../components/ProductStudioImage.astro';
 import '../../styles/product-detail.css';
 
@@ -27,7 +28,8 @@ const mediaKind = product.imageLayout;
 const highlights = product.specs.filter((spec) => !['Назначение', 'Состояние'].includes(spec.label) && spec.value.length <= 40).slice(0, 2);
 const hasSpecs = product.specs.length > 0 || product.surfaces.length > 0;
 const longDescription = product.description.length > 360;
-const metaDescription = brochure?.edition === 'current' ? `${product.name} — ${product.catalogPurpose}.` : product.description;
+const metaDescription = productSeoDescriptions[product.slug as keyof typeof productSeoDescriptions];
+if (!metaDescription) throw new Error(`Missing product SEO description: ${product.slug}`);
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -42,7 +44,7 @@ const schema = {
 <BaseLayout title={product.name + ' — ' + product.subtitle + ' | PROMIX'} description={metaDescription} canonical={'/products/' + product.slug + '/'} image={product.imageUnavailable ? '/images/hero-architecture-no-product-1600.webp' : product.image} pageClass="product-page">
   <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
   <SiteHeader />
-  <main class="product-main pd-main">
+  <main id="main-content" class="product-main pd-main" tabindex="-1">
     <nav class="pd-breadcrumbs" aria-label="Хлебные крошки">
       <a href="/">Главная</a><span aria-hidden="true">/</span><a href="/products/">Продукция</a><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span>
     </nav>
@@ -78,10 +80,13 @@ const schema = {
       </>}
       <section class="pd-section pd-brochure-section" id="documents" aria-labelledby="documents-title">
         <h2 id="documents-title">Документы</h2>
-        {productDocuments.length > 0 ? <DocumentList documents={productDocuments} /> : <div class="pd-section-content">
-          <p>Документы на этот материал можно запросить у специалиста PROMIX.</p>
-          <button class="button button-primary pd-document-request" type="button" data-open-form data-form-context="product-support" data-product-name={product.name} data-product-slug={product.slug} data-form-title={`Запросить документы на ${product.name}`} data-form-message={`Прошу предоставить актуальные документы на ${product.name}: технический лист и документы, подтверждающие соответствие продукции.`}>Запросить документы</button>
-        </div>}
+        <div class="pd-section-content">
+          {productDocuments.length > 0 && <DocumentList documents={productDocuments} />}
+          {!productDocuments.some((document) => document.documentType === 'technical-sheet') && <div class="pd-section-content">
+            <p>Технический лист на этот материал можно запросить у специалиста PROMIX.</p>
+            <button class="button button-primary pd-document-request" type="button" data-open-form data-form-context="product-support" data-product-name={product.name} data-product-slug={product.slug} data-form-title={`Запросить документы на ${product.name}`} data-form-message={`Прошу предоставить актуальные документы на ${product.name}: технический лист и документы, подтверждающие соответствие продукции.`}>Запросить технический лист</button>
+          </div>}
+        </div>
       </section>
     </div>
     <aside class="pd-support" aria-label="Помощь с применением">
