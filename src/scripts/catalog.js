@@ -1,3 +1,5 @@
+import { t, formatMaterialCount } from '../i18n/runtime';
+
 const catalogCards = [...document.querySelectorAll('[data-catalog-card]')];
 const filterButtons = [...document.querySelectorAll('[data-filter-group]')];
 const searchInput = document.querySelector('[data-catalog-search]');
@@ -66,7 +68,7 @@ const synonymGroups = [
   ['флиз', 'флизелин', 'нетканый'],
   ['краска', 'окраска', 'окрашивание'],
   ['гидроизоляция', 'влагозащита', 'влажный'],
-];
+].map((group) => [...new Set(group.flatMap((word) => [word, t(word)]))]);
 const shortIndexAliases = new Map([
   ['w', 'w'], ['ц', 'w'],
   ['h', 'h'], ['р', 'h'],
@@ -75,10 +77,16 @@ const shortIndexAliases = new Map([
 ]);
 
 const normalize = (value = '') => value
-  .toLocaleLowerCase('ru-RU')
+  .normalize('NFKC')
+  // Neutral Unicode casing keeps printed Latin product codes searchable in
+  // every locale, including Azerbaijani (where ASCII I otherwise becomes ı).
+  .toLowerCase()
+  .replaceAll('\u0307', '')
+  .replaceAll('ı', 'i')
   .replaceAll('ё', 'е')
+  .replace(/[’‘ʻʼʹ`]/g, "'")
   .replace(/[‐‑‒–—−-]+/g, ' ')
-  .replace(/[^a-zа-я0-9]+/gi, ' ')
+  .replace(/[^\p{L}\p{N}]+/gu, ' ')
   .trim()
   .replace(/\s+/g, ' ');
 
@@ -104,7 +112,8 @@ const preparedCards = catalogCards.map((card, order) => ({
   name: normalize(card.dataset.searchName),
   category: normalize(card.dataset.searchCategory),
   purpose: normalize(card.dataset.searchPurpose),
-  keywords: normalize(card.dataset.searchKeywords),
+  // Keep the localized card title searchable alongside the full product name.
+  keywords: normalize([card.dataset.searchKeywords, card.querySelector('h2, h3')?.textContent].filter(Boolean).join(' ')),
   shortName: normalize(card.dataset.searchShort),
   series: normalize(card.dataset.searchSeries),
 }));
@@ -159,6 +168,10 @@ const scoreProduct = (product, tokens, shortQuery = '') => {
     const exactIndex = product.shortName === shortQuery;
     return { total: exactIndex ? 1000 : 0, matchedTokens: exactIndex ? 1 : 0 };
   }
+  // A printed PROMIX series letter is a product code, not the initial of an
+  // ordinary translated word such as "high" or "finish".
+  const seriesCode = tokens.includes('promix') ? tokens.find(token => ['h', 'j', 'w', 'f'].includes(token)) : undefined;
+  if (seriesCode && product.shortName !== seriesCode) return { total: 0, matchedTokens: 0 };
   let total = 0;
   let matchedTokens = 0;
   tokens.forEach((token) => {
@@ -174,14 +187,6 @@ const scoreProduct = (product, tokens, shortQuery = '') => {
   });
   if (matchedTokens === tokens.length && tokens.length > 1) total += tokens.length * 18;
   return { total, matchedTokens };
-};
-
-const pluralMaterials = (count) => {
-  const mod10 = count % 10;
-  const mod100 = count % 100;
-  if (mod10 === 1 && mod100 !== 11) return `${count} материал`;
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${count} материала`;
-  return `${count} материалов`;
 };
 
 const matchesActiveFilters = (card) => {
@@ -217,7 +222,7 @@ const applyCatalogFilters = () => {
     if (grid?.children[index] !== card) grid?.insertBefore(card, grid.children[index] ?? null);
   });
 
-  if (countOutput) countOutput.textContent = pluralMaterials(visible.length);
+  if (countOutput) countOutput.textContent = formatMaterialCount(visible.length);
   if (emptyState) emptyState.hidden = visible.length !== 0;
   const hasFilters = activeFilters.category !== 'all' || activeFilters.task !== 'all' || Boolean(activeFilters.query);
   resetButtons.forEach((button) => { button.hidden = !hasFilters; });
@@ -236,7 +241,7 @@ const renderCatalog = () => {
     button.setAttribute('aria-pressed', String(active));
   });
   if (categorySelect) categorySelect.value = activeFilters.category;
-  if (categoryTitle) categoryTitle.textContent = categorySelect?.selectedOptions[0]?.textContent ?? 'Все материалы';
+  if (categoryTitle) categoryTitle.textContent = categorySelect?.selectedOptions[0]?.textContent ?? t('Все материалы');
   productGrid?.toggleAttribute('data-category-filtered', activeFilters.category !== 'all');
   if (searchInput && searchInput.value !== activeFilters.query) searchInput.value = activeFilters.query;
   taskSummaries.forEach((summary) => {

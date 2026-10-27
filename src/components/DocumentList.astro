@@ -15,7 +15,7 @@ const { documents, showScope = false, headingLevel: Heading = 'h3' } = Astro.pro
     <div class="document-copy">
       <Heading class="document-title">{document.title}</Heading>
       {showScope && <p class="document-scope">{document.scope}</p>}
-      <p class="document-number">№ {document.number}</p>
+      <p class="document-number" data-i18n-skip>№ {document.number}</p>
       <p class="document-date">от <time datetime={document.dateISO}>{document.date}</time></p>
       <p class="document-format">PDF · {documentPageLabel(document.pages)}</p>
     </div>

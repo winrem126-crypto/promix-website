@@ -6,13 +6,14 @@ import '../styles/product-category-showcase.css';
 interface Props { previewVariant?: 'final'; }
 
 const sceneRoot = '/images/home-category-cards/clean-ui-2026-10';
+const sceneId = (id: string) => id === 'paints' ? 'paints-super-tack-7-46ad6d760c5e' : id;
 const sceneWidths = [480, 768, 960, 1440];
 const sceneSizes = '(max-width: 760px) calc(100vw - 44px), (max-width: 1100px) calc((100vw - 84px) / 2), (max-width: 1496px) calc((91.6vw - 40px) / 3), 443px';
 // Tiny photo previews are inline so cards never wait for a separate placeholder request.
 const scenePreviews: Record<string, string> = {
   putties: 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwBACdASoeABQAPv1sq06rJiOiMBgMAWAfiWQAzNBX8M2Pfe5qS/VjbwPLDU4dnUAA/vfuZyGunGMCRekfYPOE91FS8PnF8kwJvhqOnKC6/5fz3Puv/zMJQRwVn+7c7+K/4Zjqg9IGsNEpjUhEAA==',
   primers: 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwBACdASoeABQAPwFyrFGrJqOiqA1RYCAJQBndiLvpHTdSFCZHLonDjUfF8vUAAP736ZPP+ILjZIgAQ+1euE5Wmxy/cN7mUVMpCCqIB4FKG7MFIdpbXKPj0p+Bwif9ydtVPJJYwZQxRAhEAAAAAA==',
-  paints: 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABwBACdASoeABQAPu1eqE6ppSQiN/qoATAdiWcAy6Qhuqs2n1SVR/mgupnBsAD+8dAlF7BIR5NRXHjVk1/zCaPVy9wVQ7eJJuA9hZbf6OTeQNe/5EEqrYlUQ4w2S1cZT1WEFBjrQHT4gDVoKVugAA==',
+  paints: 'data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQBACdASoeABQAPymCtlSuKCSjMBgIAcAlCWUAxzA0gB8FhSPfWFNG4DOAAP7v0JKxf54bxg7+3OpsVoEkwfg1d+dNRmuGRKn76S+/UwiteijqIF34Z69iRkFptHbRpDYXdKVVFXuuoAS5x2Q5IbDj8CeLzuxqiiFeCxvy0lScHAHCbUpogAAA',
   adhesives: 'data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwBACdASoeABQAPwFyr0+rJyQiMAgBYCAJZwC9WCFrzlwgYxsfrs4mlB6LUqpUBIAA/u/DqdbczZJEODRtgoYPtc82wgNkKqjebIO+2vfbD6MjZvWc51PCrpdjvPT2HH7J8DXoAAA=',
   waterproofing: 'data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwBACdASoeABQAPwFyrVGrJqQiqA1RYCAJYwAAvY5O/yjdzBBf+dWKkIyRiKNVO4AA/vfurI4Jjit8dji7WBnV0eBqguofy+JSsDoqExTSoBdllMT1BLkqfNxZHynutE2KMwJq8AA=',
   'roll-materials': 'data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwBACdASoeABQAPwF0sVIrJqSiqAqpYCAJYwABHui86mB+ikUlXpytI7EV/6glb+AA/voh6tzqf5nOSA7qpom3qqHKInaPJptvJDdHq45N+Iy3Z+AsGkOcrzDBDW5yPh2EuD8G2IYmYUdhupkQFD+z1hbMn/nYk6RimIAA',
@@ -45,10 +46,10 @@ const materialCount = (count: number) => {
         style={`--category-preview: url("${scenePreviews[category.id]}")`}>
         <picture>
           <source type="image/webp"
-            srcset={sceneWidths.map((width) => `${sceneRoot}/${category.id}-${width}.webp ${width}w`).join(', ')}
+            srcset={sceneWidths.map((width) => `${sceneRoot}/${sceneId(category.id)}-${width}.webp ${width}w`).join(', ')}
             sizes={sceneSizes} />
           <img class="home-category-scene"
-            src={`${sceneRoot}/${category.id}-960.jpg`}
+            src={category.id === 'paints' ? `${sceneRoot}/paints-super-tack-7-46ad6d760c5e-960.png` : `${sceneRoot}/${category.id}-960.jpg`}
             width="960" height="640" alt="" loading="lazy" decoding="async" />
         </picture>
       </span>

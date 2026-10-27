@@ -31,7 +31,8 @@ export const documents: readonly ProductDocument[] = [
     productIds: [
       'pro-spray-finish', // «шпатлевка финишная PROMIX Pro Spray»
       'promix-f', // «шпатлевка супер финишная PROMIX F»
-      'promix-h-02', // Both grain sizes belong to the PROMIX H series.
+      'promix-h-02', // «шпатлевка выравнивающая PROMIX H»
+      'promix-h-02-hard', // The same registered PROMIX H series, red H 0,2 variant.
       'promix-h-03', // «шпатлевка выравнивающая PROMIX H»
       'promix-w', // «шпатлевка влагостойкая PROMIX W»
       'promix-j', // «шпатлевка шовная PROMIX J»

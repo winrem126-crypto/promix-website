@@ -1,3 +1,5 @@
+import { t } from '../i18n/runtime';
+
 export function initFinishingSystems() {
   document.querySelectorAll<HTMLElement>('[data-finishing-system]').forEach((section) => {
     if (section.hasAttribute('data-enhanced')) return;
@@ -22,7 +24,7 @@ export function initFinishingSystems() {
     const activate = (index: number) => {
       active = index;
       exitLabels.forEach((label) => {
-        label.textContent = index === steps.length - 1 ? 'Далее — производство' : 'Пропустить этапы';
+        label.textContent = index === steps.length - 1 ? t('Далее — производство') : t('Пропустить этапы');
       });
       steps.forEach((step, i) => { step.dataset.active = String(i === index); });
       panels.forEach((panel, i) => {

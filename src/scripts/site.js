@@ -1,3 +1,5 @@
+import { t } from '../i18n/runtime';
+
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('#mobile-menu');
@@ -75,7 +77,7 @@ reducedMotion.addEventListener('change', () => {
 const setMobileMenu = (open) => {
   if (!menuButton || !mobileMenu) return;
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  menuButton.setAttribute('aria-label', open ? t("Закрыть меню") : t("Открыть меню"));
   cancelClosing(mobileMenu);
   mobileMenu.hidden = !open;
   mobileMenu.inert = !open;
@@ -218,7 +220,7 @@ const saveConsent = (analytics) => {
     } catch { consentPersisted = false; }
   }
   document.querySelectorAll('[data-cookie-status]').forEach((status) => {
-    status.textContent = consentPersisted ? '' : 'Выбор действует на этой странице. Браузер не позволяет сохранить настройки; при следующем открытии потребуется новый выбор.';
+    status.textContent = consentPersisted ? '' : t("Выбор действует на этой странице. Браузер не позволяет сохранить настройки; при следующем открытии потребуется новый выбор.");
     status.hidden = consentPersisted;
   });
   if (cookieBanner && !cookieBanner.hidden) {
@@ -263,11 +265,11 @@ const setConsultationValue = (name, value = '') => {
 
 const consultationFields = ['name', 'phone', 'city', 'message', 'consent'];
 const consultationFieldMessages = {
-  name: 'Укажите имя: не более 120 символов, без переносов строк.',
-  phone: 'Укажите телефон: от 7 до 15 цифр. Допустимы +, скобки, пробелы, точка и дефис; не более 40 символов.',
-  city: 'Укажите город: не более 120 символов, без переносов строк.',
-  message: 'Сократите комментарий до 3000 символов.',
-  consent: 'Необходимо согласие на обработку персональных данных.',
+  name: t("Укажите имя: не более 120 символов, без переносов строк."),
+  phone: t("Укажите телефон: от 7 до 15 цифр. Допустимы +, скобки, пробелы, точка и дефис; не более 40 символов."),
+  city: t("Укажите город: не более 120 символов, без переносов строк."),
+  message: t("Сократите комментарий до 3000 символов."),
+  consent: t("Необходимо согласие на обработку персональных данных."),
 };
 const normalizeConsultationText = (value) => value.replace(/\0/g, '').trim();
 const getConsultationFieldError = (field) => {
@@ -275,7 +277,7 @@ const getConsultationFieldError = (field) => {
   const value = normalizeConsultationText(field.value);
   const length = [...value].length;
   if (field.name === 'name') {
-    if (!value) return 'Введите имя.';
+    if (!value) return t("Введите имя.");
     if (length > 120 || /[\r\n]/.test(value)) return consultationFieldMessages.name;
   } else if (field.name === 'phone') {
     const digits = value.replace(/[^0-9]/g, '');
@@ -283,7 +285,7 @@ const getConsultationFieldError = (field) => {
     if (length > 40 || digits.length < 7 || digits.length > 15 || /[\r\n]/.test(value) || !/^[0-9+() \t\f\v.-]+$/.test(value)) return consultationFieldMessages.phone;
   } else if (field.name === 'city') {
     // Keep the existing required city field; the backend also limits its length and line breaks.
-    if (!value) return 'Введите город.';
+    if (!value) return t("Введите город.");
     if (length > 120 || /[\r\n]/.test(value)) return consultationFieldMessages.city;
   } else if (field.name === 'message' && length > 3000) return consultationFieldMessages.message;
   return '';
@@ -302,7 +304,7 @@ const clearConsultationErrors = (form) => {
 };
 const showConsultationValidation = (form, names) => {
   const status = form.querySelector('.form-status');
-  status.textContent = 'Проверьте отмеченные поля.';
+  status.textContent = t("Проверьте отмеченные поля.");
   status.dataset.state = 'validation';
   status.hidden = false;
   // Use document order even if the server returns its field names in a different order.
@@ -315,7 +317,7 @@ if (consultationForm) {
   const refreshFieldError = (event) => {
     const field = event.target;
     if (!consultationFields.includes(field.name)) return;
-    if (consultationSubmit?.textContent === 'Проверить отправку' && !consultationSubmit.disabled) consultationSubmit.innerHTML = consultationSubmitIdleHtml;
+    if (consultationSubmit?.textContent === t("Проверить отправку") && !consultationSubmit.disabled) consultationSubmit.innerHTML = consultationSubmitIdleHtml;
     if (field.getAttribute('aria-invalid') !== 'true') return;
     setConsultationFieldError(consultationForm, field.name, getConsultationFieldError(field));
     if (!consultationForm.querySelector('[aria-invalid="true"]')) {
@@ -338,13 +340,13 @@ const prepareConsultation = (button) => {
   const sourcePage = location.pathname;
   const source = context === 'partnership' ? 'partnership' : context === 'header' ? 'header' : context === 'catalog-empty' ? 'catalog' : sourcePage;
   const copy = {
-    partnership: ['Для B2B', 'Стать партнёром PROMIX'],
-    'product-consultation': ['Консультация по продукту', product ? `Консультация по ${product}` : 'Консультация по продукции'],
-    'product-support': ['Применение материала', product ? `Обсудить применение ${product}` : 'Обсудить применение материала'],
-    header: ['Консультация', 'Расскажите о проекте'],
-    'catalog-empty': ['Подбор материала', 'Поможем подобрать материал'],
-    general: ['Консультация', 'Расскажите о проекте'],
-  }[context] || ['Консультация', 'Расскажите о проекте'];
+    partnership: [t("Для B2B"), t("Стать партнёром PROMIX")],
+    'product-consultation': [t("Консультация по продукту"), product ? t("Консультация по {product}", { product }) : t("Консультация по продукции")],
+    'product-support': [t("Применение материала"), product ? t("Обсудить применение {product}", { product }) : t("Обсудить применение материала")],
+    header: [t("Консультация"), t("Расскажите о проекте")],
+    'catalog-empty': [t("Подбор материала"), t("Поможем подобрать материал")],
+    general: [t("Консультация"), t("Расскажите о проекте")],
+  }[context] || [t("Консультация"), t("Расскажите о проекте")];
 
   if (consultationLabel) consultationLabel.textContent = copy[0];
   if (consultationTitle) consultationTitle.textContent = button.dataset.formTitle || copy[1];
@@ -613,7 +615,7 @@ consultationForm?.addEventListener('submit', async (event) => {
   payload.consent = formData.get('consent') === 'true';
 
   submit.disabled = true;
-  submit.textContent = 'Отправляем…';
+  submit.textContent = t("Отправляем…");
   status.hidden = true;
   status.textContent = '';
   delete status.dataset.state;
@@ -667,8 +669,8 @@ consultationForm?.addEventListener('submit', async (event) => {
     }
     if (!response.ok || result?.ok !== true || result?.state !== 'accepted' || result?.submissionId !== payload.submissionId) throw new Error('Lead request was not accepted');
 
-    status.textContent = 'Спасибо. Заявка отправлена. Мы свяжемся с вами.';
-    submit.textContent = 'Запрос отправлен';
+    status.textContent = t("Спасибо. Заявка отправлена. Мы свяжемся с вами.");
+    submit.textContent = t("Запрос отправлен");
     status.dataset.state = 'success';
     status.hidden = false;
     form.querySelectorAll('input:not([type="hidden"]), textarea').forEach((field) => { field.disabled = true; });
@@ -693,23 +695,23 @@ consultationForm?.addEventListener('submit', async (event) => {
     }
     if (formRequest !== controller) return;
     status.textContent = error?.message === 'submission-persistence-unavailable'
-      ? 'В этом браузере не удалось подготовить заявку. Отправка не начата. Позвоните нам или попробуйте другой браузер.'
+      ? t("В этом браузере не удалось подготовить заявку. Отправка не начата. Позвоните нам или попробуйте другой браузер.")
       : responseStatus === 429
-        ? 'Слишком много обращений. Подождите немного и повторите отправку или позвоните нам.'
+        ? t("Слишком много обращений. Подождите немного и повторите отправку или позвоните нам.")
       : attempt?.state === 'accepted'
-        ? 'Эта заявка уже была подтверждена ранее. Повторную проверку выполнить не удалось. При необходимости свяжитесь с нами по телефону.'
+        ? t("Эта заявка уже была подтверждена ранее. Повторную проверку выполнить не удалось. При необходимости свяжитесь с нами по телефону.")
       : attempt?.state === 'pending'
-        ? 'Заявка ещё обрабатывается. Проверьте отправку чуть позже. Повтор без изменения полей не создаст новую заявку.'
+        ? t("Заявка ещё обрабатывается. Проверьте отправку чуть позже. Повтор без изменения полей не создаст новую заявку.")
       : controller.signal.aborted
-        ? 'Сервер не ответил вовремя. Повторите отправку без изменения полей, чтобы проверить ту же заявку, или измените данные для нового запроса.'
+        ? t("Сервер не ответил вовремя. Повторите отправку без изменения полей, чтобы проверить ту же заявку, или измените данные для нового запроса.")
       : attempt?.state === 'unknown'
-        ? 'Не удалось подтвердить отправку. Повтор без изменения полей проверит ту же заявку. Вы также можете изменить данные для нового запроса или позвонить нам.'
-        : 'Заявка не принята. Проверьте поля, попробуйте позже или свяжитесь с нами по телефону.';
+        ? t("Не удалось подтвердить отправку. Повтор без изменения полей проверит ту же заявку. Вы также можете изменить данные для нового запроса или позвонить нам.")
+        : t("Заявка не принята. Проверьте поля, попробуйте позже или свяжитесь с нами по телефону.");
     status.dataset.state = 'error';
     status.hidden = false;
     submit.disabled = false;
     submit.innerHTML = consultationSubmitIdleHtml;
-    if (['pending', 'unknown'].includes(attempt?.state)) submit.textContent = 'Проверить отправку';
+    if (['pending', 'unknown'].includes(attempt?.state)) submit.textContent = t("Проверить отправку");
   } finally {
     window.clearTimeout(timeout);
     if (formRequest === controller) formRequest = undefined;

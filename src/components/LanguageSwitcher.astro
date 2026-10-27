@@ -1,0 +1,35 @@
+---
+import '../styles/language-switcher.css';
+import { LOCALES } from '../i18n/config.mjs';
+const languages = LOCALES.map(language => [language.code, language.native]);
+const russianPath = Astro.url.pathname.replace(/^\/(?:en|uz|kk|tg|az|ky|be|hy|ka|tk)(?=\/|$)/, '') || '/';
+const languageHref = (locale: string) => locale === 'ru' ? russianPath : `/${locale}${russianPath}`;
+---
+
+<details class="language-switcher" data-language-switcher>
+  <summary class="language-switcher-trigger" data-language-trigger aria-label="Выбрать язык: Русский" aria-controls="site-language-list">
+    <span data-language-current data-i18n-skip>RU</span>
+    <span class="language-switcher-chevron" aria-hidden="true"></span>
+  </summary>
+  <div class="language-switcher-panel" id="site-language-list">
+    <p class="language-switcher-label">Язык сайта</p>
+    <nav aria-label="Язык сайта">
+      {languages.map(([locale, name]) => <a
+        class="language-switcher-choice"
+        href={languageHref(locale)}
+        lang={locale}
+        hreflang={locale}
+        data-language-option
+        data-locale={locale}
+        aria-current={locale === 'ru' ? 'true' : undefined}
+      >
+        <span data-i18n-skip>{name}</span>
+        <span class="language-switcher-check" data-language-check aria-hidden="true" hidden={locale !== 'ru'}>✓</span>
+      </a>)}
+    </nav>
+  </div>
+</details>
+
+<script>
+  import '../scripts/language-switcher';
+</script>

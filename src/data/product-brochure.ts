@@ -1,5 +1,5 @@
 import rawBrochures from './product-brochure-2025.json';
-import { getCurrentBrochure, type CurrentBrochure } from './current-brochure';
+import { getCurrentBrochure, getCurrentRollFormats, type CurrentBrochure } from './current-brochure';
 import type { Product } from './products';
 
 export type BrochureGroup = 'description' | 'characteristics' | 'application' | 'storage';
@@ -39,6 +39,11 @@ function currentProductBrochure(current: CurrentBrochure): ProductBrochure {
   const block = (id: string, heading: string, paragraphs: string[], warning = false): BrochureBlock[] =>
     paragraphs.length ? [{ id, heading, paragraphs, warning, source }] : [];
   const storageSpecs = current.specs.filter((spec) => ['Морозостойкость', 'Срок годности', 'Упаковка'].includes(spec.label));
+  // These retained structured rows match the confirmed manufacturer formats;
+  // densities are table values, never inferred official grade identifiers.
+  const glassFiberFormats = current.productSlug === 'glass-fiber-plus-top'
+    ? brochures[current.productSlug].groups.storage.flatMap((entry) => entry.rollFormats ?? [])
+    : [];
   return {
     edition: 'current',
     source,
@@ -51,7 +56,15 @@ function currentProductBrochure(current: CurrentBrochure): ProductBrochure {
         ...block('properties', 'Свойства', current.properties),
         ...block('composition', 'Состав', current.composition),
       ],
-      characteristics: [],
+      characteristics: glassFiberFormats.length ? [{
+        id: 'roll-formats',
+        heading: 'Плотность и размеры рулонов',
+        table: {
+          headers: ['Плотность, г/м²', 'Ширина, м', 'Длина, м'],
+          rows: glassFiberFormats.map((format) => [format.density, format.width, format.length]),
+        },
+        source,
+      }] : [],
       application: [
         ...block('application', 'Подготовка основания и порядок работ', current.application),
         ...current.tables.map((table): BrochureBlock => ({ id: 'dilution', heading: table.heading, table, source })),
@@ -89,7 +102,7 @@ export function resolveBrochureText(text: string, product: Product): string {
 // preserve the existing catalog values and order; the detail table uses the
 // very same formats, including the density-to-length association.
 export function rollCatalogSpecs(slug: string): Product['specs'] {
-  const formats = brochures[slug]?.groups.storage.flatMap((block) => block.rollFormats ?? []);
+  const formats = getCurrentRollFormats(slug) ?? brochures[slug]?.groups.storage.flatMap((block) => block.rollFormats ?? []);
   if (!formats?.length) throw new Error(`Missing roll formats: ${slug}`);
   const format = formats[0];
   return [

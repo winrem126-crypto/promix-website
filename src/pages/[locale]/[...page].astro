@@ -1,0 +1,25 @@
+---
+import Home from '../index.astro';
+import Catalog from '../products/index.astro';
+import ProductPage from '../products/[slug].astro';
+import Documents from '../documents/index.astro';
+import Privacy from '../privacy.astro';
+import Cookies from '../cookies.astro';
+import PersonalData from '../personal-data.astro';
+import { products } from '../../data/products';
+import { TARGET_LOCALES } from '../../i18n/config.mjs';
+
+export function getStaticPaths() {
+  const pages = [
+    { page: undefined, kind: 'home' }, { page: 'products', kind: 'catalog' },
+    { page: 'documents', kind: 'documents' }, { page: 'privacy', kind: 'privacy' },
+    { page: 'cookies', kind: 'cookies' }, { page: 'personal-data', kind: 'personalData' },
+    ...products.map(product => ({ page: 'products/' + product.slug, kind: 'product', product })),
+  ];
+  return TARGET_LOCALES.flatMap(language => pages.map(({ page, ...props }) => ({ params: { locale: language.code, page }, props })));
+}
+const { kind, product } = Astro.props;
+const components = { home: Home, catalog: Catalog, documents: Documents, privacy: Privacy, cookies: Cookies, personalData: PersonalData };
+const Page = components[kind as keyof typeof components] ?? Home;
+---
+{kind === 'product' && product ? <ProductPage product={product} /> : <Page />}

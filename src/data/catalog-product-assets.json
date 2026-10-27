@@ -1201,19 +1201,19 @@
     "originalFilename": "PROMIX_SU_KUSH.png"
   },
   "super-tack-3": {
-    "image": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-1600.webp",
+    "image": "/images/products/catalog-2026-10/super-tack-3-c112b8672ccf-1600.webp",
     "sources": [
       {
         "width": 640,
-        "url": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-640.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-3-c112b8672ccf-640.webp"
       },
       {
         "width": 960,
-        "url": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-960.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-3-c112b8672ccf-960.webp"
       },
       {
         "width": 1600,
-        "url": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-1600.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-3-c112b8672ccf-1600.webp"
       }
     ],
     "frame": {
@@ -1257,23 +1257,27 @@
       "groundMask": "/images/products/catalog-2026-10/super-tack-3-952003b7c139-ground-4ebc55903049.svg",
       "profile": "reference-mineral"
     },
-    "sourceHash": "952003b7c139",
-    "originalFilename": "PROMIX_Super_Tack_3.png"
+    "sourceHash": "c112b8672ccf",
+    "originalFilename": "PROMIX_Super_Tack_3.png",
+    "volumeLabelNeutralized": false,
+    "sourceOriginalHash": "952003b7c139",
+    "labelArtworkApproved": true,
+    "labelVolume": "9 л"
   },
   "super-tack-7": {
-    "image": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-1600.webp",
+    "image": "/images/products/catalog-2026-10/super-tack-7-c1d116c79f85-1600.webp",
     "sources": [
       {
         "width": 640,
-        "url": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-640.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-7-c1d116c79f85-640.webp"
       },
       {
         "width": 960,
-        "url": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-960.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-7-c1d116c79f85-960.webp"
       },
       {
         "width": 1600,
-        "url": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-1600.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-7-c1d116c79f85-1600.webp"
       }
     ],
     "frame": {
@@ -1317,23 +1321,27 @@
       "groundMask": "/images/products/catalog-2026-10/super-tack-7-9713303dcb5f-ground-4ebc55903049.svg",
       "profile": "reference-mineral"
     },
-    "sourceHash": "9713303dcb5f",
-    "originalFilename": "PROMIX_Super_Tack_7.png"
+    "sourceHash": "c1d116c79f85",
+    "originalFilename": "PROMIX_Super_Tack_7.png",
+    "volumeLabelNeutralized": false,
+    "sourceOriginalHash": "9713303dcb5f",
+    "labelArtworkApproved": true,
+    "labelVolume": "9 л"
   },
   "super-tack-facade": {
-    "image": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-1600.webp",
+    "image": "/images/products/catalog-2026-10/super-tack-facade-f8c8687dc890-1600.webp",
     "sources": [
       {
         "width": 640,
-        "url": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-640.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-facade-f8c8687dc890-640.webp"
       },
       {
         "width": 960,
-        "url": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-960.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-facade-f8c8687dc890-960.webp"
       },
       {
         "width": 1600,
-        "url": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-1600.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-facade-f8c8687dc890-1600.webp"
       }
     ],
     "frame": {
@@ -1377,23 +1385,27 @@
       "groundMask": "/images/products/catalog-2026-10/super-tack-facade-80d1d9b9b739-ground-4ebc55903049.svg",
       "profile": "reference-mineral"
     },
-    "sourceHash": "80d1d9b9b739",
-    "originalFilename": "PROMIX_Super_Tack_Fasad.png"
+    "sourceHash": "f8c8687dc890",
+    "originalFilename": "PROMIX_Super_Tack_Fasad.png",
+    "volumeLabelNeutralized": false,
+    "sourceOriginalHash": "80d1d9b9b739",
+    "labelArtworkApproved": true,
+    "labelVolume": "9 л"
   },
   "super-tack-facade-silicon": {
-    "image": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-1600.webp",
+    "image": "/images/products/catalog-2026-10/super-tack-facade-silicon-16ba53dcb2f7-1600.webp",
     "sources": [
       {
         "width": 640,
-        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-640.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-16ba53dcb2f7-640.webp"
       },
       {
         "width": 960,
-        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-960.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-16ba53dcb2f7-960.webp"
       },
       {
         "width": 1600,
-        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-1600.webp"
+        "url": "/images/products/catalog-2026-10/super-tack-facade-silicon-16ba53dcb2f7-1600.webp"
       }
     ],
     "frame": {
@@ -1437,8 +1449,12 @@
       "groundMask": "/images/products/catalog-2026-10/super-tack-facade-silicon-74849e644295-ground-4ebc55903049.svg",
       "profile": "reference-mineral"
     },
-    "sourceHash": "74849e644295",
-    "originalFilename": "PROMIX_Super_Tack_Fasad_Silikon.png"
+    "sourceHash": "16ba53dcb2f7",
+    "originalFilename": "PROMIX_Super_Tack_Fasad_Silikon.png",
+    "volumeLabelNeutralized": false,
+    "sourceOriginalHash": "74849e644295",
+    "labelArtworkApproved": true,
+    "labelVolume": "9 л"
   },
   "textured-anti-vandal": {
     "image": "/images/products/catalog-2026-10/textured-anti-vandal-2143d551bcdc-1600.webp",
@@ -1559,5 +1575,65 @@
     },
     "sourceHash": "62aa53c331ed",
     "originalFilename": "PROMIX_W.png"
+  },
+  "promix-h-02-hard": {
+    "image": "/images/products/catalog-2026-10/promix-h-02-hard-685e4fb7db0e-1600.webp",
+    "sources": [
+      {
+        "width": 640,
+        "url": "/images/products/catalog-2026-10/promix-h-02-hard-685e4fb7db0e-640.webp"
+      },
+      {
+        "width": 960,
+        "url": "/images/products/catalog-2026-10/promix-h-02-hard-685e4fb7db0e-960.webp"
+      },
+      {
+        "width": 1600,
+        "url": "/images/products/catalog-2026-10/promix-h-02-hard-685e4fb7db0e-1600.webp"
+      }
+    ],
+    "frame": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bounds": [
+        208,
+        66,
+        1185,
+        1033
+      ],
+      "opticalScale": 1,
+      "normalizeDetail": true,
+      "builtInShadow": false,
+      "reference": {
+        "source": [
+          963,
+          769
+        ],
+        "bounds": [
+          72,
+          31,
+          778,
+          680
+        ]
+      }
+    },
+    "geometry": {
+      "source": [
+        1600,
+        1200
+      ],
+      "bodyWidth": 964,
+      "bodyCenter": 801,
+      "base": 1099,
+      "family": "bucket",
+      "contactMask": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-contact-85ebe6369b50.svg",
+      "ambientMask": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-ambient-e735a9a7795e.svg",
+      "groundMask": "/images/products/catalog-2026-10/promix-h-03-685e4fb7db0e-ground-4ebc55903049.svg",
+      "profile": "reference-mineral"
+    },
+    "sourceHash": "685e4fb7db0e",
+    "originalFilename": "PROMIX_H.png"
   }
 }

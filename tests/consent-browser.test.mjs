@@ -5,14 +5,20 @@ import { after, before, test } from 'node:test';
 
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
+const { transpileModule, ModuleKind, ScriptTarget } = require('typescript');
 const origin = 'https://pro-mix.ru';
 const consentKey = 'promix-cookie-consent';
 const attributionKey = 'promix-lead-attribution-v1';
 const grant = { version: 1, necessary: true, analytics: true, updatedAt: '2026-10-26T10:00:00.000Z' };
 const sourceRoot = new URL('../src/scripts/', import.meta.url);
 let browser;
+let runtimeModule;
 
 before(async () => {
+  runtimeModule = transpileModule(await readFile(new URL('../src/i18n/runtime.ts', import.meta.url), 'utf8'), {
+    fileName: 'runtime.ts',
+    compilerOptions: { module: ModuleKind.ESNext, target: ScriptTarget.ES2022 },
+  }).outputText;
   browser = await chromium.launch({ channel: 'chrome', headless: true });
 });
 
@@ -74,7 +80,9 @@ const openSession = async (scope, { storedConsent, storageMode = 'normal', order
   }, { mode: storageMode, attribution: seedAttribution, key: attributionKey });
   await context.route('**/*', async (route) => {
     const url = new URL(route.request().url());
-    if (url.origin === origin && url.pathname.startsWith('/scripts/')) {
+    if (url.origin === origin && ['/i18n/runtime', '/i18n/runtime.js', '/i18n/runtime.ts'].includes(url.pathname)) {
+      await route.fulfill({ contentType: 'text/javascript', body: runtimeModule });
+    } else if (url.origin === origin && url.pathname.startsWith('/scripts/')) {
       const name = url.pathname.split('/').at(-1);
       await route.fulfill({ contentType: 'text/javascript', body: await readFile(new URL(name.endsWith('.js') ? name : `${name}.js`, sourceRoot), 'utf8') });
     } else if (url.origin === origin) {

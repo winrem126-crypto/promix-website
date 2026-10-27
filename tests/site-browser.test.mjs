@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { after, before, test } from 'node:test';
 import { chromium } from 'playwright';
 import { createStaticSiteFixture, distRoot, listFiles, resolvePublicFile } from './support/static-site-fixture.mjs';
+import { LOCALES } from '../scripts/i18n/config.mjs';
 
 const evidenceRoot = process.env.PROMIX_QA_DIR ?? fileURLToPath(new URL('../../PROMIX_FIX_QA_2026-10-26/', import.meta.url));
 const evidence = { routes: [], responsive: [], interactions: [], errors: [], screenshots: [] };
@@ -47,7 +48,7 @@ before(async () => {
   routes = files.filter((file) => file.endsWith('.html')).map((file) => {
     const relative = path.relative(distRoot, file).split(path.sep).join('/');
     return relative === 'index.html' ? '/' : '/' + relative.replace(/index\.html$/, '');
-  }).sort();
+  }).filter((route) => !LOCALES.some((locale) => locale.code !== 'ru' && route.startsWith(`/${locale.code}/`))).sort();
   fixture = await createStaticSiteFixture();
   browser = await chromium.launch({ headless: true, ...(process.env.PROMIX_CHROME_PATH ? { executablePath: process.env.PROMIX_CHROME_PATH } : { channel: 'chrome' }) });
   context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
@@ -68,10 +69,14 @@ after(async () => {
 });
 
 test('all production pages retain semantic content, metadata, valid media and product document requests', async (suite) => {
-  assert.equal(routes.length, 36);
-  assert.equal(catalogProducts.length, 25);
+  assert.equal(routes.length, 37);
+  assert.equal(catalogProducts.length, 26);
   assert.ok(!catalogProducts.some((product) => product.href.includes('promix-h-03')));
   assert.ok(catalogProducts.some((product) => product.href === '/products/promix-h-02/'));
+  assert.ok(catalogProducts.some((product) => product.href === '/products/promix-h-02-hard/'));
+  for (const slug of ['pro-spray-improved', 'polymer-putty', 'acrylic-enamel']) {
+    assert.ok(!catalogProducts.some((product) => product.href === `/products/${slug}/`), `${slug} stays hidden`);
+  }
   for (const route of routes) {
     await suite.test(route, async () => {
       const response = await visit(route);
@@ -157,7 +162,7 @@ test('internal links, responsive media, CSS resources, sitemap and robots resolv
   }
   const sitemap = await fs.readFile(path.join(distRoot, 'sitemap-0.xml'), 'utf8');
   const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(match[1]));
-  assert.equal(locations.length, 35);
+  assert.equal(locations.length, 36 * LOCALES.length);
   assert.ok(locations.every((url) => !/preview|404/.test(url.pathname)));
   for (const url of locations) await fs.access(resolvePublicFile(url.pathname));
   const robots = await fs.readFile(path.join(distRoot, 'robots.txt'), 'utf8');
@@ -182,7 +187,7 @@ test('catalog search, filtering, reset, history and reload keep visible results 
   const button = page.locator('[data-filter-group][data-filter-value="putties"]');
   await button.click();
   const expected = catalogProducts.filter((product) => product.category === 'putties').length;
-  assert.equal(expected, 8);
+  assert.equal(expected, 9);
   assert.equal(await page.locator('[data-catalog-card]:visible').count(), expected);
   await page.reload({ waitUntil: 'networkidle' });
   assert.equal(await page.locator('[data-catalog-card]:visible').count(), expected);
@@ -191,6 +196,87 @@ test('catalog search, filtering, reset, history and reload keep visible results 
   await page.goBack({ waitUntil: 'networkidle' });
   assert.equal(await page.locator('[data-catalog-card]:visible').count(), expected);
   evidence.interactions.push({ name: 'catalog', products: catalogProducts.length, putties: expected, restored: true });
+});
+
+test('H 0,2 variants retain distinct pages, inline benefits, white hard material and derived counts', async () => {
+  await visit('/products/');
+  const variants = [
+    { slug: 'promix-h-02-hard', name: 'PROMIX H 0,2 — Жёсткая', catalogName: 'H 0,2 — жёсткая', lead: 'Более твёрдая поверхность после высыхания.' },
+    { slug: 'promix-h-02', name: 'PROMIX H 0,2 — Мягкая', catalogName: 'H 0,2 — мягкая', lead: 'Легче шлифуется после высыхания.' },
+  ];
+  const technical = 'Толстослойная выравнивающая шпатлёвка для внутренних работ.';
+  const firstHrefs = await page.locator('[data-catalog-card]').evaluateAll((cards) => cards.slice(0, 3).map((card) => card.dataset.productHref));
+  assert.deepEqual(firstHrefs, ['/products/promix-h-02-hard/', '/products/promix-h-02/', '/products/promix-j/']);
+  const images = [];
+  for (const variant of variants) {
+    const card = page.locator(`[data-catalog-card][data-product-href="/products/${variant.slug}/"]`);
+    assert.equal(await card.locator('h2').textContent(), variant.catalogName);
+    assert.equal(await card.locator('.product-card-copy > p').count(), 1);
+    assert.equal((await card.locator('.product-card-copy > p').textContent()).trim(), `${variant.lead} ${technical}`);
+    assert.equal(await card.locator('.product-card-copy > p strong').count(), 0);
+    const style = await card.locator('.product-card-copy > p').evaluate((element) => ({ weight: getComputedStyle(element).fontWeight, color: getComputedStyle(element).color }));
+    assert.deepEqual(style, { weight: '400', color: 'rgb(88, 106, 119)' });
+    images.push(await card.locator('.product-card-visual img').getAttribute('src'));
+  }
+  assert.equal(new Set(images).size, 2, 'two variants use distinct packaging photos');
+  const visibleHrefs = () => page.locator('[data-catalog-card]:visible').evaluateAll((cards) => cards.map((card) => card.dataset.productHref));
+  for (const [query, expected] of [
+    ['H 0,2', variants.map((variant) => `/products/${variant.slug}/`)],
+    ['PROMIX H', variants.map((variant) => `/products/${variant.slug}/`)],
+    ['Жёсткая', ['/products/promix-h-02-hard/']],
+    ['Мягкая', ['/products/promix-h-02/']],
+    ['лёгкая шлифовка', ['/products/promix-h-02/']],
+  ]) {
+    await page.locator('[data-catalog-search]').fill(query);
+    await page.locator('[data-catalog-search]').press('Tab');
+    await page.waitForFunction(({ expected }) => {
+      const hrefs = [...document.querySelectorAll('[data-catalog-card]')].filter((card) => !card.hidden).map((card) => card.dataset.productHref);
+      return expected.every((href) => hrefs.includes(href));
+    }, { expected });
+    const results = await visibleHrefs();
+    assert.ok(expected.every((href) => results.includes(href)), query);
+    assert.ok(!results.includes('/products/promix-h-03/'), query);
+  }
+  for (const variant of variants) {
+    await visit(`/products/${variant.slug}/`);
+    assert.equal(await page.locator('h1').textContent(), variant.name);
+    assert.equal((await page.locator('.pd-subtitle').textContent()).trim(), `${variant.lead} ${technical}`);
+    assert.equal(await page.locator('.pd-description').count(), 0, 'H description appears once in the existing subtitle');
+    const schema = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) => scripts.map((script) => JSON.parse(script.textContent)).find((entry) => entry['@type'] === 'Product'));
+    assert.equal(schema.name, variant.name);
+    assert.equal(new URL(await page.locator('link[rel="canonical"]').getAttribute('href')).pathname, `/products/${variant.slug}/`);
+    if (variant.slug.endsWith('-hard')) {
+      const color = page.locator('.pd-specs > div').filter({ has: page.locator('dt', { hasText: /^Цвет$/ }) });
+      assert.equal((await color.locator('dd').textContent()).trim(), 'Белый, колеровка по RAL.');
+      assert.doesNotMatch(await page.locator('main').textContent(), /бежев/i);
+    }
+  }
+  await visit('/');
+  assert.match(await page.locator('.home-products__catalog').textContent(), /26 материалов/);
+  assert.equal((await page.locator('#home-category-count-putties').textContent()).trim(), '9 материалов');
+  evidence.interactions.push({ name: 'H 0,2 assortment', variants: variants.map((variant) => variant.slug), catalog: 26, putties: 9, distinctImages: true });
+});
+
+test('all public SUPER TACK products show confirmed packaging in catalog and detail sections', async () => {
+  await visit('/products/');
+  await page.locator('[data-catalog-search]').fill('SUPER TACK');
+  await page.waitForFunction(() => [...document.querySelectorAll('[data-catalog-card]')].filter((card) => !card.hidden).length === 4);
+  const cards = page.locator('[data-catalog-card]:visible');
+  assert.equal(await cards.count(), 4);
+  const hrefs = await cards.evaluateAll((entries) => entries.map((card) => card.dataset.productHref));
+  assert.deepEqual([...hrefs].sort(), ['super-tack-3', 'super-tack-7', 'super-tack-facade', 'super-tack-facade-silicon'].map((slug) => `/products/${slug}/`).sort());
+  for (let index = 0; index < 4; index += 1) {
+    const packaging = cards.nth(index).locator('.product-card-specs > div').filter({ has: page.locator('dt', { hasText: 'Упаковка' }) });
+    assert.equal((await packaging.locator('dd').textContent()).trim(), '1 л; 2,2 л; 9 л');
+  }
+  for (const href of hrefs) {
+    await visit(href);
+    const packaging = page.locator('.pd-specs > div').filter({ has: page.locator('dt', { hasText: /^Упаковка$/ }) });
+    assert.equal((await packaging.locator('dd').textContent()).trim(), 'Ведро 1 л; 2,2 л; 9 л.');
+    assert.ok(await page.locator('#storage').getByText('Ведро 1 л; 2,2 л; 9 л.', { exact: true }).count());
+    assert.doesNotMatch(await page.locator('main').textContent(), /4[,.]5\s*л/);
+  }
+  evidence.interactions.push({ name: 'SUPER TACK packaging', products: hrefs, packaging: '1 л; 2,2 л; 9 л' });
 });
 
 test('first-layer cookie choices and primary controls remain accessible at every requested width', async (suite) => {

@@ -31,13 +31,13 @@ const retainedApplication = !brochure.coveredSpecLabels.includes('Нанесен
               {block.items?.length && <List>{block.items.map((item) => <li>{text(item)}</li>)}</List>}
               {block.after?.map((paragraph) => <p>{text(paragraph)}</p>)}
               {block.table && <div class="pd-table-scroll" role="region" aria-label={block.heading} tabindex="0">
-                <table class:list={['pd-brochure-table', { 'pd-two-column-table': block.table.headers.length === 2 }]}>
+                <table class:list={['pd-brochure-table', { 'pd-two-column-table': block.table.headers.length === 2, 'pd-roll-table': block.id === 'roll-formats' }]}>
                   <caption>{block.heading}</caption>
                   <thead><tr>{block.table.headers.map((header) => <th scope="col">{header}</th>)}</tr></thead>
                   <tbody>{block.table.rows.map((row) => <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody>
                 </table>
               </div>}
-              {block.table && block.table.headers.length > 2 && <p class="pd-table-hint">Таблица прокручивается по горизонтали.</p>}
+              {block.table && block.table.headers.length > 2 && block.id !== 'roll-formats' && <p class="pd-table-hint">Таблица прокручивается по горизонтали.</p>}
               {block.rollFormats && <div class="pd-table-scroll" role="region" aria-label="Размеры и плотность рулонов" tabindex="0">
                 <table class="pd-brochure-table pd-roll-table">
                   <caption>Размеры и плотность рулонов</caption>

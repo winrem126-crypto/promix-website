@@ -81,6 +81,19 @@
 .catalog-page .catalog-product-grid .product-card.product-card--open .product-card-copy > span:first-child { color: #607887; font: 500 11px/1.4 'PROMIX Product', Inter, sans-serif; letter-spacing: .075em; text-transform: uppercase; }
 .catalog-page .catalog-product-grid[data-category-filtered] .product-card-copy > span:first-child { display: none; }
 .catalog-page .catalog-product-grid .product-card.product-card--open .product-card-copy :is(h2, h3) { display: block; min-height: max(2lh, var(--catalog-title-height, 0px)); margin: 8px 0 0; font-size: 22px; font-weight: 600; line-height: 1.22; letter-spacing: -.025em; overflow: visible; -webkit-line-clamp: unset; transform: none; transition: color 200ms ease; }
+/* Fit the complete Russian name when its card has room for readable type. */
+html[lang="ru"] .catalog-page .catalog-product-grid .product-card[data-product-href="/products/deep-primer/"] .product-card-copy {
+  container-type: inline-size;
+  container-name: deep-primer-title;
+}
+@container deep-primer-title (min-width: 250px) {
+  html[lang="ru"] .catalog-page .catalog-product-grid .product-card[data-product-href="/products/deep-primer/"] .product-card-copy :is(h2, h3) {
+    font-size: clamp(16px, 6.3cqw, 20px);
+    /* Preserve the row's original 22px × 1.22 line-height rhythm. */
+    line-height: 26.84px;
+    white-space: nowrap;
+  }
+}
 .catalog-page .catalog-product-grid[data-category-filtered] .product-card.product-card--open .product-card-copy h2 { margin-top: 0; }
 .catalog-page .catalog-product-grid .product-card.product-card--open .product-card-copy > p { display: block; min-height: max(2lh, var(--catalog-description-height, 0px)); margin: 8px 0 0; color: var(--catalog-muted); font-size: 14px; line-height: 1.5; overflow: visible; -webkit-line-clamp: unset; }
 .catalog-page .catalog-product-grid .product-card.product-card--open .product-card-specs { display: flex; flex-direction: column; min-height: 0; margin: 18px 0 0; padding-top: 13px; gap: 10px; border-top: 1px solid var(--catalog-line); }

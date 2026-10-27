@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import HomeProducts from '../../components/HomeProducts.astro';
+import ArchitecturalTasks from '../../components/ArchitecturalTasks.astro';
+import HomeProduction from '../../components/HomeProduction.astro';
+import HomePartners from '../../components/HomePartners.astro';
+import HomeFooter from '../../components/HomeFooter.astro';
+import SiteDialogs from '../../components/SiteDialogs.astro';
+import '../../styles/architectural-home.css';
+import '../../styles/hero-wall-assembly.css';
+const assets = '/previews/hero-wall-assembly';
+const layers = [
+  { name: 'Основание', file: 'layer-01.png', order: 0 },
+  { name: 'Подготовка', file: 'layer-02.png', order: 1 },
+  { name: 'Выравнивание', file: 'layer-03.png', order: 3 },
+  { name: 'Армирование', file: 'layer-04.png', order: 2 },
+  { name: 'Финишная поверхность', file: 'layer-05.png', order: 4 },
+];
+---
+<BaseLayout title="PROMIX — сборка стены · концепт" description="Эксперимент с анимацией первого экрана PROMIX." canonical="/" robots="noindex, nofollow" pageClass="architectural-home wall-assembly-preview">
+  <SiteHeader />
+  <main id="main-content" class="arch-main">
+    <section class="assembly-runway" data-assembly data-mode="auto" aria-labelledby="assembly-title">
+      <div class="assembly-pin">
+        <div class="assembly-hero">
+          <img class="assembly-backdrop" src={`${assets}/studio.webp`} alt="" width="1672" height="941" fetchpriority="high" />
+          <div class="assembly-copy">
+            <p class="assembly-eyebrow">PROMIX / Профессиональные материалы</p>
+            <div class="assembly-message">
+              <h1 id="assembly-title">За красивой стеной —<br />правильная основа<span>.</span></h1>
+              <p class="assembly-description">Материалы PROMIX — от подготовки основания до финишного покрытия.</p>
+              <a class="assembly-cta" href="#products">Смотреть продукцию <img src="/icons/phosphor/arrow-right.svg" alt="" width="20" height="20" /></a>
+            </div>
+            <a class="assembly-scroll" href="#products">Из чего складывается результат <img src="/icons/phosphor/caret-down.svg" alt="" width="16" height="16" /></a>
+          </div>
+          <figure class="assembly-art" aria-label="Пять разнесённых образцов материалов плавно собираются в единую стену">
+            <div class="assembly-scene" data-scene>
+              {layers.map((layer, i) => <img class="assembly-layer" data-layer={layer.order} src={`${assets}/${layer.file}`} alt="" width="400" height="793" style={`--layer-z:${layer.order + 1};--clip:var(--clip-${i + 1})`} />)}
+              <img class="assembly-bucket" src={`${assets}/bucket.png`} alt="Шпатлёвка PROMIX H" width="1024" height="1024" />
+            </div>
+            <figcaption class="assembly-art-caption"><span>Материал. Форма. Результат.</span><span data-scene-status>Слои отделки</span></figcaption>
+          </figure>
+        </div>
+        <div class="assembly-controls" aria-label="Управление превью анимации">
+          <div class="assembly-controls-title"><span>Проба анимации</span><strong data-status aria-live="polite">Слои отделки</strong></div>
+          <div class="assembly-modes" role="group" aria-label="Способ управления">
+            <button type="button" data-mode-button="auto" aria-pressed="true">Автосборка</button>
+            <button type="button" data-mode-button="scroll" aria-pressed="false">По прокрутке</button>
+          </div>
+          <div class="assembly-playback">
+            <button type="button" data-replay>Повторить</button>
+            <button type="button" data-toggle>Собрать стену</button>
+          </div>
+          <label class="assembly-scrubber"><span class="assembly-sr-only">Степень сборки стены</span><input data-scrubber type="range" min="0" max="100" value="0" step="1" aria-valuetext="Слои разнесены" /><output data-progress>0%</output></label>
+        </div>
+      </div>
+    </section>
+    <HomeProducts />
+    <ArchitecturalTasks />
+    <HomeProduction />
+    <HomePartners />
+  </main>
+  <HomeFooter />
+  <SiteDialogs />
+  <script src="../../scripts/hero-wall-assembly.ts"></script>
+  <script src="../../scripts/site.js"></script>
+</BaseLayout>

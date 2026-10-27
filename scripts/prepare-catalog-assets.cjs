@@ -72,9 +72,14 @@ async function main() {
   }
   const sourceDirectory = path.resolve(sourceArgument);
   if (!(await fs.stat(sourceDirectory)).isDirectory()) throw new Error('The source path must be a directory.');
+  const existingMetadata = JSON.parse(await fs.readFile(metadataFile, 'utf8'));
+  // Keep reviewed label artwork and earlier volume-label corrections when
+  // importing a source batch that may contain superseded manufacturer labels.
+  const importsToPrepare = imports.filter(([slug]) =>
+    !existingMetadata[slug]?.volumeLabelNeutralized && !existingMetadata[slug]?.labelArtworkApproved);
   console.warn('Skipping H 0,3: approved photograph of that SKU is required; PROMIX_H.png must not be substituted.');
   // Check the entire input set before creating any output.
-  await Promise.all(imports.map(async ([slug, filename]) => {
+  await Promise.all(importsToPrepare.map(async ([slug, filename]) => {
     if (!(await fs.stat(path.join(sourceDirectory, filename))).isFile()) throw new Error(`${slug}: missing source ${filename}`);
   }));
 
@@ -91,12 +96,12 @@ async function main() {
     fs.mkdir(originalDirectory, { recursive: true }),
   ]);
 
-  const imported = new Array(imports.length);
+  const imported = new Array(importsToPrepare.length);
   let next = 0;
   async function worker() {
-    while (next < imports.length) {
+    while (next < importsToPrepare.length) {
       const index = next++;
-      const [slug, originalFilename, family] = imports[index];
+      const [slug, originalFilename, family] = importsToPrepare[index];
       const original = await fs.readFile(path.join(sourceDirectory, originalFilename));
       const sourceSha256 = digest(original);
       const sourceHash = sourceSha256.slice(0, 12);
@@ -154,7 +159,7 @@ async function main() {
     }
   }
   await Promise.all([worker(), worker()]);
-  const metadata = Object.fromEntries(imported.map(item => [item.slug, item.metadata]));
+  const metadata = { ...existingMetadata, ...Object.fromEntries(imported.map(item => [item.slug, item.metadata])) };
   await fs.writeFile(metadataFile, JSON.stringify(metadata, null, 2) + '\n');
   console.log(JSON.stringify({
     imported: imported.length,

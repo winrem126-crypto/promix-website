@@ -47,7 +47,7 @@ const productHref = `/products/${product.slug}/`;
   data-product-href={productHref}
   data-preview-state={reviewGeometry?.previewState}
 >
-  <a class="product-card-hitarea" href={productHref} aria-label={`${product.name} — открыть карточку товара`}>
+  <a class="product-card-hitarea" href={productHref} aria-label={`${product.catalogName} — открыть карточку товара`}>
     <div class:list={[`product-card-visual media-${mediaKind}`, { 'product-card-visual--normalized': imageFrame }]} data-product-shadow={shadowGeometry ? JSON.stringify(shadowGeometry) : undefined} data-shadow-family={shadowGeometry?.family} data-shadow-profile={shadowGeometry?.profile} style={shadowStyle}>
       <slot name="stage-background">{groundShadow && !product.imageUnavailable && <ProductStageScene />}</slot>
       {shadowGeometry && !product.imageUnavailable && <CatalogProductShadow synchronized={mineralScene} />}
@@ -63,8 +63,8 @@ const productHref = `/products/${product.slug}/`;
     </div>
     <div class="product-card-copy">
       <span>{product.categoryLabel}</span>
-      <Heading>{product.name}</Heading>
-      <p>{product.subtitle}</p>
+      <Heading>{product.catalogName}</Heading>
+      <p>{product.catalogDescriptionLead && <>{product.catalogDescriptionLeadEmphasized === false ? product.catalogDescriptionLead : <strong>{product.catalogDescriptionLead}</strong>}{' '}</>}{product.catalogDescription ?? product.subtitle}</p>
       <dl class="product-card-specs">
         {cardSpecs.map((spec) => <div><dt><span>{spec.label}</span></dt><dd>{spec.value}</dd></div>)}
       </dl>

@@ -28,6 +28,7 @@ const mediaKind = product.imageLayout;
 const highlights = product.specs.filter((spec) => !['Назначение', 'Состояние'].includes(spec.label) && spec.value.length <= 40).slice(0, 2);
 const hasSpecs = product.specs.length > 0 || product.surfaces.length > 0;
 const longDescription = product.description.length > 360;
+const descriptionInSubtitle = Boolean(product.descriptionLead && product.description === product.subtitle);
 const metaDescription = productSeoDescriptions[product.slug as keyof typeof productSeoDescriptions];
 if (!metaDescription) throw new Error(`Missing product SEO description: ${product.slug}`);
 const schema = {
@@ -58,7 +59,7 @@ const schema = {
         <ProductStudioImage product={product} />
       </div>
       <div class="pd-overview">
-        {!longDescription && product.description && <p class="pd-description">{product.description}</p>}
+        {!longDescription && !descriptionInSubtitle && product.description && <p class="pd-description">{product.description}</p>}
         {highlights.length > 0 && <dl class="pd-highlights">{highlights.map((spec) => <div><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl>}
         <div class="pd-actions">
           <button class="button button-primary" type="button" data-open-form data-form-context="product-consultation" data-product-name={product.name} data-product-slug={product.slug}>Получить консультацию</button>
